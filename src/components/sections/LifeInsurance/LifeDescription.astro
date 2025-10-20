@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import detailBg from '../../../assets/images/seguros-vida/Health-detail.webp';
+// import detailBgMobile from '../../../assets/images/polizas-salud/Health-detail-mobile.webp';
+---
+
+<section
+  class="relative bg-cover bg-center bg-no-repeat text-white overflow-hidden flex flex-col items-center justify-center text-center h-[650px] m-0 p-0 md:rounded-3xl md:h-auto md:mt-14 md:px-6 md:py-20"
+>
+  <!-- Imagen de fondo: Desktop y Mobile -->
+  <!-- Desktop -->
+  <Image 
+    src={detailBg} 
+    alt="Fondo salud detalle" 
+    class="absolute inset-0 w-full h-full object-cover hidden md:block"
+  />
+  <!-- Mobile -->
+  <Image 
+    src={detailBg} 
+    alt="Fondo salud detalle móvil" 
+    class="absolute inset-0 w-full h-[650px] object-cover md:hidden md:h-full"
+  />
+
+  <div class="relative z-10 max-w-3xl flex flex-col items-center px-4 py-6 md:py-0">
+    <!-- Título -->
+    <div class="bg-[#2b5c8f]/95 px-20 py-4 rounded-[25px] inline-block mb-10 md:bg-[#2b5c8f]/90 md:px-40 md:py-6 md:w-auto md:rounded-lg md:mb-8">
+      <h2 class="text-3xl md:text-3xl font-semibold text-center leading-tight">
+        <span class="block">La vida es</span>
+        <span class="block font-extrabold italic">incierta</span>
+      </h2>
+    </div>
+
+    <!-- Texto principal del cuerpo -->
+    <p class="text-xl md:text-2xl leading-relaxed mb-12 md:mb-10 text-white max-w-[95%] md:max-w-[75%] font-light px-2 text-center">
+      Un accidente, o una enfermedad inesperada pueden cambiarlo todo en segundos.
+    </p>
+
+    <!-- Texto final -->
+    <div class="bg-white text-[#384f6b] font-bold italic rounded-[35px] px-10 py-6 inline-block shadow-md text-xl md:text-xl leading-relaxed max-w-[95%] md:mx-0">
+      <p class="text-center">
+        <span class="font-extrabold italic">Sin un respaldo, tu familia</span><br />
+        <span class="font-extrabold italic">podría enfrentar deudas,</span><br />
+        <span class="font-extrabold italic">gastos diarios y un futuro</span><br />
+        <span class="font-extrabold italic">incierto sin ti.</span>
+      </p>
+    </div>
+  </div>
+</section>

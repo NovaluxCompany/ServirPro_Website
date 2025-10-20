@@ -3,21 +3,22 @@
 import { Image } from 'astro:assets';
 
 // Importar imágenes de oficinas
-import oficinaMedellin01 from '../../assets/images/offices/Oficinamedellin-01.jpg';
-import oficinaMedellin02 from '../../assets/images/offices/Oficinamedellin-02.jpg';
-import oficinaBogota01 from '../../assets/images/offices/Oficinabogota-01.jpg';
-import oficinaBogota02 from '../../assets/images/offices/Oficinabogota-02.jpg';
-import oficinaPereira01 from '../../assets/images/offices/Oficinapereira-01.jpg';
-import oficinaPereira02 from '../../assets/images/offices/Oficinapereira-02.jpg';
+import oficinaMedellin01 from '../../assets/images/offices/Oficinamedellin-01.webp';
+import oficinaMedellin02 from '../../assets/images/offices/Oficinamedellin-02.webp';
+import oficinaBogota01 from '../../assets/images/offices/Oficinabogota-01.webp';
+import oficinaBogota02 from '../../assets/images/offices/Oficinabogota-02.webp';
+import oficinaPereira01 from '../../assets/images/offices/Oficinapereira-01.webp';   
+import oficinaPereira02 from '../../assets/images/offices/Oficinapereira-02.webp';
+import OfficeCard from "../ui/OfficeCard.astro";
 ---
 
 <!-- Contamos con oficinas en -->
-<section class="bg-servir-blue py-16 md:py-20 relative">
+<section id="offices-section" class="bg-servir-blue py-16 md:py-20 relative">
     <div class="max-w-7xl mx-auto px-4">
         <!-- Título con fondo blanco redondo en la parte superior -->
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <div class="bg-white rounded-full px-12 py-6 shadow-lg">
-                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold whitespace-nowrap text-servir-blue">
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold whitespace-nowrap text-servir-blue" style="font-style:italic">
                     Contamos con oficinas en:
                 </h2>
             </div>
@@ -30,239 +31,46 @@ import oficinaPereira02 from '../../assets/images/offices/Oficinapereira-02.jpg'
         <div class="relative">
             <!-- Contenedor del carrusel -->
             <div class="overflow-hidden" id="carousel-container">
-                <div id="offices-carousel" class="flex transition-transform duration-300 ease-in-out">
-
-                    <!-- Card CC. Viva Envigado -->
-                    <div class="flex-none w-full sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 mx-2">
-                        <div
-                            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-96 sm:h-80 md:h-96 lg:h-80">
-                            <div class="flex flex-col sm:flex-row h-full">
-                                <!-- Carrusel de imágenes (izquierda) -->
-                                <div class="w-full sm:w-1/2 h-1/2 sm:h-full relative p-3">
-                                    <div class="relative h-full rounded-lg overflow-hidden">
-                                        <div id="envigado-images"
-                                            class="flex h-full transition-transform duration-300 ease-in-out"
-                                            style="width: 200%;">
-                                            <Image src={oficinaPereira01}
-                                                alt="CC. Viva Envigado 1" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                            <Image src={oficinaPereira02}
-                                                alt="CC. Viva Envigado 2" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                        </div>
-                                    </div>
-                                    <!-- Controles del carrusel de imágenes -->
-                                    <button onclick="previousImage('envigado')"
-                                        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                        </svg>
-                                    </button>
-                                    <button onclick="nextImage('envigado')"
-                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Contenido de la card (derecha) -->
-                                <div
-                                    class="w-full sm:w-1/2 h-1/2 sm:h-full p-4 sm:p-6 flex flex-col justify-center items-center text-center">
-                                    <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #385D83;">
-                                        CC. Viva Envigado</h3>
-                                    <a href="https://maps.app.goo.gl/4ik33Hfv3dbTHbFv9" target="_blank"
-                                        class="inline-block bg-gray-300 text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-400 transition-colors text-sm md:text-base">
-                                        Ver ubicación
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Oficina en Medellín -->
-                    <div class="flex-none w-full sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 mx-2">
-                        <div
-                            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-96 sm:h-80 md:h-96 lg:h-80">
-                            <div class="flex flex-col sm:flex-row h-full">
-                                <!-- Carrusel de imágenes (izquierda) -->
-                                <div class="w-full sm:w-1/2 h-1/2 sm:h-full relative p-3">
-                                    <div class="relative h-full rounded-lg overflow-hidden">
-                                        <div id="medellin-images"
-                                            class="flex h-full transition-transform duration-300 ease-in-out"
-                                            style="width: 200%;">
-                                            <Image src={oficinaMedellin01}
-                                                alt="Oficina Medellín 1" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                            <Image src={oficinaMedellin02}
-                                                alt="Oficina Medellín 2" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                        </div>
-                                    </div>
-                                    <!-- Controles del carrusel de imágenes -->
-                                    <button onclick="previousImage('medellin')"
-                                        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                        </svg>
-                                    </button>
-                                    <button onclick="nextImage('medellin')"
-                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Contenido de la card (derecha) -->
-                                <div
-                                    class="w-full sm:w-1/2 h-1/2 sm:h-full p-4 sm:p-6 flex flex-col justify-center items-center text-center">
-                                    <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #385D83;">
-                                        Oficina en Medellín</h3>
-                                    <p class="text-gray-600 mb-2 text-sm md:text-base">Carrera 51 #45-75</p>
-                                    <p class="text-gray-600 mb-2 text-sm md:text-base">CC. Pioneros - Local 213</p>
-                                    <p class="text-gray-600 mb-4 text-sm md:text-base">Centro de Medellín, La Candelaria</p>
-                                    <a href="https://maps.app.goo.gl/UXmTfssLjFP8LqVY9?g_st=awb" target="_blank"
-                                        class="inline-block bg-gray-300 text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-400 transition-colors text-sm md:text-base">
-                                        Ver ubicación
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Oficina en Bogotá -->
-                    <div class="flex-none w-full sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 mx-2">
-                        <div
-                            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-96 sm:h-80 md:h-96 lg:h-80">
-                            <div class="flex flex-col sm:flex-row h-full">
-                                <!-- Carrusel de imágenes (izquierda) -->
-                                <div class="w-full sm:w-1/2 h-1/2 sm:h-full relative p-3">
-                                    <div class="relative h-full rounded-lg overflow-hidden">
-                                        <div id="bogota-images"
-                                            class="flex h-full transition-transform duration-300 ease-in-out"
-                                            style="width: 200%;">
-                                            <Image src={oficinaBogota01}
-                                                alt="Oficina Bogotá 1" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                            <Image src={oficinaBogota02}
-                                                alt="Oficina Bogotá 2" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                        </div>
-                                    </div>
-                                    <!-- Controles del carrusel de imágenes -->
-                                    <button onclick="previousImage('bogota')"
-                                        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                        </svg>
-                                    </button>
-                                    <button onclick="nextImage('bogota')"
-                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Contenido de la card (derecha) -->
-                                <div
-                                    class="w-full sm:w-1/2 h-1/2 sm:h-full p-4 sm:p-6 flex flex-col justify-center items-center text-center">
-                                    <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #385D83;">
-                                        Oficina en Bogotá</h3>
-                                    <p class="text-gray-600 mb-2 text-sm md:text-base">Calle 13# 15-73</p>
-                                    <p class="text-gray-600 mb-2 text-sm md:text-base">CC. Nodo Móvil 13G - Oficina 206</p>
-                                    <p class="text-gray-600 mb-4 text-sm md:text-base">Centro de Bogotá, Los Mártires</p>
-                                    <a href="https://maps.app.goo.gl/xWVsig6u2rkvhwZ19?g_st=awb" target="_blank"
-                                        class="inline-block bg-gray-300 text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-400 transition-colors text-sm md:text-base">
-                                        Ver ubicación
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Oficina en Pereira -->
-                    <div class="flex-none w-full sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 mx-2">
-                        <div
-                            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-96 sm:h-80 md:h-96 lg:h-80">
-                            <div class="flex flex-col sm:flex-row h-full">
-                                <!-- Carrusel de imágenes (izquierda) -->
-                                <div class="w-full sm:w-1/2 h-1/2 sm:h-full relative p-3">
-                                    <div class="relative h-full rounded-lg overflow-hidden">
-                                        <div id="pereira-images"
-                                            class="flex h-full transition-transform duration-300 ease-in-out"
-                                            style="width: 200%;">
-                                            <Image src={oficinaPereira01}
-                                                alt="Oficina Pereira 1" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                            <Image src={oficinaPereira02}
-                                                alt="Oficina Pereira 2" class="flex-none h-full object-cover"
-                                                style="width: 50%;" />
-                                        </div>
-                                    </div>
-                                    <!-- Controles del carrusel de imágenes -->
-                                    <button onclick="previousImage('pereira')"
-                                        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                        </svg>
-                                    </button>
-                                    <button onclick="nextImage('pereira')"
-                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Contenido de la card (derecha) -->
-                                <div
-                                    class="w-full sm:w-1/2 h-1/2 sm:h-full p-4 sm:p-6 flex flex-col justify-center items-center text-center">
-                                    <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #385D83;">
-                                        Oficina en Pereira</h3>
-                                    <p class="text-gray-600 mb-2 text-sm md:text-base">Carrera 8#19-41</p>
-                                    <p class="text-gray-600 mb-2 text-sm md:text-base">CC. Bolívar Plaza- Local 118</p>
-                                    <p class="text-gray-600 mb-4 text-sm md:text-base">Plaza Bolívar, Pereira</p>
-                                    <a href="https://maps.app.goo.gl/hCAJopm3WZTepwaY9?g_st=ic"
-                                        target="_blank"
-                                        class="inline-block bg-gray-300 text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-400 transition-colors text-sm md:text-base">
-                                        Ver ubicación
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+              <div id="offices-carousel" class="flex transition-transform duration-300 ease-in-out">
+                <!-- <OfficeCard
+                    officeKey="envigado"
+                    title="CC. Viva Envigado"
+                    images={{ src1: oficinaPereira01, src2: oficinaPereira02, alt1: 'CC. Viva Envigado 1', alt2: 'CC. Viva Envigado 2' }}
+                    mapUrl="https://maps.app.goo.gl/4ik33Hfv3dbTHbFv9"
+                /> -->
+                <OfficeCard
+                    officeKey="medellin"
+                    title="Oficina en Medellín"
+                    images={{ src1: oficinaMedellin01, src2: oficinaMedellin02, alt1: 'Oficina Medellín 1', alt2: 'Oficina Medellín 2' }}
+                    mapUrl="https://maps.app.goo.gl/UXmTfssLjFP8LqVY9?g_st=awb"
+                    details={["Carrera 51 #45-75", "CC. Pioneros - Local 213", "Centro de Medellín, La Candelaria"]}
+                />
+                <OfficeCard
+                    officeKey="bogota"
+                    title="Oficina en Bogotá"
+                    images={{ src1: oficinaBogota01, src2: oficinaBogota02, alt1: 'Oficina Bogotá 1', alt2: 'Oficina Bogotá 2' }}
+                    mapUrl="https://maps.app.goo.gl/xWVsig6u2rkvhwZ19?g_st=awb"
+                    details={["Calle 13# 15-73", "CC. Nodo Móvil 13G - Oficina 206", "Centro de Bogotá, Los Mártires"]}
+                />
+                <OfficeCard
+                    officeKey="pereira"
+                    title="Oficina en Pereira"
+                    images={{ src1: oficinaPereira01, src2: oficinaPereira02, alt1: 'Oficina Pereira 1', alt2: 'Oficina Pereira 2' }}
+                    mapUrl="https://maps.app.goo.gl/hCAJopm3WZTepwaY9?g_st=ic"
+                    details={["Carrera 8#19-41", "CC. Bolívar Plaza- Local 118", "Plaza Bolívar, Pereira"]}
+                />
                 </div>
+             </div>
             </div>
 
             <!-- Botones de navegación en la parte inferior -->
-            <div class="flex justify-center mt-8 space-x-4">
+            <div class="flex justify-center mt-8 space-x-4" id="offices-indicators">
                 <button
-                    class="carousel-btn w-4 h-4 rounded-full bg-blue-600 shadow-lg border-2 border-white transition-all duration-300 hover:bg-blue-700 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"></button>
+                    class="office-indicator w-4 h-4 rounded-full bg-gray-300 shadow-lg border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
                 <button
-                    class="carousel-btn w-4 h-4 rounded-full bg-gray-300 shadow-md border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
+                    class="office-indicator w-4 h-4 rounded-full bg-gray-300 shadow-md border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
                 <button
-                    class="carousel-btn w-4 h-4 rounded-full bg-gray-300 shadow-md border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
-                <button
-                    class="carousel-btn w-4 h-4 rounded-full bg-gray-300 shadow-md border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-next focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
+                    class="office-indicator w-4 h-4 rounded-full bg-gray-300 shadow-md border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
             </div>
         </div>
     </div>
@@ -271,48 +79,79 @@ import oficinaPereira02 from '../../assets/images/offices/Oficinapereira-02.jpg'
 <script>
     // Variables globales para el carrusel principal
     let currentOfficeIndex = 0;
-    const totalOffices = 4;
+    const totalOffices = 3;
+
+    // Auto-rotación del carrusel principal
+    let autoTimer = null;
+    const autoIntervalMs = 7000;
+    let isCarouselVisible = false;
 
     // Variables para los carruseles de imágenes de cada oficina
     const imageIndexes = {
-        'envigado': 0,
         'medellin': 0,
         'bogota': 0,
         'pereira': 0
     };
 
+    // Función para iniciar la auto-rotación (simplificada)
+    function startAutoRotation() {
+        if (autoTimer) {
+            clearInterval(autoTimer);
+        }
+        if (isCarouselVisible) {
+            autoTimer = setInterval(() => {
+                const nextIndex = (currentOfficeIndex + 1) % totalOffices;
+                changeOffice(nextIndex);
+            }, autoIntervalMs);
+        }
+    }
+
+    // Función para pausar la auto-rotación (simplificada)
+    function pauseAutoRotation() {
+        if (autoTimer) {
+            clearInterval(autoTimer);
+            autoTimer = null;
+        }
+    }
+
     // Función para cambiar de oficina
     function changeOffice(index) {
-        currentOfficeIndex = index;
         const carousel = document.getElementById('offices-carousel');
         const container = document.getElementById('carousel-container');
-        
-        // Obtener el ancho del contenedor
-        const containerWidth = container.offsetWidth;
-        
-        // Calcular el ancho de cada card incluyendo márgenes
-        // Cada card tiene mx-2 (16px de margen total) y diferentes anchos responsivos
+        if (!carousel || !container) return;
+
         const cards = carousel.children;
+        const maxIndex = Math.max(0, cards.length - 1);
+        currentOfficeIndex = Math.min(Math.max(index, 0), maxIndex);
+
+        // Obtener el ancho del contenedor (por si se necesita en el futuro)
+        const containerWidth = container.offsetWidth;
+
+        // Calcular el desplazamiento acumulado hasta la tarjeta seleccionada
         let totalOffset = 0;
-        
-        for (let i = 0; i < index; i++) {
-            totalOffset += cards[i].offsetWidth + 16; // 16px = mx-2 (8px cada lado)
+        for (let i = 0; i < currentOfficeIndex; i++) {
+            const card = cards[i];
+            if (!card) break;
+            totalOffset += card.offsetWidth + 16; // 16px = mx-2 (8px cada lado)
         }
-        
+
         carousel.style.transform = `translateX(-${totalOffset}px)`;
-        
+
         // Actualizar indicadores
         updateCarouselIndicators();
     }
 
-    // Función para actualizar los indicadores del carrusel principal
+    // Función para actualizar los indicadores del carrusel principal (scope Offices)
     function updateCarouselIndicators() {
-        const buttons = document.querySelectorAll('.carousel-btn');
+        const buttons = document.querySelectorAll('#offices-indicators .office-indicator');
         buttons.forEach((btn, index) => {
             if (index === currentOfficeIndex) {
+                // Color activo explicitamente requerido: #90C044
                 btn.classList.remove('bg-gray-300');
-                btn.classList.add('bg-blue-600');
+                btn.classList.remove('bg-blue-600');
+                btn.style.backgroundColor = '#90C044';
             } else {
+                btn.style.backgroundColor = '';
                 btn.classList.remove('bg-blue-600');
                 btn.classList.add('bg-gray-300');
             }
@@ -341,16 +180,130 @@ import oficinaPereira02 from '../../assets/images/offices/Oficinapereira-02.jpg'
         imageCarousel.style.transform = `translateX(${translateX}%)`;
     }
 
+    // Configurar Intersection Observer para detectar cuando la sección es visible
+    function setupIntersectionObserver() {
+        const officesSection = document.querySelector('#offices-section');
+        
+        if (!officesSection) {
+            return;
+        }
+
+
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0]; // Solo hay una entrada
+  
+            
+            if (entry.isIntersecting) {
+                // La sección es visible, iniciar auto-rotación
+                isCarouselVisible = true;
+                // Limpiar cualquier timer existente
+                if (autoTimer) {
+                    clearInterval(autoTimer);
+                }
+                // Iniciar nuevo timer
+                autoTimer = setInterval(() => {
+                    const nextIndex = (currentOfficeIndex + 1) % totalOffices;
+                    changeOffice(nextIndex);
+                }, autoIntervalMs);
+            } else {
+                // La sección no es visible, pausar auto-rotación
+                isCarouselVisible = false;
+                if (autoTimer) {
+                    clearInterval(autoTimer);
+                    autoTimer = null;
+                }
+            }
+        }, {
+            // Configurar el threshold para que se active cuando cualquier parte de la sección sea visible
+            threshold: 0.1,
+            // Agregar un margen para que se active antes
+            rootMargin: '100px 0px 100px 0px'
+        });
+
+        observer.observe(officesSection);
+    }
+
     // Inicializar el carrusel cuando se carga la página
     document.addEventListener('DOMContentLoaded', function() {
-        // Configurar los botones indicadores del carrusel principal
-        const carouselButtons = document.querySelectorAll('.carousel-btn');
+        // Configurar los botones indicadores del carrusel principal (solo Offices)
+        const carouselButtons = document.querySelectorAll('#offices-indicators .office-indicator');
         carouselButtons.forEach((btn, index) => {
-            btn.addEventListener('click', () => changeOffice(index));
+            btn.addEventListener('click', () => {
+                changeOffice(index);
+                // Reiniciar el timer después de una interacción manual
+                if (isCarouselVisible) {
+                    startAutoRotation();
+                }
+            });
         });
 
         // Inicializar el primer indicador como activo
         updateCarouselIndicators();
+
+        // Configurar el Intersection Observer
+        setupIntersectionObserver();
+
+        // Habilitar swipe táctil en móviles y arrastre en desktop para el carrusel de oficinas
+        const container = document.getElementById('carousel-container');
+        if (container) {
+            let startX = 0;
+            let isDragging = false;
+            const threshold = 50; // píxeles para cambiar de slide
+
+            const onTouchStart = (e) => {
+                if (e.touches && e.touches.length > 0) {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                }
+            };
+            const onTouchMove = (e) => {
+                if (!isDragging) return;
+                // Prevenir el scroll vertical predominante cuando es un swipe horizontal
+                e.preventDefault();
+            };
+            const onTouchEnd = (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : startX;
+                const delta = endX - startX;
+                if (Math.abs(delta) > threshold) {
+                    // delta negativo: swipe a la izquierda -> siguiente oficina
+                    const direction = delta < 0 ? 1 : -1;
+                    changeOffice(currentOfficeIndex + direction);
+                    // Reiniciar el timer después de una interacción manual
+                    if (isCarouselVisible) {
+                        startAutoRotation();
+                    }
+                }
+            };
+
+            // Eventos táctiles
+            container.addEventListener('touchstart', onTouchStart, { passive: false });
+            container.addEventListener('touchmove', onTouchMove, { passive: false });
+            container.addEventListener('touchend', onTouchEnd, { passive: false });
+
+            // Opcional: soporte de mouse para desktop
+            let mouseStartX = 0;
+            const onMouseDown = (e) => { isDragging = true; mouseStartX = e.clientX; };
+            const onMouseMove = (e) => { if (!isDragging) return; };
+            const onMouseUp = (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const delta = e.clientX - mouseStartX;
+                if (Math.abs(delta) > threshold) {
+                    const direction = delta < 0 ? 1 : -1;
+                    changeOffice(currentOfficeIndex + direction);
+                    // Reiniciar el timer después de una interacción manual
+                    if (isCarouselVisible) {
+                        startAutoRotation();
+                    }
+                }
+            };
+            container.addEventListener('mousedown', onMouseDown);
+            container.addEventListener('mousemove', onMouseMove);
+            container.addEventListener('mouseup', onMouseUp);
+            container.addEventListener('mouseleave', onMouseUp);
+        }
     });
 
     // Hacer las funciones globales para que funcionen con onclick

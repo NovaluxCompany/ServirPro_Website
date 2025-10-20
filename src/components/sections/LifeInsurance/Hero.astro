@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import heroBg from '../../../assets/images/seguros-vida/Hero.webp';
+import heroBgMobile from '../../../assets/images/seguros-vida/Hero-mobile.webp';
+
+const policyTitle = "Seguros de vida";
+const subtitle = "Tranquilidad y respaldo económico";
+const description = "para quienes dependen de ti.";
+const buttonText = "Cotizar seguro";
+---
+
+<section class="">
+  <div class="w-full">
+    <div 
+      class="relative overflow-hidden rounded-lg min-h-[650px] sm:min-h-[420px] md:min-h-[650px]"
+    >
+      <!-- Imagen de fondo usando el componente Image -->
+      <!-- Desktop -->
+      <Image 
+        src={heroBg} 
+        alt="Pólizas de salud" 
+        class="absolute inset-0 w-full h-full object-cover hidden md:block" 
+      />
+      <!-- Mobile -->
+      <Image 
+        src={heroBgMobile} 
+        alt="Pólizas de salud mobile" 
+        class="absolute inset-0 w-full h-full object-cover md:hidden" 
+        style="object-position: center 0%;"
+      />
+      
+      <!-- Banda de título en desktop: fija a la derecha, 40% de ancho -->
+      <div class="hidden md:block absolute top-40 right-0 md:w-[40%] bg-[#3F5A82] rounded-l-full rounded-r-none py-1 px-6 shadow-md z-10">
+        <h2 class="font-extrabold text-white leading-tight text-center" style="font-size:60px;">{policyTitle}</h2>
+      </div>
+      
+      <!-- Contenido -->
+      <div 
+        class="absolute inset-0 flex flex-col items-center justify-end pb-12 px-6 md:items-start md:justify-start md:p-0 md:relative md:w-full md:flex md:justify-end"
+      >
+        <div class="w-full max-w-lg md:w-[40%] p-6 md:p-8 lg:p-10 bg-transparent md:bg-transparent rounded-lg md:rounded-none z-10 md:shadow-none">
+
+          <div class="text-center md:text-center w-full md:mt-[55%]">
+            
+            <!-- Título en móvil: caja azul pequeña centrada -->
+            <div class="md:hidden inline-block px-25 py-2 mb-4 rounded-lg bg-[#3F5A82] shadow-md">
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                {policyTitle}
+              </h2>
+            </div>
+
+            <p class="text-xl sm:text-2xl text-[#405d84] leading-snug mb-3 font-semibold">
+              <span class="font-extrabold text-[#5793ce]">Tranquilidad y respaldo <br /> económico</span> para quienes <br /> dependen de ti.
+            </p>
+
+            <a 
+              href="#" 
+              class="inline-block mt-6 px-8 py-3 text-base font-semibold text-black bg-[#8BC34A] rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-[#A3D66A] hover:shadow-xl"
+            >
+              {buttonText}
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>

@@ -1,8 +1,10 @@
 ---
 // Testimonials.astro - Sección de testimonios con video y reseñas de Google
-import ReviewCard from '../ui/ReviewCard.astro';
+import ReviewCard from '../../ui/ReviewCard.astro';
 import { Image } from 'astro:assets';
-import googleImage from '../../assets/iconos/google_icon_review_completo.svg';
+import googleImage from '../../../assets/iconos/google_icon_review_completo.svg';
+import clientRecommendationDesktop from '../../../assets/images/client-recomendation.webp';
+import clientRecommendationMobile from '../../../assets/images/client-recomendation_mobile.webp';
 
 // Datos de los testimonios reales de Google Reviews
 const reviews = [
@@ -94,24 +96,41 @@ const reviews = [
         name: "Astrid Peña",
         initial: "A",
         timeAgo: "Hace 2 meses",
-        review: "E",
+        review: "",
         bgColor: "bg-violet-500"
     }
 ];
 ---
 
 <!-- Sección de Testimonios -->
-<section class="py-16 bg-white">
+<section class="bg-white pb-8">
+            <!-- Imagen de título para desktop -->
+            <div class="hidden md:block mb-12">
+                <Image 
+                    src={clientRecommendationDesktop} 
+                    alt="Lo que dicen nuestros clientes" 
+                    class="w-full h-auto mx-auto"
+                    loading="lazy"
+                />
+            </div>
+            
+            <!-- Imagen de título para mobile -->
+            <div class="md:hidden mb-12">
+                <Image 
+                    src={clientRecommendationMobile} 
+                    alt="Lo que dicen nuestros clientes" 
+                    class="w-full h-auto mx-auto"
+                    loading="lazy"
+                />
+            </div>
     <div class="container mx-auto px-4">
         <div class="max-w-9xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray">Lo que dicen nuestros clientes</h2>
-
             <!-- Video de YouTube -->
             <div class="relative w-full max-w-3xl mx-auto mb-16">
                 <div
                     class="aspect-w-16 aspect-h-9 relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
                     <iframe class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Testimonios de clientes"
+                        src="https://www.youtube.com/embed/6kK-4qD5k_8?si=eBhwNXLzblJbdqwy" title="Testimonios de clientes"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
@@ -196,6 +215,22 @@ const reviews = [
                                     d="M9 5l7 7-7 7"></path>
                             </svg>
                         </button>
+
+                        <!-- Overlay de flechas móviles sobre el carrusel -->
+                        <div class="md:hidden absolute inset-0 z-[1000] pointer-events-none">
+                            <button onclick="previousReview();" aria-label="Anterior"
+                                class="absolute -left-1 top-1/2 -translate-y-1/2 p-0 bg-transparent border-0 cursor-pointer pointer-events-auto">
+                                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button onclick="nextReview();" aria-label="Siguiente"
+                                class="absolute -right-1 top-1/2 -translate-y-1/2 p-0 bg-transparent border-0 cursor-pointer pointer-events-auto">
+                                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+  officeKey: string;
+  title: string;
+  images: { src1: any; src2: any; alt1?: string; alt2?: string };
+  mapUrl: string;
+  details?: string[];
+}
+
+const { officeKey, title, images, mapUrl, details = [] } = Astro.props;
+const alt1 = images.alt1 || `${title} 1`;
+const alt2 = images.alt2 || `${title} 2`;
+---
+
+<div class="flex-none w-[calc(100%-70px)] sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 mx-2">
+  <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-[500px] sm:h-80 md:h-96 lg:h-80">
+    <div class="flex flex-col sm:flex-row h-full">
+      <!-- Carrusel de imágenes (izquierda) -->
+      <div class="w-full sm:w-1/2 h-[280px] sm:h-full relative pt-3 pb-3 px-3 sm:px-4">
+        <div class="relative h-full rounded-lg overflow-hidden">
+          <div id={`${officeKey}-images`} class="flex h-full transition-transform duration-300 ease-in-out" style="width: 200%;">
+            <Image src={images.src1} alt={alt1} class="flex-none h-full object-cover" style="width: 50%;" />
+            <Image src={images.src2} alt={alt2} class="flex-none h-full object-cover" style="width: 50%;" />
+          </div>
+        </div>
+        <!-- Controles del carrusel de imágenes -->
+        <button onclick={`previousImage('${officeKey}')`} class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button onclick={`nextImage('${officeKey}')`} class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Contenido de la card (derecha) -->
+      <div class="w-full sm:w-1/2 h-auto sm:h-full p-4 sm:p-6 flex flex-col justify-center items-center text-center">
+        <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #385D83;font-style:italic;font-weight:850;">{title}</h3>
+        {details.map((line) => (
+          <p class="text-gray-600 mb-2 text-sm md:text-base">{line}</p>
+        ))}
+        <a href={mapUrl} target="_blank" class="mt-6 sm:mt-3 mb-8 sm:mb-6 inline-block bg-gray-300 text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-400 transition-colors text-sm md:text-base">
+          Ver ubicación
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

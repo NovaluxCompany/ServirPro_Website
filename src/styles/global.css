@@ -3,8 +3,11 @@
 /* Configuración de colores personalizados para ServirPRO */
 @theme {
   --color-servir-blue: #2b89c0;
+  --color-servir-blue-dark: #3F5A82;
+  --color-servir-blue-banner:#2b5c8f;
   --color-servir-green:#85C657;
   --color-servir-gray-text: #44474B;
+  --color-servir-dark-text:#4c4846;
 }
 
 /* Estilos base */

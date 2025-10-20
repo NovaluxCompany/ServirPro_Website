@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+
+import bannerHealth from '../../../assets/images/health-services/servirpro-banner.webp';
+import bannerHealthMobile from '../../../assets/images/health-services/servirpro-banner_mobile.webp';
+import bannerTitleHealth from '../../../assets/images/health-services/titulo-franja.webp';
+---
+<!-- Sección Banner (solo web, ancho completo) -->
+<section class="relative w-screen left-1/2 -translate-x-1/2 bg-[#e4e4e4] py-10 md:py-16 mt-12 hidden md:block">
+  <!-- Overlay de título en la parte superior, centrado -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+    <Image 
+      src={bannerTitleHealth} 
+      alt="En ServirPRO Seguros" 
+      class="w-[720px] max-w-[85vw] h-auto mx-auto"
+      loading="lazy"
+      quality={90}
+    />
+  </div>
+
+  <!-- Imagen principal del banner -->
+  <div class="w-full">
+    <Image 
+      src={bannerHealth} 
+      alt="Banner servicios ServirPRO Seguros" 
+      class="w-full h-auto"
+      loading="lazy"
+      quality={90}
+    />
+  </div>
+</section>
+
+<!-- Sección Banner (solo móvil, ancho completo, solo imagen) -->
+<section class="relative w-screen left-1/2 -translate-x-1/2 bg-[#e4e4e4] py-8 mt-8 md:hidden block">
+  <div class="w-full">
+    <Image 
+      src={bannerHealthMobile} 
+      alt="Banner servicios ServirPRO Seguros móvil" 
+      class="w-full h-auto"
+      loading="lazy"
+      quality={90}
+    />
+  </div>
+</section>

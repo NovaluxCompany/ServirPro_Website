@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import detailBg from '../../../assets/images/health-services/Health-detail.webp';
+import detailBgMobile from '../../../assets/images/health-services/Health-detail-mobile.webp';
+---
+
+<section
+  class="relative bg-cover bg-center bg-no-repeat text-white rounded-3xl overflow-hidden flex flex-col items-center justify-center text-center h-[650px] m-0 p-0 md:h-auto md:mt-14 md:px-6 md:py-36"
+>
+  <!-- Imagen de fondo: Desktop y Mobile -->
+  <!-- Desktop -->
+  <Image 
+    src={detailBg} 
+    alt="Fondo salud detalle" 
+    class="absolute inset-0 w-full h-full object-cover hidden md:block"
+  />
+  <!-- Mobile -->
+  <Image 
+    src={detailBgMobile} 
+    alt="Fondo salud detalle móvil" 
+    class="absolute inset-0 w-full h-[650px] object-cover md:hidden md:h-full"
+  />
+
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+    <!-- Título -->
+    <div class="bg-servir-blue-banner px-6 py-3 w-[90%] rounded-[20px] inline-block mb-8 md:w-auto md:rounded-lg">
+         <h2 class="text-2xl md:text-3xl font-semibold">
+        <span class="block md:inline">La salud es</span>
+        <span class="block md:inline font-extrabold italic">impredecible</span>
+      </h2>
+    </div>
+
+    <!-- Texto principal del cuerpo -->
+    <p class="text-base md:text-lg leading-relaxed mb-10 text-white max-w-[85%] md:max-w-[75%]">
+      Un accidente, un diagnóstico inesperado o una urgencia en un viaje pueden cambiarlo todo en segundos. 
+      Con un servicio básico, la espera y la incertidumbre son inevitables.
+    </p>
+
+    <!-- Texto final -->
+    <div class="bg-white text-[#3b5881] font-extrabold italic rounded-2xl px-8 py-5 inline-block shadow-md text-lg md:text-xl leading-snug mx-[23px] md:mx-0">
+      <p>
+        Con tu bienestar,<br />
+        esperar nunca debería ser una opción.
+      </p>
+    </div>
+  </div>
+</section>

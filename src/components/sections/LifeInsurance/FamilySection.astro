@@ -1,0 +1,118 @@
+---
+// FamilySection.astro - Sección de tranquilidad con imagen de familia
+import { Image } from "astro:assets";
+import contactWebImage from "../../../assets/images/seguros-vida/familia.webp";
+import contactMobileImage from "../../../assets/images/seguros-vida/contact-section_mobile.webp";
+import logo from "../../../assets/logos/Logo.png";
+---
+
+<!-- Sección de Tranquilidad con Imagen de Familia -->
+<section
+  class="relative py-16 sm:py-40 lg:py-48 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[900px] sm:min-h-[600px] lg:min-h-[700px]"
+>
+  <!-- Imagen de fondo para desktop -->
+  <Image
+    src={contactWebImage}
+    alt="Familia feliz"
+    class="absolute inset-0 w-full h-full object-cover z-9 hidden sm:block"
+    loading="eager"
+  />
+
+  <!-- Imagen de fondo para mobile -->
+  <Image
+    src={contactMobileImage}
+    alt="Familia feliz mobile"
+    class="absolute inset-0 w-full h-full object-cover z-9 sm:hidden"
+    loading="eager"
+  />
+
+  <!-- Overlay semitransparente -->
+  <div class="absolute inset-0 bg-white bg-opacity-70 sm:bg-opacity-70"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto sm:mx-0">
+      
+      <!-- Mobile: contenido centrado -->
+      <div class="sm:hidden text-center">
+        <!-- Título móvil -->
+        <h2 class="text-2xl font-extrabold italic mb-6" style="color: #2b4d6f; line-height: 1.3;">
+          Un seguro de vida es<br />
+          más que un contrato...
+        </h2>
+
+        <!-- Texto móvil -->
+        <p class="text-lg leading-relaxed mb-6" style="color: #4A4A4A; font-weight: 500;">
+          Es la forma de decirle a tu familia<br />
+          que, pase lo que pase, <span class="font-bold" style="color: #5793ce;">siempre<br />
+          estarás ahí para protegerlos.</span>
+        </p>
+
+        <!-- Caja azul móvil -->
+        <div class="py-5 px-6 rounded-2xl inline-block mb-8" style="background-color: #5793ce;">
+          <p class="text-lg font-extrabold text-white italic" style="line-height: 1.4;">
+            Haz hoy el acto de amor más<br />
+            grande: asegurar su futuro.
+          </p>
+        </div>
+      </div>
+
+      <!-- Desktop: diseño mejorado -->
+      <div class="hidden sm:block">
+        <h2
+          class="text-4xl lg:text-4xl xl:text-6xl font-black text-left mb-6"
+          style="color: #3B5881; line-height: 1.2; font-style: italic;"
+        >
+          Un seguro de vida es<br />
+          más que un contrato...
+        </h2>
+
+        <p
+          class="text-2xl lg:text-3xl xl:text-4xl text-left leading-tight mb-4"
+          style="color: #4A4A4A; font-weight: 500;"
+        >
+          Es la forma de decirle a tu familia<br />
+          que, pase lo que pase, <span
+            class="font-extrabold"
+            style="color: #5793ce;">siempre<br />
+          estarás ahí para protegerlos.</span>
+        </p>
+
+        <div
+          class="mt-8 py-6 px-8 rounded-2xl inline-block"
+          style="background-color: #5793ce;"
+        >
+          <p
+            class="text-2xl lg:text-3xl font-black text-white italic"
+            style="line-height: 1.3;"
+          >
+            Haz hoy el acto de amor más<br />
+            grande: asegurar su futuro.
+          </p>
+        </div>
+      </div>
+    </div>    
+  </div>
+
+  <!-- Botones centrados respecto a toda la imagen -->
+  <div class="relative z-10 mt-30 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 px-4">
+    <a
+      href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20página%20web%20y%20quiero%20tener%20más%20información%20sobre%20los%20servicios"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block text-center w-full sm:w-auto px-12 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 text-lg sm:text-xl"
+      style="min-width: 280px; max-width: 350px;"
+    >
+      Hablar con un asesor
+    </a>
+    <a
+      href="https://wa.me/573193029089"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block text-center w-full sm:w-auto px-12 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 text-lg sm:text-xl"
+      style="background-color: #85C657; min-width: 280px; max-width: 350px;"
+    >
+      Cotizar seguro
+    </a>
+  </div>
+</section>

@@ -44,20 +44,24 @@ import logo from '../../assets/logos/Logo.png';
             
             <h2
                 class="text-2xl text-servir-gray-text sm:text-3xl lg:text-4xl font-light text-gray-800 mb-8 leading-tight text-center text-servir-gray-text">
-                <!-- En móvil: 2 líneas con resaltado azul y texto blanco -->
+                <!-- Móvil: líneas separadas, centradas y con mayor negrilla en la frase final -->
                 <span class="sm:hidden">
                     <span
                         class="font-bold bg-servir-blue text-white px-3 py-1 border-2 rounded mb-1 inline-block"
                         style="border-color: #2F8BC0;">Aseguramos</span><br>
                     <span class="font-bold bg-servir-blue text-white px-3 py-1 border-2 rounded inline-block"
                         style="border-color: #2F8BC0;">tu tranquilidad,</span><br>
+                    <span class=" text-servir-gray-text inline-block mt-2" style="font-weight:550">para que vivas sin</span><br>
+                    <span class=" text-servir-gray-text inline-block" style="font-weight:550">preocuparte por</span><br>
+                    <span class=" text-servir-gray-text inline-block" style="font-weight:550">tu salud, tu vida o</span><br>
+                    <span class=" text-servir-gray-text inline-block" style="font-weight:550">tu vehículo</span>
                 </span>
-                <!-- En PC: 1 línea sin borde ni sombreado, solo negrilla -->
+                <!-- Desktop: frase completa normal -->
                 <span class="hidden sm:inline">
                     <span class="font-bold text-servir-gray-text">Aseguramos tu tranquilidad,</span><br>
+                    para que vivas sin preocuparte<br>
+                    por tu salud, tu vida o tu vehículo
                 </span>
-                para que vivas sin preocuparte<br>
-                por tu salud, tu vida o tu vehículo
             </h2>
             
              <!-- Logo centrado debajo del texto solo en desktop -->
@@ -74,15 +78,21 @@ import logo from '../../assets/logos/Logo.png';
 
         <!-- Botones centrados respecto a toda la imagen -->
         <div class="flex flex-col sm:flex-row gap-4 mt-24 justify-center items-center w-full">
-            <button
-                class="w-full sm:w-auto px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 min-w-[300px] max-w-[350px] cursor-pointer">
+            <a
+                href="https://wa.me/573193029089?text=Hola,%20vi%20el%20sitio%20web%20y%20quiero%20hablar%20con%20un%20asesor"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 min-w-[300px] max-w-[350px] cursor-pointer">
                 Hablar con un asesor
-            </button>
-            <button
-                class="w-full sm:w-auto px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 min-w-[300px] max-w-[350px] cursor-pointer"
+            </a>
+            <a
+                href="https://wa.me/573193029089?text=Hola,%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20un%20seguro"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block text-center w-full sm:w-auto px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 min-w-[300px] max-w-[350px] cursor-pointer"
                 style="background-color: #85C657;">
                 Cotizar seguro
-            </button>
+            </a>
         </div>
     </div>
 </section>

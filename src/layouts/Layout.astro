@@ -48,9 +48,7 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
       }
 
       /* Estilos para el difuminado azul */
-      .hero-overlay {
-        background: linear-gradient(to top, rgb(33 82 111 / 95%) 0%, rgb(11 56 82 / 85%) 15%, rgb(6 70 108 / 70%) 30%, rgb(0 43 67 / 50%) 50%, rgba(47, 139, 192, 0.3) 70%, rgba(47, 139, 192, 0.1) 85%, transparent 100%)
-      }
+  
 
       /* Estilos mejorados para los menús desplegables */
       .dropdown-group {
@@ -217,14 +215,46 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
         showReviewSlide(currentReviewSlide);
       }
 
-      // Toggle del menú móvil
+      // Control del Sidemenu móvil con overlay
+      function openMobileMenu() {
+        const overlay = document.getElementById('mobile-overlay');
+        const panel = document.getElementById('mobile-menu-panel');
+        if (!overlay || !panel) return;
+        overlay.classList.remove('hidden');
+        // Iniciar fade-in del overlay
+        requestAnimationFrame(() => {
+          overlay.classList.remove('opacity-0');
+          overlay.classList.add('opacity-100');
+        });
+        // Expandir panel desde la izquierda
+        panel.classList.remove('scale-x-0');
+        panel.classList.add('scale-x-100');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        const overlay = document.getElementById('mobile-overlay');
+        const panel = document.getElementById('mobile-menu-panel');
+        if (!overlay || !panel) return;
+        // Contraer panel hacia la izquierda
+        panel.classList.remove('scale-x-100');
+        panel.classList.add('scale-x-0');
+        // Iniciar fade-out del overlay y esperar la transición antes de ocultarlo
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => {
+          overlay.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 300);
+      }
+
       function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
+        const overlay = document.getElementById('mobile-overlay');
+        if (!overlay) return;
+        if (overlay.classList.contains('hidden')) {
+          openMobileMenu();
         } else {
-          mobileMenu.classList.add('hidden');
+          closeMobileMenu();
         }
       }
 
@@ -333,11 +363,23 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
         // Auto-play del carrusel principal cada 5 segundos
         setInterval(nextSlide, 5000);
         
-        // Event listeners para el menú móvil
+        // Event listeners para el menú móvil (sidemenu)
         const menuButton = document.getElementById('menu-button');
         if (menuButton) {
           menuButton.addEventListener('click', toggleMobileMenu);
         }
+        const menuButtonInside = document.getElementById('menu-button-inside');
+        if (menuButtonInside) {
+          menuButtonInside.addEventListener('click', toggleMobileMenu);
+        }
+        const backdrop = document.getElementById('mobile-backdrop');
+        if (backdrop) {
+          backdrop.addEventListener('click', closeMobileMenu);
+        }
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeMobileMenu();
+        });
 
         // Event listeners para búsqueda móvil
         const searchButton = document.getElementById('search-button');
@@ -379,7 +421,7 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
         // Cerrar dropdowns al hacer clic fuera
         document.addEventListener('click', function(event) {
           const isDropdownClick = event.target.closest('.dropdown-group');
-          const isMobileMenuClick = event.target.closest('#mobile-menu') || event.target.closest('#menu-button');
+          const isMobileMenuClick = event.target.closest('#mobile-menu-panel') || event.target.closest('#menu-button');
           
           if (!isDropdownClick) {
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
@@ -392,9 +434,9 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
           }
 
           if (!isMobileMenuClick) {
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-              mobileMenu.classList.add('hidden');
+            const overlay = document.getElementById('mobile-overlay');
+            if (overlay && !overlay.classList.contains('hidden')) {
+              closeMobileMenu();
             }
           }
         });
@@ -411,6 +453,8 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
       window.nextReviewSlide = nextReviewSlide;
       window.prevReviewSlide = prevReviewSlide;
       window.toggleMobileMenu = toggleMobileMenu;
+      window.openMobileMenu = openMobileMenu;
+      window.closeMobileMenu = closeMobileMenu;
       window.toggleDropdown = toggleDropdown;
       window.toggleMobileAccordion = toggleMobileAccordion;
       window.toggleAccordion = toggleAccordion;

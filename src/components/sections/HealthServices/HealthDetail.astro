@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets';
+import BenefitItem from '../../ui/BenefitItem.astro';
+ 
+// Imagen del título
+import tituloImg from '../../../assets/images/health-services/poliza-titulo.webp';
+
+// Iconos
+import icon1 from '../../../assets/iconos/health-services/icon-especialista.svg';
+import icon2 from '../../../assets/iconos/health-services/icon-autorizaciones.svg';
+import icon3 from '../../../assets/iconos/health-services/icon-habitacion.svg';
+import icon4 from '../../../assets/iconos/health-services/icon-edificio.svg';
+import icon5 from '../../../assets/iconos/health-services/icon-viaje.svg';
+import icon7 from '../../../assets/iconos/health-services/icon-ambulancia2.svg';
+
+---
+
+<section class="w-full flex flex-col items-center justify-center text-center px-6 py-16 md:py-10 bg-white">
+  <!-- Imagen del título -->
+  <div class="mb-12">
+    <Image src={tituloImg} alt="Una póliza de salud te brinda" class="mx-auto w-[400px] md:w-[420px]"/>
+  </div>
+
+  <!-- Beneficios -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
+    <BenefitItem 
+      icon={icon1} 
+      alt="Especialistas" 
+      text="Acceso rápido e ilimitado a especialistas de primer nivel." 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon2} 
+      alt="Autorizaciones" 
+      text="Autorizaciones rápidas para exámenes y procedimientos médicos." 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon4} 
+      alt="Clínicas y hospitales" 
+      text="Atención ilimitada en las mejores clínicas y hospitales del país." 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon3} 
+      alt="Habitación preferencial" 
+      text="Habitación preferencial en caso de hospitalización." 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon5} 
+      alt="Cobertura internacional" 
+      text="Cobertura internacional en tus viajes al exterior." 
+      showBorderMobileOnly={true}
+    />
+    
+    <BenefitItem 
+      icon={icon7} 
+      alt="Atención domiciliaria" 
+      text="Atención domiciliaria de urgencias, sin salir de casa." 
+          showBorder={false}
+    />
+  </div>
+
+  <!-- Botón Cotizar -->
+  <button class="bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+    Cotizar póliza
+  </button>
+
+  <!-- Pasos -->
+  <div class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative">
+    <!-- Paso 1 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
+      <p class="font-medium text-servir-dark-text" style="font-size:20px;font-weight:600">Cotiza tu póliza en minutos.</p>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
+      <p class="font-medium text-servir-dark-text" style="font-size:20px;font-weight:600">Elige tu póliza de preferencia.</p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
+      <p class="font-medium text-servir-dark-text" style="font-size:20px;font-weight:600">Disfruta de un servicio exclusivo y tu tranquilidad total.</p>
+    </div>
+  </div>
+
+
+  <!-- Segundo botón -->
+  <button class="bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+    Cotizar póliza
+  </button>
+
+</section>

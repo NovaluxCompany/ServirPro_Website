@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import BenefitItem from '../../ui/BenefitItem.astro';
+
+// Imagen del título
+import tituloImg from '../../../assets/images/seguros-vida/seguro-titulo.webp';
+import clientesImg from '../../../assets/images/seguros-vida/nuestros-clientes.webp';
+
+// Iconos
+import icon1 from '../../../assets/iconos/seguros-vida/proteccion-economica.svg';
+import icon2 from '../../../assets/iconos/seguros-vida/respaldo-invalidez.svg';
+import icon3 from '../../../assets/iconos/seguros-vida/cobertura-deudas.svg';
+import icon4 from '../../../assets/iconos/seguros-vida/futuro-seguro.svg';
+
+---
+
+<section class="w-full flex flex-col items-center justify-center text-center px-6 py-16 md:py-24 bg-white">
+  <!-- Imagen del título -->
+  <div class="mb-12">
+    <Image src={tituloImg} alt="Una póliza de salud te brinda" class="mx-auto w-[400px] md:w-[520px]"/>
+  </div>
+
+  <!-- Beneficios -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
+    <BenefitItem 
+      icon={icon1} 
+      alt="protección económica" 
+      text="Protección ecónomica para tu familia en caso de fallecimiento." 
+    />
+
+    <BenefitItem 
+      icon={icon2} 
+      alt="respaldo invalidez" 
+      text="Respaldo en caso de invalidez o enfermedades graves." 
+    />
+
+    <BenefitItem 
+      icon={icon3} 
+      alt="cobertura deudas" 
+      text="Cobertura de deudas o créditos." 
+    />
+
+
+    <BenefitItem 
+      icon={icon4} 
+      alt="futuro seguro" 
+      text="Futuro seguro para tus hijos o dependientes." 
+    />
+  </div>
+
+  <!-- Botón Cotizar -->
+  <button class="bg-[#8cc63f] text-[#1a1a1a] font-semibold px-8 py-3 rounded-full hover:bg-[#7bb534] transition mb-12">
+    Cotizar seguro
+  </button>
+
+  <!-- Pasos -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-10 relative">
+    <!-- Paso 1 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
+      <p class="font-medium text-gray-800">Cotiza tu seguro en minutos.</p>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
+      <p class="font-medium text-gray-800">Elige el plan ideal para ti y tu familia.</p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
+      <p class="font-medium text-gray-800">Vive con tranquilidad.</p>
+    </div>
+  </div>
+
+
+  <!-- Segundo botón -->
+  <button class="bg-[#8cc63f] text-[#1a1a1a] font-semibold px-8 py-3 rounded-full hover:bg-[#7bb534] transition">
+    Cotizar seguro
+  </button>
+
+</section>

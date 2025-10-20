@@ -1,0 +1,101 @@
+---
+// ServiceIcon.astro - Componente reutilizable para iconos de servicios
+import { Image } from 'astro:assets';
+
+// Importar todas las imágenes SVG
+import healthIcon from '../../assets/iconos/polizas_salud.svg';
+import lifeIcon from '../../assets/iconos/seguros_vida.svg';
+import autoIcon from '../../assets/iconos/seguros_auto.svg';
+import homeIcon from '../../assets/iconos/seguros_hogar.svg';
+import epsIcon from '../../assets/iconos/afiliacion_eps_arl.svg';
+import securityIcon from '../../assets/iconos/planes_seguridad_social.svg';
+import businessIcon from '../../assets/iconos/Intermediacion_arl_empresas.svg';
+import groupIcon from '../../assets/iconos/polizas_colectivas.svg';
+
+export interface Props {
+  iconType: 'health' | 'life' | 'auto' | 'home' | 'eps' | 'security' | 'business' | 'group';
+  title: string;
+  className?: string;
+  href?: string;
+}
+
+const { iconType, title, className = '', href = '' } = Astro.props;
+
+// Función para obtener la imagen según el tipo de icono
+function getIconImage(type: string) {
+  switch (type) {
+    case 'health':
+      return healthIcon;
+    case 'life':
+      return lifeIcon;
+    case 'auto':
+      return autoIcon;
+    case 'home':
+      return homeIcon;
+    case 'eps':
+      return epsIcon;
+    case 'security':
+      return securityIcon;
+    case 'business':
+      return businessIcon;
+    case 'group':
+      return groupIcon;
+    default:
+      return healthIcon;
+  }
+}
+
+// Función para procesar el título y hacer las últimas palabras clave más bold
+function processTitle(title: string) {
+  // Palabras clave que deben ser más bold
+  const keyWords = ['Salud', 'Vida', 'Autos y Motos', 'Hogar', 'EPS o ARL', 'Seguridad Social', 'ARL Empresas', 'Colectivas'];
+  
+  // Buscar si alguna palabra clave está al final del título
+  for (const keyword of keyWords) {
+    if (title.endsWith(keyword)) {
+      const beforeKeyword = title.substring(0, title.length - keyword.length);
+      return {
+        beforeKeyword: beforeKeyword.trim(),
+        keyword: keyword
+      };
+    }
+  }
+  
+  // Si no encuentra palabras clave específicas, hacer bold las últimas 1-2 palabras
+  const words = title.split(' ');
+  if (words.length >= 2) {
+    const lastTwoWords = words.slice(-2).join(' ');
+    const beforeLastTwo = words.slice(0, -2).join(' ');
+    return {
+      beforeKeyword: beforeLastTwo,
+      keyword: lastTwoWords
+    };
+  }
+  
+  return {
+    beforeKeyword: '',
+    keyword: title
+  };
+}
+
+const titleParts = processTitle(title);
+---
+
+<a href={href} class={`group cursor-pointer transform transition-all duration-300 md:hover:scale-110 -mx-1 md:mx-0 ${className}`} aria-label={title}>
+  <div class="bg-white rounded-full w-40 h-40 md:w-44 md:h-44 mx-auto flex flex-col items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 p-3 md:p-4">
+    <div class="mb-2">
+      <Image 
+        src={getIconImage(iconType)} 
+        alt={`${title} icon`} 
+        class="w-14 h-14 md:w-16 md:h-16"
+        loading="lazy"
+      />
+    </div>
+    <h3 class="text-xs md:text-sm font-semibold text-gray-900 group-hover:text-servir-blue transition-colors duration-300 text-center leading-tight">
+      {titleParts.beforeKeyword && (
+        <span>{titleParts.beforeKeyword} </span>
+      )}
+      <span class="font-bold">{titleParts.keyword}</span>
+    </h3>
+  </div>
+</a>

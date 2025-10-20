@@ -3,44 +3,110 @@
 import { Image } from 'astro:assets';
 import heroImage from '../../assets/images/hero-carrousel.webp';
 import heroImageMobile from '../../assets/images/hero-carrousel_mobile.webp';
+
+const desktopSlides = [heroImage, heroImage];
+const mobileSlides = [heroImageMobile, heroImageMobile];
 ---
 
 <!-- Sección Principal (Hero) -->
-<section class="relative h-[500px] md:h-[600px] overflow-hidden">
-    <!-- Imagen de fondo para desktop -->
-    <Image 
-        src={heroImage} 
-        alt="Hero background" 
-        class="absolute inset-0 w-full h-full object-cover hidden md:block"
-        loading="eager"
-    />
+<section class="relative h-[84vh] md:h-[600px] overflow-hidden">
+    <!-- Carrusel de fondo para desktop -->
+    <div class="absolute inset-0 hidden md:block carousel desktop">
+        {desktopSlides.map((img, idx) => (
+            <Image
+                src={img}
+                alt="Hero slide"
+                class={`hero-slide desktop absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+            />
+        ))}
+        <!-- Flechas de navegación (Desktop a los extremos) -->
+        <button aria-label="Anterior" class="carousel-btn desktop prev absolute top-1/2 left-2 -translate-y-1/2 w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
+          <iconify-icon icon="fa6-solid:chevron-left" class="w-6 h-6 text-white"></iconify-icon>
+        </button>
+        <button aria-label="Siguiente" class="carousel-btn desktop next absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
+          <iconify-icon icon="fa6-solid:chevron-right" class="w-6 h-6 text-white"></iconify-icon>
+        </button>
+    </div>
     
-    <!-- Imagen de fondo para mobile -->
-    <Image 
-        src={heroImageMobile} 
-        alt="Hero background mobile" 
-        class="absolute inset-0 w-full h-full object-cover md:hidden"
-        loading="eager"
-    />
+    <!-- Carrusel de fondo para mobile -->
+    <div class="absolute inset-0 md:hidden carousel mobile">
+        {mobileSlides.map((img, idx) => (
+            <Image
+                src={img}
+                alt="Hero slide mobile"
+                class={`hero-slide mobile absolute inset-0 w-full  object-cover transition-opacity duration-700 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                style="height: 100vh"
+            />
+        ))}
+        <!-- (Se moverán las flechas móviles al bloque de contenido) -->
+    </div>
     <div class="absolute inset-0">
         <!-- Difuminado Azul -->
         <div class="hero-overlay absolute inset-0"></div>
         <!-- Contenido del Hero -->
         <div
-            class="relative z-10 p-4 max-w-4xl mx-auto h-full flex items-end justify-center text-center pb-16 md:pb-24">
-            <div>
-                <h1
-                    class="text-lg sm:text-xl md:text-3xl lg:text-4xl font-normal text-white leading-tight mb-6 md:mb-8 drop-shadow-lg">
+            class="relative z-10 p-4 max-w-4xl mx-auto h-full flex items-center md:items-end justify-center text-center pb-12 md:pb-24">
+            <div class="w-full">
+                <!-- Fila de título con flechas (Mobile) -->
+                <div class="md:hidden flex items-center justify-center gap-4 " style="margin-top:173px;margin-bottom:36px">
+                  <button aria-label="Anterior" class="carousel-btn mobile cursor-pointer prev w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
+                    <iconify-icon icon="fa6-solid:chevron-left" class="w-5 h-5 text-white"></iconify-icon>
+                  </button>
+                  <h1 class="text-2xl sm:text-2xl font-medium leading-tight text-white drop-shadow-lg text-center">
+                    <span class="block text-[#aed8f8] font-bold">Pólizas de salud,</span>
+                    <span class="block text-[#aed8f8] font-bold">seguros de vida,</span
+                    <span class="block">seguros para autos</span>
+                    <span class="whitespace-nowrap">y seguridad social </span>
+                    <span class="inline-block whitespace-nowrap font-bold md:bg-transparent bg-servir-blue/70 md:px-0 px-2 md:py-0 py-1 rounded-lg" style="font-size:23px">con asesoría experta</span>
+                  </h1>
+                  <button aria-label="Siguiente" class="carousel-btn mobile cursor-pointer next w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
+                    <iconify-icon icon="fa6-solid:chevron-right" class="w-5 h-5 text-white"></iconify-icon>
+                  </button>
+                </div>
+
+                <!-- Título (Desktop, centrado sin flechas dentro) -->
+                <div class="hidden md:block mb-8">
+                  <h1 class="text-3xl lg:text-4xl font-normal text-white leading-tight drop-shadow-lg text-center">
                     Pólizas de salud, seguros de vida, seguros para autos y seguridad social <span
-                        class="font-bold md:bg-transparent bg-servir-blue/70 md:px-0 px-2 md:py-0 py-1 rounded-lg">con
-                        asesoría experta</span>
-                </h1>
-                <button
-                    class="text-black text-base md:text-lg lg:text-xl font-bold px-16 md:px-24 lg:px-32 py-3 md:py-4 rounded-full transition duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
+                      class="font-bold md:bg-transparent bg-servir-blue/70 md:px-0 px-2 md:py-0 py-1 rounded-lg">con
+                      asesoría experta</span>
+                  </h1>
+                </div>
+
+                <a
+                    href="https://wa.me/573193029089?text=Hola,%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20un%20seguro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block text-black text-base md:text-lg lg:text-xl font-bold px-16 md:px-24 lg:px-32 py-3 md:py-4 rounded-full transition duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
                     style="background-color: #85C657;">
                     Cotizar seguro
-                </button>
+                </a>
             </div>
         </div>
     </div>
+
+    <!-- Script para rotar y controlar el carrusel con flechas -->
+    <script>
+      const setupCarousel = (slideSelector, type, intervalMs = 5000) => {
+        const slides = document.querySelectorAll(slideSelector);
+        if (!slides.length) return;
+        let i = 0;
+        slides.forEach((el, idx) => el.style.opacity = idx === 0 ? '1' : '0');
+        const show = (index) => {
+          slides[i].style.opacity = '0';
+          i = (index + slides.length) % slides.length;
+          slides[i].style.opacity = '1';
+        };
+        const next = () => show(i + 1);
+        const prev = () => show(i - 1);
+        let timer = setInterval(next, intervalMs);
+        const reset = () => { clearInterval(timer); timer = setInterval(next, intervalMs); };
+        document.querySelectorAll(`.carousel-btn.${type}.next`).forEach(btn => btn.addEventListener('click', () => { next(); reset(); }));
+        document.querySelectorAll(`.carousel-btn.${type}.prev`).forEach(btn => btn.addEventListener('click', () => { prev(); reset(); }));
+      };
+      setupCarousel('.hero-slide.desktop', 'desktop', 5000);
+      setupCarousel('.hero-slide.mobile', 'mobile', 5000);
+    </script>
 </section>

@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import contactBannerWeb from '../../../assets/images/health-services/Contact-banner.webp';
+import contactBannerMobile from '../../../assets/images/health-services/Contact-banner_mobile.webp';
+---
+
+<!-- Sección de Contacto -->
+<section class="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[500px] lg:min-h-[600px]">
+    <!-- Imagen de fondo para desktop -->
+    <Image 
+        src={contactBannerWeb} 
+        alt="Contacto ServirPRO" 
+        class="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block"
+        loading="lazy"
+        quality={90}
+    />
+    
+    <!-- Imagen de fondo para mobile -->
+    <Image 
+        src={contactBannerMobile} 
+        alt="Contacto ServirPRO mobile" 
+        class="absolute inset-0 w-full h-full object-cover z-0 sm:hidden"
+        loading="lazy"
+        quality={90}
+    />
+
+    <!-- Contenido -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center sm:text-left sm:mx-0">
+            <!-- Título principal -->
+            <h2 class="text-2xl sm:text-4xl lg:text-4xl font-bold text-[#3b5881] mb-6 leading-tight" style="font-weight:800">
+                Viajas, trabajas, disfrutas la vida.
+            </h2>
+            
+            <!-- Subtítulo -->
+            <p class="text-base sm:text-xl text-servir-dark-text mb-6 leading-relaxed font-medium" style="font-weight:700;">
+                <span class="sm:hidden" style="font-size:16px;">Una póliza de salud acompaña tu estilo de vida con respaldo ilimitado, atención preferencial y cobertura internacional.</span>
+                <span class="hidden sm:inline" style="font-size:25px;">Una póliza de salud acompaña tu estilo de vida con respaldo ilimitado, atención preferencial y cobertura internacional.</span>
+            </p>
+            
+            <!-- Mensaje destacado -->
+            <div class="bg-[#2b89c6] text-white px-6 py-3 rounded-lg inline-block mb-8">
+                <p class="text-lg sm:text-xl font-semibold" style="font-weight:800;">
+                    <span class="sm:hidden" style="font-size:18px;">Tu tranquilidad está asegurada.</span>
+                    <span class="hidden sm:inline" style="font-size:30px;">Tu tranquilidad está asegurada.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Botones centrados -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-12 justify-center items-center w-full">
+            <a
+                href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20página%20web%20y%20quiero%20hablar%20con%20un%20asesor%20sobre%20pólizas%20de%20salud"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[280px] cursor-pointer">
+                Hablar con un asesor
+            </a>
+            <a
+                href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20página%20web%20y%20quiero%20cotizar%20una%20póliza%20de%20salud"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-servir-green inline-block text-center w-full sm:w-auto px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[280px] cursor-pointer">
+                Cotizar póliza
+            </a>
+        </div>
+    </div>
+</section>
