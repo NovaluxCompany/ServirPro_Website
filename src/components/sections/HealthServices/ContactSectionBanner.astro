@@ -47,22 +47,41 @@ import contactBannerMobile from '../../../assets/images/health-services/Contact-
             </div>
         </div>
 
-        <!-- Botones centrados -->
-        <div class="flex flex-col sm:flex-row gap-4 mt-8 lg:mt-20 sm:mt-12 justify-center items-center w-full">
+        <!-- Botones (mobile: flujo normal; desktop: overlay inferior con espaciado) -->
+        <!-- Mobile -->
+        <div class="flex flex-col gap-4 mt-8 justify-center items-center w-full sm:hidden">
             <a
-                href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20página%20web%20y%20quiero%20hablar%20con%20un%20asesor%20sobre%20pólizas%20de%20salud"
+                href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20hablar%20con%20un%20asesor%20sobre%20p%C3%B3lizas%20de%20salud"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[280px] cursor-pointer">
                 Hablar con un asesor
             </a>
             <a
-                href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20página%20web%20y%20quiero%20cotizar%20una%20póliza%20de%20salud"
+                href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20cotizar%20una%20p%C3%B3liza%20de%20salud"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="bg-servir-green inline-block text-center w-full sm:w-auto px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[280px] cursor-pointer">
                 Cotizar póliza
             </a>
         </div>
+
+    </div>
+    <!-- Desktop overlay (posicionado hacia la parte inferior de la imagen) -->
+    <div class="hidden sm:flex gap-4 justify-center items-center w-full sm:absolute sm:inset-x-0 sm:bottom-10">
+        <a
+            href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20hablar%20con%20un%20asesor%20sobre%20p%C3%B3lizas%20de%20salud"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block text-center px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 cursor-pointer">
+            Hablar con un asesor
+        </a>
+        <a
+            href="https://wa.me/573193029089?text=Hola%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20cotizar%20una%20p%C3%B3liza%20de%20salud"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer">
+            Cotizar póliza
+        </a>
     </div>
 </section>
