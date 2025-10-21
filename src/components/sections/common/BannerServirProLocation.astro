@@ -6,7 +6,7 @@ import bannerHealthMobile from '../../../assets/images/health-services/servirpro
 import bannerTitleHealth from '../../../assets/images/health-services/titulo-franja.webp';
 ---
 <!-- Sección Banner (solo web, ancho completo) -->
-<section class="relative w-screen left-1/2 -translate-x-1/2 bg-[#e4e4e4] py-10 md:py-16 mt-12 hidden md:block">
+<section class="relative w-full bg-[#e4e4e4] py-8 md:py-8 mt-4 lg:pb-0 md:pb-0 hidden md:block">
   <!-- Overlay de título en la parte superior, centrado -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
     <Image 
@@ -19,11 +19,11 @@ import bannerTitleHealth from '../../../assets/images/health-services/titulo-fra
   </div>
 
   <!-- Imagen principal del banner -->
-  <div class="w-full">
+  <div class="w-full flex justify-center overflow-hidden">
     <Image 
       src={bannerHealth} 
       alt="Banner servicios ServirPRO Seguros" 
-      class="w-full h-auto"
+      class="w-full max-w-none h-auto"
       loading="lazy"
       quality={90}
     />
@@ -31,8 +31,8 @@ import bannerTitleHealth from '../../../assets/images/health-services/titulo-fra
 </section>
 
 <!-- Sección Banner (solo móvil, ancho completo, solo imagen) -->
-<section class="relative w-screen left-1/2 -translate-x-1/2 bg-[#e4e4e4] py-8 mt-8 md:hidden block">
-  <div class="w-full">
+<section class="relative w-full bg-white md:hidden block">
+  <div class="w-full overflow-hidden">
     <Image 
       src={bannerHealthMobile} 
       alt="Banner servicios ServirPRO Seguros móvil" 
