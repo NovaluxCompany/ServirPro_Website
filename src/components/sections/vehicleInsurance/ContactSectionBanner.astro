@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import contactBannerWeb from '../../../assets/images/health-services/Contact-banner.webp';
-import contactBannerMobile from '../../../assets/images/health-services/Contact-banner_mobile.webp';
+import contactBannerWeb from '../../../assets/images/vehicleInsurance/Contact-banner.webp';
+import contactBannerMobile from '../../../assets/images/vehicleInsurance/Contact-banner-mobile.webp';
 ---
 
 <!-- Sección de Contacto -->
@@ -25,26 +25,19 @@ import contactBannerMobile from '../../../assets/images/health-services/Contact-
     />
 
     <!-- Contenido -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto text-center sm:text-left sm:mx-0">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+        <div class="max-w-2xl mx-auto text-center sm:text-left sm:mx-0 sm:max-w-none">
             <!-- Título principal -->
-            <h2 class="text-2xl sm:text-4xl lg:text-4xl lg:text-center font-bold text-[#3b5881] mb-7 italic leading-tight" style="font-weight:800">
-                Viajas, trabajas, disfrutas la vida.
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl text-left font-bold text-[#3b5881] mb-4 sm:mb-6 italic leading-tight" style="font-weight:900">
+                Un seguro no solo<br class="hidden sm:block" />
+                protege tu vehículo...
             </h2>
-            
             <!-- Subtítulo -->
-            <p class="text-base sm:text-xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium lg:d-flex text-center" style="font-weight:700;">
-                <span class="sm:hidden" style="font-size:16px;">Una póliza de salud acompaña tu estilo de vida con respaldo ilimitado, atención preferencial y cobertura internacional.</span>
-                <span class="hidden sm:inline" style="font-size:25px;">Una póliza de salud acompaña tu estilo de vida con respaldo ilimitado, atención preferencial y cobertura internacional.</span>
-            </p>
-            
-            <!-- Mensaje destacado -->
-            <div class="bg-[#2b89c6] text-white px-6 py-3 rounded-lg inline-block mb-8  lg:flex justify-center">
-                <p class="text-lg sm:text-xl font-semibold" style="font-weight:800;">
-                    <span class="sm:hidden" style="font-size:18px;">Tu tranquilidad está asegurada.</span>
-                    <span class="hidden sm:inline" style="font-size:30px;">Tu tranquilidad está asegurada.</span>
-                </p>
-            </div>
+            <p class="text-base sm:text-xl lg:text-3xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium text-left" style="font-weight:700;">
+                <span class="sm:hidden whitespace-pre-line" style="font-size:16px;">También cuida tu tranquilidad y
+                 a quienes viajan contigo.</span>
+                <span class="hidden sm:inline">También cuida tu tranquilidad y<br class="hidden sm:block" /> a quienes viajan contigo.</span>
+            </p> 
         </div>
 
         <!-- Botones (mobile: flujo normal; desktop: overlay inferior con espaciado) -->
@@ -81,7 +74,7 @@ import contactBannerMobile from '../../../assets/images/health-services/Contact-
             target="_blank"
             rel="noopener noreferrer"
             class="bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer">
-            Cotizar póliza
+            Cotizar seguro
         </a>
     </div>
 </section>
