@@ -162,3 +162,13 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select {
 .accordion-content.open {
   max-height: 500px;
 }
+
+/*BOTONES PRINCIOPALES*/
+.button-text{
+  font-size: 16px;
+}
+/*ESTILOS SECCIÓN PASOS*/
+.step-text{
+  font-size: 16px;
+  font-weight: 600;
+}
