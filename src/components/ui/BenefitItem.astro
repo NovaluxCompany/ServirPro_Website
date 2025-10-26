@@ -15,11 +15,16 @@ const { icon, alt, text, colSpan = false, showBorder = false, showBorderMobileOn
 // Determinar las clases de borde
 let borderClasses = '';
 if (showBorderMobileOnly) {
-  borderClasses = 'border-b-2 border-servir-blue md:border-b-0';
+  borderClasses = 'border-b-2 border-servir-blue border-line-width md:border-b-0';
 } else if (showBorder) {
-  borderClasses = 'border-b-2 border-servir-blue';
+  borderClasses = 'border-b-2 border-servir-blue border-line-width';
 }
 ---
+<style>
+  .border-line-width{
+    border-bottom-width: 1.5px;
+  }
+</style>
 
 <div class={`flex items-center gap-4 pb-3 ${borderClasses} ${colSpan ? 'md:col-span-2' : ''}`}>
   <Image src={icon} alt={alt} class="w-12 h-12 shrink-0 text-servir-blue-banner" />
@@ -27,3 +32,4 @@ if (showBorderMobileOnly) {
     {text}
   </p>
 </div>
+
