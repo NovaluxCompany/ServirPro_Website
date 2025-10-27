@@ -81,7 +81,11 @@ function processTitle(title: string) {
 const titleParts = processTitle(title);
 ---
 
-<a href={href} class={`group cursor-pointer transform transition-all duration-300 md:hover:scale-110 -mx-1 md:mx-0 ${className}`} aria-label={title}>
+<a 
+  href={href} 
+  class={`service-icon-link group cursor-pointer transform transition-all duration-200 md:hover:scale-110 -mx-1 md:mx-0 ${className}`} 
+  aria-label={title}
+>
   <div class="bg-white rounded-full w-40 h-40 md:w-44 md:h-44 mx-auto flex flex-col items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 p-3 md:p-4">
     <div class="mb-2">
       <Image 
@@ -99,3 +103,18 @@ const titleParts = processTitle(title);
     </h3>
   </div>
 </a>
+
+<style>
+  .service-icon-link:active {
+    opacity: 0.6;
+    transform: scale(0.92) !important;
+    transition: all 0.15s ease-out;
+  }
+  
+  /* Para mantener el efecto un momento mientras navega */
+  @media (hover: hover) {
+    .service-icon-link:active:hover {
+      transform: scale(0.92) !important;
+    }
+  }
+</style>
