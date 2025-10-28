@@ -1,0 +1,105 @@
+---
+import { Image } from 'astro:assets';
+import BenefitItem from '../../ui/BenefitItem.astro';
+ 
+// Imagen del título
+import tituloImg from '../../../assets/images/vehicleInsurance/Detail-Title.webp';
+import tituloImgMobile from '../../../assets/images/vehicleInsurance/Detail-Title-mobile.webp';
+
+
+// Iconos
+import icon1 from '../../../assets/iconos/vehicleInsurance/icon-car.webp';
+import icon2 from '../../../assets/iconos/vehicleInsurance/icon-doc.webp';
+import icon3 from '../../../assets/iconos/vehicleInsurance/icon-tool.webp';
+import icon4 from '../../../assets/iconos/vehicleInsurance/icon-setting.webp';
+import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
+
+---
+
+<section class="w-full flex flex-col items-center justify-center text-center px-6 py-16 md:py-10 bg-white">
+  <!-- Imagen del título -->
+  <div class="mb-12">
+    <Image src={tituloImg} alt="Una póliza de salud te brinda" class="mx-auto w-[400px] md:w-[600px] md:h-[120px] object-cover hidden sm:block"/>
+    <Image src={tituloImgMobile} alt="Una póliza de salud te brinda" class="mx-auto w-[400px] md:w-[600px] md:h-[120px] object-cover sm:hidden"/>
+
+  </div>
+
+  <!-- Beneficios -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
+    <BenefitItem 
+      icon={icon1} 
+      alt="Cobertura accidente" 
+      text={`Cobertura en caso de accidente,
+      robo, pérdida parcial o total. `} 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon2} 
+      alt="Protección" 
+      text={`Protección civil y daños a terceros.
+      Asesoría jurídica.`} 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon4} 
+      alt="Asistencia" 
+      text={`Asistencia 24/7 en carretera
+       y grúa.`} 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon3} 
+      alt="Repuestos" 
+      text={`Reposición o reparación con
+      repuestos originales. `} 
+      showBorder={false}
+      showBorderMobileOnly={true}
+
+    />
+
+    <BenefitItem 
+      icon={icon5} 
+      alt="Cobertura moto"  
+      text={`Cobertura para motos de 
+      diferentes cilindrajes.`} 
+      showBorderMobileOnly={false}
+    />
+    
+  </div>
+
+  <!-- Botón Cotizar -->
+  <button class="button-text button-container  bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+    Cotizar seguro
+  </button>
+
+  <!-- Pasos -->
+  <div class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative">
+    <!-- Paso 1 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
+      <p class="font-medium text-servir-dark-text step-text" >Cotiza tu seguro en minutos.</p>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
+      <p class="font-medium text-servir-dark-text step-text" >Elige el plan ideal que mejor se adapte a tu vehículo y presupueso.</p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
+      <p class="font-medium text-servir-dark-text step-text" >Conduce con respaldo y tranquilidad.</p>
+    </div>
+  </div>
+
+
+  <!-- Segundo botón -->
+  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+    Cotizar seguro
+  </button>
+
+</section>
