@@ -3,16 +3,16 @@ import { Image } from 'astro:assets';
 import BenefitItem from '../../ui/BenefitItem.astro';
  
 // Imagen del título
-import tituloImg from '../../../assets/images/vehicleInsurance/Detail-Title.webp';
-import tituloImgMobile from '../../../assets/images/vehicleInsurance/Detail-Title-mobile.webp';
+import tituloImg from '../../../assets/images/homeInsurance/Detail-Title.webp';
+import tituloImgMobile from '../../../assets/images/homeInsurance/Detail-Title-mobile.webp';
 
 
 // Iconos
-import icon1 from '../../../assets/iconos/vehicleInsurance/icon-car.webp';
-import icon2 from '../../../assets/iconos/vehicleInsurance/icon-doc.webp';
-import icon3 from '../../../assets/iconos/vehicleInsurance/icon-tool.webp';
-import icon4 from '../../../assets/iconos/vehicleInsurance/icon-setting.webp';
-import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
+import icon1 from '../../../assets/iconos/homeInsurance/icon-home.svg';
+import icon2 from '../../../assets/iconos/homeInsurance/icon-hammer.svg';
+import icon3 from '../../../assets/iconos/homeInsurance/icon-drop.svg';
+import icon4 from '../../../assets/iconos/homeInsurance/icon-tool.svg';
+import icon5 from '../../../assets/iconos/homeInsurance/icon-home-hand.svg';
 
 ---
 
@@ -28,33 +28,34 @@ import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
     <BenefitItem 
       icon={icon1} 
-      alt="Cobertura accidente" 
-      text={`Cobertura en caso de accidente,
-      robo, pérdida parcial o total. `} 
+      alt="Protección casa" 
+      text={`Protección ante incendios, robos
+       y desastres naturales.`} 
       showBorder={true}
     />
 
     <BenefitItem 
       icon={icon2} 
-      alt="Protección" 
-      text={`Protección civil y daños a terceros.
-      Asesoría jurídica.`} 
-      showBorder={true}
-    />
-
-    <BenefitItem 
-      icon={icon4} 
-      alt="Asistencia" 
-      text={`Asistencia 24/7 en carretera
-       y grúa.`} 
+      alt="Responsabilidad legal" 
+      text={`Responsabilidad civil frente
+       a terceros.`} 
       showBorder={true}
     />
 
     <BenefitItem 
       icon={icon3} 
-      alt="Repuestos" 
-      text={`Reposición o reparación con
-      repuestos originales. `} 
+      alt="Cobertura" 
+      text={`Cobertura por daños eléctricos o
+       fugas de agua.`} 
+      showBorder={true}
+    />
+
+    <BenefitItem 
+      icon={icon4} 
+      alt="Herramienta" 
+      text={`Asistencia en el hogar 24/7 
+      (Plomería, cerrajería,
+      electricidad). `} 
       showBorder={false}
       showBorderMobileOnly={true}
 
@@ -62,9 +63,9 @@ import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
 
     <BenefitItem 
       icon={icon5} 
-      alt="Cobertura moto"  
-      text={`Cobertura para motos de 
-      diferentes cilindrajes.`} 
+      alt="Protección electrodomésticos"  
+      text={`Protección de electrodomésticos,
+       muebles y objetos de valor.`} 
       showBorderMobileOnly={false}
     />
     
@@ -80,25 +81,29 @@ import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
     <!-- Paso 1 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >Cotiza tu seguro en minutos.</p>
+      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line" >Cotiza tu seguro
+         en minutos.</p>
     </div>
 
     <!-- Paso 2 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >Elige el plan ideal que mejor se adapte a tu vehículo y presupueso.</p>
+      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line" >Elige la cobertura ideal
+        para tu vivienda.</p>
     </div>
 
     <!-- Paso 3 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >Conduce con respaldo y tranquilidad.</p>
+      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line" >Vive con la
+        tranquilidad de tener un hogar
+        protegido.</p>
     </div>
   </div>
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green mb-6">
     Cotizar seguro
   </button>
 
