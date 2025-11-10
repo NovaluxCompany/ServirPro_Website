@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import heroBg from '../../../assets/images/companyArl/Hero.webp';
-import heroBgMobile from '../../../assets/images/vehicleInsurance/Hero-mobile.webp';
+import heroBgMobile from '../../../assets/images/companyArl/Hero-mobile.webp';
 
 // HealthPolicySection.astro - Versión con imagen cubriendo 100% de ancho del diseño
 const policyTitle = `Intermediación en
@@ -35,16 +35,19 @@ const buttonText = "Asesoría gratuita";
           <div class="text-center w-full space-y-4">
             <!-- Título en móvil: caja azul centrada -->
             <div class="inline-block py-4 px-8 rounded-3xl bg-servir-blue-dark shadow-md w-full">
-              <h2 class="text-3xl font-extrabold text-white leading-tight whitespace-pre-line">
+              <h2 class="text-2xl font-extrabold text-white leading-tight whitespace-pre-line">
                 {policyTitle}
               </h2>
             </div>
 
             <!-- Subtítulo y descripción -->
             <div class="space-y-1 mb-15">
-              <p class="text-xl font-bold text-[#5793ce] leading-tight">{subtitle}</p>
-              <p class="text-xl text-servir-blue-dark leading-tight">
-                {description}
+              <p class="text-xl font-bold text-[#5793ce] leading-tight">
+                {subtitle}
+
+                <span class="text-servir-blue-dark" style="color:#4b4746">
+                  {description}
+                </span>
               </p>
             </div>
             
