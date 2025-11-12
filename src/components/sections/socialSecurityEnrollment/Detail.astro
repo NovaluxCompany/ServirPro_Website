@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import BenefitItem from "../../ui/BenefitItem.astro";
+
+// Imagen del título
+import tituloImg from "../../../assets/images/socialSecurityEnrollment/afiliacion-titulo.webp";
+
+
+// Iconos
+import icon1 from "../../../assets/iconos/socialSecurityEnrollment/icon1.png";
+import icon2 from "../../../assets/iconos/socialSecurityEnrollment/icon2.png";
+import icon3 from "../../../assets/iconos/socialSecurityEnrollment/icon3.png";
+import icon4 from "../../../assets/iconos/socialSecurityEnrollment/icon4.png";
+import icon5 from "../../../assets/iconos/socialSecurityEnrollment/icon5.png";
+import icon6 from "../../../assets/iconos/socialSecurityEnrollment/icon6.png";
+---
+
+<section
+  class="w-full flex flex-col items-center justify-center text-center px-6 py-10 md:py-16 bg-white"
+>
+  <!-- Imagen del título -->
+  <div class="mb-12">
+    <Image
+      src={tituloImg}
+      alt="Una póliza de salud te brinda"
+      class="mx-auto w-[400px] md:w-[520px]"
+    />
+  </div>
+
+  <!-- Beneficios -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
+    <BenefitItem
+      icon={icon1}
+      alt="Cobertura real en salud, pensión y riesgos laborales"
+      text={`Cobertura real en salud, pensión y
+      riesgos laborales.`}
+      showBorder={true}
+    />
+
+    <BenefitItem
+      icon={icon2}
+      alt="Trámite 100% legal y verificado"
+      text={`Trámite 100% legal y verificado.`}
+      showBorder={true}
+    />
+
+    <BenefitItem
+      icon={icon3}
+      alt="Certificados auténticos y actualizados"
+      text={`Certificados auténticos
+      y actualizados.`}
+      showBorder={true}
+    />
+
+    <BenefitItem
+      icon={icon4}
+      alt="Asesoría personalizada y acompañamiento total"
+      text={`Asesoría personalizada y 
+      acompañamiento total.`}
+      showBorder={true}
+    />
+    <BenefitItem
+      icon={icon5}
+      alt="Experiencia en el sector"
+      text={`de experiencia en el sector.`}
+      showBorderMobileOnly={true}
+    />
+    <BenefitItem
+      icon={icon6}
+      alt="Respaldo de una empresa sólida y confiable"
+      text={`Respaldo de una empresa
+      sólida y confiable.`}
+    />
+  </div>
+
+  <!-- Botón Cotizar -->
+  <button
+    class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12"
+  >
+    Conocer planes
+  </button>
+
+  <!-- Pasos -->
+  <div
+    class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative"
+  >
+    <!-- Paso 1 -->
+    <div
+      class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
+    >
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
+      <p class="font-medium text-servir-dark-text step-text">
+        Envía tus datos personales y actividad laboral.
+      </p>
+    </div>
+
+    <!-- Paso 2 -->
+    <div
+      class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
+    >
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
+      <p class="font-medium text-servir-dark-text step-text">
+        Nosotros realizamos las afiliaciones según tu plan.
+      </p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div
+      class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
+    >
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
+      <p class="font-medium text-servir-dark-text step-text">
+        En menos de 24 horas recibes tus certificados y puedes comenzar a
+        trabajar.
+      </p>
+    </div>
+  </div>
+
+  <!-- Segundo botón -->
+  <button
+    class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green"
+  >
+    Conocer planes
+  </button>
+
+</section>
+
