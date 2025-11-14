@@ -3,6 +3,8 @@
 import { Image } from "astro:assets";
 import logoSrc from "../../../assets/logos/Logo.jpg";
 
+const currentPath = Astro.url.pathname; // <--- importante
+
 const menu = [
     {
         label: "Créditos",
@@ -118,36 +120,50 @@ const menu = [
             <nav class="hidden lg:flex lg:space-x-8 items-center">
                 <a
                     href="/"
-                    class="text-servir-blue font-bold px-3 py-2 rounded-md text-sm"
+                    class={`font-bold px-3 py-2 rounded-md text-sm ${currentPath === "/" ? "text-servir-blue" : "gray-text hover:text-servir-blue"}`}
                 >
                     Inicio
                 </a>
-
                 {
-                    menu.map(({ label, items }) => (
-                        <div class="dropdown-group">
-                            <button class="gray-text font-bold hover:text-servir-blue px-3 py-2 text-sm flex items-center">
-                                {label}
-                                <iconify-icon
-                                    icon="fa6-solid:chevron-down"
-                                    class="dropdown-arrow w-3 h-3 ml-2"
-                                />
-                            </button>
+                    menu.map(({ label, items }) => {
+                        const isActive = items.some(
+                            (i) => i.href === currentPath,
+                        );
 
-                            <div class="dropdown-menu">
-                                <div class="py-1">
-                                    {items.map(({ label: sub, href }) => (
-                                        <a
-                                            href={href}
-                                            class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50"
-                                        >
-                                            {sub}
-                                        </a>
-                                    ))}
+                        return (
+                            <div class="dropdown-group">
+                                <button
+                                    class={`px-3 py-2 text-sm flex items-center font-bold 
+                    ${isActive ? "text-servir-blue" : "gray-text hover:text-servir-blue"}
+                `}
+                                >
+                                    {label}
+                                    <iconify-icon
+                                        icon="fa6-solid:chevron-down"
+                                        class="dropdown-arrow w-3 h-3 ml-2"
+                                    />
+                                </button>
+
+                                <div class="dropdown-menu">
+                                    <div class="py-1">
+                                        {items.map(({ label: sub, href }) => (
+                                            <a
+                                                href={href}
+                                                class={`block px-4 py-2 text-sm 
+                                ${
+                                    currentPath === href
+                                        ? "text-servir-blue font-bold bg-blue-50"
+                                        : "gray-text hover:text-servir-blue hover:bg-blue-50"
+                                }`}
+                                            >
+                                                {sub}
+                                            </a>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
+                        );
+                    })
                 }
             </nav>
 
@@ -215,43 +231,59 @@ const menu = [
             <div
                 class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex-1 overflow-y-auto"
             >
-                            <a
+                <a
                     href="/"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-servir-blue bg-blue-50"
-                    >Inicio</a
+                    class={`block px-3 py-2 rounded-md text-base font-medium ${
+                        currentPath === "/"
+                            ? "text-servir-blue bg-blue-50"
+                            : "text-gray-700 hover:bg-gray-100"
+                    }`}>Inicio</a
                 >
                 {
-                    menu.map(({ label, items }, i) => (
-                        <div class="border-b border-gray-100">
-                            <button
-                                class="w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
-                                onclick={`document.getElementById('m-${i}').classList.toggle('hidden')`}
-                            >
-                                {label}
-                                <iconify-icon
-                                    icon="fa6-solid:chevron-down"
-                                    class="icon w-4 h-4 transform transition-transform"
-                                     id={`mobile-${i}`}
-                                />
-                            </button>
+                    menu.map(({ label, items }, i) => {
+                        const isParentActive = items.some(
+                            (item) => item.href === currentPath,
+                        );
 
-                            <div
-                                id={`m-${i}`}
-                                class="hidden pl-4 pb-2 space-y-1"
-                            >
-                                {items.map(({ label: sub, href }) => (
-                                    <a
-                                        href={href}
-                                        class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50"
-                                    >
-                                        {sub}
-                                    </a>
-                                ))}
+                        return (
+                            <div class="border-b border-gray-100">
+                                <button
+                                    class={`w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium rounded-md ${
+                                        isParentActive
+                                            ? "text-servir-blue bg-blue-50"
+                                            : "text-gray-700 hover:bg-gray-100"
+                                    }`}
+                                    onclick={`document.getElementById('m-${i}').classList.toggle('hidden')`}
+                                >
+                                    {label}
+                                    <iconify-icon
+                                        icon="fa6-solid:chevron-down"
+                                        class="icon w-4 h-4 transform transition-transform"
+                                        id={`mobile-${i}`}
+                                    />
+                                </button>
+
+                                <div
+                                    id={`m-${i}`}
+                                    class="hidden pl-4 pb-2 space-y-1"
+                                >
+                                    {items.map(({ label: sub, href }) => (
+                                        <a
+                                            href={href}
+                                            class={`block px-3 py-1 text-sm ${
+                                                currentPath === href
+                                                    ? "text-servir-blue font-semibold bg-blue-50"
+                                                    : "text-gray-600 hover:bg-gray-50"
+                                            }`}
+                                        >
+                                            {sub}
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))
+                        );
+                    })
                 }
-
             </div>
         </div>
     </div>
