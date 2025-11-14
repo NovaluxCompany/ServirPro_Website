@@ -2,26 +2,9 @@
 // ServiceIcon.astro - Componente reutilizable para iconos de servicios
 import { Image } from "astro:assets";
 
-// Importar todas las imágenes SVG
-import healthIcon from "../../assets/iconos/polizas_salud.svg";
-import lifeIcon from "../../assets/iconos/seguros_vida.svg";
-import autoIcon from "../../assets/iconos/seguros_auto.svg";
-import homeIcon from "../../assets/iconos/seguros_hogar.svg";
-import epsIcon from "../../assets/iconos/afiliacion_eps_arl.svg";
-import securityIcon from "../../assets/iconos/planes_seguridad_social.svg";
-import businessIcon from "../../assets/iconos/Intermediacion_arl_empresas.svg";
-import groupIcon from "../../assets/iconos/polizas_colectivas.svg";
 
 export interface Props {
-  iconType:
-    | "health"
-    | "life"
-    | "auto"
-    | "home"
-    | "eps"
-    | "security"
-    | "business"
-    | "group";
+  iconType:ImageMetadata;
   title: string;
   className?: string;
   href?: string;
@@ -29,29 +12,7 @@ export interface Props {
 
 const { iconType, title, className = "", href = "" } = Astro.props;
 
-// Función para obtener la imagen según el tipo de icono
-function getIconImage(type: string) {
-  switch (type) {
-    case "health":
-      return healthIcon;
-    case "life":
-      return lifeIcon;
-    case "auto":
-      return autoIcon;
-    case "home":
-      return homeIcon;
-    case "eps":
-      return epsIcon;
-    case "security":
-      return securityIcon;
-    case "business":
-      return businessIcon;
-    case "group":
-      return groupIcon;
-    default:
-      return healthIcon;
-  }
-}
+
 
 // Función para procesar el título y hacer las últimas palabras clave más bold
 function processTitle(title: string) {
@@ -108,7 +69,7 @@ const titleParts = processTitle(title);
   >
     <div class="mb-2">
       <Image
-        src={getIconImage(iconType)}
+        src={iconType}
         alt={`${title} icon`}
         class="w-14 h-14 md:w-16 md:h-16"
         loading="lazy"
