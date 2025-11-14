@@ -1,143 +1,426 @@
 ---
 // Header component
-import { Image } from 'astro:assets';
-import logoSrc from '../../../assets/logos/Logo.jpg';
+import { Image } from "astro:assets";
+import logoSrc from "../../../assets/logos/Logo.jpg";
 ---
 
 <!-- Header Principal (Panel Superior) -->
 <div class="bg-servir-blue text-white text-center py-2 text-sm font-medium">
     <!-- Texto estático en pantallas medianas y grandes -->
     <div class="px-4 hidden sm:block">
-        ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia y miles de clientes protegidos.
+        ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia y miles
+        de clientes protegidos.
     </div>
     <!-- Marquee en móviles (continuo, sin espacios vacíos) -->
     <div class="px-4 sm:hidden overflow-hidden">
         <div class="marquee-track">
-            <span class="marquee-item">ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia y miles de clientes protegidos.</span>
-            <span class="marquee-item">ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia y miles de clientes protegidos.</span>
+            <span class="marquee-item"
+                >ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia
+                y miles de clientes protegidos.</span
+            >
+            <span class="marquee-item"
+                >ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia
+                y miles de clientes protegidos.</span
+            >
         </div>
     </div>
 </div>
 
 <style>
-  @keyframes marquee {
-    0%, 16.67% { transform: translateX(0); } /* 5 segundos de pausa (5/30 = 16.67%) */
-    100% { transform: translateX(-50%); }
-  }
-  .marquee-track {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: marquee 30s linear infinite;
-  }
-  .marquee-item {
-    padding-right: 2rem; /* espacio entre los duplicados para transición limpia */
-  }
+    @keyframes marquee {
+        0%,
+        16.67% {
+            transform: translateX(0);
+        } /* 5 segundos de pausa (5/30 = 16.67%) */
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    .marquee-track {
+        display: inline-flex;
+        white-space: nowrap;
+        animation: marquee 30s linear infinite;
+    }
+    .marquee-item {
+        padding-right: 2rem; /* espacio entre los duplicados para transición limpia */
+    }
 </style>
 
 <!-- Navegación Principal -->
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-center lg:justify-between items-center h-20">
-
             <!-- Botón de Hamburguesa (Solo Móvil) -->
-            <button id="menu-button" class="hidden lg:hidden p-2 rounded-md  hover:bg-gray-100 transition-colors">
+            <button
+                id="menu-button"
+                class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+            >
                 <!-- Icono de Menú Hamburguesa con Iconify -->
-                <iconify-icon   width="20" icon="fa6-solid:bars" class="w-8 h-8 text-servir-blue flex items-center justify-center "></iconify-icon>
+                <iconify-icon
+                    width="20"
+                    icon="fa6-solid:bars"
+                    class="w-8 h-8 text-servir-blue flex items-center justify-center"
+                ></iconify-icon>
             </button>
 
             <!-- Logo (Centrado en Móvil) -->
-            <a href="#"
-                class="flex-shrink-0 lg:ml-0 md:absolute lg:static lg:transform-none">
-                <Image src={logoSrc} alt="ServirPRO Seguros" class="h-12 w-auto" />
+            <a
+                href="#"
+                class="flex-shrink-0 lg:ml-0 md:absolute lg:static lg:transform-none"
+            >
+                <Image
+                    src={logoSrc}
+                    alt="ServirPRO Seguros"
+                    class="h-12 w-auto"
+                />
             </a>
+
+            <!-- Navegación de Escritorio -->
+            <nav class="hidden lg:flex lg:space-x-8 items-center">
+                <a
+                    href="#"
+                    class="text-servir-blue font-bold px-3 py-2 rounded-md text-sm transition duration-150"
+                    >Inicio</a
+                >
+
+                <!-- Dropdown Créditos -->
+                <div class="dropdown-group" data-dropdown="creditos">
+                    <button
+                        class="gray-text font-bold hover:text-servir-blue px-3 py-2 rounded-md text-sm transition duration-150 flex items-center"
+                    >
+                        Créditos
+                        <!-- Icono de flecha abajo con Iconify -->
+                        <iconify-icon
+                            icon="fa6-solid:chevron-down"
+                            class="dropdown-arrow w-3 h-3 ml-2 transition-transform"
+                        ></iconify-icon>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div
+                            class="py-1"
+                            role="menu"
+                            aria-orientation="vertical"
+                        >
+                            <a
+                                href="#"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Créditos para vehículos</a
+                            >
+                            <a
+                                href="#"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Compra de Cartera de Vehículos</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dropdown Seguros -->
+                <div class="dropdown-group" data-dropdown="seguros">
+                    <button
+                        class="gray-text font-bold hover:text-servir-blue px-3 py-2 rounded-md text-sm transition duration-150 flex items-center"
+                    >
+                        Seguros
+                        <!-- Icono de flecha abajo con Iconify -->
+                        <iconify-icon
+                            icon="fa6-solid:chevron-down"
+                            class="dropdown-arrow w-3 h-3 ml-2 transition-transform"
+                        ></iconify-icon>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div
+                            class="py-1"
+                            role="menu"
+                            aria-orientation="vertical"
+                        >
+                            <a
+                                href="/seguros-vehiculo"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Seguros para autos y motos</a
+                            >
+                            <a
+                                href="/seguros-vida"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Seguros de vida</a
+                            >
+                            <a
+                                href="/polizas-salud"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Pólizas de salud</a
+                            >
+                            <a
+                                href="/"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Planes Complementarios</a
+                            >
+                            <a
+                                href="/seguros-hogar"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Seguros para Hogar</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dropdown Seguridad Social -->
+                <div class="dropdown-group" data-dropdown="seguridad">
+                    <button
+                        class="gray-text font-bold hover:text-servir-blue px-3 py-2 rounded-md text-sm transition duration-150 flex items-center"
+                    >
+                        Seguridad social
+                        <!-- Icono de flecha abajo con Iconify -->
+                        <iconify-icon
+                            icon="fa6-solid:chevron-down"
+                            class="dropdown-arrow w-3 h-3 ml-2 transition-transform"
+                        ></iconify-icon>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="py-1">
+                            <a
+                                href="/afiliaciones-seguridad-social"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Planes de seguridad social</a
+                            >
+                            <a
+                                href="/afiliacion-eps"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Afiliaciones a Solo EPS</a
+                            >
+                            <a
+                                href="/afiliacion-arl"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Afiliaciones a Solo ARL</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dropdown Empresas -->
+                <div class="dropdown-group" data-dropdown="empresas">
+                    <button
+                        class="gray-text font-bold hover:text-servir-blue px-3 py-2 rounded-md text-sm transition duration-150 flex items-center"
+                    >
+                        Empresas
+                        <!-- Icono de flecha abajo con Iconify -->
+                        <iconify-icon
+                            icon="fa6-solid:chevron-down"
+                            class="dropdown-arrow w-3 h-3 ml-2 transition-transform"
+                        ></iconify-icon>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="py-1">
+                            <a
+                                href="#"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Intermediación en ARL</a
+                            >
+                            <a
+                                href="/polizas-colectivas"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Pólizas colectivas</a
+                            >
+                            <a
+                                href="#"
+                                class="block px-4 py-2 text-sm gray-text hover:text-servir-blue hover:bg-blue-50 transition duration-150"
+                                >Trámites de seguridad social</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
             <!-- Icono de Búsqueda y Botón de Contacto -->
             <div class="flex items-center space-x-3">
                 <!-- Botón de Búsqueda (Oculto) -->
-                <button id="search-button" class="hidden p-2 rounded-md  hover:bg-gray-100 transition-colors">
+                <button
+                    id="search-button"
+                    class="hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+                >
                     <!-- Icono de lupa con Iconify -->
-                    <iconify-icon icon="fa6-solid:magnifying-glass" width="20" class="w-8 h-8 flex items-center justify-center text-servir-blue"></iconify-icon>
+                    <iconify-icon
+                        icon="fa6-solid:magnifying-glass"
+                        width="20"
+                        class="w-8 h-8 flex items-center justify-center text-servir-blue"
+                    ></iconify-icon>
                 </button>
-
-                <!-- Botón Contáctanos (Solo Desktop) -->
-                <a href="https://wa.me/573011090186?text=Hola,%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20un%20seguro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hidden lg:block bg-servir-blue text-white px-12 py-4 rounded-full font-semibold hover:transition-all duration-300 transform hover:scale-105 active:scale-95">
-                    Contáctanos
-                </a>
             </div>
         </div>
 
         <!-- Campo de Búsqueda Expandible (Oculto) -->
         <div id="search-bar" class="hidden py-2 border-t border-gray-200">
-            <input type="search" placeholder="Buscar en ServirPRO..."
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-servir-blue">
+            <input
+                type="search"
+                placeholder="Buscar en ServirPRO..."
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-servir-blue"
+            />
         </div>
     </div>
 
     <!-- Menú Móvil como Sidemenu con Overlay -->
-    <div id="mobile-overlay" class="fixed inset-0 z-[100] hidden lg:hidden opacity-0 transition-opacity duration-300">
+    <div
+        id="mobile-overlay"
+        class="fixed inset-0 z-[100] hidden lg:hidden opacity-0 transition-opacity duration-300"
+    >
         <!-- Backdrop negro/transparente -->
         <div id="mobile-backdrop" class="absolute inset-0 bg-black/50"></div>
         <!-- Panel lateral -->
-        <div id="mobile-menu-panel" class="absolute inset-y-0 left-0 w-80 max-w-[85%] bg-white shadow-xl transform origin-left scale-x-0 transition-transform duration-300 ease-out flex flex-col h-dvh">
+        <div
+            id="mobile-menu-panel"
+            class="absolute inset-y-0 left-0 w-80 max-w-[85%] bg-white shadow-xl transform origin-left scale-x-0 transition-transform duration-300 ease-out flex flex-col h-dvh"
+        >
             <!-- Header superior dentro del sidemenu: botón hamburguesa y logo -->
-            <div class="flex items-center space-x-3 px-3 py-3 border-b" style="border-color:#d6d2d2">
-                <button id="menu-button-inside" class="p-2 rounded-md hover:bg-gray-100 transition-colors flex  align-center">
-                    <iconify-icon width="20" icon="fa6-solid:bars" class="w-8 h-8 text-servir-blue"></iconify-icon>
+            <div
+                class="flex items-center space-x-3 px-3 py-3 border-b"
+                style="border-color:#d6d2d2"
+            >
+                <button
+                    id="menu-button-inside"
+                    class="p-2 rounded-md hover:bg-gray-100 transition-colors flex align-center"
+                >
+                    <iconify-icon
+                        width="20"
+                        icon="fa6-solid:bars"
+                        class="w-8 h-8 text-servir-blue"></iconify-icon>
                 </button>
                 <a href="#" class="flex items-center" style="margin-left:13%">
-                    <Image src={logoSrc} alt="ServirPRO Seguros" class="h-10 w-auto" />
+                    <Image
+                        src={logoSrc}
+                        alt="ServirPRO Seguros"
+                        class="h-10 w-auto"
+                    />
                 </a>
             </div>
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex-1 overflow-y-auto">
-                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-servir-blue bg-blue-50">Inicio</a>
+            <div
+                class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex-1 overflow-y-auto"
+            >
+                <a
+                    href="/"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-servir-blue bg-blue-50"
+                    >Inicio</a
+                >
 
                 <!-- Acordeón Seguros -->
                 <div class="border-b border-gray-100">
-                    <button id="mobile-seguros-btn" class="w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">
+                    <button
+                        id="mobile-seguros-btn"
+                        class="w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
+                    >
                         Seguros
-                        <iconify-icon icon="fa6-solid:chevron-down" class="icon w-4 h-4 transform transition-transform" id="mobile-seguros-icon"></iconify-icon>
+                        <iconify-icon
+                            icon="fa6-solid:chevron-down"
+                            class="icon w-4 h-4 transform transition-transform"
+                            id="mobile-seguros-icon"></iconify-icon>
                     </button>
-                    <div id="mobile-seguros-content" class="hidden pl-4 pb-2 space-y-1">
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Pólizas de salud</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Planes complementarios</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Seguros de vida</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Seguros para autos y motos</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Seguros para hogar</a>
+                    <div
+                        id="mobile-seguros-content"
+                        class="hidden pl-4 pb-2 space-y-1"
+                    >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Pólizas de salud</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Planes complementarios</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Seguros de vida</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Seguros para autos y motos</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Seguros para hogar</a
+                        >
                     </div>
                 </div>
 
                 <!-- Acordeón Seguridad Social -->
                 <div class="border-b border-gray-100">
-                    <button id="mobile-seguridad-btn" class="w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">
+                    <button
+                        id="mobile-seguridad-btn"
+                        class="w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
+                    >
                         Seguridad social
-                        <iconify-icon icon="fa6-solid:chevron-down" class="icon w-4 h-4 transform transition-transform" id="mobile-seguridad-icon"></iconify-icon>
+                        <iconify-icon
+                            icon="fa6-solid:chevron-down"
+                            class="icon w-4 h-4 transform transition-transform"
+                            id="mobile-seguridad-icon"></iconify-icon>
                     </button>
-                    <div id="mobile-seguridad-content" class="hidden pl-4 pb-2 space-y-1">
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Solo EPS o solo ARL</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">EPS + ARL + Pensión</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Plan completo de seguridad social</a>
+                    <div
+                        id="mobile-seguridad-content"
+                        class="hidden pl-4 pb-2 space-y-1"
+                    >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Solo EPS o solo ARL</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >EPS + ARL + Pensión</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Plan completo de seguridad social</a
+                        >
                     </div>
                 </div>
 
                 <!-- Acordeón Empresas -->
                 <div class="border-b border-gray-100">
-                    <button id="mobile-empresas-btn" class="w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">
+                    <button
+                        id="mobile-empresas-btn"
+                        class="w-full text-left flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
+                    >
                         Empresas
-                        <iconify-icon icon="fa6-solid:chevron-down" class="icon w-4 h-4 transform transition-transform" id="mobile-empresas-icon"></iconify-icon>
+                        <iconify-icon
+                            icon="fa6-solid:chevron-down"
+                            class="icon w-4 h-4 transform transition-transform"
+                            id="mobile-empresas-icon"></iconify-icon>
                     </button>
-                    <div id="mobile-empresas-content" class="hidden pl-4 pb-2 space-y-1">
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Intermediación en ARL</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Pólizas colectivas</a>
-                        <a href="#" class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md">Trámites de seguridad social</a>
+                    <div
+                        id="mobile-empresas-content"
+                        class="hidden pl-4 pb-2 space-y-1"
+                    >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Intermediación en ARL</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Pólizas colectivas</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                            >Trámites de seguridad social</a
+                        >
                     </div>
                 </div>
                 <!-- Botón Contáctanos: al mismo nivel de los menús, justo debajo -->
                 <div class="pt-6">
-                    <a href="https://wa.me/573011090186?text=Hola,%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20un%20seguro" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-servir-blue text-white px-12 py-4 rounded-full font-semibold hover:transition-all duration-300 transform hover:scale-105 active:scale-95">Contáctanos</a>
+                    <a
+                        href="https://wa.me/573011090186?text=Hola,%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20un%20seguro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="block w-full text-center bg-servir-blue text-white px-12 py-4 rounded-full font-semibold hover:transition-all duration-300 transform hover:scale-105 active:scale-95"
+                        >Contáctanos</a
+                    >
                 </div>
             </div>
         </div>
     </div>
+</header>
