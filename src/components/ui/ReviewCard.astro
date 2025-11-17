@@ -11,16 +11,32 @@ export interface Props {
     bgColor?: string;
 }
 
+// Client-side script to handle review expansion
+const clientId = Math.random().toString(36).substring(2, 9);
+const reviewId = `review-${clientId}`;
+
+// Function to handle review expansion
+const handleReviewClick = `
+    const review = document.getElementById('${reviewId}');
+    if (review) {
+        review.classList.toggle('line-clamp-3'); 
+        const dots = review.nextElementSibling;
+        if (dots) {
+            dots.textContent = review.classList.contains('line-clamp-3') ? '...' : '';
+        }
+    }
+`;
+
 const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
 
 
 ---
 
 <div class="flex-none w-full md:w-1/2 px-4 md:px-6">
-    <div class="bg-gray-100 rounded-lg p-8 h-full relative">
+    <div class="bg-gray-100 rounded-lg p-8 h-[95%] relative">
         <!-- Icono de Google en la esquina superior derecha -->
         <div class="absolute top-4 right-4">
-            <Image src={googleImage} class="w-6 h-6" alt="Google icon">
+            <Image src={googleImage} class="w-6 h-6" alt="Google icon" />
         </div>
         
         <!-- Layout responsive: centrado en móvil, horizontal en desktop -->
@@ -41,6 +57,33 @@ const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
                         </svg>
                     ))}
                 </div>
-        <p class="text-gray-700 text-sm text-center md:text-left">{review}</p>
+        <div class="relative">
+            <p 
+                id={reviewId}
+                class="text-gray-700 text-sm text-center md:text-left line-clamp-3 cursor-pointer transition-all duration-200"
+                onclick={handleReviewClick}
+            >{review}</p>
+            {review.length > 100 && (
+                <span 
+                    class="text-blue-500 cursor-pointer text-sm font-medium ml-1 mt-1"
+                    onclick={handleReviewClick}
+                >Ver más</span>
+            )}
+        </div>
     </div>
 </div>
+
+<style>
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Smooth transition for expanding/collapsing */
+    .transition-all {
+        transition: all 0.3s ease;
+    }
+</style>
