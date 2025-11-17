@@ -1,5 +1,8 @@
 ---
 // Testimonials.astro - Sección de testimonios con video y reseñas de Google
+
+// Props
+const { showVideo = false } = Astro.props;
 import ReviewCard from '../../ui/ReviewCard.astro';
 import { Image } from 'astro:assets';
 import googleImage from '../../../assets/iconos/google_icon_review_completo.svg';
@@ -8,98 +11,567 @@ import clientRecommendationMobile from '../../../assets/images/client-recomendat
 
 // Datos de los testimonios reales de Google Reviews
 const reviews = [
-    {
-        name: "Luz Stella Zuluaga Foronda",
-        initial: "L",
-        timeAgo: "Hace un mes",
-        review: "El servicio es buenisimo, la atención al cliente es excelente, super recomendado",
-        bgColor: "bg-blue-500"
-    },
-    {
-        name: "Deivis Daniel Macia montalvo",
-        initial: "D",
-        timeAgo: "Hace 3 semanas",
-        review: "Quiero por este medio agradecer la excelente amabilidad y la responsabilidad, de la cual da credibilidad y confianza, en cada proceso de afiliación. A ustedes cómo empresa servirpro muchas gracias 👍",
-        bgColor: "bg-green-500"
-    },
-    {
-        name: "Cristian David Cabrera Villada",
-        initial: "C",
-        timeAgo: "Hace un mes",
-        review: "Me parece excelente la atención, rápida, clara y oportuna",
-        bgColor: "bg-purple-500"
-    },
-    {
-        name: "Marcela Tobar",
-        initial: "M",
-        timeAgo: "Hace 2 meses",
-        review: "Excelente servicio de verdad, fácil, rápido y seguro. Gracias ☺️",
-        bgColor: "bg-pink-500"
-    },
-    {
-        name: "Alberto Poggioli",
-        initial: "A",
-        timeAgo: "Hace 2 meses",
-        review: "La atención de ServirPro es muy buena, son personas muy diligentes, conocen los temas y responden muy rápido a las consultas, 100% recomendados",
-        bgColor: "bg-indigo-500"
-    },
-    {
-        name: "ANA MARIA LOZANO",
-        initial: "A",
-        timeAgo: "Hace 2 meses",
-        review: "El servicio es excelente.",
-        bgColor: "bg-red-500"
-    },
-    {
-        name: "Gustavo Montoya",
-        initial: "G",
-        timeAgo: "Hace un mes",
-        review: "Muy cumplidos",
-        bgColor: "bg-yellow-500"
-    },
-    {
-        name: "Cybercol Monterrey",
-        initial: "C",
-        timeAgo: "Hace 4 horas",
-        review: "Me encanta, resolvieron todas mis dudas.",
-        bgColor: "bg-teal-500"
-    },
-    {
-        name: "Juana Hernández",
-        initial: "J",
-        timeAgo: "Hace un mes",
-        review: "",
-        bgColor: "bg-orange-500"
-    },
-    {
-        name: "Karlitox Mendez",
-        initial: "K",
-        timeAgo: "Hace un mes",
-        review: "",
-        bgColor: "bg-cyan-500"
-    },
-    {
-        name: "Alirio Rodriguez",
-        initial: "A",
-        timeAgo: "Hace 2 meses",
-        review: "",
-        bgColor: "bg-lime-500"
-    },
-    {
-        name: "VJ Lau",
-        initial: "V",
-        timeAgo: "Hace 2 meses",
-        review: "",
-        bgColor: "bg-emerald-500"
-    },
-    {
-        name: "Astrid Peña",
-        initial: "A",
-        timeAgo: "Hace 2 meses",
-        review: "",
-        bgColor: "bg-violet-500"
-    }
-];
+  {
+    "name": "Juan Jose Lopez",
+    "initial": "J",
+    "timeAgo": "Hace 1 día",
+    "review": "Buenas tardes , Servipro es una empresa con gran experiencia en el tema de la Seguridad Social y los asesores muy profesionales en su trabajo , cumplidos con los pagos cada mes .",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Yamid Restrepo",
+    "initial": "Y",
+    "timeAgo": "Hace 2 días",
+    "review": "Hasta el momento me han prestado un excelente servicio en estos aproximadamente 6 meses, de verdad estoy muy agradecido porque han sido muy atentos.",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Monica maria Cano Gutiérrez",
+    "initial": "M",
+    "timeAgo": "Hace 2 días",
+    "review": "Excelente servicio,no tengo ninguna queja.El personal siempre esta dispuesto a brindarte asesoría.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "María Mejia",
+    "initial": "M",
+    "timeAgo": "Hace 2 días",
+    "review": "Que buena experiencia tengo con ServirPRO, mucha agilidad y certeza en el servicio. Los recomiendo completamente 10/10!!!",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Ibelin Prieto",
+    "initial": "I",
+    "timeAgo": "Hace 2 días",
+    "review": "Quiero destacar la excelente labor que realiza la empresa SERVIPRO Seguros al brindar servicios integrales de salud, pólizas médicas, seguros de vida y acompañamiento en materia de seguridad social. Su compromiso con el bienestar de las personas se refleja en la calidad de su atención y en la claridad con la que ofrecen asesoría experta en cada paso del proceso. Da mucha tranquilidad contar con un equipo tan profesional, humano y dedicado, que realmente comprende las necesidades de sus clientes y trabaja para ofrecer soluciones que aportan seguridad y confianza en cada etapa de la vida. Sin duda, un aliado indispensable para proteger lo que más valoramos.",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Carolina Correa",
+    "initial": "C",
+    "timeAgo": "Hace 2 días",
+    "review": "Muy buen servicio!! Muy atentos, siempre responden cualquier duda y nunca he tenido ningún inconveniente con ellos",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Inversiones JJ",
+    "initial": "I",
+    "timeAgo": "Hace 3 días",
+    "review": "Excelente servicio, realizan acompañamiento por si tenemos alguna novedad, super recomendados .",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Juan Esteban López Agudelo",
+    "initial": "J",
+    "timeAgo": "Hace 3 días",
+    "review": "Las personas son amables, la gente es carismática y siempre dispuestos a servir a todos dentro de sus instalaciones.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Stefa C",
+    "initial": "S",
+    "timeAgo": "Hace 3 días",
+    "review": "Me siento muy valorada como cliente, la atención de ServirPRO es rápida, son amables y muy eficientes. Estoy agradecida 100%👌",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Angela Maria Benitez Vargas",
+    "initial": "A",
+    "timeAgo": "Hace 3 días",
+    "review": "Muchas gracias a Servipro seguros por el apoyo y estar pendiente de mi seguridad social.",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Stevens Velasco",
+    "initial": "S",
+    "timeAgo": "Hace 4 días",
+    "review": "Cumplidos y honestos",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "chiquiluki luki",
+    "initial": "C",
+    "timeAgo": "Hace 4 días",
+    "review": "Llevamos varios años pagando la Eps con ServirPRO, confiabilidad y buen servicio desde el primer momento en que los contacte. RECOMENDADISIMO… 🤩🤩",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "johana mejia roman",
+    "initial": "J",
+    "timeAgo": "Hace 4 días",
+    "review": "Muy cumplidos y serios, no he tenido inconveniente alguno",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "ricardo garcia yepes",
+    "initial": "R",
+    "timeAgo": "Hace 4 días",
+    "review": "Hasta el momento ha sido un entidad seria con nosotros la verdad los recomiendo",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Angela Cardona",
+    "initial": "A",
+    "timeAgo": "Hace 4 días",
+    "review": "Hoy quiero agradecer y recomendar a servirPRO por prestarme a mi y a mi familia una excelente atención ,agilidad y sobretodo su excelente servicio espero que esta sea la base de su buena empresa",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Beatriz Aguirre",
+    "initial": "B",
+    "timeAgo": "Hace 4 días",
+    "review": "Excelente servicio muy claros ante alguna duda e inquietud que uno tenga",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Esmeralda Lopez",
+    "initial": "E",
+    "timeAgo": "Hace 4 días",
+    "review": "Muy correctos en todo",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Adrian A.",
+    "initial": "A",
+    "timeAgo": "Hace 4 días",
+    "review": "ServirPRO es confiable, pagan la seguridad social oportunamente, atención y respuesta oportuna, estoy con ellos desde este año y todo va bien.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "INGEVAPOR SAS",
+    "initial": "I",
+    "timeAgo": "Hace 4 días",
+    "review": "",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "adriana zorrilla",
+    "initial": "A",
+    "timeAgo": "Hace 4 días",
+    "review": "",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Ana Sierra",
+    "initial": "A",
+    "timeAgo": "Hace 4 días",
+    "review": "ServiPro En una entidad muy seria y responsable la recomiendo mucho y siempre da solución a tiempo y con el tema de la seguridad social ,son muy responsables y siempre está pendiente.de los clientes y cualquier trámite son muy profesionales Le agradezco mucho por su atención",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Cristina Muñoz",
+    "initial": "C",
+    "timeAgo": "Hace 4 días",
+    "review": "Completamente seguro y confiable💯",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "wilder chavarria",
+    "initial": "W",
+    "timeAgo": "Hace 4 días",
+    "review": "En el poco tiempo que llevo pagando la seguridad social por medio de la compañía ha sido muy oportuno los trámites que he requerido!",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "tatiana valencia",
+    "initial": "T",
+    "timeAgo": "Hace 4 días",
+    "review": "Me ha gustado el servicio de servírPROseguros , son diligentes , siempre están pendientes a los requerimientos que uno como clientes solicita . Me ha gustado mucho la atención",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "milena mendoza",
+    "initial": "M",
+    "timeAgo": "Hace 4 días",
+    "review": "Me encanta la atención rápida de este equipo , me brindan seguridad y seguimiento en cada pago los recomiendo 100%",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Santiago roman perez",
+    "initial": "S",
+    "timeAgo": "Hace 4 días",
+    "review": "Excelente servicio y profesionalismos siempre. Muy buen acompañamiento.",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Santiago Lopez Mejia",
+    "initial": "S",
+    "timeAgo": "Hace 4 días",
+    "review": "Atención muy oportuna y excelente por parte de los asesores , 0 inconvenientes con dudas , pagos y demás",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Liccet Carolina Zapata",
+    "initial": "L",
+    "timeAgo": "Hace 4 días",
+    "review": "Excelente Servicio, siempre muy atentos a todas las necesidades. Los recomiendo totalmente.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Diana Hernández",
+    "initial": "D",
+    "timeAgo": "Hace 4 días",
+    "review": "Es una empresa seria y responsable, con una calidad humana hermosa, ya llevo más de dos años con ellos y la comiendo 100%",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Marcela Sanchez",
+    "initial": "M",
+    "timeAgo": "Hace 4 días",
+    "review": "Gracias, Servirpro, por tanto compromiso y calidez . No solo brindan un excelente servicio, también hacen sentir a las personas acompañadas y bien atendidas. Se nota que trabajan con el corazón y eso marca la diferencia. Da gusto encontrar una entidad que combina profesionalismo con un trato humano y cercano. ¡Gracias por su dedicación y por siempre dar lo mejor!",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Jose Tapiero",
+    "initial": "J",
+    "timeAgo": "Hace 4 días",
+    "review": "La verdad el servicio es muy profesional, responden oportunamente, tienen una excelente atención al usuario, y las afiliaciones son hechas con todo éxito, recomendados 1000%",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Jacqueline Ocampo",
+    "initial": "J",
+    "timeAgo": "Hace 4 días",
+    "review": "Quiero agradecer a esta empresa por su excelente servicio. Siempre están pendientes de mí, me recuerdan a tiempo los pagos de mi EPS y me consultan si tengo alguna novedad. Son muy responsables, cumplidos y atentos. Gracias a ellos mantengo al día todo lo relacionado con mi seguridad social. Los recomiendo completamente a quienes busquen una empresa seria y confiable.",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Yurani Garzon",
+    "initial": "Y",
+    "timeAgo": "Hace 4 días",
+    "review": "Me encanta su servicio, son muy amables, gestionando todo ante las eps, me responden por las incapacidades. Los recomiendo muy bien",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "juan pablo muñoz",
+    "initial": "J",
+    "timeAgo": "Hace 4 días",
+    "review": "Muy cumplidos con el servicio, llevo casi 1 año con ellos y hasta el momento todo correcto",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Alejandro Morales",
+    "initial": "A",
+    "timeAgo": "Hace 5 días",
+    "review": "Muy satisfecho con el servicio. Son puntuales, organizados y ofrecen una atención al cliente excelente. Transmiten confianza y seguridad en cada proceso, algo fundamental cuando se trata de la gestión de seguridad social.",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Adriana Jimenez",
+    "initial": "A",
+    "timeAgo": "Hace 7 días",
+    "review": "Tuve una excelente experiencia con ServiPRO Seguros. Desde el primer contacto recibí una atención personalizada, ágil y muy profesional. El trámite fue rápido y sin complicaciones. Sin duda, se los recomiendo a quienes buscan un servicio de seguros eficiente y con calidez humana.",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Future Caicedo",
+    "initial": "F",
+    "timeAgo": "Hace 1 semana",
+    "review": "",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Ingrid PR",
+    "initial": "I",
+    "timeAgo": "Hace 3 semanas",
+    "review": "Excelente servicio de ésta empresa son muy honestos y cumplidores. No he tenido inconvenientes en la atención de los servicios. Son muy correctos en los pagos. La atención del asesor Jhon también es impecable y muy diligente. Sigan así cumpliendo y muchas gracias por todo. Bendiciones 🙏🏻",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "daianna espinosa",
+    "initial": "D",
+    "timeAgo": "Hace 3 semanas",
+    "review": "Estamos muy contentos con el servicio.",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Mónica Gómez Distribuciones Estéticas",
+    "initial": "M",
+    "timeAgo": "Hace 3 semanas",
+    "review": "Recibí una excelente atención en la nueva ubicación en viva Envigado. Una sola sugerencia : como es una burbuja pequeña no se destaca a la vista muy fácil, se que llevan poco pero es bueno un aviso grande donde se destaque que tramitan el Soat. Muchos usuarios vamos buscando este servicio en este centro comercial. Gracias!",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "valentina gomez",
+    "initial": "V",
+    "timeAgo": "Hace 3 semanas",
+    "review": "Vivo agradecida con ustedes todo es muy legal y la atención en cuanto a incapacidades, novedades y dudas que uno tenga están al instante para resolverla, en la Eps nunca he tenido ningun problema con la atención todo ha sido muy eficaz gracias a la seriedad de esta empresa si necesitan afiliarse solos a Eps o planes completos los recomiendo al 100% satisfecha con todos sus servicios",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Ana Rodriguez",
+    "initial": "A",
+    "timeAgo": "Hace 3 semanas",
+    "review": "Excelente servicio, muy eficientes y rápidos. Dan solución inmediata con cordialidad, super recomendados.",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Jorge Castrillon",
+    "initial": "J",
+    "timeAgo": "Hace 4 semanas",
+    "review": "Excelenete servicio, disponibilidad y atencion permanente y de calidad, muy contentos con el apoyo de servipro.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Camila Mazo Restrepo",
+    "initial": "C",
+    "timeAgo": "Hace 1 mes",
+    "review": "ServirPRO es una empresa excelente. Son muy cumplidos, responsables y siempre están pendientes de todo. Se nota el compromiso y la calidad humana de su equipo. Además, manejan todo el tema con mucha seriedad . ¡Los recomiendo con total confianza!👌👏",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Imperio Automotriz",
+    "initial": "I",
+    "timeAgo": "Hace 1 mes",
+    "review": "Excelente servicio y atención requerida de parte de servipro seguros Medellín estoy complacida por la celeridad en la atención los recomiendo ampliamente",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Maria Cardona",
+    "initial": "M",
+    "timeAgo": "Hace 1 mes",
+    "review": "ServirPROSeguros, es una empresa que desde que inicie con ellos en el año 2023 se han destacado por su buen servicio, siempre están ahí para resolverme cualquier inquietud, nunca he tenido ningún inconveniente. Hasta el momento estoy muy contenta con ellos. Muchas gracias",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Paula Ramírez",
+    "initial": "P",
+    "timeAgo": "Hace 1 mes",
+    "review": "Me siento respaldada con ServiPro ya que es una compañía de seguros que brinda un servicio rápido, personalizado y eficiente lo que significa una excelente garantía.",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Lady Ximena Marin Buitrago",
+    "initial": "L",
+    "timeAgo": "Hace 1 mes",
+    "review": "En nombre propio y de mi familia, queremos expresar nuestro agradecimiento por la atención excepcional que ServiPRO Seguros nos ha brindado en todo lo relacionado con los procesos y trámites relacionados con la seguridad social. El compromisos de todos, en particular de nuestro asesor John, su dedicación y compromiso han hecho una gran diferencia en la experiencia del servicio. La calidad de la información que se proporciona ha sido fundamental para mi familia. Además, valoramos enormemente la gestión oportuna y eficiente que realizan ante cada consulta. Muchas gracias, ServiPRO Seguros.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Victor Mario Paniagua Morales",
+    "initial": "V",
+    "timeAgo": "Hace 1 mes",
+    "review": "La verdad es una empresa super confiable y que garantiza la prestación del servicio ,100% recomendada.",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Sergio Pizarro",
+    "initial": "S",
+    "timeAgo": "Hace 1 mes",
+    "review": "Estimados amigos de ServirPro quiero expresarles mi más sincero agradecimiento por el excelente servicio que brindan. Su compromiso, responsabilidad y atención personalizada marcan una gran diferencia y hacen que cada gestión sea ágil y confiable. Es un verdadero placer contar con un equipo tan servicial y profesional, siempre dispuesto a apoyar con amabilidad y eficiencia.Felicitaciones por su dedicación y por mantener la calidad humana que los distingue. ¡Gracias por servir con tanto compromiso y excelencia!",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "juan camilo velez",
+    "initial": "J",
+    "timeAgo": "Hace 1 mes",
+    "review": "\"La verdad, el servicio ha sido muy bueno. Siempre están pendientes, explican todo con claridad y se nota que les importa ayudar a los usuarios . ¡Gracias por prestar un excelente servicio¡",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Daniel García Loaiza",
+    "initial": "D",
+    "timeAgo": "Hace 1 mes",
+    "review": "¡¡Son excelentes!! Siempre me han brindado un servicio de primera, y no he tenido ningún tipo de problemas con respecto a mi afiliación. Cada que tengo inquietudes o necesito alguna información, la respuesta es inmediata. Muy recomendados.",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Valentina Molina",
+    "initial": "V",
+    "timeAgo": "Hace 1 mes",
+    "review": "Es una empresa excelente , brindan un servicio excelente , son muy atentos y amables! Hace un par de años uso su servicio y me ha ido súper bien 👍",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Chucho Martinez",
+    "initial": "C",
+    "timeAgo": "Hace 1 mes",
+    "review": "Los felicito excelente atención, servicio al cliente y sin esperas responden rápido Muy buena asesoría y todo lo que e solicitado me han ayudado gracias 😊 Por eso yo los e recomendado con amigos y gente que nesecitan servicios de afiliación.",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Luz Dary Lopez",
+    "initial": "L",
+    "timeAgo": "Hace 1 mes",
+    "review": "Gracias, ServirPRO, por la confianza que me inspiran, el trato cordial y la atención ágil que siempre nos brindan. Han sido varios años junto a ustedes, demostrándonos en todo momento responsabilidad y compromiso. Gracias... Gracias... Gracias",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Carlos Duarte Ruffo",
+    "initial": "C",
+    "timeAgo": "Hace 1 mes",
+    "review": "la empresa tiene un alto sentido de responsabilidad, compromiso y efectividad. De verdad que la gestión que realizan es bastante agil y eficiente, y siempre en pro del colaborador. La asesoría brindada siempre es oportuna y de calidad.",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Yadelis Chavez",
+    "initial": "Y",
+    "timeAgo": "Hace 1 mes",
+    "review": "Llevo un año y medio con esta empresa y me encanta ! Son responsables están al pendiente de cualquier novedad cuando envío mi pago ! Lo recomiendo muy atentos también en el WhatsApp para dar respuestas ! Es segura y confiable",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Maria fernanda Ibarra caro",
+    "initial": "M",
+    "timeAgo": "Hace 1 mes",
+    "review": "Ha sido la mejor experiencia que he tenido este año, servirpro seguros, una empresa responsable, comprometida con el bienestar de sus usuarios teniendo un equipo comprometido a cualquier requerimiento y novedad que se tiene en cuanto a sus seguros con sus afiliados, siempre pendiente de sus usuarios.lo recomiendo 100%.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Andrea Andre37",
+    "initial": "A",
+    "timeAgo": "Hace 1 mes",
+    "review": "Desde el primer contacto por wsp el asesor me despejó dudas, e incluso fué demasiado honesto con mi caso, porque desde mi desconocimiento pudo haberse aprovechado y lo que hizo fué aconsejarme y al seguir sus consejos decidí pagar mi EPS con ellos. Totalmente confiables, serios y amables.",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Naty Mejia",
+    "initial": "N",
+    "timeAgo": "Hace 1 mes",
+    "review": "Recomendadisimo, serios, seguros y oportunos en sus respuestas.",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Luisa perez",
+    "initial": "L",
+    "timeAgo": "Hace 1 mes",
+    "review": "Recomiendo esta empresa al 100! Son súper juiciosos para mantenerme al día con mis pagos, pagan con puntualidad cada incapacidad, son súper eficientes a cada duda o inquietud que uno tenga, los pagos mes a mes se pueden pagar con mucha facilidad, dan opción de hacerlo directamente en la oficina de ellos o enviando el comprobante de pago. De verdad que no tengo ninguna queja hacia ellos.",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "tatiana remoto ospina",
+    "initial": "T",
+    "timeAgo": "Hace 1 mes",
+    "review": "Sin duda el mejor servicio que he adquirido, no tengo ningún problema con las citas, urgencias, medicamentos, sin duda los recomiendo 1000%, excelente servicio, todo para mi ha sido súper ágil y cómodo, gracias",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Braint Camilo Lopez Quintero",
+    "initial": "B",
+    "timeAgo": "Hace 1 mes",
+    "review": "Servicio 100% confiable, siempre responden rápido ante cualquier inquietud o eventualidad la verdad recomendadisimo",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Nicole Dayanna Gonzalez Rodriguez",
+    "initial": "N",
+    "timeAgo": "Hace 1 mes",
+    "review": "Quiero aprovechar para agradecer por la atención excelente de sebastian, rápido, oportuno! Muy buen servicio, super recomendado.",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Cristian camilo Gallego zuleta",
+    "initial": "C",
+    "timeAgo": "Hace 1 mes",
+    "review": "Servirpro prestan el mejor servicio de Antioquia a las personas independientes son muy oportunos con los tiempos de afiliación y reclamación de incapacidad y en los servicios súper recomendado",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Alejandra Zapata",
+    "initial": "A",
+    "timeAgo": "Hace 1 mes",
+    "review": "Cuidar de la salud también es cuidar del bolsillo 💚. Gracias por este detalle que demuestra su compromiso con nosotros. ¡Así da gusto seguir confiando en su Servicio",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Paulina Serna",
+    "initial": "P",
+    "timeAgo": "Hace 1 mes",
+    "review": "Quiero expresar mi agradecimiento por el excelente servicio que he recibido por parte de ServirPRO. Desde el inicio, el proceso de afiliación fue ágil y claro, y siempre he sentido respaldo por parte del equipo, quienes han sido amables, profesionales y resolutivos ante cualquier inquietud. Ademas me siento tranquila sabiendo que cuento con una entidad comprometida con el bienestar de sus afiliados. ¡Recomiendo ampliamente sus servicios!",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Cybercol Monterrey",
+    "initial": "C",
+    "timeAgo": "Hace 1 mes",
+    "review": "Me encanta, resolvieron todas mis dudas.",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Deivis Daniel Macia montalvo",
+    "initial": "D",
+    "timeAgo": "Hace 2 meses",
+    "review": "Quiero por este medio agradecer la excelente amabilidad y la responsabilidad, de la cual da credibilidad y confianza, en cada proceso de afiliación. A ustedes cómo empresa servirpro muchas gracias 👍",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Gustavo Montoya",
+    "initial": "G",
+    "timeAgo": "Hace 2 meses",
+    "review": "Muy cumplidos",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "Juana Hernández.",
+    "initial": "J",
+    "timeAgo": "Hace 2 meses",
+    "review": "",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "Cristian David Cabrera Villada",
+    "initial": "C",
+    "timeAgo": "Hace 2 meses",
+    "review": "Me parece excelente la atención, rápida, clara y oportuna",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Luz Stella Zuluaga Foronda (Telo)",
+    "initial": "L",
+    "timeAgo": "Hace 2 meses",
+    "review": "El servicio es buenisimo, la atención al cliente es excelente, super recomendado",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Karlitox Mendez",
+    "initial": "K",
+    "timeAgo": "Hace 3 meses",
+    "review": "",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Alirio Rodriguez",
+    "initial": "A",
+    "timeAgo": "Hace 3 meses",
+    "review": "",
+    "bgColor": "bg-blue-500"
+  },
+  {
+    "name": "ANA MARIA LOZANO",
+    "initial": "A",
+    "timeAgo": "Hace 3 meses",
+    "review": "El servicio es excelente.",
+    "bgColor": "bg-red-500"
+  },
+  {
+    "name": "VJ Lau",
+    "initial": "V",
+    "timeAgo": "Hace 3 meses",
+    "review": "",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "name": "Marcela Tobar",
+    "initial": "M",
+    "timeAgo": "Hace 4 meses",
+    "review": "Excelente servicio de verdad, fácil, rápido y seguro. Gracias ☺️",
+    "bgColor": "bg-yellow-500"
+  },
+  {
+    "name": "Alberto Poggioli",
+    "initial": "A",
+    "timeAgo": "Hace 4 meses",
+    "review": "La atención de ServirPro es muy buena, son personas muy diligentes, conocen los temas y responden muy rápido a las consultas, 100% recomendados.",
+    "bgColor": "bg-purple-500"
+  },
+  {
+    "name": "Astrid Peña",
+    "initial": "A",
+    "timeAgo": "Hace 4 meses",
+    "review": "",
+    "bgColor": "bg-blue-500"
+  }
+]
 ---
 
 <!-- Sección de Testimonios -->
@@ -126,17 +598,20 @@ const reviews = [
     <div class="container mx-auto px-4">
         <div class="max-w-9xl mx-auto text-center">
             <!-- Video de YouTube -->
-            <div class="relative w-full max-w-3xl mx-auto mb-16">
-                <div
-                    class="aspect-w-16 aspect-h-9 relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
-                    <iframe class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/6kK-4qD5k_8?si=eBhwNXLzblJbdqwy" title="Testimonios de clientes"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+            {showVideo && (
+                <div class="relative w-full max-w-3xl mx-auto mb-16">
+                    <div class="aspect-w-16 aspect-h-9 relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/6kK-4qD5k_8?si=eBhwNXLzblJbdqwy" 
+                            title="Testimonios de clientes"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
-            </div>
+            )}
 
             <!-- Reseñas de Google -->
             <div class="max-w-full mx-auto px-8 sm:px-12 xl:px-16">
@@ -240,7 +715,7 @@ const reviews = [
 
 <script>
     let currentReviewIndex = 0;
-    const totalReviews = 13;
+    const totalReviews = 80;
     let reviewsPerView = 3; // Por defecto 3 cards en desktop
     let startX = 0;
     let isDragging = false;

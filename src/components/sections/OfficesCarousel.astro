@@ -1,8 +1,9 @@
 ---
 // OfficesCarousel.astro - Carrusel de oficinas
-import { Image } from 'astro:assets';
 
 // Importar imágenes de oficinas
+import oficinaEnvigado01 from '../../assets/images/offices/Oficinaenvigado-01.jpg';
+import oficinaEnvigado02 from '../../assets/images/offices/Oficinaenvigado-02.jpg';
 import oficinaMedellin01 from '../../assets/images/offices/Oficinamedellin-01.webp';
 import oficinaMedellin02 from '../../assets/images/offices/Oficinamedellin-02.webp';
 import oficinaBogota01 from '../../assets/images/offices/Oficinabogota-01.webp';
@@ -32,12 +33,12 @@ import OfficeCard from "../ui/OfficeCard.astro";
             <!-- Contenedor del carrusel -->
             <div class="overflow-hidden" id="carousel-container">
               <div id="offices-carousel" class="flex transition-transform duration-300 ease-in-out">
-                <!-- <OfficeCard
+                <OfficeCard
                     officeKey="envigado"
                     title="CC. Viva Envigado"
-                    images={{ src1: oficinaPereira01, src2: oficinaPereira02, alt1: 'CC. Viva Envigado 1', alt2: 'CC. Viva Envigado 2' }}
-                    mapUrl="https://maps.app.goo.gl/4ik33Hfv3dbTHbFv9"
-                /> -->
+                    images={{ src1: oficinaEnvigado01, src2: oficinaEnvigado02, alt1: 'CC. Viva Envigado 1', alt2: 'CC. Viva Envigado 2' }}
+                    mapUrl="https://maps.app.goo.gl/4ik33Hfv3dbTHbFv9"  
+                />
                 <OfficeCard
                     officeKey="medellin"
                     title="Oficina en Medellín"
@@ -79,7 +80,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
 <script>
     // Variables globales para el carrusel principal
     let currentOfficeIndex = 0;
-    const totalOffices = 3;
+    const totalOffices = 4;
 
     // Auto-rotación del carrusel principal
     let autoTimer = null;
@@ -88,6 +89,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
 
     // Variables para los carruseles de imágenes de cada oficina
     const imageIndexes = {
+        'envigado':0,
         'medellin': 0,
         'bogota': 0,
         'pereira': 0
