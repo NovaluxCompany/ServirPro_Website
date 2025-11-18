@@ -45,8 +45,8 @@ const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
                 {initial}
             </div>
             <div class="md:flex-1 md:min-w-0">
-                <div class="font-semibold text-gray-800 md:truncate">{name}</div>
-                <div class="text-sm text-gray-500">{timeAgo}</div>
+                <div class="font-semibold text-gray-800 md:truncate description">{name}</div>
+                <div class="text-sm text-gray-500 description">{timeAgo}</div>
             </div>
         </div>
           <div class="flex text-yellow-400 mt-1 justify-center md:justify-start">
@@ -60,12 +60,13 @@ const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
         <div class="relative">
             <p 
                 id={reviewId}
-                class="text-gray-700 text-sm text-center md:text-left line-clamp-3 cursor-pointer transition-all duration-200"
+                class="text-gray-700 text-sm text-center md:text-left line-clamp-3 cursor-pointer transition-all duration-200 description"
                 onclick={handleReviewClick}
             >{review}</p>
-            {review.length > 100 && (
+            {review.length > 150 && (
                 <span 
-                    class="text-blue-500 cursor-pointer text-sm font-medium ml-1 mt-1"
+                    class="text-blue-500 cursor-pointer text-sm font-medium ml-1 mt-1 description
+                    "
                     onclick={handleReviewClick}
                 >Ver más</span>
             )}

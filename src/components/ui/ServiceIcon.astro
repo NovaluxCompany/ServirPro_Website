@@ -65,7 +65,7 @@ const titleParts = processTitle(title);
   aria-label={title}
 >
   <div
-    class="bg-white rounded-full w-40 h-40 md:w-44 md:h-44 mx-auto flex flex-col items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 p-3 md:p-4"
+    class="bg-white rounded-full w-40 h-40 md:w-56 md:h-54 mx-auto flex flex-col items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 p-3 md:p-4"
   >
     <div class="mb-2">
       <Image
@@ -76,10 +76,10 @@ const titleParts = processTitle(title);
       />
     </div>
     <h3
-      class="text-xs md:text-sm font-semibold text-gray-900 group-hover:text-servir-blue transition-colors duration-300 text-center leading-tight"
+      class="text-xs md:text-sm font-semibold text-gray-900 group-hover:text-servir-blue transition-colors duration-300 text-center leading-tight description"
     >
       {titleParts.beforeKeyword && <span>{titleParts.beforeKeyword} </span>}
-      <span class="font-bold">{titleParts.keyword}</span>
+      <span class="font-bold description">{titleParts.keyword}</span>
     </h3>
   </div>
 </a>
