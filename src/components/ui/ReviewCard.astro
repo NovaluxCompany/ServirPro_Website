@@ -70,8 +70,7 @@ const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
         if (!reviewElement || !buttonElement) return;
         
         // Verificar si el contenido necesita expansión
-        const isOverflowing = reviewElement.
-         > reviewElement.clientHeight;
+        const isOverflowing = reviewElement.scrollHeight > reviewElement.clientHeight;
         
         // Ocultar el botón si el texto no sobrepasa el límite
         if (!isOverflowing) {
