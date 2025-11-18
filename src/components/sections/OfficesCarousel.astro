@@ -171,7 +171,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
     }
 
     // Función para cambiar de oficina
-    function changeOffice(index) {
+    function changeOffice(index:number) {
         const carousel = document.getElementById("offices-carousel");
         const container = document.getElementById("carousel-container");
         if (!carousel || !container) return;
@@ -227,7 +227,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
     }
 
     // Función para cambiar imagen anterior en el carrusel de fotos
-    function previousImage(office) {
+    function previousImage(office:any) {
         const currentIndex = imageIndexes[office];
         const newIndex = currentIndex === 0 ? 1 : currentIndex - 1;
         imageIndexes[office] = newIndex;
@@ -238,7 +238,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
     }
 
     // Función para cambiar imagen siguiente en el carrusel de fotos
-    function nextImage(office) {
+    function nextImage(office:any) {
         const currentIndex = imageIndexes[office];
         const newIndex = currentIndex === 1 ? 0 : currentIndex + 1;
         imageIndexes[office] = newIndex;
