@@ -48,7 +48,7 @@ const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
         <div class="flex-1 flex flex-col">
             <p 
                 id={reviewId}
-                class="text-gray-700 text-sm text-center md:text-left line-clamp-4 description transition-all duration-300"
+                class="text-gray-700 text-sm text-center md:text-left line-clamp-6 description transition-all duration-300"
             >{review}</p>
             
             <button 
@@ -84,12 +84,12 @@ const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
             if (isExpanded) {
                 // Contraer
                 reviewElement.classList.remove('expanded');
-                reviewElement.classList.add('line-clamp-4');
+                reviewElement.classList.add('line-clamp-6');
                 buttonElement.textContent = 'Ver más';
             } else {
                 // Expandir
                 reviewElement.classList.add('expanded');
-                reviewElement.classList.remove('line-clamp-4');
+                reviewElement.classList.remove('line-clamp-6');
                 buttonElement.textContent = 'Ver menos';
             }
         });
