@@ -120,7 +120,7 @@ const menu = [
             <nav class="hidden lg:flex lg:space-x-8 items-center">
                 <a
                     href="/"
-                    class={`font-bold px-3 py-2 rounded-md text-sm ${currentPath === "/" ? "text-servir-blue" : "gray-text hover:text-servir-blue"}`}
+                    class={`description font-bold px-3 py-2 rounded-md text-sm ${currentPath === "/" ? "text-servir-blue" : "gray-text hover:text-servir-blue"}`}
                 >
                     Inicio
                 </a>
@@ -133,7 +133,7 @@ const menu = [
                         return (
                             <div class="dropdown-group">
                                 <button
-                                    class={`px-3 py-2 text-sm flex items-center font-bold 
+                                    class={`description px-3 py-2 text-sm flex items-center font-bold 
                     ${isActive ? "text-servir-blue" : "gray-text hover:text-servir-blue"}
                 `}
                                 >
@@ -150,7 +150,7 @@ const menu = [
                                         {items.map(({ label: sub, href }) => (
                                             <a
                                                 href={href}
-                                                class={`block px-4 py-2 text-sm 
+                                                class={`description block px-4 py-2 text-sm 
                                 ${
                                     currentPath === href
                                         ? "text-servir-blue font-bold bg-blue-50"
