@@ -1,116 +1,253 @@
 ---
-// Hero Section component - Imagen estática
-import { Image } from 'astro:assets';
-import heroImage from '../../assets/images/hero-carrousel.webp';
-import heroImage2 from '../../assets/images/hero-carrousel1.webp';
+import { Image } from "astro:assets";
 
-import heroImageMobile from '../../assets/images/hero-carrousel_mobile.webp';
-import heroImageMobile1 from '../../assets/images/hero-carrousel_mobile1.webp';
+import heroImage from "../../assets/images/hero-carrousel.webp";
+import heroImage2 from "../../assets/images/hero-carrousel1.webp";
 
+import heroImageMobile from "../../assets/images/hero-carrousel_mobile.webp";
+import heroImageMobile1 from "../../assets/images/hero-carrousel_mobile1.webp";
 
 const desktopSlides = [heroImage, heroImage2];
 const mobileSlides = [heroImageMobile, heroImageMobile1];
 ---
 
-<!-- Sección Principal (Hero) -->
 <section class="relative h-[84vh] md:h-[600px] overflow-hidden">
-    <!-- Carrusel de fondo para desktop -->
-    <div class="absolute inset-0 hidden md:block carousel desktop">
-        {desktopSlides.map((img, idx) => (
-            <Image
-                src={img}
-                alt="Hero slide"
-                class={`hero-slide desktop absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`}
-                loading={idx === 0 ? 'eager' : 'lazy'}
-            />
-        ))}
-        <!-- Flechas de navegación (Desktop a los extremos) -->
-        <button aria-label="Anterior" class="carousel-btn desktop prev absolute top-1/2 left-2 -translate-y-1/2 w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
-          <iconify-icon icon="fa6-solid:chevron-left" class="w-6 h-6 text-white"></iconify-icon>
-        </button>
-        <button aria-label="Siguiente" class="carousel-btn desktop next absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
-          <iconify-icon icon="fa6-solid:chevron-right" class="w-6 h-6 text-white"></iconify-icon>
-        </button>
-    </div>
-    
-    <!-- Carrusel de fondo para mobile -->
-    <div class="absolute inset-0 md:hidden carousel mobile">
-        {mobileSlides.map((img, idx) => (
-            <Image
-                src={img}
-                alt="Hero slide mobile"
-                class={`hero-slide mobile absolute inset-0 w-full  object-cover transition-opacity duration-700 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`}
-                loading={idx === 0 ? 'eager' : 'lazy'}
-                style="height: 100vh"
-            />
-        ))}
-        <!-- (Se moverán las flechas móviles al bloque de contenido) -->
-    </div>
-    <div class="absolute inset-0">
-        <!-- Difuminado Azul -->
-        <div class="hero-overlay absolute inset-0"></div>
-        <!-- Contenido del Hero -->
+  <!-- Desktop Carousel -->
+  <div class="absolute inset-0 hidden md:block carousel desktop">
+    {
+      desktopSlides.map((img, idx) => (
+        <Image
+          src={img}
+          alt="Hero slide"
+          class={`hero-slide desktop absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${idx === 0 ? "opacity-100" : "opacity-0"}`}
+          loading={idx === 0 ? "eager" : "lazy"}
+        />
+      ))
+    }
+
+    <button
+      aria-label="Anterior"
+      class="carousel-btn desktop prev absolute top-1/2 left-2 -translate-y-1/2 w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center z-10"
+    >
+      <iconify-icon icon="fa6-solid:chevron-left" class="w-6 h-6 text-white"
+      ></iconify-icon>
+    </button>
+    <button
+      aria-label="Siguiente"
+      class="carousel-btn desktop next absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center z-10"
+    >
+      <iconify-icon icon="fa6-solid:chevron-right" class="w-6 h-6 text-white"
+      ></iconify-icon>
+    </button>
+  </div>
+
+  <!-- Mobile Carousel -->
+  <div class="absolute inset-0 md:hidden carousel mobile">
+    {
+      mobileSlides.map((img, idx) => (
+        <Image
+          src={img}
+          alt="Hero slide mobile"
+          class={`hero-slide mobile absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${idx === 0 ? "opacity-100" : "opacity-0"}`}
+          loading={idx === 0 ? "eager" : "lazy"}
+        />
+      ))
+    }
+  </div>
+
+  <div class="absolute inset-0">
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <!-- Content -->
+    <div
+      class="relative z-10 p-4 max-w-4xl mx-auto h-full flex items-center md:items-end justify-center text-center pb-12 md:pb-24"
+    >
+      <div class="w-full">
+        <!-- Mobile title + arrows -->
         <div
-            class="relative z-10 p-4 max-w-4xl mx-auto h-full flex items-center md:items-end justify-center text-center pb-12 md:pb-24">
-            <div class="w-full">
-                <!-- Fila de título con flechas (Mobile) -->
-                <div class="md:hidden flex items-center justify-center gap-4 " style="margin-top:173px;margin-bottom:36px">
-                  <button aria-label="Anterior" class="carousel-btn mobile cursor-pointer prev w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
-                    <iconify-icon icon="fa6-solid:chevron-left" class="w-5 h-5 text-white"></iconify-icon>
-                  </button>
-                  <h1 class="text-2xl sm:text-2xl font-medium leading-tight text-white drop-shadow-lg text-center">
-                    <span class="block text-[#aed8f8] font-bold">Pólizas de salud,</span>
-                    <span class="block text-[#aed8f8] font-bold">seguros de vida,</span>
-                    <span class="block">seguros para autos</span>
-                    <span class="whitespace-nowrap">y seguridad social </span>
-                    <span class="inline-block whitespace-nowrap font-bold md:bg-transparent bg-servir-blue/70 md:px-0 px-2 md:py-0 py-1 rounded-lg" style="font-size:23px">con asesoría experta</span>
-                  </h1>
-                  <button aria-label="Siguiente" class="carousel-btn mobile cursor-pointer next w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center">
-                    <iconify-icon icon="fa6-solid:chevron-right" class="w-5 h-5 text-white"></iconify-icon>
-                  </button>
-                </div>
+          class="md:hidden flex items-center justify-center gap-4 mt-[173px] mb-[36px]"
+        >
+          <button
+            aria-label="Anterior"
+            class="carousel-btn mobile cursor-pointer prev w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center"
+          >
+            <iconify-icon
+              icon="fa6-solid:chevron-left"
+              class="w-5 h-5 text-white"></iconify-icon>
+          </button>
 
-                <!-- Título (Desktop, centrado sin flechas dentro) -->
-                <div class="hidden md:block mb-8">
-                  <h1 class="text-3xl lg:text-4xl font-normal text-white leading-tight drop-shadow-lg text-center">
-                    <span class="block text-[#aed8f8] font-bold">Pólizas de salud, seguros de vida,</span>
-                    seguros para autos y seguridad social <span
-                      class="inline-block whitespace-nowrap font-bold  bg-servir-blue/70  px-3 py-1 rounded-lg">con asesoría experta</span>
-                  </h1>
-                </div>
+          <h1
+            id="mobileText"
+            class="text-2xl sm:text-2xl font-medium leading-tight text-white drop-shadow-lg text-center"
+          >
+          </h1>
 
-                <a
-                    href="https://wa.me/573011090186?text=Hola,%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20un%20seguro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-block text-black text-base md:text-lg lg:text-xl font-bold px-16 md:px-24 lg:px-32 py-3 md:py-4 rounded-full transition duration-300 transform hover:scale-105 active:scale-95 cursor-pointer btn-text"
-                    style="background-color: #85C657;">
-                    Cotizar seguro
-                </a>
-            </div>
+          <button
+            aria-label="Siguiente"
+            class="carousel-btn mobile cursor-pointer next w-10 h-10 rounded-full bg-transparent text-white flex items-center justify-center"
+          >
+            <iconify-icon
+              icon="fa6-solid:chevron-right"
+              class="w-5 h-5 text-white"></iconify-icon>
+          </button>
         </div>
-    </div>
 
-    <!-- Script para rotar y controlar el carrusel con flechas -->
-    <script>
-      const setupCarousel = (slideSelector, type, intervalMs = 5000) => {
-        const slides = document.querySelectorAll(slideSelector);
-        if (!slides.length) return;
-        let i = 0;
-        slides.forEach((el, idx) => el.style.opacity = idx === 0 ? '1' : '0');
-        const show = (index) => {
-          slides[i].style.opacity = '0';
-          i = (index + slides.length) % slides.length;
-          slides[i].style.opacity = '1';
-        };
-        const next = () => show(i + 1);
-        const prev = () => show(i - 1);
-        let timer = setInterval(next, intervalMs);
-        const reset = () => { clearInterval(timer); timer = setInterval(next, intervalMs); };
-        document.querySelectorAll(`.carousel-btn.${type}.next`).forEach(btn => btn.addEventListener('click', () => { next(); reset(); }));
-        document.querySelectorAll(`.carousel-btn.${type}.prev`).forEach(btn => btn.addEventListener('click', () => { prev(); reset(); }));
-      };
-      setupCarousel('.hero-slide.desktop', 'desktop', 5000);
-      setupCarousel('.hero-slide.mobile', 'mobile', 5000);
-    </script>
+        <!-- Desktop title -->
+        <div class="hidden md:block mb-8">
+          <h1
+            id="desktopText"
+            class="text-3xl lg:text-4xl font-normal text-white leading-tight drop-shadow-lg text-center"
+          >
+          </h1>
+        </div>
+
+        <!-- CTA VARIABLE -->
+        <a
+          id="ctaButton"
+          class="inline-block text-black text-base md:text-lg lg:text-xl font-bold px-16 md:px-24 lg:px-32 py-3 md:py-4 rounded-full transition duration-300 transform hover:scale-105 active:scale-95 cursor-pointer btn-text opacity-0 pointer-events-none"
+          style="background-color: #85C657;"></a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Full Carousel Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    /* TEXTOS DESKTOP */
+    const desktopTexts = [
+      {
+        titleTop: "Pólizas de salud, seguros de vida,",
+        titleBottom: "seguros para autos y seguridad social",
+        highlight: "con asesoría experta",
+        cta: "Cotizar seguro",
+        ctaLink:
+          "https://wa.me/573011090186?text=Hola, vi el sitio web y quiero cotizar un seguro",
+      },
+      {
+        titleTop: "Te ayudamos a reducir",
+        titleBottom: "la cuota de tu crédito vehicular y",
+        highlight: "ahorrar dinero cada mes",
+        cta: "Quiero asesoría de mi crédito",
+        ctaLink: "https://wa.me/573011090186?text=Necesito%20información",
+      },
+    ];
+
+    /* TEXTOS MOBILE */
+    const mobileTexts = [
+      {
+        line1: "Pólizas de salud,",
+        line2: "seguros de vida,",
+        line3: "seguros para autos",
+        line4: "y seguridad social",
+        highlight: "con asesoría experta",
+        cta: "Cotizar seguro",
+        ctaLink:
+          "https://wa.me/573011090186?text=Hola, vi el sitio web y quiero cotizar un seguro",
+      },
+      {
+        line1: "Te ayudamos a reducir",
+        line2: "la cuota de tu crédito vehicular y",
+        highlight: "ahorrar dinero cada mes",
+        cta: "Quiero asesoría de mi crédito",
+        ctaLink: "https://wa.me/573011090186?text=Necesito%20orientación",
+      },
+    ];
+
+    /* FUNCIÓN CENTRAL */
+    const setupCarousel: any = (
+      slideSelector: any,
+      type: any,
+      intervalMs = 12000,
+      texts = null,
+      textElementId = null,
+    ) => {
+      const slides = document.querySelectorAll(slideSelector);
+      if (!slides.length) return;
+
+      let i = 0;
+      slides.forEach((el, idx) => (el.style.opacity = idx === 0 ? "1" : "0"));
+
+      const textEl = textElementId
+        ? document.getElementById(textElementId)
+        : null;
+      const ctaButton: any = document.getElementById("ctaButton");
+
+      /* ACTUALIZA TEXTOS + BOTÓN */
+      const updateText = (idx: any) => {
+        if (!texts || !textEl) return;
+        const t: any = texts[idx];
+
+        if (type === "desktop") {
+          textEl.innerHTML = `
+          <span class="block text-[#aed8f8] font-bold">${t.titleTop}</span>
+          ${t.titleBottom}
+          <span class="inline-block whitespace-nowrap font-bold bg-servir-blue/70 px-3 py-1 rounded-lg ml-2">${t.highlight}</span>
+        `;
+        }
+
+        if (type === "mobile") {
+          textEl.innerHTML = `
+          ${t.line1 ? `<span class="block text-[#aed8f8] font-bold">${t.line1}</span>` : ""}
+          ${t.line2 ? `<span class="block text-[#aed8f8] font-bold">${t.line2}</span>` : ""}
+          ${t.line3 ? `<span class="block">${t.line3}</span>` : ""}
+          ${t.line4 ? `<span class="block">${t.line4}</span>` : ""}
+          ${t.highlight ? `<span class="inline-block whitespace-nowrap font-bold bg-servir-blue/70 px-2 py-1 rounded-lg text-white mt-1" style="font-size:23px">${t.highlight}</span>` : ""}
+        `;
+        }
+        if (ctaButton) {
+          ctaButton.textContent = t.cta;
+          ctaButton.href = t.ctaLink;
+          ctaButton.classList.remove("opacity-0", "pointer-events-none");
+        }
+      };
+
+      updateText(0);
+
+      const show = (index: any) => {
+        slides[i].style.opacity = "0";
+        i = (index + slides.length) % slides.length;
+        slides[i].style.opacity = "1";
+        updateText(i);
+      };
+
+      const next = () => show(i + 1);
+      const prev = () => show(i - 1);
+
+      let timer = setInterval(next, intervalMs);
+      const reset = () => {
+        clearInterval(timer);
+        timer = setInterval(next, intervalMs);
+      };
+
+      document.querySelectorAll(`.carousel-btn.${type}.next`).forEach((btn) =>
+        btn.addEventListener("click", () => {
+          next();
+          reset();
+        }),
+      );
+
+      document.querySelectorAll(`.carousel-btn.${type}.prev`).forEach((btn) =>
+        btn.addEventListener("click", () => {
+          prev();
+          reset();
+        }),
+      );
+    };
+
+    setupCarousel(
+      ".hero-slide.desktop",
+      "desktop",
+      12000,
+      desktopTexts,
+      "desktopText",
+    );
+    setupCarousel(
+      ".hero-slide.mobile",
+      "mobile",
+      12000,
+      mobileTexts,
+      "mobileText",
+    );
+  });
+</script>
