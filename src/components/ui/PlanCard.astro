@@ -1,79 +1,85 @@
 ---
-
-const { title, description, buttonText, buttonType = 'ver' } = Astro.props;
+const { title, description, buttonText, buttonType = "ver" } = Astro.props;
 ---
 
 <div class="plan-card">
-  <div class="plan-header">{title}</div>
+  <div class="plan-header subtitle">{title}</div>
 
   <div class="plan-body">
-    <p>{description}</p>
+    <p class="description">{description}</p>
   </div>
 
-  <button class={`plan-button ${buttonType === 'cotizar' ? 'btn-cotizar' : 'btn-ver'}`}>
+  <button
+    class={`button-text  plan-button ${buttonType === "cotizar" ? "btn-cotizar" : "btn-ver"}`}
+  >
     {buttonText}
   </button>
 </div>
 
 <style>
-.plan-card {
-  position: relative;
-  background: #fff;
-  border: 2px solid #c2ddf5;
-  border-radius: 15px;
-  width: 324px;
-  height: 139px;
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  box-sizing: border-box;
-}
+  .plan-card {
+    position: relative;
+    background: #fff;
+    border: 2px solid #c2ddf5;
+    border-radius: 15px;
+    width: 324px;
+    height: 139px;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-sizing: border-box;
+  }
 
-/* --- Título superior --- */
-.plan-header {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #5b9bd5;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 600;
-  padding: 0.6rem 1.2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  white-space: nowrap;
-}
+  /* --- Título superior --- */
+  .plan-header {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #5b9bd5;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+  }
 
-/* --- Cuerpo --- */
-.plan-body p {
-  margin: 2rem 0;
-  font-size: 0.95rem;
-  color: #333;
-  font-weight: 500;
-  line-height: 1.3;
-}
+  /* --- Cuerpo --- */
+  .plan-body p {
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.3;
+  }
 
-.plan-button {
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: none;
-  border-radius: 32px;
-  width: 70%;
-  height: 40px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  background-color: #8bc34a;
-  color: #000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-  transition: background-color 0.2s ease;
-}
+  .plan-button {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 32px;
+    width: 70%;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #8bc34a;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease;
+  }
 
-.plan-button:hover {
-  background-color: #7fb640;
-}
+  .plan-button:hover {
+    background-color: #7fb640;
+  }
+  @media (min-width: 1024px) {
+    .plan-body p {
+      margin: 1rem 0;
+    }
+  }
 </style>
