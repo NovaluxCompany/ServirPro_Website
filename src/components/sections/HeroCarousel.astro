@@ -104,6 +104,7 @@ const mobileSlides = [heroImageMobile, heroImageMobile1];
         <!-- CTA VARIABLE -->
         <a
           id="ctaButton"
+          target="_blank"
           class="inline-block text-black text-base md:text-lg lg:text-xl font-bold px-16 md:px-24 lg:px-32 py-3 md:py-4 rounded-full transition duration-300 transform hover:scale-105 active:scale-95 cursor-pointer btn-text opacity-0 pointer-events-none"
           style="background-color: #85C657;"></a>
       </div>
@@ -113,6 +114,8 @@ const mobileSlides = [heroImageMobile, heroImageMobile1];
 
 <!-- Full Carousel Script -->
 <script>
+import { whatsappLinks } from "../../utils/whatsapp";
+
   document.addEventListener("DOMContentLoaded", () => {
     /* TEXTOS DESKTOP */
     const desktopTexts = [
@@ -121,15 +124,14 @@ const mobileSlides = [heroImageMobile, heroImageMobile1];
         titleBottom: "seguros para autos y seguridad social",
         highlight: "con asesoría experta",
         cta: "Cotizar seguro",
-        ctaLink:
-          "https://wa.me/573011090186?text=Hola, vi el sitio web y quiero cotizar un seguro",
+        ctaLink: whatsappLinks.cotizarSeguro,
       },
       {
         titleTop: "Te ayudamos a reducir",
         titleBottom: "la cuota de tu crédito vehicular y",
         highlight: "ahorrar dinero cada mes",
         cta: "Quiero asesoría de mi crédito",
-        ctaLink: "https://wa.me/573011090186?text=Necesito%20información",
+        ctaLink: whatsappLinks.asesoriaCreditoVehicular,
       },
     ];
 
