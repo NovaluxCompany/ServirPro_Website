@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import heroBg from '../../../assets/images/arlEnrollment/Hero.webp';
 import heroBgMobile from '../../../assets/images/arlEnrollment/Hero-mobile.webp';
- 
+ import { whatsappLinks } from "../../../utils/whatsapp";
+
 const policyTitle = "Afiliaciones a solo EPS";
 const subtitle = "Accede fácil y rapido";
 const description = " a tu servicio de salud con respaldo de ServirPRO Seguros.";
@@ -47,7 +48,7 @@ const buttonText = "Afiliarme ahora";
             
     
 
-            <a href="#" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
+            <a href={whatsappLinks.cotizarEps} target="_blank" rel="noopener noreferrer" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
               {buttonText}
             </a>
           </div>
@@ -70,7 +71,7 @@ const buttonText = "Afiliarme ahora";
                 </span>
               </p>
 
-              <a href="#" class="button-text inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
+              <a href={whatsappLinks.cotizarEps} target="_blank" rel="noopener noreferrer" class="button-text inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
                 {buttonText}
               </a>
             </div>

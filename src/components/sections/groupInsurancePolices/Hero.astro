@@ -3,10 +3,14 @@ import { Image } from "astro:assets";
 import heroBg from "../../../assets/images/groupInsurancePolices/Hero.webp";
 import heroBgMobile from "../../../assets/images/groupInsurancePolices/Hero-mobile.webp";
 
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 // HealthPolicySection.astro - Versión con imagen cubriendo 100% de ancho del diseño
 const policyTitle = `Pólizas colectivas`;
 const subtitle = "Asegura tu equipo, tus activos y tu empresa con respaldo, ahorro y cobertura total.";
 const buttonText = "Cotizar póliza";
+
+
 ---
 
 <section
@@ -66,15 +70,14 @@ const buttonText = "Cotizar póliza";
               <p class="text-xl font-medium leading-tight" style="color:#4b4746">
                 {subtitle}
               </p>
-              <!-- <p class="text-xl font-bold text-[#5793ce] leading-tight">
-                {description}
-              </p> -->
             </div>
 
             <!-- Botón -->
             <div class="pt-4">
               <a
-                href="#"
+                href={whatsappLinks.cotizarPoliza}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="button-container button-text inline-block px-8 py-3 text-base font-bold text-black bg-servir-green w-full rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
               >
                 {buttonText}
@@ -98,14 +101,10 @@ const buttonText = "Cotizar póliza";
               >
                 {subtitle}
               </p>
-              <!-- <p
-                class="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold text-[#5793ce] leading-snug font-extrabold mb-6 md:mb-8"
-              >
-                {description}
-              </p> -->
-
               <a
-                href="#"
+                href={whatsappLinks.cotizarPoliza}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="button-text button-container inline-block w-100 mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
               >
                 {buttonText}

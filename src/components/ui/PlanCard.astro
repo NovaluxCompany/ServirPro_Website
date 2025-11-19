@@ -1,5 +1,5 @@
 ---
-const { title, description, buttonText, buttonType = "ver" } = Astro.props;
+const { title, description, buttonText, buttonType = "ver", buttonLink, buttonTarget = "_blank" } = Astro.props;
 ---
 
 <div class="plan-card">
@@ -9,11 +9,14 @@ const { title, description, buttonText, buttonType = "ver" } = Astro.props;
     <p class="description">{description}</p>
   </div>
 
-  <button
-    class={`button-text  plan-button ${buttonType === "cotizar" ? "btn-cotizar" : "btn-ver"}`}
+  <a
+    class={`button-text  flex justify-center items-center plan-button ${buttonType === "cotizar" ? "btn-cotizar" : "btn-ver"}`}
+    href={buttonLink}
+    target={buttonTarget}
+    rel="noopener noreferrer"
   >
     {buttonText}
-  </button>
+</a>
 </div>
 
 <style>

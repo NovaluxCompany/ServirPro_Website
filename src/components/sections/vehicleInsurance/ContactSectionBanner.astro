@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import contactBannerWeb from '../../../assets/images/vehicleInsurance/Contact-banner.webp';
 import contactBannerMobile from '../../../assets/images/vehicleInsurance/Contact-banner-mobile.webp';
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 ---
 
 <!-- Sección de Contacto -->
@@ -43,13 +45,14 @@ import contactBannerMobile from '../../../assets/images/vehicleInsurance/Contact
         <!-- Mobile -->
         <div class="flex flex-col gap-1 pb-8 justify-center items-center w-full sm:hidden">
             <a
-               
+                href={whatsappLinks.hablarConAsesor}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="button-text button-container inline-block text-center w-full px-8 py-4 bg-gray-200 text-black text-lg font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[320px] cursor-pointer">
-                Hablar con un asesor
+                Hablar con un asesor 
             </a>
             <a
+                href={whatsappLinks.cotizarSeguro}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="button-text button-container bg-servir-green inline-block text-center w-full px-8 py-4 text-black text-lg font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[320px] cursor-pointer">
@@ -61,12 +64,14 @@ import contactBannerMobile from '../../../assets/images/vehicleInsurance/Contact
     <!-- Desktop overlay (posicionado hacia la parte inferior de la imagen) -->
     <div class="hidden sm:flex gap-4 justify-center items-center w-full sm:absolute sm:inset-x-0 sm:bottom-10">
         <a
+            href={whatsappLinks.hablarConAsesor}
             target="_blank"
             rel="noopener noreferrer"
             class="button-text button-container inline-block text-center px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 cursor-pointer">
             Hablar con un asesor
         </a>
         <a
+            href={whatsappLinks.cotizarSeguro}
             target="_blank"
             rel="noopener noreferrer"
             class="button-text button-container  bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer">

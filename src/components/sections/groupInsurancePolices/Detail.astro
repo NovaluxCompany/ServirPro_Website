@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BenefitItem from "../../ui/BenefitItem.astro";
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 // Imagen del título
 import tituloImg from "../../../assets/images/groupInsurancePolices/Title.webp";
@@ -79,9 +80,9 @@ de experiencia.`}
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[320px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+  <a href={whatsappLinks.cotizarPolizaColectiva} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[320px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
     Ver planes colectivos
-  </button>
+  </a>
 
 
   <!-- Pasos -->
@@ -113,7 +114,7 @@ de experiencia.`}
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[320px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+  <a href={whatsappLinks.cotizarPoliza} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[320px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
     Cotizar ahora
-  </button>
+  </a>
 </section>

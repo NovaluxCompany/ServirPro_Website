@@ -3,11 +3,13 @@ import { Image } from 'astro:assets';
 import heroBg from '../../../assets/images/health-services/Hero.webp';
 import heroBgMobile from '../../../assets/images/health-services/Hero-mobile.webp';
 
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 // HealthPolicySection.astro - Versión con imagen cubriendo 100% de ancho del diseño
 const policyTitle = "Pólizas de salud";
 const subtitle = "Acceso ilimitado a especialistas y clínicas de alta calidad,";
 const description = "con atención preferencial y cobertura internacional.";
-const buttonText = "Cotizar póliza";
+const buttonText = "Cotizar póliza"; 
 ---
 
 <section class="h-[70vh] min-h-[86vh] max-h-[70vh] sm:h-[100vh] sm:max-h-[80vh] sm:min-h-0 sm:max-h-none">
@@ -48,7 +50,7 @@ const buttonText = "Cotizar póliza";
             
     
 
-            <a href="#" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
+            <a href={whatsappLinks.cotizarPoliza} target="_blank" rel="noopener noreferrer" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
               {buttonText}
             </a>
           </div>
@@ -69,7 +71,7 @@ const buttonText = "Cotizar póliza";
                 {description}
               </p>
 
-              <a href="#" class="button-text inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
+              <a href={whatsappLinks.cotizarPoliza} target="_blank" rel="noopener noreferrer" class="button-text inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
                 {buttonText}
               </a>
             </div>

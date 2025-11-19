@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BenefitItem from "../../ui/BenefitItem.astro";
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 // Imagen del título
 import tituloImg from "../../../assets/images/companyArl/Title.webp";
@@ -83,9 +84,9 @@ para tu empresa.`}
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+  <a href={whatsappLinks.cotizarArlEmpresas} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
     Asesoría gratuita
-  </button>
+  </a>
 
 
   <!-- Pasos -->
@@ -117,7 +118,7 @@ para tu empresa.`}
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+  <a href={whatsappLinks.cotizarArlEmpresas} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
     Asesoría gratuita
-  </button>
+  </a>
 </section>

@@ -13,6 +13,7 @@ import icon2 from '../../../assets/iconos/vehicleInsurance/icon-doc.webp';
 import icon3 from '../../../assets/iconos/vehicleInsurance/icon-tool.webp';
 import icon4 from '../../../assets/iconos/vehicleInsurance/icon-setting.webp';
 import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 ---
 
@@ -71,9 +72,9 @@ import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container  bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+  <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-text button-container  bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
     Cotizar seguro
-  </button>
+  </a>
 
   <!-- Pasos -->
   <div class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative">
@@ -98,8 +99,8 @@ import icon5 from '../../../assets/iconos/vehicleInsurance/icon-bike.webp';
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+  <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
     Cotizar seguro
-  </button>
+  </a>
 
 </section>

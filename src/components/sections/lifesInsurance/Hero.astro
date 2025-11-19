@@ -7,6 +7,8 @@ const policyTitle = "Seguros de vida";
 const subtitle = "Tranquilidad y respaldo económico";
 const description = "para quienes dependen de ti.";
 const buttonText = "Cotizar seguro";
+
+import { whatsappLinks } from "../../../utils/whatsapp";
 ---
 
 <section class="h-[70vh] max-h-[70vh] sm:h-auto sm:max-h-none">
@@ -47,7 +49,7 @@ const buttonText = "Cotizar seguro";
             
     
 
-            <a href="#" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
+            <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
               {buttonText}
             </a>
           </div>
@@ -70,7 +72,7 @@ const buttonText = "Cotizar seguro";
                 </span>
               </p>
 
-              <a href="#" class="inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl btn-text">
+              <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl btn-text">
                 {buttonText}
               </a>
             </div>

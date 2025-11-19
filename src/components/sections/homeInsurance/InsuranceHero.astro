@@ -8,6 +8,8 @@ const policyTitle = `Seguros de hogar`;
 const subtitle = "Protege tu casa, tus bienes y la";
 const description = "tranquilidad de tu familia.";
 const buttonText = "Cotizar seguro";
+
+import { whatsappLinks } from "../../../utils/whatsapp";
 ---
 
 <section
@@ -75,7 +77,9 @@ const buttonText = "Cotizar seguro";
             <!-- Botón -->
             <div class="pt-4">
               <a
-                href="#"
+                href={whatsappLinks.cotizarSeguro}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="button-container button-text inline-block px-8 py-3 text-base font-bold text-black bg-servir-green w-full rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
               >
                 {buttonText}
@@ -106,7 +110,9 @@ const buttonText = "Cotizar seguro";
               </p>
 
               <a
-                href="#"
+                href={whatsappLinks.cotizarSeguro}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="button-text button-container inline-block w-100 mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
               >
                 {buttonText}

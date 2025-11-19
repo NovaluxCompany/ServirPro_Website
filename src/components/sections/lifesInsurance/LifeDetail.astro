@@ -10,6 +10,8 @@ import icon1 from "../../../assets/iconos/lifeInsurance/proteccion-economica.svg
 import icon2 from "../../../assets/iconos/lifeInsurance/respaldo-invalidez.svg";
 import icon3 from "../../../assets/iconos/lifeInsurance/cobertura-deudas.svg";
 import icon4 from "../../../assets/iconos/lifeInsurance/futuro-seguro.svg";
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 ---
 
 <section
@@ -60,9 +62,9 @@ import icon4 from "../../../assets/iconos/lifeInsurance/futuro-seguro.svg";
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+  <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
     Cotizar seguro
-  </button>
+  </a>
 
 
   <!-- Pasos -->
@@ -88,7 +90,7 @@ import icon4 from "../../../assets/iconos/lifeInsurance/futuro-seguro.svg";
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+  <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
     Cotizar seguro
-  </button>
+  </a>
 </section>
