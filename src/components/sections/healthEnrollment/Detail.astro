@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BenefitItem from "../../ui/BenefitItem.astro";
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 // Imagen del título
 import tituloImg from "../../../assets/images/healthEnrollment/afiliacion-titulo.webp";
@@ -20,7 +21,7 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
     <Image
       src={tituloImg}
       alt="Una póliza de salud te brinda"
-      class="mx-auto w-[400px] md:w-[520px]"
+      class="mx-auto w-[400px] md:w-[780px]"
     />
   </div>
 
@@ -58,9 +59,9 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+  <a href={whatsappLinks.cotizarArl} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
     Afiliarme ahora
-  </button>
+  </a>
 
 
   <!-- Pasos -->
@@ -68,25 +69,25 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
     <!-- Paso 1 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >Envía tus datos personales y cargo a realizar.</p>
+      <p class="font-medium text-servir-dark-text step-text description" >Envía tus datos personales y cargo a realizar.</p>
     </div>
 
     <!-- Paso 2 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >Nosotros realizamos el trámite ante la ARL.</p>
+      <p class="font-medium text-servir-dark-text step-text description" >Nosotros realizamos el trámite ante la ARL.</p>
     </div>
 
     <!-- Paso 3 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >En menos de 24 horas recibes tu certificado y puedes comenzar a trabajar.</p>
+      <p class="font-medium text-servir-dark-text step-text description" >En menos de 24 horas recibes tu certificado y puedes comenzar a trabajar.</p>
     </div>
   </div>
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+  <a href={whatsappLinks.cotizarArl} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
     Afiliarme ahora
-  </button>
+  </a>
 </section>

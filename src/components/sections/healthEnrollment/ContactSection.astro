@@ -3,75 +3,114 @@
 import { Image } from "astro:assets";
 import contactWebImage from "../../../assets/images/healthEnrollment/ContactBanner.webp";
 import contactMobileImage from "../../../assets/images/healthEnrollment/ContactBanner-mobile.webp";
+import { whatsappLinks } from "../../../utils/whatsapp";
 ---
 
 <!-- Sección de Tranquilidad con Imagen de Familia -->
-<section class="relative py-0 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden max-h-[600px]  md:min-h-[670px]">
+<section
+    class="relative py-0 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden max-h-[600px] md:min-h-[670px]"
+>
     <!-- Imagen de fondo para desktop -->
-    <Image 
-        src={contactWebImage} 
-        alt="Contacto ServirPRO" 
+    <Image
+        src={contactWebImage}
+        alt="Contacto ServirPRO"
         class="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block"
         loading="lazy"
         quality={90}
     />
-    
+
     <!-- Imagen de fondo para mobile -->
-    <Image 
-        src={contactMobileImage} 
-        alt="Contacto ServirPRO mobile" 
+    <Image
+        src={contactMobileImage}
+        alt="Contacto ServirPRO mobile"
         class="absolute inset-0 w-full h-full object-cover object-top z-0 sm:hidden"
         loading="lazy"
         quality={90}
     />
 
     <!-- Contenido -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[620px] md:min-h-[100vh] sm:min-h-0 flex flex-col justify-between sm:justify-center py-8 sm:py-0">
-        <div class="max-w-2xl mx-auto text-center sm:text-left sm:mx-0 sm:max-w-none flex-grow flex flex-col justify-end sm:justify-start">
+    <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[620px] md:min-h-[100vh] sm:min-h-0 flex flex-col justify-between sm:justify-center py-8 sm:py-0"
+    >
+        <div
+            class="max-w-2xl mx-auto text-center sm:text-left sm:mx-0 sm:max-w-none flex-grow flex flex-col justify-end sm:justify-start"
+        >
             <!-- Título principal -->
-            <h2 class="text-2xl md:text-3xl lg:text-5xl text-center sm:text-left font-bold text-[#3b5881] mb-4 sm:mb-6 mt-8 italic leading-tight" style="font-weight:900">
-                <span class="sm:hidden ">Un accidente laboral puede cambiar tu vida en segundos</span>
-                <span class="hidden sm:inline ">Un accidente laboral<br class="hidden sm:block" /> puede cambiar tu vida<br class="hidden sm:block" /> en segundos.</span>
+            <h2
+                class="text-2xl md:text-3xl lg:text-5xl text-center sm:text-left font-bold text-[#3b5881] mb-4 sm:mb-6 mt-8 italic leading-tight subtitle"
+                style="font-weight:900"
+            >
+                <span class="sm:hidden subtitle"
+                    >Un accidente laboral puede cambiar tu vida en segundos</span
+                >
+                <span class="hidden sm:inline subtitle"
+                    >Un accidente laboral puede <br class="hidden sm:block" /> cambiar
+                    tu vida en segundos.</span
+                >
             </h2>
             <!-- Subtítulo -->
-            <p class="text-lg sm:text-xl lg:text-3xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium text-center sm:text-left" style="font-weight:700;">
-                <span class="sm:hidden">Afíliate con <strong>ServirPRO Seguros</strong> y recibe acompañamiento, respaldo y trámite rápido para trabajar con total tranquilidad.</span>
-                <span class="hidden sm:inline">Afíliate con <strong>ServirPRO Seguros</strong> y <br class="hidden sm:block" /> recibe acompañamiento, respaldo y <br class="hidden sm:block" /> trámite rápido para trabajar con <br class="hidden sm:block" /> total tranquilidad.</span>
-            </p> 
+            <p
+                class="text-lg sm:text-xl lg:text-3xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium text-center sm:text-left subtitle"
+                style="font-weight:700;"
+            >
+                <span class="sm:hidden subtitle"
+                    >Afíliate con <strong>ServirPRO Seguros</strong> y recibe acompañamiento,
+                    respaldo y trámite rápido para trabajar con total tranquilidad.</span
+                >
+                <span class="hidden sm:inline subtitle"
+                    >Afíliate con <strong>ServirPRO Seguros</strong> y <br
+                        class="hidden sm:block"
+                    /> recibe acompañamiento, respaldo y <br
+                        class="hidden sm:block"
+                    /> trámite rápido para trabajar con <br
+                        class="hidden sm:block"
+                    /> total tranquilidad.</span
+                >
+            </p>
         </div>
 
         <!-- Botones (mobile: flujo normal; desktop: overlay inferior con espaciado) -->
         <!-- Mobile -->
-        <div class="flex flex-col gap-1 pb-8 justify-center items-center w-full sm:hidden">
+        <div
+            class="flex flex-col gap-1 pb-8 justify-center items-center w-full sm:hidden"
+        >
             <a
-               
+                href={whatsappLinks.hablarConAsesor}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="button-text button-container inline-block text-center w-full px-8 py-4 bg-gray-200 text-black text-lg font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[320px] cursor-pointer">
+                class="button-text button-container inline-block text-center w-full px-8 py-4 bg-gray-200 text-black text-lg font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[320px] cursor-pointer"
+            >
                 Hablar con un asesor
             </a>
             <a
+                href={whatsappLinks.cotizarArl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="button-text button-container bg-servir-green inline-block text-center w-full px-8 py-4 text-black text-lg font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[320px] cursor-pointer">
-                Asesoría gratuita
+                class="button-text button-container bg-servir-green inline-block text-center w-full px-8 py-4 text-black text-lg font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[320px] cursor-pointer"
+            >
+                Afiliarme ahora
             </a>
         </div>
-
     </div>
     <!-- Desktop overlay (posicionado hacia la parte inferior de la imagen) -->
-    <div class="hidden sm:flex gap-4 justify-center items-center w-full sm:absolute sm:inset-x-0 sm:bottom-10">
+    <div
+        class="hidden sm:flex gap-4 justify-center items-center w-full sm:absolute sm:inset-x-0 sm:bottom-10"
+    >
         <a
+            href={whatsappLinks.hablarConAsesor}
             target="_blank"
             rel="noopener noreferrer"
-            class="button-text button-container inline-block text-center px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 cursor-pointer">
+            class="button-text button-container inline-block text-center px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 cursor-pointer"
+        >
             Hablar con un asesor
         </a>
         <a
+            href={whatsappLinks.cotizarArl}
             target="_blank"
             rel="noopener noreferrer"
-            class="button-text button-container  bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer">
-            Asesoría gratuita
+            class="button-text button-container bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer"
+        >
+            Afiliarme ahora
         </a>
     </div>
 </section>

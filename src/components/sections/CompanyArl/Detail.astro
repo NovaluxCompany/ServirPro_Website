@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BenefitItem from "../../ui/BenefitItem.astro";
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 // Imagen del título
 import tituloImg from "../../../assets/images/companyArl/Title.webp";
@@ -22,7 +23,7 @@ import icon7 from '../../../assets/iconos/lifeInsurance/cobertura-deudas.svg';
     <Image
       src={tituloImg}
       alt="Contar con un intermediario en ARL"
-      class="mx-auto w-[400px] md:w-[520px]"
+      class="mx-auto w-[400px] md:w-[760px]"
     />
   </div>
 
@@ -83,9 +84,9 @@ para tu empresa.`}
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+  <a href={whatsappLinks.cotizarArlEmpresas} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
     Asesoría gratuita
-  </button>
+  </a>
 
 
   <!-- Pasos -->
@@ -93,7 +94,7 @@ para tu empresa.`}
     <!-- Paso 1 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >
+      <p class="font-medium text-servir-dark-text step-text description" >
         Solicita tu asesoría.
       </p>
     </div>
@@ -101,7 +102,7 @@ para tu empresa.`}
     <!-- Paso 2 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >
+      <p class="font-medium text-servir-dark-text step-text description" >
         Recibe acompañamiento gratuito y personalizado.
     </p>
     </div>
@@ -109,7 +110,7 @@ para tu empresa.`}
     <!-- Paso 3 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
-      <p class="font-medium text-servir-dark-text step-text" >
+      <p class="font-medium text-servir-dark-text step-text description" >
         Aprovecha todos los beneficios de tu ARL.
       </p>
     </div>
@@ -117,7 +118,7 @@ para tu empresa.`}
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+  <a href={whatsappLinks.cotizarArlEmpresas} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
     Asesoría gratuita
-  </button>
+  </a>
 </section>

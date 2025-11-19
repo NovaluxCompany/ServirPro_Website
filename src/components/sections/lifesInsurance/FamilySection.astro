@@ -3,6 +3,8 @@
 import { Image } from "astro:assets";
 import contactWebImage from "../../../assets/images/lifeInsurance/familia.webp";
 import contactMobileImage from "../../../assets/images/lifeInsurance/contact-section_mobile.webp";
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 ---
 
 <!-- Sección de Tranquilidad con Imagen de Familia -->
@@ -58,18 +60,18 @@ import contactMobileImage from "../../../assets/images/lifeInsurance/contact-sec
 
       <!-- Desktop: diseño mejorado -->
       <div class="hidden sm:block md:flex md:flex-col md:items-center md:justify-center">
-            <h2 class="text-2xl sm:text-4xl lg:text-4xl lg:text-center font-bold text-[#3b5881] italic leading-tight" style="font-weight:800">
+            <h2 class="text-2xl sm:text-4xl lg:text-4xl lg:text-center font-bold text-[#3b5881] italic leading-tight subtitle mb-6" style="font-weight:800">
                Un seguro de vida es
               más que un contrato...
             </h2>
 
         <p
-          class="text-3xl lg:text-3xl xl:text-3xl text-center leading-tight mb-2 mt-4"
+          class="text-3xl lg:text-3xl xl:text-3xl text-center leading-tight mb-2 mt-4 mb-6 subtitle"
           style="color: #4A4A4A; font-weight: 600;"
         >
           Es la forma de decirle a tu familia<br />
           que, pase lo que pase, <span
-            class="font-extrabold"
+            class="font-extrabold subtitle"
             style="color: #5793ce;">siempre<br />
           estarás ahí para protegerlos.</span>
         </p>
@@ -79,7 +81,7 @@ import contactMobileImage from "../../../assets/images/lifeInsurance/contact-sec
           style="background-color: #5793ce;"
         >
           <p
-            class="text-2xl lg:text-3xl font-black text-white italic text-center"
+            class="text-2xl lg:text-3xl font-black text-white italic text-center subtitle"
             style="line-height: 1.3;"
           >
             Haz hoy el acto de amor más<br />
@@ -93,7 +95,7 @@ import contactMobileImage from "../../../assets/images/lifeInsurance/contact-sec
   <!-- Botones centrados respecto a toda la imagen -->
   <div class="relative z-10  mt-8 md:mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 px-4">
     <a
-      href="https://wa.me/573011090186?text=Hola%20vengo%20desde%20la%20página%20web%20y%20quiero%20tener%20más%20información%20sobre%20los%20servicios"
+      href={whatsappLinks.hablarConAsesor}
       target="_blank"
       rel="noopener noreferrer"
       class="button-text button-container inline-block  text-center w-full sm:w-auto px-12 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 text-lg sm:text-xl"
@@ -102,7 +104,7 @@ import contactMobileImage from "../../../assets/images/lifeInsurance/contact-sec
       Hablar con un asesor
     </a>
     <a
-      href="https://wa.me/573011090186"
+      href={whatsappLinks.cotizarSeguro}
       target="_blank"
       rel="noopener noreferrer"
       class="button-text button-container inline-block text-center w-full sm:w-auto px-12 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 text-lg sm:text-xl"

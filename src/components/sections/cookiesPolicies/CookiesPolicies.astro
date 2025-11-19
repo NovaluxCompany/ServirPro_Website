@@ -1,0 +1,567 @@
+<style>
+@media (max-width: 768px) {
+
+    .cookies-table-wrapper {
+        overflow-x: hidden !important;
+    }
+
+    table.cookies-table {
+        width: 100% !important;
+        min-width: 100% !important;
+        display: block;
+        border: 0;
+    }
+
+    table.cookies-table thead {
+        display: none;
+    }
+
+    table.cookies-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    table.cookies-table tr {
+        display: block;
+        background: white;
+        margin: 15px 0;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        padding: 18px 16px;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* RESET de celdas */
+    table.cookies-table td {
+        display: block;
+        padding: 10px 0 !important;
+        font-size: 18px !important;
+        border-bottom: 1px solid #f1f5f9;
+        word-break: break-word;
+    }
+
+    table.cookies-table td:last-child {
+        border-bottom: none;
+    }
+
+    /* ---------- TITULO (Nombre) ---------- */
+    table.cookies-table td:nth-child(1) {
+        font-size: 22px !important;
+        font-weight: 700;
+        color: #0f172a;
+        border-bottom: none !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 10px;
+    }
+
+    /* ---------- CAMPOS INTERNOS ---------- */
+
+    /* Titular */
+    table.cookies-table td:nth-child(2)::before {
+        content: "Titular: ";
+        font-weight: 700;
+        color: #1e293b;
+    }
+
+    /* Tipo */
+    table.cookies-table td:nth-child(3)::before {
+        content: "Tipo: ";
+        font-weight: 700;
+        color: #1e293b;
+    }
+
+    /* Duración */
+    table.cookies-table td:nth-child(4)::before {
+        content: "Duración: ";
+        font-weight: 700;
+        color: #1e293b;
+    }
+
+    /* ---------- DESCRIPCIÓN (Finalidad) ---------- */
+    table.cookies-table td:nth-child(5) {
+        font-size: 18px !important;
+        margin-top: 12px;
+        border-bottom: none !important;
+    }
+
+    table.cookies-table td:nth-child(5)::before {
+        content: "Finalidad:";
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 700;
+        color: #1e293b;
+    }
+
+}
+</style>
+
+
+
+<section
+    style="
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+"
+>
+    <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 40px;">
+        Política de Cookies
+    </h1>
+
+    <p style="font-size:20px; margin-bottom:25px;">
+        Con nuestra política de cookies queremos informarte cuáles cookies
+        utilizamos, sus finalidades, sus gestores y la forma en que puedes
+        desactivarlas.
+    </p>
+
+    <h2 style="font-size:24px; margin:30px 0 15px;font-weight:700;">
+        Cookies que utilizamos
+    </h2>
+
+    <p style="font-size:20px; margin-bottom:25px;">
+        En nuestro portal web utilizamos las siguientes cookies:
+    </p>
+
+    <!-- TABLA DE COOKIES -->
+    <div
+    class="cookies-table-wrapper"
+    style="
+        overflow-x:auto;
+        border-radius:12px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.05);
+        margin-top:40px;
+        margin-bottom:40px;
+"
+    >
+        <table
+        class="cookies-table"
+        style="
+            width:100%;
+            border-collapse:collapse;
+            font-size:20px;
+            min-width:900px;
+        "
+        >
+            <thead>
+                <tr style="background:#f1f5f9;">
+                    <th
+                        style="padding:14px 12px;text-align:left;border-bottom:2px solid #e2e8f0;font-weight:700;"
+                        >Nombre</th
+                    >
+                    <th
+                        style="padding:14px 12px;text-align:left;border-bottom:2px solid #e2e8f0;font-weight:700;"
+                        >Titular</th
+                    >
+                    <th
+                        style="padding:14px 12px;text-align:left;border-bottom:2px solid #e2e8f0;font-weight:700;"
+                        >Tipo</th
+                    >
+                    <th
+                        style="padding:14px 12px;text-align:left;border-bottom:2px solid #e2e8f0;font-weight:700;"
+                        >Duración</th
+                    >
+                    <th
+                        style="padding:14px 12px;text-align:left;border-bottom:2px solid #e2e8f0;font-weight:700;"
+                        >Finalidad</th
+                    >
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- FILAS AUTOMÁTICAMENTE DE TU LISTADO (SIN CAMBIAR TEXTO) -->
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">aravel_session</td>
+                    <td style="padding:12px;">servirpro.co</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">Sesión</td>
+                    <td style="padding:12px;"
+                        >Contiene información de la navegación del usuario
+                        mientras está en el sitio</td
+                    >
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">viewed_cookie_policy</td>
+                    <td style="padding:12px;">servirpro.co</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">De servicio</td>
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">eintentlvdta</td>
+                    <td style="padding:12px;">servirpro.co</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">De servicio</td>
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;"
+                        >remember_web_59ba36addc2<br/>
+                        b2f9401580f014c7f58ea4e30989d</td
+                    >
+                    <td style="padding:12px;">servirpro.co</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">De servicio</td>
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">XSRF-TOKEN</td>
+                    <td style="padding:12px;">servirpro.co</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">Sesión</td>
+                    <td style="padding:12px;">De servicio</td>
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">cookiespolicy</td>
+                    <td style="padding:12px;">servirpro.co</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">De servicio</td>
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">mailmunch_second_pageview</td>
+                    <td style="padding:12px;">servirpro.co</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicio para Active Campaign</td>
+                </tr>
+
+                <!-- GOOGLE -->
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">CONSENT</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">1P_JAR</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">NID</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">SSID</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">S</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">HSID</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">SAPISID</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">APISID</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">SID</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">SIDCC</td>
+                    <td style="padding:12px;">Google</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;"
+                        >Servicios de Google como Google Analytics, Google Maps,
+                        Youtube o Google ReCaptcha</td
+                    >
+                </tr>
+
+                <!-- FACEBOOK -->
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">sb</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">datr</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">act</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">xs</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">presence</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">spin</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">sesión</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">c_user</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">fr</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">wd</td>
+                    <td style="padding:12px;">Facebook</td>
+                    <td style="padding:12px;">Analítica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Facebook pixel</td>
+                </tr>
+
+                <!-- YOUTUBE -->
+                <tr style="background:#ffffff;">
+                    <td style="padding:12px;">VISITOR_INFO1_LIVE</td>
+                    <td style="padding:12px;">Youtube</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Youtube</td>
+                </tr>
+
+                <tr style="background:#f9fafb;">
+                    <td style="padding:12px;">YSC</td>
+                    <td style="padding:12px;">Youtube</td>
+                    <td style="padding:12px;">Técnica</td>
+                    <td style="padding:12px;">persistentes</td>
+                    <td style="padding:12px;">Servicios de Youtube</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TEXTO EXACTO QUE PEDISTE, SIN EDITAR NI UNA PALABRA -->
+
+    <p style="font-size:20px;line-height:1.6;margin-bottom:25px;">
+        Las cookies de nuestro portal web podrían modificarse en la medida en
+        que actualicemos los contenidos y servicios ofrecidos. Por esta razón le
+        invitamos a que consulte nuestra política con regularidad.
+    </p>
+
+    <h2 style="font-size:24px;font-weight:700;margin-top:30px;">
+        Consentimiento para el uso de las cookies
+    </h2>
+
+    <p style="font-size:20px;line-height:1.6;margin-bottom:25px;">
+        De acuerdo a la finalidad de la cookie tú tienes el derecho de aceptar o
+        no su descarga e instalación en tu dispositivo.
+        <br /><br />
+        Las cookies que tienen una finalidad técnica no necesitan de tu consentimiento
+        para su instalación, ya que son las que permiten el correcto funcionamiento
+        de este Portal Web.
+        <br /><br />
+        Sin embargo, para aquellas que no son técnicas, por ejemplo, las publicitarias
+        puedes aceptar o no su instalación, o si has dado a aceptar, puedes retirar
+        tu consentimiento en cualquier momento. Para ello tienes un panel de configuración
+        en el pie de página de todas las páginas de este Portal web.
+    </p>
+
+    <h2 style="font-size:24px;font-weight:700;margin-top:30px;">
+        Información importante
+    </h2>
+
+    <p style="font-size:20px;line-height:1.6;margin-bottom:25px;">
+        ¿Qué son las cookies?
+        <br /><br />
+        Las cookies son unos pequeños archivos que se pueden descargar en tus equipos
+        (PC. Móvil, Tablet) cuando navegas a través internet.
+        <br /><br />
+        Estas herramientas nos permiten a los gestores de páginas webs recoger, almacenar
+        y recuperar información sobre tus hábitos de navegación. Por ejemplo, nos
+        ayudan a identificarte como usuario, o conocer tus preferencias de compra
+        para poder ofrecerte productos y servicios que sean de tu interés.
+        <br /><br />
+        También nos ayudan a elevar el nivel de seguridad y evitar fraudes al momento
+        de realizar tus compras.
+    </p>
+
+    <h2 style="font-size:24px;font-weight:700;margin-top:30px;">
+        Tipos de cookies.
+    </h2>
+
+    <p style="font-size:20px;line-height:1.6;margin-bottom:25px;">
+        Las cookies tienen varias clasificaciones y categorización. Esta
+        clasificación puede ser:
+        <br /><br />
+        Cookies propias o de terceros: serán cookies propias cuando la información
+        recogida la gestione el propio editor (nosotros). Y de terceros cuando la
+        información recogida se gestione por una entidad distinta, por ejemplo: las
+        cookies que instala Google, ya que la información que recogen sus cookies
+        no las administramos nosotros.
+        <br /><br />
+        Según el plazo de tiempo que permanecen almacenadas en tu navegador estas
+        pueden ser:
+        <br /><br />
+        Cookies de sesión: diseñadas para recabar y almacenar datos mientras el usuario
+        accede a una página web. Se suelen emplear para almacenar información que
+        solo interesa conservar para la prestación del servicio solicitado por el
+        usuario en una sola ocasión.
+        <br /><br />
+        Cookies persistentes: los datos siguen almacenados en el terminal y pueden
+        ser accedidos y tratados durante un periodo definido por el responsable de
+        la cookie, y que puede ir de unos minutos a varios años.
+        <br /><br />
+        Según la finalidad para la que se trate la información obtenida:
+        <br /><br />
+        Cookies técnicas: aquellas que permiten al usuario la navegación a través
+        de una página web, plataforma o aplicación y la utilización de las diferentes
+        opciones o servicios que en ella existan.
+        <br /><br />
+        Cookies de personalización: permiten al usuario acceder al servicio con algunas
+        características de carácter general predefinidas en función de una serie
+        de criterios en el terminal del usuario.
+        <br /><br />
+        Cookies de análisis: permiten al responsable de las mismas, el seguimiento
+        y análisis del comportamiento de los usuarios de los sitios web a los que
+        están vinculadas. La información recogida mediante este tipo de cookies se
+        utiliza en la medición de la actividad de los sitios web, aplicación o plataforma
+        y para la elaboración de perfiles de navegación de los usuarios de dichos
+        sitios, aplicaciones y plataformas, con el fin de introducir mejoras en función
+        del análisis de los datos de uso que hacen los usuarios del servicio.
+        <br /><br />
+        Cookies publicitarias: permiten la gestión, de la forma más eficaz posible,
+        de los espacios publicitarios.
+        <br /><br />
+        Cookies de publicidad comportamental: almacenan información del comportamiento
+        de los usuarios obtenida a través de la observación continuada de sus hábitos
+        de navegación, lo que permite desarrollar un perfil específico para mostrar
+        publicidad en función del mismo.
+        <br /><br />
+        Cookies de redes sociales externas: se utilizan para que los visitantes puedan
+        interactuar con el contenido de diferentes plataformas sociales (facebook,
+        youtube, twitter, linkedIn, Instagram, etc.) y que se generen únicamente
+        para los usuarios de dichas redes sociales. Las condiciones de utilización
+        de estas cookies y la información recopilada se regulan por la política de
+        privacidad de la plataforma social correspondiente.
+    </p>
+
+    <h2 style="font-size:24px;font-weight:700;margin-top:30px;">
+        Cómo modificar la configuración de las cookies desde tu navegador
+    </h2>
+
+    <p style="font-size:20px;line-height:1.6;margin-bottom:25px;">
+        Tú como usuario puedes restringir, bloquear o borrar las cookies de este
+        portal web o de cualquier otro utilizando configurando tus preferencias
+        en tu navegador.
+        <br /><br />
+        En cada navegador la operativa es diferente, puedes encontrar cómo hacerlo
+        en el menú de ayuda de tu navegador, en el cual se establece el procedimiento
+        para su eliminación. Para más información puedes acceder a las siguientes
+        páginas web:
+        <br /><br />
+        Internet Explorer: microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=ie-10
+        <br /><br />
+        FireFox: mozilla.org/es/kb/Borrar%20cookies
+        <br /><br />
+        Chrome: google.com/chrome/answer/95647?hl=es
+        <br /><br />
+        Safari: apple.com/es/privacy/use-of-cookies/
+    </p>
+</section>

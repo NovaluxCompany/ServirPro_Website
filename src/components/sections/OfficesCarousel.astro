@@ -2,79 +2,133 @@
 // OfficesCarousel.astro - Carrusel de oficinas
 
 // Importar imágenes de oficinas
-import oficinaEnvigado01 from '../../assets/images/offices/Oficinaenvigado-01.jpg';
-import oficinaEnvigado02 from '../../assets/images/offices/Oficinaenvigado-02.jpg';
-import oficinaMedellin01 from '../../assets/images/offices/Oficinamedellin-01.webp';
-import oficinaMedellin02 from '../../assets/images/offices/Oficinamedellin-02.webp';
-import oficinaBogota01 from '../../assets/images/offices/Oficinabogota-01.webp';
-import oficinaBogota02 from '../../assets/images/offices/Oficinabogota-02.webp';
-import oficinaPereira01 from '../../assets/images/offices/Oficinapereira-01.webp';   
-import oficinaPereira02 from '../../assets/images/offices/Oficinapereira-02.webp';
+import oficinaEnvigado01 from "../../assets/images/offices/Oficinaenvigado-01.jpg";
+import oficinaEnvigado02 from "../../assets/images/offices/Oficinaenvigado-02.jpg";
+import oficinaMedellin01 from "../../assets/images/offices/Oficinamedellin-01.webp";
+import oficinaMedellin02 from "../../assets/images/offices/Oficinamedellin-02.webp";
+import oficinaBogota01 from "../../assets/images/offices/Oficinabogota-01.webp";
+import oficinaBogota02 from "../../assets/images/offices/Oficinabogota-02.webp";
+import oficinaPereira01 from "../../assets/images/offices/Oficinapereira-01.webp";
+import oficinaPereira02 from "../../assets/images/offices/Oficinapereira-02.webp";
 import OfficeCard from "../ui/OfficeCard.astro";
 ---
 
+<style>
+    .carousel-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 26px;
+        color: #2c3e50;
+        border-radius: 9999px;
+        background: white;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .carousel-btn:hover {
+        background: #f3f3f3;
+        transform: scale(1.1);
+    }
+</style>
 <!-- Contamos con oficinas en -->
 <section id="offices-section" class="bg-servir-blue py-16 md:py-20 relative">
     <div class="max-w-7xl mx-auto px-4">
-        <!-- Título con fondo blanco redondo en la parte superior -->
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-white rounded-full px-12 py-6 shadow-lg">
-                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold whitespace-nowrap text-servir-blue" style="font-style:italic">
-                    Contamos con oficinas en:
-                </h2>
-            </div>
-        </div>
-
         <!-- Espaciado para el título -->
         <div class="pt-12 md:pt-16"></div>
 
         <!-- Carrusel de Cards de Oficinas -->
         <div class="relative">
             <!-- Contenedor del carrusel -->
-            <div class="overflow-hidden" id="carousel-container">
-              <div id="offices-carousel" class="flex transition-transform duration-300 ease-in-out">
-                <OfficeCard
-                    officeKey="envigado"
-                    title="CC. Viva Envigado"
-                    images={{ src1: oficinaEnvigado01, src2: oficinaEnvigado02, alt1: 'CC. Viva Envigado 1', alt2: 'CC. Viva Envigado 2' }}
-                    mapUrl="https://maps.app.goo.gl/4ik33Hfv3dbTHbFv9"  
-                />
-                <OfficeCard
-                    officeKey="medellin"
-                    title="Oficina en Medellín"
-                    images={{ src1: oficinaMedellin01, src2: oficinaMedellin02, alt1: 'Oficina Medellín 1', alt2: 'Oficina Medellín 2' }}
-                    mapUrl="https://maps.app.goo.gl/UXmTfssLjFP8LqVY9?g_st=awb"
-                    details={["Carrera 51 #45-75", "CC. Pioneros - Local 213", "Centro de Medellín, La Candelaria"]}
-                />
-                <OfficeCard
-                    officeKey="bogota"
-                    title="Oficina en Bogotá"
-                    images={{ src1: oficinaBogota01, src2: oficinaBogota02, alt1: 'Oficina Bogotá 1', alt2: 'Oficina Bogotá 2' }}
-                    mapUrl="https://maps.app.goo.gl/xWVsig6u2rkvhwZ19?g_st=awb"
-                    details={["Calle 13# 15-73", "CC. Nodo Móvil 13G - Local 206", "Centro de Bogotá, Los Mártires"]}
-                />
-                <OfficeCard
-                    officeKey="pereira"
-                    title="Oficina en Pereira"
-                    images={{ src1: oficinaPereira01, src2: oficinaPereira02, alt1: 'Oficina Pereira 1', alt2: 'Oficina Pereira 2' }}
-                    mapUrl="https://maps.app.goo.gl/hCAJopm3WZTepwaY9?g_st=ic"
-                    details={["Carrera 8#19-41", "CC. Bolívar Plaza- Local 118", "Plaza Bolívar, Pereira"]}
-                />
+            <div
+                class="overflow-hidden md:px-8 lg:px-8 xl:px-8"
+                id="carousel-container"
+            >
+                <div
+                    id="offices-carousel"
+                    class="flex transition-transform duration-300 ease-in-out"
+                >
+                    <OfficeCard
+                        officeKey="envigado"
+                        title="CC. Viva Envigado"
+                        images={{
+                            src1: oficinaEnvigado01,
+                            src2: oficinaEnvigado02,
+                            alt1: "CC. Viva Envigado 1",
+                            alt2: "CC. Viva Envigado 2",
+                        }}
+                        mapUrl="https://maps.app.goo.gl/oRQPp4ebTXAm61iF9?g_st=ipc",
+                        details={[
+                            "Carrera 48 #32b sur - 139",
+                            "CC. Viva Envigado Piso 2 - Zona Financiera (al frente del Banco Colpatria)"
+                        ]}
+                    />
+                    <OfficeCard
+                        officeKey="medellin"
+                        title="Oficina en Medellín"
+                        images={{
+                            src1: oficinaMedellin01,
+                            src2: oficinaMedellin02,
+                            alt1: "Oficina Medellín 1",
+                            alt2: "Oficina Medellín 2",
+                        }}
+                        mapUrl="https://maps.app.goo.gl/UXmTfssLjFP8LqVY9?g_st=awb"
+                        details={[
+                            "Carrera 51 #45-75",
+                            "CC. Pioneros - Local 213",
+                            "Centro de Medellín, La Candelaria",
+                        ]}
+                    />
+                    <OfficeCard
+                        officeKey="bogota"
+                        title="Oficina en Bogotá"
+                        images={{
+                            src1: oficinaBogota01,
+                            src2: oficinaBogota02,
+                            alt1: "Oficina Bogotá 1",
+                            alt2: "Oficina Bogotá 2",
+                        }}
+                        mapUrl="https://maps.app.goo.gl/xWVsig6u2rkvhwZ19?g_st=awb"
+                        details={[
+                            "Calle 13# 15-73",
+                            "CC. Nodo Móvil 13G - Local 206",
+                            "Centro de Bogotá, Los Mártires",
+                        ]}
+                    />
+                    <OfficeCard
+                        officeKey="pereira"
+                        title="Oficina en Pereira"
+                        images={{
+                            src1: oficinaPereira01,
+                            src2: oficinaPereira02,
+                            alt1: "Oficina Pereira 1",
+                            alt2: "Oficina Pereira 2",
+                        }}
+                        mapUrl="https://maps.app.goo.gl/hCAJopm3WZTepwaY9?g_st=ic"
+                        details={[
+                            "Carrera 8#19-41",
+                            "CC. Bolívar Plaza- Local 118",
+                            "Plaza Bolívar, Pereira",
+                        ]}
+                    />
                 </div>
-             </div>
-            </div>
-
-            <!-- Botones de navegación en la parte inferior -->
-            <div class="flex justify-center mt-8 space-x-4" id="offices-indicators">
-                <button
-                    class="office-indicator w-4 h-4 rounded-full bg-gray-300 shadow-lg border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
-                <button
-                    class="office-indicator w-4 h-4 rounded-full bg-gray-300 shadow-md border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
-                <button
-                    class="office-indicator w-4 h-4 rounded-full bg-gray-300 shadow-md border-2 border-white transition-all duration-300 hover:bg-gray-400 hover:scale-110 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"></button>
             </div>
         </div>
     </div>
+    <button
+        onclick="prevOffice()"
+        class="carousel-btn absolute left-4 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-0 scale-75 sm:scale-100"
+    >
+        ‹
+    </button>
+
+    <button
+        onclick="nextOffice()"
+        class="carousel-btn absolute right-4 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-0 scale-75 sm:scale-100"
+    >
+        ›
+    </button>
 </section>
 
 <script>
@@ -89,10 +143,10 @@ import OfficeCard from "../ui/OfficeCard.astro";
 
     // Variables para los carruseles de imágenes de cada oficina
     const imageIndexes = {
-        'envigado':0,
-        'medellin': 0,
-        'bogota': 0,
-        'pereira': 0
+        envigado: 0,
+        medellin: 0,
+        bogota: 0,
+        pereira: 0,
     };
 
     // Función para iniciar la auto-rotación (simplificada)
@@ -117,66 +171,78 @@ import OfficeCard from "../ui/OfficeCard.astro";
     }
 
     // Función para cambiar de oficina
-    function changeOffice(index) {
-        const carousel = document.getElementById('offices-carousel');
-        const container = document.getElementById('carousel-container');
+    function changeOffice(index:number) {
+        const carousel = document.getElementById("offices-carousel");
+        const container = document.getElementById("carousel-container");
         if (!carousel || !container) return;
 
         const cards = carousel.children;
-        const maxIndex = Math.max(0, cards.length - 1);
-        currentOfficeIndex = Math.min(Math.max(index, 0), maxIndex);
+        const total = cards.length;
 
-        // Obtener el ancho del contenedor (por si se necesita en el futuro)
-        const containerWidth = container.offsetWidth;
+        // índice seguro (loop)
+        currentOfficeIndex = ((index % total) + total) % total;
 
-        // Calcular el desplazamiento acumulado hasta la tarjeta seleccionada
+        // detectar móvil (1 card por vista)
+        const isMobile = window.innerWidth < 640; // sm breakpoint
+
         let totalOffset = 0;
-        for (let i = 0; i < currentOfficeIndex; i++) {
-            const card = cards[i];
-            if (!card) break;
-            totalOffset += card.offsetWidth + 16; // 16px = mx-2 (8px cada lado)
+
+        if (isMobile) {
+            // --- MODO MOBILE: 1 card exacta por vista ---
+            const containerWidth = container.offsetWidth;
+            totalOffset = currentOfficeIndex * containerWidth;
+        } else {
+            // --- MODO DESKTOP: card real + gap dinámico ---
+            totalOffset = 0;
+            for (let i = 0; i < currentOfficeIndex; i++) {
+                const card = cards[i];
+                if (!card) break;
+                const style = window.getComputedStyle(card);
+                const marginRight = parseFloat(style.marginRight);
+                totalOffset += card.offsetWidth + marginRight;
+            }
         }
 
+        // Aplicar movimiento
         carousel.style.transform = `translateX(-${totalOffset}px)`;
-
-        // Actualizar indicadores
-        updateCarouselIndicators();
     }
 
     // Función para actualizar los indicadores del carrusel principal (scope Offices)
     function updateCarouselIndicators() {
-        const buttons = document.querySelectorAll('#offices-indicators .office-indicator');
+        const buttons = document.querySelectorAll(
+            "#offices-indicators .office-indicator",
+        );
         buttons.forEach((btn, index) => {
             if (index === currentOfficeIndex) {
                 // Color activo explicitamente requerido: #90C044
-                btn.classList.remove('bg-gray-300');
-                btn.classList.remove('bg-blue-600');
-                btn.style.backgroundColor = '#90C044';
+                btn.classList.remove("bg-gray-300");
+                btn.classList.remove("bg-blue-600");
+                btn.style.backgroundColor = "#90C044";
             } else {
-                btn.style.backgroundColor = '';
-                btn.classList.remove('bg-blue-600');
-                btn.classList.add('bg-gray-300');
+                btn.style.backgroundColor = "";
+                btn.classList.remove("bg-blue-600");
+                btn.classList.add("bg-gray-300");
             }
         });
     }
 
     // Función para cambiar imagen anterior en el carrusel de fotos
-    function previousImage(office) {
+    function previousImage(office:any) {
         const currentIndex = imageIndexes[office];
         const newIndex = currentIndex === 0 ? 1 : currentIndex - 1;
         imageIndexes[office] = newIndex;
-        
+
         const imageCarousel = document.getElementById(`${office}-images`);
         const translateX = -newIndex * 50;
         imageCarousel.style.transform = `translateX(${translateX}%)`;
     }
 
     // Función para cambiar imagen siguiente en el carrusel de fotos
-    function nextImage(office) {
+    function nextImage(office:any) {
         const currentIndex = imageIndexes[office];
         const newIndex = currentIndex === 1 ? 0 : currentIndex + 1;
         imageIndexes[office] = newIndex;
-        
+
         const imageCarousel = document.getElementById(`${office}-images`);
         const translateX = -newIndex * 50;
         imageCarousel.style.transform = `translateX(${translateX}%)`;
@@ -184,53 +250,71 @@ import OfficeCard from "../ui/OfficeCard.astro";
 
     // Configurar Intersection Observer para detectar cuando la sección es visible
     function setupIntersectionObserver() {
-        const officesSection = document.querySelector('#offices-section');
-        
+        const officesSection = document.querySelector("#offices-section");
+
         if (!officesSection) {
             return;
         }
 
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0]; // Solo hay una entrada
 
-        const observer = new IntersectionObserver((entries) => {
-            const entry = entries[0]; // Solo hay una entrada
-  
-            
-            if (entry.isIntersecting) {
-                // La sección es visible, iniciar auto-rotación
-                isCarouselVisible = true;
-                // Limpiar cualquier timer existente
-                if (autoTimer) {
-                    clearInterval(autoTimer);
+                if (entry.isIntersecting) {
+                    // La sección es visible, iniciar auto-rotación
+                    isCarouselVisible = true;
+                    // Limpiar cualquier timer existente
+                    if (autoTimer) {
+                        clearInterval(autoTimer);
+                    }
+                    // Iniciar nuevo timer
+                    autoTimer = setInterval(() => {
+                        const nextIndex =
+                            (currentOfficeIndex + 1) % totalOffices;
+                        changeOffice(nextIndex);
+                    }, autoIntervalMs);
+                } else {
+                    // La sección no es visible, pausar auto-rotación
+                    isCarouselVisible = false;
+                    if (autoTimer) {
+                        clearInterval(autoTimer);
+                        autoTimer = null;
+                    }
                 }
-                // Iniciar nuevo timer
-                autoTimer = setInterval(() => {
-                    const nextIndex = (currentOfficeIndex + 1) % totalOffices;
-                    changeOffice(nextIndex);
-                }, autoIntervalMs);
-            } else {
-                // La sección no es visible, pausar auto-rotación
-                isCarouselVisible = false;
-                if (autoTimer) {
-                    clearInterval(autoTimer);
-                    autoTimer = null;
-                }
-            }
-        }, {
-            // Configurar el threshold para que se active cuando cualquier parte de la sección sea visible
-            threshold: 0.1,
-            // Agregar un margen para que se active antes
-            rootMargin: '100px 0px 100px 0px'
-        });
+            },
+            {
+                // Configurar el threshold para que se active cuando cualquier parte de la sección sea visible
+                threshold: 0.1,
+                // Agregar un margen para que se active antes
+                rootMargin: "100px 0px 100px 0px",
+            },
+        );
 
         observer.observe(officesSection);
     }
 
+    function nextOffice() {
+        currentOfficeIndex = (currentOfficeIndex + 1) % totalOffices;
+        changeOffice(currentOfficeIndex);
+
+        if (isCarouselVisible) startAutoRotation();
+    }
+    function prevOffice() {
+        currentOfficeIndex =
+            (currentOfficeIndex - 1 + totalOffices) % totalOffices;
+        changeOffice(currentOfficeIndex);
+
+        if (isCarouselVisible) startAutoRotation();
+    }
+
     // Inicializar el carrusel cuando se carga la página
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener("DOMContentLoaded", function () {
         // Configurar los botones indicadores del carrusel principal (solo Offices)
-        const carouselButtons = document.querySelectorAll('#offices-indicators .office-indicator');
+        const carouselButtons = document.querySelectorAll(
+            "#offices-indicators .office-indicator",
+        );
         carouselButtons.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener("click", () => {
                 changeOffice(index);
                 // Reiniciar el timer después de una interacción manual
                 if (isCarouselVisible) {
@@ -246,7 +330,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
         setupIntersectionObserver();
 
         // Habilitar swipe táctil en móviles y arrastre en desktop para el carrusel de oficinas
-        const container = document.getElementById('carousel-container');
+        const container = document.getElementById("carousel-container");
         if (container) {
             let startX = 0;
             let isDragging = false;
@@ -266,7 +350,10 @@ import OfficeCard from "../ui/OfficeCard.astro";
             const onTouchEnd = (e) => {
                 if (!isDragging) return;
                 isDragging = false;
-                const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : startX;
+                const endX =
+                    e.changedTouches && e.changedTouches[0]
+                        ? e.changedTouches[0].clientX
+                        : startX;
                 const delta = endX - startX;
                 if (Math.abs(delta) > threshold) {
                     // delta negativo: swipe a la izquierda -> siguiente oficina
@@ -280,14 +367,25 @@ import OfficeCard from "../ui/OfficeCard.astro";
             };
 
             // Eventos táctiles
-            container.addEventListener('touchstart', onTouchStart, { passive: false });
-            container.addEventListener('touchmove', onTouchMove, { passive: false });
-            container.addEventListener('touchend', onTouchEnd, { passive: false });
+            container.addEventListener("touchstart", onTouchStart, {
+                passive: false,
+            });
+            container.addEventListener("touchmove", onTouchMove, {
+                passive: false,
+            });
+            container.addEventListener("touchend", onTouchEnd, {
+                passive: false,
+            });
 
             // Opcional: soporte de mouse para desktop
             let mouseStartX = 0;
-            const onMouseDown = (e) => { isDragging = true; mouseStartX = e.clientX; };
-            const onMouseMove = (e) => { if (!isDragging) return; };
+            const onMouseDown = (e) => {
+                isDragging = true;
+                mouseStartX = e.clientX;
+            };
+            const onMouseMove = (e) => {
+                if (!isDragging) return;
+            };
             const onMouseUp = (e) => {
                 if (!isDragging) return;
                 isDragging = false;
@@ -301,10 +399,10 @@ import OfficeCard from "../ui/OfficeCard.astro";
                     }
                 }
             };
-            container.addEventListener('mousedown', onMouseDown);
-            container.addEventListener('mousemove', onMouseMove);
-            container.addEventListener('mouseup', onMouseUp);
-            container.addEventListener('mouseleave', onMouseUp);
+            container.addEventListener("mousedown", onMouseDown);
+            container.addEventListener("mousemove", onMouseMove);
+            container.addEventListener("mouseup", onMouseUp);
+            container.addEventListener("mouseleave", onMouseUp);
         }
     });
 
@@ -312,4 +410,6 @@ import OfficeCard from "../ui/OfficeCard.astro";
     window.previousImage = previousImage;
     window.nextImage = nextImage;
     window.changeOffice = changeOffice;
+    window.nextOffice = nextOffice;
+    window.prevOffice = prevOffice;
 </script>

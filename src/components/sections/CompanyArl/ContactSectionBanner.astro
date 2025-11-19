@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import contactBannerWeb from '../../../assets/images/companyArl/Contact-banner.webp';
 import contactBannerMobile from '../../../assets/images/companyArl/Contact-banner-mobile.webp';
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 ---
 
 <!-- Sección de Contacto -->
@@ -28,26 +30,27 @@ import contactBannerMobile from '../../../assets/images/companyArl/Contact-banne
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[620px] md:min-h-screen sm:min-h-0 flex flex-col justify-between sm:justify-center py-8 sm:py-0">
         <div class="max-w-2xl mx-auto text-center sm:mx-0 sm:max-w-none grow flex flex-col  justify-end sm:justify-start">
             <!-- Título principal -->
-            <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold text-[#3b5881] mb-4 sm:mb-6 mt-8 italic leading-tight max-w-[620px] text-center " style="font-weight:900">
-                En ServirPRO Seguros nos encargamos de todo el proceso en ARL,
-            </h2>
-            <!-- Subtítulo -->
-            <p class="text-lg sm:text-xl lg:text-3xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium max-w-[615px] text-center " style="font-weight:700;">
-                para que tú te puedas enfocar en hacer crecer tu empresa..
-            </p> 
+             <span class="max-w-[620px] mt-10">
+                 <span class="text-2xl md:text-3xl lg:text-5xl font-bold text-[#3b5881] mb-4 sm:mb-6 mt-8 italic leading-tight text-center subtitle" style="font-weight:900">
+                     En ServirPRO Seguros nos encargamos de todo el proceso en ARL,
+                 </span><span class="text-lg sm:text-xl lg:text-3xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium max-w-[615px] text-center subtitle" style="font-weight:700;">
+                     para que tú te puedas enfocar en hacer crecer tu empresa..
+                 </span> 
+             </span>
         </div>
 
         <!-- Botones (mobile: flujo normal; desktop: overlay inferior con espaciado) -->
         <!-- Mobile -->
         <div class="flex flex-col gap-1 pb-8 justify-center items-center w-full sm:hidden">
             <a
-               
+                href={whatsappLinks.hablarConAsesor}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="button-text button-container inline-block text-center w-full px-8 py-4 bg-gray-200 text-black text-lg font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[320px] cursor-pointer">
                 Hablar con un asesor
             </a>
             <a
+                href={whatsappLinks.cotizarArlEmpresas}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="button-text button-container bg-servir-green inline-block text-center w-full px-8 py-4 text-black text-lg font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[320px] cursor-pointer">
@@ -59,12 +62,14 @@ import contactBannerMobile from '../../../assets/images/companyArl/Contact-banne
     <!-- Desktop overlay (posicionado hacia la parte inferior de la imagen) -->
     <div class="hidden sm:flex gap-4 justify-center items-center w-full sm:absolute sm:inset-x-0 sm:bottom-10">
         <a
+            href={whatsappLinks.hablarConAsesor}
             target="_blank"
             rel="noopener noreferrer"
             class="button-text button-container inline-block text-center px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 cursor-pointer">
             Hablar con un asesor
         </a>
         <a
+            href={whatsappLinks.cotizarArlEmpresas}
             target="_blank"
             rel="noopener noreferrer"
             class="button-text button-container  bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer">

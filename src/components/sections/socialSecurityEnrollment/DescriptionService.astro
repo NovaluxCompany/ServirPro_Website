@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import PlanCard from "../../ui/PlanCard.astro";
 import tituloImg2 from "../../../assets/images/socialSecurityEnrollment/SecurityPlan-Banner.webp";
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 const planesFila1 = [
     {
@@ -9,18 +10,24 @@ const planesFila1 = [
         description: "Atención médica y servicios de salud.",
         buttonText: "Ver plan",
         buttonType: "ver",
+        buttonLink: '/afiliacion-eps',
+        buttonTarget: '_parent',
     },
     {
         title: "Solo ARL",
         description: "Protección ante accidentes laborales.",
         buttonText: "Ver plan",
         buttonType: "ver",
+        buttonLink: '/afiliacion-arl',
+        buttonTarget: '_parent',
     },
     {
         title: "EPS+ARL",
         description: "Cobertura médica y laboral completa.",
         buttonText: "Cotizar este plan",
-        buttonType: "cotizar",
+        buttonType: "cotizar", 
+        buttonLink: whatsappLinks.cotizarEpsArl,
+        buttonTarget: '_blank',
     },
 ];
 
@@ -30,17 +37,21 @@ const planesFila2 = [
         description: "Seguridad integral para tu presente y tu futuro.",
         buttonText: "Cotizar este plan",
         buttonType: "cotizar",
+        buttonLink: whatsappLinks.cotizarEpsArlPension,
+        buttonTarget: '_blank',
     },
     {
         title: "EPS+ARL+Pensión+Caja",
         description: "Protección total y beneficios para tu familia.",
         buttonText: "Cotizar este plan",
         buttonType: "cotizar",
+        buttonLink: whatsappLinks.cotizarEpsArlPensionCaja,
+        buttonTarget: '_blank',
     },
 ];
 ---
 
-<section class="py-10 md:py-16">
+<section id="planes-afiliaciones" class="py-10 md:py-16">
     <div>
         <Image
             src={tituloImg2}
@@ -49,7 +60,7 @@ const planesFila2 = [
         />
     </div>
     <div class="text-center mt-6">
-        <h1 class="font-medium text-servir-blue-dark font-bolder">
+        <h1 class="font-medium text-servir-blue-dark font-bolder subtitle">
             Elige el plan que se ajuste a tu necesidad y presupuesto.
         </h1>
     </div>

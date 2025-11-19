@@ -21,8 +21,8 @@ const buttonText = "Conocer planes";
       <Image src={heroBgMobile} alt="Pólizas de salud mobile" class="absolute inset-0 w-full h-[80vh] border-none object-cover sm:hidden" />
       
       <!-- Banda de título en tablet y desktop: fija a la derecha -->
-      <div id="title-band" class="hidden sm:block absolute top-24 md:top-24 lg:top-24 right-0 w-[45%] md:w-[40%] bg-servir-blue-dark rounded-l-full rounded-r-none shadow-md z-10 py-3 md:py-4 px-4 md:px-6">
-        <h2 class="font-extrabold text-white leading-tight text-center text-3xl md:text-4xl lg:text-5xl">{policyTitle}</h2>
+      <div id="title-band" class="hidden sm:block absolute top-24 md:top-24 lg:top-24 right-0 w-[45%] md:w-[40%] bg-servir-blue-dark rounded-l-full rounded-r-none shadow-md z-10 py-3 md:py-4 px-4 md:px-6 title">
+        <h2 class="font-extrabold text-white leading-tight text-center text-3xl md:text-4xl lg:text-5xl title">{policyTitle}</h2>
       </div>
       
       <div class="absolute inset-0 bg-opacity-20 sm:hidden"></div>
@@ -47,7 +47,7 @@ const buttonText = "Conocer planes";
             
     
 
-            <a href="#" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
+            <a href="#planes-afiliaciones" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
               {buttonText}
             </a>
           </div>
@@ -61,16 +61,16 @@ const buttonText = "Conocer planes";
           <div class=" md:p-6 lg:p-8">
             <div class="text-center w-full">
               <p class="mb-6 md:mb-8">
-                <span class="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-snug text-[#5793ce] font-extrabold">
+                <span class="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-snug text-[#5793ce] font-extrabold subtitle">
                   {subtitle}
                 </span>
                 
-                <span class="text-base sm:text-lg md:text-2xl lg:text-3xl text-servir-blue-dark font-semibold">
+                <span class="text-base sm:text-lg md:text-2xl lg:text-3xl text-servir-blue-dark font-semibold subtitle">
                   {description}
                 </span>
               </p>
 
-              <a href="#" class="inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
+              <a href="#planes-afiliaciones" class="button-text inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
                 {buttonText}
               </a>
             </div>

@@ -6,21 +6,21 @@ import logoSrc from "../../../assets/logos/Logo.jpg";
 const currentPath = Astro.url.pathname; // <--- importante
 
 const menu = [
-    {
-        label: "Créditos",
-        items: [
-            { label: "Créditos para vehículos", href: "#" },
-            { label: "Compra de Cartera de Vehículos", href: "#" },
-        ],
-    },
+    // {
+    //     label: "Créditos",
+    //     items: [
+    //         { label: "Créditos para vehículos", href: "#" },
+    //         { label: "Compra de Cartera de Vehículos", href: "#" },
+    //     ],
+    // },
     {
         label: "Seguros",
         items: [
             { label: "Seguros para autos y motos", href: "/seguros-vehiculo" },
             { label: "Seguros de vida", href: "/seguros-vida" },
             { label: "Pólizas de salud", href: "/polizas-salud" },
-            { label: "Planes Complementarios", href: "/planes-complementarios" },
-            { label: "Seguros para Hogar", href: "/seguros-hogar" },
+            // { label: "Planes Complementarios", href: "/planes-complementarios" },
+            { label: "Seguros de Hogar", href: "/seguros-hogar" },
         ],
     },
     {
@@ -39,7 +39,7 @@ const menu = [
         items: [
             { label: "Intermediación en ARL", href: "/arl-empresas" },
             { label: "Pólizas colectivas", href: "/polizas-colectivas" },
-            { label: "Trámites de seguridad social", href: "#" },
+            // { label: "Trámites de seguridad social", href: "#" },
         ],
     },
 ];
@@ -57,11 +57,11 @@ const menu = [
         <div class="marquee-track">
             <span class="marquee-item"
                 >ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia
-                y miles de clientes protegidos.</span
+                y miles de clientes satisfechos.</span
             >
             <span class="marquee-item"
                 >ServirPRO: Tu tranquilidad asegurada | +10 años de experiencia
-                y miles de clientes protegidos.</span
+                y miles de clientes satisfechos.</span
             >
         </div>
     </div>
@@ -106,7 +106,7 @@ const menu = [
 
             <!-- Logo (Centrado en Móvil) -->
             <a
-                href="#"
+                href="/"
                 class="flex-shrink-0 lg:ml-0 md:absolute lg:static lg:transform-none"
             >
                 <Image
@@ -120,7 +120,7 @@ const menu = [
             <nav class="hidden lg:flex lg:space-x-8 items-center">
                 <a
                     href="/"
-                    class={`font-bold px-3 py-2 rounded-md text-sm ${currentPath === "/" ? "text-servir-blue" : "gray-text hover:text-servir-blue"}`}
+                    class={`description font-bold px-3 py-2 rounded-md text-sm ${currentPath === "/" ? "text-servir-blue" : "gray-text hover:text-servir-blue"}`}
                 >
                     Inicio
                 </a>
@@ -133,7 +133,7 @@ const menu = [
                         return (
                             <div class="dropdown-group">
                                 <button
-                                    class={`px-3 py-2 text-sm flex items-center font-bold 
+                                    class={`description px-3 py-2 text-sm flex items-center font-bold 
                     ${isActive ? "text-servir-blue" : "gray-text hover:text-servir-blue"}
                 `}
                                 >
@@ -150,7 +150,7 @@ const menu = [
                                         {items.map(({ label: sub, href }) => (
                                             <a
                                                 href={href}
-                                                class={`block px-4 py-2 text-sm 
+                                                class={`description block px-4 py-2 text-sm 
                                 ${
                                     currentPath === href
                                         ? "text-servir-blue font-bold bg-blue-50"
@@ -221,7 +221,7 @@ const menu = [
                         icon="fa6-solid:bars"
                         class="w-8 h-8 text-servir-blue"></iconify-icon>
                 </button>
-                <a href="#" class="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none">
+                <a href="/" class="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none">
                     <Image
                         src={logoSrc}
                         alt="ServirPRO Seguros"

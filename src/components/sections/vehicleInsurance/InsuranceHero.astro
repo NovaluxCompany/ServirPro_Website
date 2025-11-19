@@ -2,13 +2,16 @@
 import { Image } from 'astro:assets';
 import heroBg from '../../../assets/images/vehicleInsurance/Hero.webp';
 import heroBgMobile from '../../../assets/images/vehicleInsurance/Hero-mobile.webp';
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 // HealthPolicySection.astro - Versión con imagen cubriendo 100% de ancho del diseño
 const policyTitle = `Seguros para
-autos y motos`;
+ autos y motos`;
 const subtitle = "Protección total";
 const description = "en tus recorridos diarios.";
 const buttonText = "Cotizar seguro";
+
+
 ---
 
 <section class="h-[70vh] min-h-[70vh] max-h-[70vh] sm:h-[100vh] sm:max-h-[80vh] sm:min-h-0 sm:max-h-none">
@@ -23,8 +26,8 @@ const buttonText = "Cotizar seguro";
       <Image src={heroBgMobile} alt="Seguro vehicular mobile" class="absolute inset-0 w-full h-full border-none object-cover sm:hidden" />
       
       <!-- Banda de título en tablet y desktop: fija a la derecha -->
-      <div id="title-band" class="hidden sm:block absolute top-24 md:top-28 lg:top-28 right-0 w-[45%] md:w-[40%] bg-servir-blue-dark rounded-l-full rounded-r-none shadow-md z-10 py-3 md:py-4 px-4 md:px-6">
-        <h2 class="font-extrabold text-white leading-tight text-center text-3xl md:text-4xl lg:text-5xl whitespace-pre-line">{policyTitle}</h2>
+      <div id="title-band" class="hidden sm:block absolute top-36 md:top-36 lg:top-36 right-0 w-[45%] md:w-[40%] bg-servir-blue-dark rounded-l-full rounded-r-none shadow-md z-10 py-3 md:py-4 px-4 md:px-6">
+        <h2 class="font-extrabold text-white leading-tight text-center text-3xl md:text-4xl lg:text-5xl whitespace-pre-line title">{policyTitle}</h2>
       </div>
       
       <div class="absolute inset-0 bg-opacity-20 sm:hidden"></div>
@@ -50,7 +53,7 @@ const buttonText = "Cotizar seguro";
             
             <!-- Botón -->
             <div class="pt-4">
-              <a href="#" class="button-container button-text inline-block px-8 py-3 text-base font-bold text-black bg-servir-green w-full rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
+              <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-container button-text inline-block px-8 py-3 text-base font-bold text-black bg-servir-green w-full rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
                 {buttonText}
               </a>
             </div>
@@ -64,15 +67,15 @@ const buttonText = "Cotizar seguro";
         <div class="absolute right-0 w-[45%] md:w-[40%] z-10 sm:top-[200px] md:top-[220px] lg:top-[270px]">
           <div class=" md:p-6 lg:p-7">
             <div class="text-center w-full">
-              <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#5793ce] leading-snug font-extrabold">
+              <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#5793ce] leading-snug font-extrabold subtitle">
                 {subtitle}
               </p>
               
-              <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl  mb-6 md:mb-8 font-semibold italic" style="color:#4b4746">
+              <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl  mb-6 md:mb-8 font-semibold italic description" style="color:#4b4746">
                 {description}
               </p>
 
-              <a href="#" class=" button-container inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
+              <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class=" button-container inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl btn-text">
                 {buttonText}
               </a>
             </div>

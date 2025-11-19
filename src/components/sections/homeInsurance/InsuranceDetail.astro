@@ -14,6 +14,8 @@ import icon3 from '../../../assets/iconos/homeInsurance/icon-drop.svg';
 import icon4 from '../../../assets/iconos/homeInsurance/icon-tool.svg';
 import icon5 from '../../../assets/iconos/homeInsurance/icon-home-hand.svg';
 
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 ---
 
 <section class="w-full flex flex-col items-center justify-center text-center px-6 py-16 md:py-10 bg-white">
@@ -72,39 +74,38 @@ import icon5 from '../../../assets/iconos/homeInsurance/icon-home-hand.svg';
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container  bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+  <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-text button-container  bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
     Cotizar seguro
-  </button>
+  </a>
 
   <!-- Pasos -->
   <div class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative">
     <!-- Paso 1 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
-      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line" >Cotiza tu seguro
+      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line description" >Cotiza tu seguro
          en minutos.</p>
     </div>
 
     <!-- Paso 2 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
-      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line" >Elige la cobertura ideal
+      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line description" >Elige la cobertura ideal
         para tu vivienda.</p>
     </div>
 
     <!-- Paso 3 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
-      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line" >Vive con la
-        tranquilidad de tener un hogar
-        protegido.</p>
+      <p class="font-medium text-servir-dark-text step-text whitespace-pre-line description" >Vive con la
+        tranquilidad de tener un hogar protegido.</p>
     </div>
   </div>
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green mb-6">
+  <a href={whatsappLinks.cotizarSeguro} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green mb-6">
     Cotizar seguro
-  </button>
+  </a>
 
 </section>

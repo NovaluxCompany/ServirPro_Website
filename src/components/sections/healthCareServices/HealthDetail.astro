@@ -13,12 +13,14 @@ import icon4 from '../../../assets/iconos/health-services/icon-edificio.svg';
 import icon5 from '../../../assets/iconos/health-services/icon-viaje.svg';
 import icon7 from '../../../assets/iconos/health-services/icon-ambulancia2.svg';
 
+import { whatsappLinks } from "../../../utils/whatsapp";
+
 ---
 
 <section class="w-full flex flex-col items-center justify-center text-center px-6 py-16 md:py-10 bg-white">
   <!-- Imagen del título -->
   <div class="mb-12">
-    <Image src={tituloImg} alt="Una póliza de salud te brinda" class="mx-auto w-[400px] md:w-[420px]"/>
+    <Image src={tituloImg} alt="Una póliza de salud te brinda" class="mx-auto w-[400px] md:w-[580px]"/>
   </div>
 
   <!-- Beneficios -->
@@ -73,35 +75,35 @@ de urgencias, sin salir de casa.`}
   </div>
 
   <!-- Botón Cotizar -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12 button-text">
+  <a href={whatsappLinks.cotizarPoliza} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12 button-text">
     Cotizar póliza
-  </button>
+  </a>
 
   <!-- Pasos -->
   <div class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative">
     <!-- Paso 1 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
-      <p class="font-medium text-servir-dark-text step-text">Cotiza tu póliza en minutos.</p>
+      <p class="font-medium text-servir-dark-text step-text description">Cotiza tu póliza en minutos.</p>
     </div>
 
     <!-- Paso 2 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
-      <p class="font-medium text-servir-dark-text step-text">Elige tu póliza de preferencia.</p>
+      <p class="font-medium text-servir-dark-text step-text description">Elige tu póliza de preferencia.</p>
     </div>
 
     <!-- Paso 3 -->
     <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
-      <p class="font-medium text-servir-dark-text step-text">Disfruta de un servicio exclusivo y tu tranquilidad total.</p>
+      <p class="font-medium text-servir-dark-text step-text description">Disfruta de un servicio exclusivo y tu tranquilidad total.</p>
     </div>
   </div>
 
 
   <!-- Segundo botón -->
-  <button class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green button-text">
+  <a href={whatsappLinks.cotizarPoliza} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green button-text">
     Cotizar póliza
-  </button>
+  </a>
 
 </section>
