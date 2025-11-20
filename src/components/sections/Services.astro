@@ -1,6 +1,22 @@
 ---
 // Services component
 import ServiceIcon from '../ui/ServiceIcon.astro';
+
+// Importar todas las imágenes SVG
+import icon1 from "../../assets/iconos/services/IC-01.svg";
+import icon2 from "../../assets/iconos/services/IC-02.svg";
+import icon3 from "../../assets/iconos/services/IC-03.svg";
+import icon4 from "../../assets/iconos/services/IC-04.svg";
+import icon5 from "../../assets/iconos/services/IC-05.svg";
+import icon6 from "../../assets/iconos/services/IC-06.svg";
+import icon7 from "../../assets/iconos/services/IC-07.svg"; 
+import icon8 from "../../assets/iconos/services/IC-08.svg";
+import icon9 from "../../assets/iconos/services/IC-09.svg";
+import icon10 from "../../assets/iconos/services/IC-10.svg";
+import icon11 from "../../assets/iconos/services/IC-11.svg";
+import icon12 from "../../assets/iconos/services/IC-12.svg";
+import icon13 from "../../assets/iconos/services/IC-13.svg";
+
 ---
 
 <!-- Nuestros Servicios -->
@@ -9,23 +25,31 @@ import ServiceIcon from '../ui/ServiceIcon.astro';
     
     <!-- Título de la sección -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-servir-dark-text">Nuestros Servicios</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-servir-dark-text title">Nuestros Servicios</h2>
+      <h3 class="text-gray-900 mb-4 text-servir-dark-text subtitle">Haz clic en el servicio que deseas conocer.</h2>
+
     </div>
 
     <!-- Grid de servicios -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       
       <!-- Primera fila -->
-      <ServiceIcon iconType="health" title="Pólizas de Salud" />
-      <ServiceIcon iconType="life" title="Seguros de Vida" />
-      <ServiceIcon iconType="auto" title="Seguros para Autos y Motos" />
-      <ServiceIcon iconType="home" title="Seguros para Hogar" />
+      <!-- <ServiceIcon iconType={icon1} title="Créditos para Vehículos" href='/'/> -->
+      <!-- <ServiceIcon iconType={icon2} title="Compra de Cartera Vehículos" href='/'/> -->
+      <ServiceIcon iconType={icon3} title="Seguros para Autos y Motos" href='/seguros-vehiculo'/>
+      <ServiceIcon iconType={icon4} title="Seguros de Vida" href="/seguros-vida" />
+      <ServiceIcon iconType={icon5} title="Pólizas de Salud" href="/polizas-salud" />
+      <!-- <ServiceIcon iconType={icon6} title="Planes complementarios" href="/" /> -->
+      <ServiceIcon iconType={icon7} title="Seguros de Hogar" href='/seguros-hogar' />
 
       <!-- Segunda fila -->
-      <ServiceIcon iconType="eps" title="Afiliaciones a EPS o ARL" />
-      <ServiceIcon iconType="security" title="Planes de Seguridad Social" />
-      <ServiceIcon iconType="business" title="Intermediación ARL Empresas" />
-      <ServiceIcon iconType="group" title="Pólizas Colectivas" />
+      <ServiceIcon iconType={icon8} title="Planes de Seguridad Social"  href='/afiliaciones-seguridad-social' />
+      <ServiceIcon iconType={icon9} title="Afiliaciones a solo EPS" href='/afiliacion-eps' />
+      <ServiceIcon iconType={icon10} title="Afiliaciones a solo ARL" href='/afiliacion-arl' />
+      <ServiceIcon iconType={icon11} title="Intermediación ARL Empresas" href='/arl-empresas' />
+      <ServiceIcon iconType={icon12} title="Pólizas Colectivas" href='/polizas-colectivas'/>
+      <!-- <ServiceIcon iconType={icon13} title="Seguridad social para empresas" href='/'/> -->
+
     </div>
   </div>
 </section>

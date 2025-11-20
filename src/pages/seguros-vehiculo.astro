@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/sections/common/Header.astro";
+import Footer from "../components/sections/common/Footer.astro";
+import Testimonials from "../components/sections/common/Testimonials.astro";
+import InsuranceDescription from "../components/sections/vehicleInsurance/InsuranceDescription.astro";
+import InsuranceDetail from "../components/sections/vehicleInsurance/InsuranceDetail.astro";
+import BannerServirProLocation from "../components/sections/common/BannerServirProLocation.astro";
+import ContactSectionBanner from "../components/sections/vehicleInsurance/ContactSectionBanner.astro";
+import InsuranceHero from "../components/sections/vehicleInsurance/InsuranceHero.astro";
+---
+
+<Layout title="Servicios | ServirPRO">
+  <Header />
+  <main class="bg-white">
+    <InsuranceHero />
+    <InsuranceDescription />
+    <InsuranceDetail />
+    <BannerServirProLocation />
+    <Testimonials />
+    <ContactSectionBanner />
+  </main>
+  <Footer />
+</Layout>

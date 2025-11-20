@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import PlanCard from "../../ui/PlanCard.astro";
+import tituloImg2 from "../../../assets/images/socialSecurityEnrollment/SecurityPlan-Banner.webp";
+import { whatsappLinks } from "../../../utils/whatsapp";
+
+const planesFila1 = [
+    {
+        title: "Solo EPS",
+        description: "Atención médica y servicios de salud.",
+        buttonText: "Ver plan",
+        buttonType: "ver",
+        buttonLink: '/afiliacion-eps',
+        buttonTarget: '_parent',
+    },
+    {
+        title: "Solo ARL",
+        description: "Protección ante accidentes laborales.",
+        buttonText: "Ver plan",
+        buttonType: "ver",
+        buttonLink: '/afiliacion-arl',
+        buttonTarget: '_parent',
+    },
+    {
+        title: "EPS+ARL",
+        description: "Cobertura médica y laboral completa.",
+        buttonText: "Cotizar este plan",
+        buttonType: "cotizar", 
+        buttonLink: whatsappLinks.cotizarEpsArl,
+        buttonTarget: '_blank',
+    },
+];
+
+const planesFila2 = [
+    {
+        title: "EPS+ARL+Pensión",
+        description: "Seguridad integral para tu presente y tu futuro.",
+        buttonText: "Cotizar este plan",
+        buttonType: "cotizar",
+        buttonLink: whatsappLinks.cotizarEpsArlPension,
+        buttonTarget: '_blank',
+    },
+    {
+        title: "EPS+ARL+Pensión+Caja",
+        description: "Protección total y beneficios para tu familia.",
+        buttonText: "Cotizar este plan",
+        buttonType: "cotizar",
+        buttonLink: whatsappLinks.cotizarEpsArlPensionCaja,
+        buttonTarget: '_blank',
+    },
+];
+---
+
+<section id="planes-afiliaciones" class="py-18 md:py-16 bg-white ">
+    <div>
+        <Image
+            src={tituloImg2}
+            alt="Una póliza de salud te brinda"
+            class="mx-auto w-[100%]"
+        />
+    </div>
+    <div class="text-center mt-6">
+        <h1 class="font-medium text-servir-blue-dark font-bolder subtitle">
+            Elige el plan que se ajuste a tu necesidad y presupuesto.
+        </h1>
+    </div>
+
+    <section class="planes-container">
+        <div class="fila fila1">
+            {planesFila1.map((plan) => <PlanCard {...plan} />)}
+        </div>
+
+        <div class="fila fila2">
+            {planesFila2.map((plan) => <PlanCard {...plan} />)}
+        </div>
+    </section>
+</section>
+
+<style>
+.planes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+/* Fila superior con 3 tarjetas */
+.fila1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Fila inferior con 2 tarjetas centradas */
+.fila2 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .fila1, .fila2 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .fila1 > *, .fila2 > * {
+    flex: 1 1 45%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fila1, .fila2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fila1 > *, .fila2 > * {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+</style>

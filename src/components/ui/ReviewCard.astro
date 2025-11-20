@@ -11,16 +11,18 @@ export interface Props {
     bgColor?: string;
 }
 
+const clientId = Math.random().toString(36).substring(2, 9);
+const reviewId = `review-${clientId}`;
+const buttonId = `button-${clientId}`;
+
 const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
-
-
 ---
 
 <div class="flex-none w-full md:w-1/2 px-4 md:px-6">
-    <div class="bg-gray-100 rounded-lg p-8 h-full relative">
+    <div class="bg-gray-100 rounded-lg p-8 min-h-[400px] relative flex flex-col">
         <!-- Icono de Google en la esquina superior derecha -->
         <div class="absolute top-4 right-4">
-            <Image src={googleImage} class="w-6 h-6" alt="Google icon">
+            <Image src={googleImage} class="w-6 h-6" alt="Google icon" />
         </div>
         
         <!-- Layout responsive: centrado en móvil, horizontal en desktop -->
@@ -29,18 +31,88 @@ const { name, initial, timeAgo, review, bgColor = "bg-blue-500" } = Astro.props;
                 {initial}
             </div>
             <div class="md:flex-1 md:min-w-0">
-                <div class="font-semibold text-gray-800 md:truncate">{name}</div>
-                <div class="text-sm text-gray-500">{timeAgo}</div>
+                <div class="font-semibold text-gray-800 md:truncate description">{name}</div>
+                <div class="text-sm text-gray-500 description">{timeAgo}</div>
             </div>
         </div>
-          <div class="flex text-yellow-400 mt-1 justify-center md:justify-start">
-                    <!-- 5 estrellas -->
-                    {Array.from({ length: 5 }).map(() => (
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                    ))}
-                </div>
-        <p class="text-gray-700 text-sm text-center md:text-left">{review}</p>
+        
+        <div class="flex text-yellow-400 mt-1 justify-center md:justify-start mb-4">
+            <!-- 5 estrellas -->
+            {Array.from({ length: 5 }).map(() => (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+            ))}
+        </div>
+        
+        <div class="flex-1 flex flex-col">
+            <p 
+                id={reviewId}
+                class="text-gray-700 text-sm text-center md:text-left line-clamp-6 description transition-all duration-300"
+            >{review}</p>
+            
+            <button 
+                id={buttonId}
+                class="text-blue-500 hover:text-blue-700 text-sm font-medium mt-3 self-center md:self-start transition-colors duration-200"
+            >
+                Ver más
+            </button>
+        </div>
     </div>
 </div>
+
+<script define:vars={{ reviewId, buttonId }}>
+    // Esperar a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+        const reviewElement = document.getElementById(reviewId);
+        const buttonElement = document.getElementById(buttonId);
+        
+        if (!reviewElement || !buttonElement) return;
+        
+        // Verificar si el contenido necesita expansión
+        const isOverflowing = reviewElement.scrollHeight > reviewElement.clientHeight;
+        
+        // Ocultar el botón si el texto no sobrepasa el límite
+        if (!isOverflowing) {
+            buttonElement.style.display = 'none';
+        }
+        
+        // Manejar el clic en el botón
+        buttonElement.addEventListener('click', () => {
+            const isExpanded = reviewElement.classList.contains('expanded');
+            
+            if (isExpanded) {
+                // Contraer
+                reviewElement.classList.remove('expanded');
+                reviewElement.classList.add('line-clamp-6');
+                buttonElement.textContent = 'Ver más';
+            } else {
+                // Expandir
+                reviewElement.classList.add('expanded');
+                reviewElement.classList.remove('line-clamp-6');
+                buttonElement.textContent = 'Ver menos';
+            }
+        });
+    });
+</script>
+
+<style>
+    .line-clamp-6 {
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .expanded {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+    }
+    
+    /* Smooth transition for expanding/collapsing */
+    .transition-all {
+        transition: all 0.3s ease;
+    }
+</style>

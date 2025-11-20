@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+
+import icon1 from "../../../assets/iconos/aditionalServices/servicies1.svg";
+import icon2 from "../../../assets/iconos/aditionalServices/servicies2.svg";
+import icon3 from "../../../assets/iconos/aditionalServices/servicies3.svg";
+
+---
+<section class="bg-gray-200 py-16 px-4 relative mt-20">
+  <div class="max-w-7xl mx-auto">
+    <!-- Panel blanco del título -->
+    <div
+      class="absolute md:left-1/2 md:-translate-x-1/2 -top-10 bg-white px-8 py-3 rounded-xl shadow-lg
+                   flex items-center justify-center z-10"
+    >
+      <h2
+        class="text-center text-3xl md:text-4xl font-bold text-servir-blue title"
+      >
+        En ServirPRO Seguros
+      </h2>
+    </div>
+
+    <!-- Grid de estadísticas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center md:gap-8">
+      <!-- Stat 1 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-6 h-25 md:h-40 flex flex-col justify-end">
+          <Image
+            src={icon1}
+            alt="Icono de servicios"
+            class="w-20 h-20 md:w-30 md:h-30 text-servir-blue"
+          />
+        </div>
+
+        <p class="text-servir-gray text-xl md:text-2xl font-semibold subtitle">
+         + 10 años de experiencia<br />en el mercado.
+        </p>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-6 h-20 md:h-40 flex items-end">
+          <Image
+            src={icon2}
+            alt="Icono de servicios"
+            class="w-20 h-20 md:w-30 md:h-30 text-servir-blue"
+          />
+        </div>
+
+        <h3 class="text-servir-gray text-xl md:text-2xl font-semibold mb-2 subtitle">
+          Oficinas en Envigado, Medellín,<br />Bogotá y Pereira.
+        </h3>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-6 h-20 md:h-40 flex items-end">
+          <Image
+            src={icon3}
+            alt="Icono de servicios"
+            class="w-20 h-20 md:w-30 md:h-30 text-servir-blue"
+          />
+        </div>
+
+        <p
+          class="text-servir-gray text-xl md:text-2xl font-semibold leading-tight subtitle"
+        >
+          Alianza directa con<br />
+          <span class="italic">aseguradoras líderes.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animación opcional para los números */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section > div > div > div {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  section > div > div > div:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  section > div > div > div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  section > div > div > div:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import detailBg from "../../../assets/images/lifeInsurance/Health-detail.webp";
+import detailBgMobile from "../../../assets/images/lifeInsurance/Health-detail-mobile.webp";
+---
+
+<section
+  class="relative bg-cover bg-center bg-no-repeat text-white  overflow-hidden flex flex-col items-center justify-center text-center h-[470px] md:h-[650px] m-0 p-0 md:h-auto  md:px-6 md:py-36"
+>
+  <!-- Imagen de fondo: Desktop y Mobile -->
+  <!-- Desktop -->
+  <Image
+    src={detailBg}
+    alt="Fondo salud detalle"
+    class="absolute inset-0 w-full h-full object-cover hidden md:block md:max-w[95vw]"
+    style="object-fit:contain"
+  />
+  <!-- Mobile -->
+  <Image
+    src={detailBgMobile}
+    alt="Fondo salud detalle móvil"
+    class="absolute inset-0 w-full h-[470px] object-cover md:hidden md:h-full"
+  />
+
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+    <!-- Título -->
+    <div
+      class="bg-servir-blue-banner px-6 py-3 w-[90%] rounded-[20px] inline-block mb-3 md:w-auto md:rounded-lg"
+    >
+      <h2 class="md:text-3xl text-lg font-semibold subtitle">
+        <span class="block md:inline md:text-3xl text-lg subtitle">La vida es</span>
+        <span class="block md:inline font-extrabold italic md:text-3xl text-lg subtitle">incierta</span>
+      </h2>
+    </div>
+
+    <!-- Texto principal del cuerpo -->
+    <p
+      class="text-base md:text-3xl text-lg leading-relaxed mb-8 text-white max-w-[85%] md:max-w-[100%] md:whitespace-pre-line subtitle"
+    >Un accidente o una enfermedad 
+      inesperada pueden cambiarlo todo en segundos.
+    </p>
+
+    <!-- Texto final -->
+    <div
+      class="bg-white text-[#3b5881] font-extrabold italic rounded-2xl px-8 py-5 inline-block shadow-md md:text-3xl text-lg leading-snug mx-[23px] md:mx-0 subtitle"
+    >
+      <p class="md:whitespace-pre-line p-0 m-0 subtitle">Sin un respaldo, tu familia podría
+        enfrentar deudas, gastos diarios y un
+        futuro incierto sin ti.
+      </p>
+    </div>
+  </div>
+</section>

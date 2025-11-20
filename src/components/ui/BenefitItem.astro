@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  icon: ImageMetadata;
+  alt: string;
+  text: string;
+  colSpan?: boolean;
+  showBorder?: boolean;
+  showBorderMobileOnly?: boolean;
+}
+
+const {
+  icon,
+  alt,
+  text,
+  colSpan = false,
+  showBorder = false,
+  showBorderMobileOnly = false,
+} = Astro.props;
+
+// Determinar las clases de borde
+let borderClasses = "";
+if (showBorderMobileOnly) {
+  borderClasses =
+    "border-b-2 border-servir-blue border-line-width-mobile md:border-b-0";
+} else if (showBorder) {
+  borderClasses = "border-b-2 border-servir-blue border-line-width";
+}
+---
+
+<style>
+  .border-line-width {
+    border-bottom-width: 1.5px;
+  }
+  @media (max-width: 768px) {
+    .border-line-width-mobile {
+      border-bottom-width: 1.5px;
+    }
+  }
+</style>
+
+<div
+  class={`flex items-center gap-4 pb-3 ${borderClasses} ${colSpan ? "md:col-span-2" : ""}`}
+>
+  <Image
+    src={icon}
+    alt={alt}
+    class="w-12 h-12 shrink-0 text-servir-blue-banner"
+  />
+  <p
+    class="text-left font-semibold text-servir-gray-text sm:whitespace-pre-line description"
+  >
+    {text}
+  </p>
+</div>

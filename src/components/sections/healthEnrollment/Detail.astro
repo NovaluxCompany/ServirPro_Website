@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import BenefitItem from "../../ui/BenefitItem.astro";
+import { whatsappLinks } from "../../../utils/whatsapp";
+
+// Imagen del título
+import tituloImg from "../../../assets/images/healthEnrollment/afiliacion-titulo.webp";
+
+// Iconos
+import icon1 from "../../../assets/iconos/healthEnrollment/icon1.webp";
+import icon2 from "../../../assets/iconos/healthEnrollment/icon2.webp";
+import icon3 from "../../../assets/iconos/healthEnrollment/icon3.webp";
+import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
+---
+
+<section
+  class="w-full flex flex-col items-center justify-center text-center px-6 py-10 md:py-16 bg-white"
+>
+  <!-- Imagen del título -->
+  <div class="mb-12">
+    <Image
+      src={tituloImg}
+      alt="Una póliza de salud te brinda"
+      class="mx-auto w-[400px] md:w-[780px]"
+    />
+  </div>
+
+  <!-- Beneficios -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
+    <BenefitItem
+      icon={icon1}
+      alt="Atención médica ante accidentes"
+      text={`Atención médica ante accidentes.`}
+      showBorder={true}
+    />
+
+    <BenefitItem
+      icon={icon2}
+      alt="Pago de incapacidades"
+      text={`Pago de incapacidades.`}
+      showBorder={true}
+    />
+
+    <BenefitItem
+      icon={icon3}
+      alt="Rehabilitación y tratamientos sin costo adicional"
+      text={`Rehabilitación y tratamientos 
+      sin costo adicional.`}
+      showBorderMobileOnly={true}
+    />
+
+    <BenefitItem
+      icon={icon4}
+      alt="Cumplimiento legal para prestar tus servicios"
+      text={`Cumplimiento legal para
+      prestar tus servicios.`}
+    
+    />
+  </div>
+
+  <!-- Botón Cotizar -->
+  <a href={whatsappLinks.cotizarArl} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
+    Afiliarme ahora
+  </a>
+
+
+  <!-- Pasos -->
+  <div class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative">
+    <!-- Paso 1 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
+      <p class="font-medium text-servir-dark-text step-text description" >Envía tus datos personales y cargo a realizar.</p>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
+      <p class="font-medium text-servir-dark-text step-text description" >Nosotros realizamos el trámite ante la ARL.</p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
+      <p class="font-medium text-servir-dark-text step-text description" >En menos de 24 horas recibes tu certificado y puedes comenzar a trabajar.</p>
+    </div>
+  </div>
+
+
+  <!-- Segundo botón -->
+  <a href={whatsappLinks.cotizarArl} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
+    Afiliarme ahora
+  </a>
+</section>

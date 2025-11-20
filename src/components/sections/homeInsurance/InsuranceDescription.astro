@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import detailBg from "../../../assets/images/homeInsurance/Detail-Banner.webp";
+import detailBgMobile from "../../../assets/images/homeInsurance/Detail-Banner-mobile.webp";
+---
+
+<section
+  class="relative bg-cover bg-center bg-no-repeat text-white overflow-hidden flex flex-col items-center justify-center text-center h-[600px] md:h-auto  m-0 p-0  md:px-2 md:py-30 lg:py-38 md:bg-transparent bg-servir-blue  md:rounded-none mx-0"
+>
+  <!-- Imagen de fondo: Desktop y Mobile -->
+  <!-- Desktop -->
+  <Image
+    src={detailBg}
+    alt="Fondo salud detalle"
+    class="absolute inset-0 w-full h-[720px] lg:object-contain md:object-cover hidden md:block"
+  />
+  <!-- Mobile -->
+  <Image
+    src={detailBgMobile}
+    alt="Fondo salud detalle móvil"
+    class="absolute inset-0 w-full h-[450px] object-contain opacity-60 md:opacity-100 md:hidden md:h-full"
+  />
+
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center min-w-[70%]">
+    <!-- Título -->
+    <div
+      class="bg-servir-blue-banner p-[20px] md:px-10 md:py-3 w-[89%] md:w-[100%] md:w-100 rounded-[20px] inline-block mb-2 md:rounded-2xl mb-10"
+    >
+      <h2 class="text-2xl md:text-3xl font-semibold sm:text-lg subtitle">
+        <span class="block md:inline md:whitespace-pre-line md:text-3xl text-lg subtitle"
+          >Un imprevisto en casa puede ocurrir en segundos:</span
+        >
+      </h2>
+    </div>
+
+    <!-- Texto intermedio (solo mobile) -->
+    <p class="text-white text-lg md:text-3xl leading-relaxed w-[77%] mb-8 subtitle">
+      Una fuga, un corto eléctrico o un robo pueden generar pérdidas altas y
+      estrés.
+    </p>
+
+    <!-- Texto final -->
+    <div
+      class="bg-white text-[#3b5881]  w-[90%]  md:w-[90%] font-extrabold italic rounded-2xl p-[23px] md:px-8 md:py-5 inline-block shadow-md text-lg md:text-3xl leading-snug mx-[23px] md:mx-0 subtitle"
+    >
+      <p>
+        Sin un seguro, reparar los daños o reemplazar tus bienes puede convertirse en una carga económica enorme.
+      </p>
+    </div>
+  </div>
+</section>
