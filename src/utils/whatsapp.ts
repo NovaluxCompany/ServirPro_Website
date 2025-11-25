@@ -40,4 +40,7 @@ export const whatsappLinks = {
     comprarSoat: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero comprar un SOAT"
     )}`,
+    genericMessage: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi su página web y quiero más información sobre un servicio"
+    )}`,
 };
