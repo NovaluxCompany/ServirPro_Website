@@ -1,4 +1,5 @@
 ---
+import FloatingWppButton from '../components/sections/common/FloatingWppButton.astro';
 import '../styles/global.css';
 
 export interface Props {
@@ -118,7 +119,7 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
   </head>
   <body class="font-sans antialiased bg-gray-50">
     <slot />
-    
+    <FloatingWppButton />
     <!-- Script para la interactividad del menú responsive -->
     <script>
       // Variables globales
