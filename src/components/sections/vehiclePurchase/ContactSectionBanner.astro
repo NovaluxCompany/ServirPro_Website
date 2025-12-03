@@ -1,16 +1,15 @@
 ---
 import { Image } from 'astro:assets';
-import contactBannerWeb from '../../../assets/images/vehicleInsurance/Contact-banner.webp';
-import contactBannerMobile from '../../../assets/images/vehicleInsurance/Contact-banner-mobile.webp';
+import contactBannerWeb from '../../../assets/images/vehiclePurchase/Contact-banner.webp';
+import contactBannerMobile from '../../../assets/images/vehiclePurchase/Contact-banner-mobile.webp';
 import { whatsappLinks } from "../../../utils/whatsapp";
 
 ---
-
 <!-- Sección de Contacto -->
 <section class="relative py-0 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden max-h-[600px]  md:min-h-[670px]">
     <!-- Imagen de fondo para desktop -->
     <Image 
-        src={contactBannerWeb} 
+        src={contactBannerWeb}   
         alt="Contacto ServirPRO" 
         class="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block"
         loading="lazy"
@@ -31,13 +30,13 @@ import { whatsappLinks } from "../../../utils/whatsapp";
         <div class="max-w-2xl mx-auto text-center sm:text-left sm:mx-0 sm:max-w-none flex-grow flex flex-col justify-center sm:justify-start">
             <!-- Título principal -->
             <h2 class="text-2xl md:text-3xl lg:text-5xl text-center sm:text-left font-bold text-[#3b5881] mb-4 sm:mb-4 mt-8 italic leading-tight" style="font-weight:900">
-                <span class="sm:hidden subtitle">Un seguro no solo protege tu vehículo...</span>
-                <span class="hidden sm:inline subtitle">Un seguro no solo protege tu vehículo...</span>
+                <span class="sm:hidden subtitle">¿Listo para bajar la cuota de tu crédito?</span>
+                <span class="hidden sm:inline subtitle">¿Listo para bajar la cuota de tu crédito?</span>
             </h2>
             <!-- Subtítulo -->
             <p class="text-lg sm:text-xl lg:text-3xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium text-center sm:text-left subtitle" style="font-weight:700;">
-                <span class="sm:hidden subtitle">También cuida tu tranquilidad y quienes viajan contigo.</span>
-                <span class="hidden sm:inline subtitle">También cuida tu tranquilidad y a <br class="hidden sm:block" /> quienes viajan contigo.</span>
+                <span class="sm:hidden subtitle">Haz clic y un asesor te ayudará a calcular tu ahorro</span>
+                <span class="hidden sm:inline subtitle">Haz clic y un asesor te ayudará a calcular tu ahorro</span>
             </p> 
         </div>
 
@@ -48,15 +47,15 @@ import { whatsappLinks } from "../../../utils/whatsapp";
                 href={whatsappLinks.hablarConAsesor}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="button-text button-container inline-block text-center w-full px-8 py-4 bg-gray-200 text-black text-lg font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[320px] cursor-pointer">
-                Hablar con un asesor 
+                class="button-text button-container inline-block text-center w-full px-12 py-4 bg-gray-200 text-black text-lg font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 min-w-[350px] max-w-[350px] cursor-pointer">
+                Quiero que me contacten
             </a>
             <a
                 href={whatsappLinks.cotizarSeguro}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="button-text button-container bg-servir-green inline-block text-center w-full px-8 py-4 text-black text-lg font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[320px] cursor-pointer">
-                Cotizar seguro
+                class="button-text button-container bg-servir-green inline-block text-center w-full px-12 py-4 text-black text-lg font-bold rounded-full hover:opacity-90 transition-colors duration-300 min-w-[350px] max-w-[350px] cursor-pointer">
+                Bajar la cuota de mi crédito 
             </a>
         </div>
 
@@ -68,14 +67,14 @@ import { whatsappLinks } from "../../../utils/whatsapp";
             target="_blank"
             rel="noopener noreferrer"
             class="button-text button-container inline-block text-center px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 cursor-pointer">
-            Hablar con un asesor
+            Quiero que me contacten
         </a>
         <a
             href={whatsappLinks.cotizarSeguro}
             target="_blank"
             rel="noopener noreferrer"
             class="button-text button-container  bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer">
-            Cotizar seguro
+            Bajar la cuota de mi crédito 
         </a>
     </div>
 </section>
