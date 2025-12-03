@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import detailBg from '../../../assets/images/vehicleInsurance/Detail-Banner.webp';
+import detailBgMobile from '../../../assets/images/vehicleInsurance/Detail-Banner-mobile.webp';
+---
+
+<section
+  class="relative bg-cover bg-center bg-no-repeat text-white overflow-hidden flex flex-col items-center justify-center text-center h-[550px] md:h-[600px] m-0 p-0 md:h-auto md:mt-10 md:px-2 md:py-30 lg:py-38 md:bg-transparent bg-servir-blue"
+>
+  <!-- Imagen de fondo: Desktop y Mobile -->
+  <!-- Desktop -->
+  <Image 
+    src={detailBg} 
+    alt="Fondo salud detalle" 
+    class="absolute inset-0 w-full   h-[720px] lg:object-contain md:object-cover hidden md:block"
+  />
+  <!-- Mobile -->
+  <Image 
+    src={detailBgMobile} 
+    alt="Fondo salud detalle móvil" 
+    class="absolute inset-0 w-full h-[450px] object-contain md:hidden md:h-full"
+  />
+
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+    <!-- Título -->
+    <div class="bg-servir-blue-banner p-6 md:px-10 md:py-6 w-[89%] md:w-full rounded-[20px] mb-8 md:rounded-2xl">
+      <h2 class="subtitle font-bold text-center mb-4 md:mb-6">
+        Si actualmente sientes que:
+      </h2>
+      <ul class="space-y-3 md:space-y-4 text-left max-w-2xl mx-auto">
+        <li class="flex items-start gap-3 description">
+          <span class="text-white mt-1 flex-shrink-0">✓</span>
+          <span>Aunque pagas tus cuotas al día, el crédito no baja.</span>
+        </li>
+        <li class="flex items-start gap-3 description">
+          <span class="text-white mt-1 flex-shrink-0">✓</span>
+          <span>Tu tasa de interés está elevada.</span>
+        </li>
+        <li class="flex items-start gap-3 description">
+          <span class="text-white mt-1 flex-shrink-0">✓</span>
+          <span>El banco no te ofrece opciones para reducir tus cuotas.</span>
+        </li>
+        <li class="flex items-start gap-3 description">
+          <span class="text-white mt-1 flex-shrink-0">✓</span>
+          <span>Te están cobrando un seguro de vida costoso.</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Texto final -->
+    <div class="bg-white text-[#3b5881]  text-lg font-extrabold italic rounded-2xl  p-[23px]  md:px-8 md:py-5 inline-block shadow-md text-lg md:text-3xl leading-snug mx-[23px] md:mx-0 subtitle">
+      <p>
+      Es momento de solicitar una compra de cartera con nosotros
+      </p>
+    </div>
+  </div>
+</section>
