@@ -199,7 +199,6 @@ select {
 
 /* Estilos SOLO para pantallas de escritorio */
 @media (min-width: 1024px) {
-
   .title {
     font-size: 36px !important;
   }

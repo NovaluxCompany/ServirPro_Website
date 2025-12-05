@@ -1,0 +1,248 @@
+---
+// Modal de Contacto - Componente reutilizable
+---
+
+<!-- Modal de Contacto -->
+<div id="contactModal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <!-- Backdrop con blur -->
+    <div class="fixed inset-0 bg-black/40 backdrop-blur-sm transition-all duration-300" onclick="closeContactModal()"></div>
+    
+    <!-- Modal Container -->
+    <div class="flex items-center justify-center min-h-screen px-4 py-6 sm:p-0">
+        <div class="relative inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full animate-fadeIn">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-servir-blue to-[#2b89c6] px-6 py-5">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-2xl font-bold text-white" id="modal-title">
+                        Un asesor se pondrá en contacto contigo
+                    </h3>
+                    <button type="button" onclick="closeContactModal()" class="text-white hover:text-gray-200 transition-colors p-1 hover:bg-white/10 rounded-full">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="contactForm" class="bg-white px-6 py-6">
+                <div class="space-y-5">
+                    <!-- Nombre -->
+                    <div>
+                        <label for="nombre" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Nombre <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-servir-blue focus:border-transparent outline-none transition-all text-gray-900"
+                            placeholder="Ingresa tu nombre"
+                        />
+                    </div>
+
+                    <!-- Correo -->
+                    <div>
+                        <label for="correo" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Correo Electrónico <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-servir-blue focus:border-transparent outline-none transition-all text-gray-900"
+                            placeholder="ejemplo@correo.com"
+                        />
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div>
+                        <label for="whatsapp" class="block text-sm font-semibold text-gray-700 mb-2">
+                            WhatsApp <span class="text-red-500">*</span>
+                        </label>
+                        <div class="flex gap-2">
+                            <select
+                                id="indicativo"
+                                name="indicativo"
+                                required
+                                class="w-32 px-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-servir-blue focus:border-transparent outline-none transition-all text-gray-900">
+                                <option value="+57">🇨🇴 +57</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+52">🇲🇽 +52</option>
+                                <option value="+34">🇪🇸 +34</option>
+                                <option value="+54">🇦🇷 +54</option>
+                                <option value="+56">🇨🇱 +56</option>
+                                <option value="+51">🇵🇪 +51</option>
+                                <option value="+593">🇪🇨 +593</option>
+                                <option value="+58">🇻🇪 +58</option>
+                            </select>
+                            <input
+                                type="tel"
+                                id="whatsapp"
+                                name="whatsapp"
+                                required
+                                pattern="[0-9]{7,15}"
+                                class="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-servir-blue focus:border-transparent outline-none transition-all text-gray-900"
+                                placeholder="3001234567"
+                            />
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Ingresa solo números, sin espacios ni guiones</p>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="mt-6 flex flex-col-reverse sm:flex-row gap-3">
+                    <button
+                        type="button"
+                        onclick="closeContactModal()"
+                        class="w-full sm:w-auto px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all">
+                        Cancelar
+                    </button>
+                    <button
+                        type="submit"
+                        class="w-full sm:w-auto px-8 py-3 bg-servir-green text-black font-bold rounded-full hover:opacity-90 hover:shadow-lg transition-all">
+                        Enviar Solicitud
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95) translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    /* Ocultar scroll cuando modal está abierto */
+    body.modal-open {
+        overflow: hidden;
+    }
+</style>
+
+<script>
+    // Declarar tipos para las funciones globales
+    declare global {
+        interface Window {
+            openContactModal: () => void;
+            closeContactModal: () => void;
+        }
+    }
+
+    // Funciones globales para el modal
+    function openContactModal() {
+        const modal = document.getElementById('contactModal');
+        if (modal) {
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+            // Pequeño delay para que la animación se vea
+            setTimeout(() => {
+                modal.style.opacity = '1';
+            }, 10);
+        }
+    }
+
+    function closeContactModal() {
+        const modal = document.getElementById('contactModal');
+        if (modal) {
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+                // Limpiar formulario
+                const form = document.getElementById('contactForm') as HTMLFormElement;
+                if (form) form.reset();
+            }, 200);
+        }
+    }
+
+    // Manejar envío del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm') as HTMLFormElement;
+        
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const nombreInput = document.getElementById('nombre') as HTMLInputElement;
+                const correoInput = document.getElementById('correo') as HTMLInputElement;
+                const indicativoInput = document.getElementById('indicativo') as HTMLSelectElement;
+                const whatsappInput = document.getElementById('whatsapp') as HTMLInputElement;
+                
+                const formData = {
+                    nombre: nombreInput?.value || '',
+                    correo: correoInput?.value || '',
+                    indicativo: indicativoInput?.value || '+57',
+                    whatsapp: whatsappInput?.value || '',
+                };
+
+                // Deshabilitar botón de envío
+                const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+
+                try {
+                    // Enviar datos a la API
+                    const response = await fetch('/api/send-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            name: `${formData.nombre}`,
+                            phone: `${formData.indicativo} ${formData.whatsapp}`,
+                            message: `Solicitud de Contacto - Compra de Cartera\n\nCorreo: ${formData.correo}\nWhatsApp: ${formData.indicativo} ${formData.whatsapp}\n`
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        // Cerrar modal
+                        closeContactModal();
+                        
+                        // Mostrar mensaje de éxito
+                        alert('¡Gracias! Tu solicitud ha sido enviada exitosamente. Nos pondremos en contacto contigo pronto.');
+                    } else {
+                        throw new Error('Error al enviar el mensaje');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Hubo un error al enviar tu solicitud. Por favor, intenta nuevamente.');
+                    
+                    // Restaurar botón
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText || 'Enviar Solicitud';
+                }
+            });
+        }
+
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('contactModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    closeContactModal();
+                }
+            }
+        });
+    });
+
+    // Hacer funciones disponibles globalmente
+    (window as any).openContactModal = openContactModal;
+    (window as any).closeContactModal = closeContactModal;
+</script>
