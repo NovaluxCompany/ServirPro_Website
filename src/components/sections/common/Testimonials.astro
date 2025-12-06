@@ -691,7 +691,7 @@ const reviews = [
                     <div class="flex-1 min-w-0 lg:flex-[3] relative">
                         <!-- Botón anterior - Solo visible en desktop -->
                         <button onclick="previousReview();"
-                            class="hidden cursor-pointer md:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white hover:shadow-xl transition-all z-20 border border-gray-200">
+                            class="hidden cursor-pointer md:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-transparent backdrop-blur-sm rounded-full p-3  transition-all z-20">
                             <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -717,7 +717,7 @@ const reviews = [
 
                         <!-- Botón siguiente - Solo visible en desktop -->
                         <button onclick="nextReview();"
-                            class="cursor-pointer hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white hover:shadow-xl transition-all z-20 border border-gray-200">
+                            class="cursor-pointer hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-transparent backdrop-blur-sm  p-3  transition-all z-20 ">
                             <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -742,6 +742,20 @@ const reviews = [
                         </div>
                     </div>
                 </div>
+                
+                <!-- Botón para leer reseñas en Google -->
+                <div class="mt-8 flex justify-center">
+                    <a 
+                        href="https://www.google.com/maps/place/ServirPRO+Seguros+Medell%C3%ADn/@6.2464443,-75.5734899,16.29z/data=!4m6!3m5!1s0x8e4429006794126f:0x9a8d8d73c8af6c4c!8m2!3d6.246606!4d-75.5701194!16s%2Fg%2F11w8jx2hzy?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block px-8 py-4 text-base md:text-lg font-bold text-black bg-white border-2 border-gray-800 rounded-full shadow-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-xl hover:scale-105 button-text"
+                    >
+                        Leer reseñas en Google
+                    </a>
+                </div>
+            </div>
+            <div>
             </div>
         </div>
     </div>
