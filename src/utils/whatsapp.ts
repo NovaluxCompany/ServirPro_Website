@@ -44,4 +44,7 @@ export const whatsappLinks = {
     genericMessage: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi su página web y quiero más información sobre un servicio"
     )}`,
+    bajarCuotaVehiculo: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero bajar la cuota de mi crédito"
+    )}`,
 };

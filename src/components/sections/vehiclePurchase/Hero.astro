@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import heroBg from '../../../assets/images/vehiclePurchase/Hero.webp';
+import heroBgMobile from '../../../assets/images/vehiclePurchase/Hero-mobile.webp';
+import { whatsappLinks } from '../../../utils/whatsapp';
+
+const mainTitle = 'Compra de Cartera';
+const mainSubtitle = 'de Créditos Vehiculares';
+const description = 'Baja la cuota de tu crédito y paga menos cada mes';
+const buttonText = 'Bajar la cuota de mi crédito';
+---
+
+<section class="relative w-full h-[580px] md:h-[600px] lg:h-[650px] overflow-hidden">
+  <!-- Imagen de fondo Desktop -->
+  <Image
+    src={heroBg}
+    alt="Compra de Cartera"
+    class="absolute inset-0 w-full h-full object-cover hidden md:block"
+  />
+
+  <!-- Imagen de fondo Mobile -->
+  <Image
+    src={heroBgMobile}
+    alt="Compra de Cartera Mobile"
+    class="absolute inset-0 w-full h-full object-cover md:hidden"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6 lg:px-8">
+    <h1 class="title text-2xl text-white font-bold mb-2 md:mb-3 leading-tight bg-servir-blue/70 px-3 py-1 rounded-lg">
+      {mainTitle}
+    </h1>
+
+    <h2 class="title text-2xl text-white font-bold mb-10 md:mb-6 leading-tight">
+      {mainSubtitle}
+    </h2>
+
+    <p class="subtitle text-xl mb-10 md:mb-8 max-w-2xl font-bold text-[#aed8f8]">
+      {description}
+    </p>
+
+    <a
+      href={whatsappLinks.bajarCuotaVehiculo}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block px-8 md:px-10 py-3 md:py-4 bg-servir-green text-black font-bold rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green/90 hover:shadow-xl hover:scale-105 description"
+    >
+      {buttonText}
+    </a>
+  </div>
+</section>

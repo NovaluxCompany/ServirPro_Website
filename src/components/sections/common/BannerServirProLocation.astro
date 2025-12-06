@@ -4,12 +4,11 @@ import { Image } from "astro:assets";
 import icon1 from "../../../assets/iconos/aditionalServices/servicies1.svg";
 import icon2 from "../../../assets/iconos/aditionalServices/servicies2.svg";
 import icon3 from "../../../assets/iconos/aditionalServices/servicies3.svg";
-
 ---
 <section class="bg-gray-200 py-16 px-4 relative">
   <div class="max-w-7xl mx-auto">
     <!-- Panel blanco del título -->
-    <div
+    <!-- <div
       class="absolute md:left-1/2 md:-translate-x-1/2 -top-10 bg-white px-8 py-3 rounded-xl shadow-lg
                    flex items-center justify-center z-10"
     >
@@ -18,7 +17,11 @@ import icon3 from "../../../assets/iconos/aditionalServices/servicies3.svg";
       >
         En ServirPRO Seguros
       </h2>
-    </div>
+    </div> -->
+
+    <h2 class="text-lg subtitle text-center font-bold text-servir-gray-dark">
+      Por qué miles confían en ServirPRO
+    </h2>
 
     <!-- Grid de estadísticas -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center md:gap-8">
@@ -33,7 +36,7 @@ import icon3 from "../../../assets/iconos/aditionalServices/servicies3.svg";
         </div>
 
         <p class="text-servir-gray text-xl md:text-2xl font-semibold subtitle">
-         + 10 años de experiencia<br />en el mercado.
+         Más de 10 años afiliando<br> trabajadores y empresas<br> en todo el país 
         </p>
       </div>
 
@@ -47,8 +50,10 @@ import icon3 from "../../../assets/iconos/aditionalServices/servicies3.svg";
           />
         </div>
 
-        <h3 class="text-servir-gray text-xl md:text-2xl font-semibold mb-2 subtitle">
-          Oficinas en Envigado, Medellín,<br />Bogotá y Pereira.
+        <h3
+          class="text-servir-gray text-xl md:text-2xl font-semibold mb-2 subtitle"
+        >
+          Oficinas físicas en <br> Medellín, Bogotá <br> y Pereira
         </h3>
       </div>
 
@@ -65,8 +70,7 @@ import icon3 from "../../../assets/iconos/aditionalServices/servicies3.svg";
         <p
           class="text-servir-gray text-xl md:text-2xl font-semibold leading-tight subtitle"
         >
-          Alianza directa con<br />
-          <span class="italic">aseguradoras líderes.</span>
+          Aliados directos de aseguradoras líderes en Colombia
         </p>
       </div>
     </div>

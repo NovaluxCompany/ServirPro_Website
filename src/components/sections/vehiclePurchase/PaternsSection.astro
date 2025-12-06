@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+
+// Importar logos de aliados
+import logoSura from '../../../assets/logos/vehiclePurchase/sura.svg';
+import logoSufi from '../../../assets/logos/vehiclePurchase/sufi.svg';
+import logoBancoOccidente from '../../../assets/logos/vehiclePurchase/banco-occidente.svg';
+import logoBancoBogota from '../../../assets/logos/vehiclePurchase/banco-bogota.svg';
+---
+
+<section class="bg-white py-16 px-4 relative mt-20">
+  <div class="max-w-7xl mx-auto">
+    <!-- Panel blanco del título -->
+    <div class="absolute md:left-1/2 md:-translate-x-1/2 -top-10 bg-white px-8 py-3 rounded-xl shadow-lg flex items-center justify-center z-10">
+      <h2 class="text-center text-3xl md:text-4xl font-bold text-servir-blue title">
+        Nuestros Aliados
+      </h2>
+    </div>
+
+    <!-- Contenedor de logos con divisores -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0 m-10 ">
+      <!-- Logo Sura -->
+      <div class="flex items-center justify-center px-4 md:px-8 py-4 w-[200px] md:w-[250px]">
+        <Image
+          src={logoSura}
+          alt="Sura"
+          class="w-full h-auto object-contain transition-all duration-300 hover:scale-110"
+        />
+      </div>
+
+      <!-- Divisor -->
+      <div class="hidden md:block w-px h-20 bg-gray-400"></div>
+
+      <!-- Logo Sufi -->
+      <div class="flex items-center justify-center px-4 md:px-8 py-4 w-[200px] md:w-[250px]">
+        <Image
+          src={logoSufi}
+          alt="Sufi"
+          class="w-full h-auto object-contain transition-all duration-300 hover:scale-110"
+        />
+      </div>
+
+      <!-- Divisor -->
+      <div class="hidden md:block w-px h-20 bg-gray-400"></div>
+
+      <!-- Logo Banco de Occidente -->
+      <div class="flex items-center justify-center px-4 md:px-8 py-4 w-[200px] md:w-[250px]">
+        <Image
+          src={logoBancoOccidente}
+          alt="Banco de Occidente"
+          class="w-full h-auto object-contain transition-all duration-300 hover:scale-110"
+        />
+      </div>
+
+      <!-- Divisor -->
+      <div class="hidden md:block w-px h-20 bg-gray-400"></div>
+
+      <!-- Logo Banco de Bogotá -->
+      <div class="flex items-center justify-center px-4 md:px-8 py-4 w-[200px] md:w-[250px]">
+        <Image
+          src={logoBancoBogota}
+          alt="Banco de Bogotá"
+          class="w-full h-auto object-contain transition-all duration-300 hover:scale-110"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animación para los logos */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section > div > div > div {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  section > div > div > div:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  section > div > div > div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  section > div > div > div:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  section > div > div > div:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+</style>

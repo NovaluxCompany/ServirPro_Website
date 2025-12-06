@@ -1,51 +1,55 @@
 ---
 import { Image } from "astro:assets";
-import detailBg from "../../../assets/images/lifeInsurance/Health-detail.webp";
-import detailBgMobile from "../../../assets/images/lifeInsurance/Health-detail-mobile.webp";
+import detailBg from "../../../assets/images/arlEnrollment/Health-detail.webp";
+import detailBgMobile from "../../../assets/images/arlEnrollment/Health-detail-mobile.webp";
+
+const smallTitle = "Evita rechazos y demoras";
+const mainTitle = "Tu salud no puede esperar";
+const description = "Afiliarte por tu cuenta puede llevar días y terminar en errores o rechazos innecesarios";
+const warningText = "Una afiliación mal hecha puede dejarte sin atención médica cuando más la necesitas";
 ---
 
-<section
-  class="relative bg-cover bg-center bg-no-repeat text-white  overflow-hidden flex flex-col items-center justify-center text-center h-[470px] md:h-[650px] m-0 p-0 md:h-auto  md:px-6 md:py-36"
->
-  <!-- Imagen de fondo: Desktop y Mobile -->
-  <!-- Desktop -->
-  <Image
-    src={detailBg}
-    alt="Fondo salud detalle"
-    class="absolute inset-0 w-full h-full object-cover hidden md:block md:max-w[95vw]"
-    style="object-fit:contain"
-  />
-  <!-- Mobile -->
-  <Image
-    src={detailBgMobile}
-    alt="Fondo salud detalle móvil"
-    class="absolute inset-0 w-full h-[470px] object-cover md:hidden md:h-full"
-  />
+<section class="relative w-full min-h-[500px] md:min-h-[600px] overflow-hidden bg-white py-8 px-4 md:py-12 md:px-18">
+  <!-- Imagen de fondo -->
+  <div class="absolute inset-0 m-4 md:m-16 rounded-3xl md:rounded-[40px] overflow-hidden">
+    <Image
+      src={detailBg}
+      alt="Fondo salud detalle"
+      class="hidden md:block w-full h-full object-cover"
+    />
+    <Image
+      src={detailBgMobile}
+      alt="Fondo salud detalle móvil"
+      class="md:hidden w-full h-full object-cover"
+    />
+  </div>
 
-  <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-    <!-- Título -->
-    <div
-      class="bg-servir-blue-banner px-6 py-3 w-[95%] rounded-[20px] inline-block mb-3 md:w-auto md:rounded-lg"
-    >
-      <h2 class="md:text-3xl text-lg font-semibold subtitle">
-        <span class="block md:inline subtitle">La salud no puede esperar</span>
-      </h2>
-    </div>
-
-    <!-- Texto principal del cuerpo -->
-    <p
-      class="md:text-3xl text-lg leading-relaxed mb-6 text-white max-w-[85%] md:max-w-[100%] md:whitespace-pre-line subtitle"
-    >Muchas personas pierden días intentando afiliarse por su cuenta, enfrentando demoras, errores o rechazos en el proceso.
-    </p>
-
-    <!-- Texto final -->
-    <div
-      class="bg-white text-[#3b5881] font-extrabold italic rounded-2xl px-8 py-5 inline-block shadow-md md:text-3xl text-lg leading-snug mx-[23px] md:mx-0 subtitle"
-    >
-      <p class="md:whitespace-pre-line p-0 m-0 subtitle">Sin una afiliación correcta a una EPS, 
-        podrías quedar sin cobertura médica
-        cuando más la necesites.
+  <!-- Contenido -->
+  <div class="relative z-10 flex items-center justify-center min-h-[500px] md:min-h-[600px] px-6 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+      
+      <!-- Título pequeño -->
+      <p class="text-white text-lg md:text-xl font-semibold description">
+        {smallTitle}
       </p>
+      
+      <!-- Título principal -->
+      <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight title">
+        {mainTitle}
+      </h2>
+      
+      <!-- Descripción -->
+      <p class="text-servir-gray-dark text-lg md:text-xl lg:text-2xl font-medium max-w-3xl mx-auto subtitle">
+        {description}
+      </p>
+      
+      <!-- Caja de advertencia -->
+      <div class="bg-white rounded-3xl px-6 py-5 md:px-8 md:py-6 shadow-xl max-w-2xl mx-auto">
+        <p class="text-servir-gray-dark text-lg md:text-xl lg:text-2xl font-bold leading-snug subtitle">
+          {warningText}
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
