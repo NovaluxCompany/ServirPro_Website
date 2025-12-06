@@ -11,8 +11,8 @@ export const POST: APIRoute = async ({ request }) => {
     const { name, phone, message } = body;
 
     const data = await resend.emails.send({
-      from: "seguros@servirpro.co",
-      to: "seguros@servirpro.co",
+      from: "afiliaciones@servirpro.co",
+      to: "afiliaciones@servirpro.co",
       subject: "Una nueva persona quiere contactar con ServirPro",
       html: `
         <h1>Nuevo mensaje desde ServirPro.co 🚀</h1>
