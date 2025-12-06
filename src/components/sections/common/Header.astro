@@ -86,8 +86,8 @@ const menu = [
 
 <!-- Navegación Principal -->
 <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between lg:justify-between items-center h-20 relative">
+    <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20 relative max-w-7xl mx-auto">
             <!-- Botón de Hamburguesa (Solo Móvil) -->
             <button
                 id="menu-button"
@@ -114,7 +114,7 @@ const menu = [
             </a>
 
             <!-- Navegación de Escritorio -->
-            <nav class="hidden lg:flex lg:space-x-8 items-center">
+            <nav class="hidden lg:flex items-center flex-1 justify-center">
                 <a
                     href="/"
                     class={`description font-bold px-3 py-2 rounded-md text-sm ${currentPath === "/" ? "text-servir-blue" : "gray-text hover:text-servir-blue"}`}
