@@ -1,8 +1,8 @@
 ---
 // Footer.astro - Footer con enlaces, redes sociales e información legal
-import { Image } from 'astro:assets';
-import logo from '../../../assets/logos/Logo.png';
-import { whatsappLinks } from '../../../utils/whatsapp';
+import { Image } from "astro:assets";
+import logo from "../../../assets/logos/Logo.png";
+import { whatsappLinks } from "../../../utils/whatsapp";
 ---
 
 <!-- Footer -->
@@ -12,9 +12,9 @@ import { whatsappLinks } from '../../../utils/whatsapp';
         <div class="max-w-7xl mx-auto">
             <!-- Logo centrado -->
             <div class="flex justify-center">
-                <Image 
-                    src={logo} 
-                    alt="ServirPRO Seguros" 
+                <Image
+                    src={logo}
+                    alt="ServirPRO Seguros"
                     class="h-16 w-auto"
                     loading="lazy"
                     quality={90}
@@ -27,14 +27,20 @@ import { whatsappLinks } from '../../../utils/whatsapp';
     <div class="bg-gray-100 text-gray-800 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <!-- Caja blanca de contacto -->
-            <div class="bg-white rounded-3xl shadow-lg p-6 md:p-8 mb-8 max-w-4xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p class="text-lg md:text-xl text-gray-800 font-medium text-center md:text-left">
+            <div
+                class="bg-white rounded-3xl shadow-lg p-6 md:p-8 mb-8 max-w-4xl mx-auto"
+            >
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-4"
+                >
+                    <p
+                        class="text-lg md:text-xl text-gray-800 font-medium text-center md:text-left"
+                    >
                         ¿Aún tienes dudas? Habla con un asesor ahora mismo.
                     </p>
-                    <a 
-                        href={whatsappLinks.cotizarSeguro} 
-                        target="_blank" 
+                    <a
+                        href={whatsappLinks.cotizarSeguro}
+                        target="_blank"
                         rel="noopener noreferrer"
                         class="inline-block px-8 py-3 bg-servir-green text-black font-bold rounded-full shadow-lg transition-all duration-300 hover:bg-opacity-90 hover:shadow-xl whitespace-nowrap button-text"
                     >
@@ -44,101 +50,187 @@ import { whatsappLinks } from '../../../utils/whatsapp';
             </div>
 
             <!-- Grid de contenido: Servicios y Legales -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8 max-w-4xl mx-auto">
-            <!-- Servicios -->
-            <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 subtitle">Servicios</h3>
-                <ul class="space-y-2">
-                    <li>
-                        <a href="/afiliacion-eps" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            Afiliación a EPS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/afiliaciones-seguridad-social" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            Afiliación a Seguridad Social
-                        </a>
-                    </li>
-                    <li>
-                        <a href={whatsappLinks.comprarSoat} target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            Seguros para vehículos
-                        </a>
-                    </li>
-                    <li>
-                        <a href={whatsappLinks.comprarSoat} target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            SOAT en línea
-                        </a>
-                    </li>
-                </ul>
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8 max-w-4xl mx-auto"
+            >
+                <!-- Servicios -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 subtitle">
+                        Servicios
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a
+                                href="/afiliacion-eps"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                Afiliación a EPS
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/afiliaciones-seguridad-social"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                Afiliación a Seguridad Social
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/seguros-vehiculo"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                Seguros para vehículos
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href={whatsappLinks.comprarSoat}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                SOAT en línea
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Legales -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 subtitle">
+                        Legales
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a
+                                href="/politicas-privacidad"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                Política de privacidad
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/terminos-condiciones"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                Términos y condiciones
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/politica-cookies"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                Cookies
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/aviso-legal"
+                                class="text-gray-700 hover:text-servir-blue transition-colors description"
+                            >
+                                Aviso legal
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Legales -->
-            <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 subtitle">Legales</h3>
-                <ul class="space-y-2">
-                    <li>
-                        <a href="/politicas-privacidad" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            Política de privacidad
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/terminos-condiciones" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            Términos y condiciones
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/politica-cookies" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            Cookies
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/aviso-legal" class="text-gray-700 hover:text-servir-blue transition-colors description">
-                            Aviso legal
-                        </a>
-                    </li>
-                </ul>
+            <!-- Redes sociales centradas -->
+            <div class="flex justify-center gap-4 mb-6">
+                <!-- Facebook -->
+                <a
+                    href="https://www.facebook.com/servirproseguros"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                        ></path>
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a
+                    href="https://www.instagram.com/servirpro/?hl=es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                        ></path>
+                    </svg>
+                </a>
+                <!-- TikTok -->
+                <a
+                    href="https://www.tiktok.com/@servirpro?is_from_webapp=1&sender_device=pc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"
+                        ></path>
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a
+                    href="https://co.linkedin.com/company/servirpro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                        ></path>
+                    </svg>
+                </a>
+                <!-- Email -->
+                <a
+                    href="mailto:Info@servirpro.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+                        ></path>
+                        <path
+                            d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+                        ></path>
+                    </svg>
+                </a>
             </div>
-        </div>
-
-        <!-- Redes sociales centradas -->
-        <div class="flex justify-center gap-4 mb-6">
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/servirproseguros" target="_blank" rel="noopener noreferrer"
-                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/servirpro/?hl=es" target="_blank" rel="noopener noreferrer"
-                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                </svg>
-            </a>
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@servirpro?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
-                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
-                </svg>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://co.linkedin.com/company/servirpro" target="_blank" rel="noopener noreferrer"
-                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-            </a>
-            <!-- Email -->
-            <a href="mailto:Info@servirpro.co" target="_blank" rel="noopener noreferrer"
-                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-servir-blue transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                    <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                </svg>
-            </a>
-        </div>
 
             <!-- Copyright centrado -->
             <div class="text-center text-gray-600 text-sm">
