@@ -1,10 +1,10 @@
 ---
-import { Image } from 'astro:assets';
-import heroBg from '../../../assets/images/arlEnrollment/Hero.webp';
-import heroBgMobile from '../../../assets/images/arlEnrollment/Hero-mobile.webp';
+import { Image } from "astro:assets";
+import heroBg from "../../../assets/images/arlEnrollment/Hero.webp";
+import heroBgMobile from "../../../assets/images/arlEnrollment/Hero-mobile.webp";
 import { whatsappLinks } from "../../../utils/whatsapp";
 
-const title = "Afíliate a la EPS en 24/48 horas, sin filas ni complicaciones.";
+const title = "Afíliate a la EPS en 24/48 horas, ";
 const description1 = "Trámite rápido, seguro y";
 const description2 = "acompañado por expertos";
 const buttonText = "Empezar mi afiliación ahora";
@@ -13,71 +13,94 @@ const benefits = [
   "Oficinas físicas en Medellín, Bogotá y Pereira",
   "Proceso guiado",
   "Más de 10 años de experiencia",
-  "Acompañamiento por WhatsApp"
+  "Acompañamiento por WhatsApp",
 ];
 ---
 
 <section class="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden">
   <!-- Imagen de fondo -->
   <div class="absolute inset-0">
-    <Image 
-      src={heroBg} 
-      alt="Afiliación EPS" 
+    <Image
+      src={heroBg}
+      alt="Afiliación EPS"
       class="hidden md:block w-full h-full object-cover object-left"
     />
-    <Image 
-      src={heroBgMobile} 
-      alt="Afiliación EPS mobile" 
+    <Image
+      src={heroBgMobile}
+      alt="Afiliación EPS mobile"
       class="md:hidden w-full h-full object-cover"
     />
   </div>
 
   <!-- Contenido -->
-  <div class="relative z-10 container mx-auto pt-42 pb-12 md:px-4 md:py-16 lg:py-20">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-end min-h-[550px] md:min-h-[650px]">
-      
+  <div
+    class="relative z-10 container mx-auto pt-42 pb-12 md:px-4 md:py-16 lg:py-20"
+  >
+    <div
+      class="flex flex-col md:flex-row md:items-center md:justify-end min-h-[550px] md:min-h-[650px]"
+    >
       <!-- Contenido derecho -->
       <div class="w-full md:w-1/2 lg:w-[55%] md:pl-8">
         <div class="bg-transparent rounded-3xl p-8 md:p-10 lg:p-12">
-          
           <!-- Título -->
-          <h1 class="text-4xl title font-extrabold text-servir-blue-dark leading-tight mb-4">
+          <h1
+            class="text-2xl title font-extrabold text-servir-blue-dark leading-tight mb-4 sm:mw-[233px]"
+            style="line-height: 0.9"
+          >
             {title}
+            <span class="md:text-2xl text-[18px]">
+              sin filas ni complicaciones.
+            </span>
           </h1>
           <!-- Descripción -->
-          <div class="mb-8 space-y-1">
-            <p class="text-xl subtitle font-semibold text-gray-800">
+          <div class="space-y-1 mb-4 md:mb-8">
+            <p
+              class="subtitle font-semibold text-gray-800"
+              style="font-size: 16px; line-height: 0.5"
+            >
               {description1}
             </p>
-            <p class="text-xl subtitle font-semibold text-gray-800">
+            <p
+              class="subtitle font-semibold text-gray-800"
+              style="font-size: 16px"
+            >
               {description2}
             </p>
           </div>
 
           <!-- Botón CTA -->
-          <a 
-            href={whatsappLinks.cotizarEps} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="inline-block w-full md:w-auto px-8 py-4 text-lg md:text-xl font-bold text-black bg-servir-green rounded-full shadow-lg transition-all duration-300 hover:bg-opacity-90 hover:shadow-xl hover:scale-105 text-center mb-8 button-text"
+          <a
+            href={whatsappLinks.cotizarEps}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block w-full md:w-auto px-8 py-4 text-lg md:text-xl font-bold text-black bg-servir-green rounded-full shadow-lg transition-all duration-300 hover:bg-opacity-90 hover:shadow-xl hover:scale-105 text-center mb-6 md:mb-8 button-text"
           >
             {buttonText}
           </a>
 
           <!-- Beneficios -->
           <div class="space-y-3">
-            {benefits.map(benefit => (
-              <div class="flex items-start gap-3">
-                <svg class="w-6 h-6 text-[#5793ce] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-base description text-gray-800 font-medium">
-                  {benefit}
-                </span>
-              </div>
-            ))}
+            {
+              benefits.map((benefit) => (
+                <div class="flex items-start gap-3 mb-0">
+                  <svg
+                    class="w-6 h-6 text-[#5793ce] flex-shrink-0 mt-1 sm:align-self: auto;"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-base description text-gray-800 font-medium sm:text-[10px] self-end">
+                    {benefit}
+                  </span>
+                </div>
+              ))
+            }
           </div>
-
         </div>
       </div>
     </div>
