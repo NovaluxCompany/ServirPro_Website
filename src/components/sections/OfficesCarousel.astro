@@ -35,10 +35,16 @@ import OfficeCard from "../ui/OfficeCard.astro";
 <!-- Contamos con oficinas en -->
 <section id="offices-section" class="bg-servir-blue py-16 md:py-20 relative">
     <div class="max-w-7xl mx-auto px-4">
-                <!-- Título con fondo blanco redondo en la parte superior -->
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-[#e6e6e6] rounded-full px-6 py-4 md:px-12 md:py-6 shadow-lg">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap text-[#0B2D49]">
+        <!-- Título con fondo blanco redondo en la parte superior -->
+        <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+            <div
+                class="bg-[#e6e6e6] rounded-full px-6 py-4 md:px-12 md:py-6 shadow-lg"
+            >
+                <h2
+                    class="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap text-[#0B2D49]"
+                >
                     Contamos con oficinas en:
                 </h2>
             </div>
@@ -57,7 +63,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
                     id="offices-carousel"
                     class="flex transition-transform duration-300 ease-in-out"
                 >
-                <OfficeCard
+                    <OfficeCard
                         officeKey="medellin"
                         title="Oficina en Medellín"
                         images={{
@@ -83,10 +89,9 @@ import OfficeCard from "../ui/OfficeCard.astro";
                             alt2: "CC. Viva Envigado 2",
                         }}
                         mapUrl="https://maps.app.goo.gl/oRQPp4ebTXAm61iF9?g_st=ipc"
-                        ,
                         details={[
                             "Carrera 48 #32b sur - 139",
-                            "CC. Viva Envigado Piso 2 - Zona Financiera (al frente del Banco Colpatria)",
+                            "CC. Viva Envigado Piso 2 - Zona Financiera (al frente del Banco DaviBank)",
                         ]}
                     />
                     <OfficeCard
