@@ -16,7 +16,7 @@ const features = [
 ---
 
 <section
-  class="relative overflow-hidden flex items-center justify-center py-10 md:py-20 min-h-[1000px] md:min-h-[900px]"
+  class="relative overflow-hidden flex items-center justify-center py-10 md:py-20 min-h-[800px] md:min-h-[900px]"
 >
   <!-- Fondo Desktop -->
   <div class="absolute inset-0 flex items-center justify-center hidden md:flex">
@@ -28,14 +28,18 @@ const features = [
   </div>
 
   <!-- Fondo Mobile -->
-  <Image
-    src={detailBgMobile}
-    alt="Fondo móvil"
-    class="md:hidden absolute inset-0 w-full h-full object-cover rounded-3xl"
-  />
+  <div class="md:hidden absolute inset-0 p-4" style="
+    padding-top: 40px;
+    padding-bottom: 40px;">
+    <Image
+      src={detailBgMobile}
+      alt="Fondo móvil"
+      class="w-full h-full object-cover rounded-[40px]"
+    />
+  </div>
 
   <!-- Contenido -->
-  <div class="relative z-10 max-w-5xl w-full px-6 md:px-12">
+  <div class="absolute z-10 max-w-5xl w-full px-8 py-6 md:px-12 md:py-0">
     
     <!-- TITULAR PRINCIPAL -->
     <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-center leading-snug mb-4 md:mb-8">
@@ -60,7 +64,7 @@ const features = [
     </ul>
 
     <!-- MOBILE: Texto después de la lista -->
-    <p class="md:hidden text-base text-[#0B2E4A] font-semibold leading-relaxed mb-6">
+    <p class="md:hidden text-base text-[#0B2E4A] justify-center font-semibold leading-relaxed mb-6">
       Sin una ARL activa, no puedes 
       trabajar con empresas ni estás 
       cubierto en caso de accidente laboral.
