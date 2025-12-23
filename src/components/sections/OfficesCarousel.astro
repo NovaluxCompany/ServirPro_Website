@@ -35,10 +35,16 @@ import OfficeCard from "../ui/OfficeCard.astro";
 <!-- Contamos con oficinas en -->
 <section id="offices-section" class="bg-servir-blue py-16 md:py-20 relative">
     <div class="max-w-7xl mx-auto px-4">
-                <!-- Título con fondo blanco redondo en la parte superior -->
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-white rounded-full px-6 py-4 md:px-12 md:py-6 shadow-lg">
-                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold whitespace-nowrap text-servir-blue" style="font-style:italic">
+        <!-- Título con fondo blanco redondo en la parte superior -->
+        <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+            <div
+                class="bg-[#e6e6e6] rounded-full px-6 py-4 md:px-12 md:py-6 shadow-lg"
+            >
+                <h2
+                    class="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap text-[#0B2D49]"
+                >
                     Contamos con oficinas en:
                 </h2>
             </div>
@@ -87,6 +93,21 @@ import OfficeCard from "../ui/OfficeCard.astro";
                             "Carrera 51 #45-75",
                             "CC. Pioneros - Local 213",
                             "Centro de Medellín, La Candelaria",
+                        ]}
+                    />
+                    <OfficeCard
+                        officeKey="envigado"
+                        title="Oficina Envigado"
+                        images={{
+                            src1: oficinaEnvigado01,
+                            src2: oficinaEnvigado02,
+                            alt1: "CC. Viva Envigado 1",
+                            alt2: "CC. Viva Envigado 2",
+                        }}
+                        mapUrl="https://maps.app.goo.gl/oRQPp4ebTXAm61iF9?g_st=ipc"
+                        details={[
+                            "Carrera 48 #32b sur - 139",
+                            "CC. Viva Envigado Piso 2 - Zona Financiera (al frente del Banco DaviBank)",
                         ]}
                     />
                     <OfficeCard
