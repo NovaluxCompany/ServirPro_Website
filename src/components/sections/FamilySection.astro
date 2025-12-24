@@ -1,33 +1,33 @@
 ---
 // FamilySection.astro - Sección de tranquilidad con imagen de familia
-import { Image } from 'astro:assets';
-import contactWebImage from '../../assets/images/contact-section_web.webp';
-import contactMobileImage from '../../assets/images/contact-section_mobile.webp';
-import logo from '../../assets/logos/Logo.png';
+import { Image } from "astro:assets";
+import contactWebImage from "../../assets/images/contact-section_web.webp";
+import contactMobileImage from "../../assets/images/contact-section_mobile.webp";
+import logo from "../../assets/logos/Logo.png";
 
 import { whatsappLinks } from "../../utils/whatsapp";
-
 ---
 
 <!-- Sección de Tranquilidad con Imagen de Familia -->
 <section
-    class="relative py-32 sm:py-40 lg:py-48 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[600px] lg:min-h-[700px]">
+    class="relative py-32 sm:py-40 lg:py-48 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[600px] lg:min-h-[700px]"
+>
     <!-- Imagen de fondo para desktop -->
-    <Image 
-        src={contactWebImage} 
-        alt="Familia feliz" 
+    <Image
+        src={contactWebImage}
+        alt="Familia feliz"
         class="absolute inset-0 w-full h-full object-cover z-9 hidden sm:block"
         loading="eager"
     />
-    
+
     <!-- Imagen de fondo para mobile -->
-    <Image 
-        src={contactMobileImage} 
-        alt="Familia feliz mobile" 
+    <Image
+        src={contactMobileImage}
+        alt="Familia feliz mobile"
         class="absolute inset-0 w-full h-full object-cover z-9 sm:hidden"
         loading="eager"
     />
-    
+
     <!-- Overlay semitransparente -->
     <div class="absolute inset-0 bg-white bg-opacity-70"></div>
 
@@ -36,42 +36,60 @@ import { whatsappLinks } from "../../utils/whatsapp";
         <div class="max-w-2xl mx-auto sm:mx-0">
             <!-- Logo en la parte superior solo en móvil -->
             <div class="flex justify-center mb-16 sm:hidden">
-                <Image 
-                    src={logo} 
-                    alt="Logo ServirPro" 
+                <Image
+                    src={logo}
+                    alt="Logo ServirPro"
                     class="w-52 h-auto"
                     loading="lazy"
                     quality={90}
                 />
             </div>
-            
+
             <h2
-                class="text-2xl text-servir-gray-text sm:text-3xl lg:text-4xl font-light text-gray-800 mb-8 leading-tight text-center text-servir-gray-text">
+                class="text-2xl text-servir-gray-text sm:text-3xl lg:text-4xl font-light text-gray-800 mb-8 leading-tight text-center text-servir-gray-text"
+            >
                 <!-- Móvil: líneas separadas, centradas y con mayor negrilla en la frase final -->
                 <span class="sm:hidden">
                     <span
                         class="font-bold bg-servir-blue text-white px-3 py-1 border-2 rounded mb-1 inline-block"
-                        style="border-color: #2F8BC0;">Aseguramos</span><br>
-                    <span class="font-bold bg-servir-blue text-white px-3 py-1 border-2 rounded inline-block"
-                        style="border-color: #2F8BC0;">tu tranquilidad,</span><br>
-                    <span class=" text-servir-gray-text inline-block mt-2" style="font-weight:550">para que vivas sin</span><br>
-                    <span class=" text-servir-gray-text inline-block" style="font-weight:550">preocuparte por</span><br>
-                    <span class=" text-servir-gray-text inline-block" style="font-weight:550">tu salud, tu vida o</span><br>
-                    <span class=" text-servir-gray-text inline-block" style="font-weight:550">tu vehículo</span>
+                        style="border-color: #2F8BC0;">Aseguramos</span
+                    ><br />
+                    <span
+                        class="font-bold bg-servir-blue text-white px-3 py-1 border-2 rounded inline-block"
+                        style="border-color: #2F8BC0;">tu tranquilidad,</span
+                    ><br />
+                    <span
+                        class="text-servir-gray-text inline-block mt-2"
+                        style="font-weight:550">para que vivas sin</span
+                    ><br />
+                    <span
+                        class="text-servir-gray-text inline-block"
+                        style="font-weight:550">preocuparte por</span
+                    ><br />
+                    <span
+                        class="text-servir-gray-text inline-block"
+                        style="font-weight:550">tu salud, tu vida o</span
+                    ><br />
+                    <span
+                        class="text-servir-gray-text inline-block"
+                        style="font-weight:550">tu vehículo</span
+                    >
                 </span>
                 <!-- Desktop: frase completa normal -->
                 <span class="hidden sm:inline subtitle">
-                    <span class="font-bold text-servir-gray-text subtitle">Aseguramos tu tranquilidad,</span><br>
-                    para que vivas sin preocuparte<br>
+                    <span class="font-bold text-servir-gray-text subtitle"
+                        >Aseguramos tu tranquilidad,</span
+                    ><br />
+                    para que vivas sin preocuparte<br />
                     por tu salud, tu vida o tu vehículo
                 </span>
             </h2>
-            
-             <!-- Logo centrado debajo del texto solo en desktop -->
+
+            <!-- Logo centrado debajo del texto solo en desktop -->
             <div class="hidden sm:flex justify-center mt-8">
-                <Image 
-                    src={logo} 
-                    alt="Logo ServirPro" 
+                <Image
+                    src={logo}
+                    alt="Logo ServirPro"
                     class="w-52 h-auto"
                     loading="lazy"
                     quality={90}
@@ -80,20 +98,24 @@ import { whatsappLinks } from "../../utils/whatsapp";
         </div>
 
         <!-- Botones centrados respecto a toda la imagen -->
-        <div class="flex flex-col sm:flex-row gap-4 mt-24 justify-center items-center w-full">
+        <div
+            class="flex flex-col sm:flex-row gap-4 mt-24 justify-center items-center w-full"
+        >
             <a
                 href={whatsappLinks.hablarConAsesor}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 min-w-[300px] max-w-[350px] cursor-pointer btn-text">
+                class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 min-w-[300px] max-w-[350px] cursor-pointer btn-text"
+            >
                 Hablar con un asesor
             </a>
             <a
-                href={whatsappLinks.cotizarSegurosGeneral}
+                href={whatsappLinks.cotizarSeguro}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-block text-center w-full sm:w-auto px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 min-w-[300px] max-w-[350px] cursor-pointer btn-text"
-                style="background-color: #85C657;">
+                style="background-color: #85C657;"
+            >
                 Cotizar seguro
             </a>
         </div>
