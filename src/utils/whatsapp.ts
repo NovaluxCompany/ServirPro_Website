@@ -5,6 +5,18 @@ export const whatsappLinks = {
     cotizarSeguro: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro"
     )}`,
+    cotizarSeguroVehiculo: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar un seguro para mi vehículo (Auto/Moto)"
+    )}`,
+    cotizarSeguroVida: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar un seguro de vida"
+    )}`,
+    cotizarSeguroHogar: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar un seguro para mi hogar"
+    )}`,
+    cotizarSegurosGeneral: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y me interesa cotizar sus seguros (Vida, Salud, Vehículo)"
+    )}`,
     cotizarPoliza: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar una póliza"
     )}`,
