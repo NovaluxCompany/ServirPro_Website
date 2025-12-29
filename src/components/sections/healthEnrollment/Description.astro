@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import detailBg from "../../../assets/images/healthEnrollment/detailARL.webp";
+import detailBg from "../../../assets/images/healthEnrollment/detailArl.webp";
 import detailBgMobile from "../../../assets/images/healthEnrollment/detail-mobile.webp";
-import checkIcon from '../../../assets/iconos/healthEnrollment/check.svg';
+import checkIcon from "../../../assets/iconos/healthEnrollment/check.svg";
 
 const features = [
   "Construcción",
@@ -11,7 +11,7 @@ const features = [
   "Mantenimiento",
   "Enfermería",
   "Servicios eléctricos",
-  "Oficios varios"
+  "Oficios varios",
 ];
 ---
 
@@ -28,9 +28,12 @@ const features = [
   </div>
 
   <!-- Fondo Mobile -->
-  <div class="md:hidden absolute inset-0 p-4" style="
+  <div
+    class="md:hidden absolute inset-0 p-4"
+    style="
     padding-top: 40px;
-    padding-bottom: 40px;">
+    padding-bottom: 40px;"
+  >
     <Image
       src={detailBgMobile}
       alt="Fondo móvil"
@@ -40,72 +43,83 @@ const features = [
 
   <!-- Contenido -->
   <div class="absolute z-10 max-w-5xl w-full px-8 py-6 md:px-12 md:py-0">
-    
     <!-- TITULAR PRINCIPAL -->
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-center leading-snug mb-4 md:mb-8">
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-center leading-snug mb-4 md:mb-8"
+    >
       Si prestas servicios como independiente, <br class="hidden md:block" />
       necesitas una ARL para trabajar legalmente
     </h2>
 
     <!-- MOBILE: Lista primero -->
     <ul class="md:hidden space-y-1.5 mb-6">
-      {features.map((feature) => (
-        <li class="flex items-center gap-2.5">
-          <img 
-            src={checkIcon.src}
-            alt="Check"
-            class="w-4 h-4 flex-shrink-0"
-          />
-          <span class="text-white text-sm font-medium leading-snug">
-            {feature}
-          </span>
-        </li>
-      ))}
+      {
+        features.map((feature) => (
+          <li class="flex items-center gap-2.5">
+            <img
+              src={checkIcon.src}
+              alt="Check"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="text-white text-sm font-medium leading-snug">
+              {feature}
+            </span>
+          </li>
+        ))
+      }
     </ul>
 
     <!-- MOBILE: Texto después de la lista -->
-    <p class="md:hidden text-base text-[#0B2E4A] justify-center font-semibold leading-relaxed mb-6">
-      Sin una ARL activa, no puedes 
-      trabajar con empresas ni estás 
-      cubierto en caso de accidente laboral.
+    <p
+      class="md:hidden text-base text-[#0B2E4A] justify-center font-semibold leading-relaxed mb-6"
+    >
+      Sin una ARL activa, no puedes trabajar con empresas ni estás cubierto en
+      caso de accidente laboral.
     </p>
 
     <!-- DESKTOP: Flex con texto izquierda y lista derecha -->
     <div class="hidden md:flex flex-row justify-center gap-8">
-      
       <!-- TEXTO IZQUIERDA -->
-      <p class="text-xl lg:text-2xl text-[#0B2E4A] font-semibold leading-relaxed max-w-[45%]" style="padding-top: 79px">
-        Sin una ARL activa, no puedes 
-        trabajar con empresas ni estás 
-        cubierto en caso de accidente laboral.
+      <p
+        class="text-xl lg:text-2xl text-[#0B2E4A] font-semibold leading-relaxed max-w-[45%]"
+        style="padding-top: 79px"
+      >
+        Sin una ARL activa, no puedes trabajar con empresas ni estás cubierto en
+        caso de accidente laboral.
       </p>
 
       <!-- LISTA DERECHA -->
       <ul class="space-y-2.5">
-        {features.map((feature) => (
-          <li class="flex items-center gap-3">
-            <img 
-              src={checkIcon.src}
-              alt="Check"
-              class="w-5 h-5 flex-shrink-0"
-            />
-            <span class="text-white text-lg font-medium leading-snug">
-              {feature}
-            </span>
-          </li>
-        ))}
+        {
+          features.map((feature) => (
+            <li class="flex items-center gap-3">
+              <img
+                src={checkIcon.src}
+                alt="Check"
+                class="w-5 h-5 flex-shrink-0"
+              />
+              <span class="text-white text-lg font-medium leading-snug">
+                {feature}
+              </span>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
     <!-- CAJA BLANCA FINAL -->
-    <div class="bg-white text-[#1e3a5f] rounded-2xl shadow-md py-5 px-5 md:py-6 md:px-10 mt-6 md:mt-10 text-left md:text-center mx-auto md:max-w-2xl">
+    <div
+      class="bg-white text-[#1e3a5f] rounded-2xl shadow-md py-5 px-5 md:py-6 md:px-10 mt-6 md:mt-10 text-left md:text-center mx-auto md:max-w-2xl"
+    >
       <p class="text-base md:text-xl font-bold leading-snug mb-2">
-        Un accidente laboral puede ocurrir en segundos y dejarte sin ingresos ni protección.
+        Un accidente laboral puede ocurrir en segundos y dejarte sin ingresos ni
+        protección.
       </p>
       <p class="text-sm md:text-lg font-normal leading-snug">
-        Evita gastos médicos, incapacidades no pagadas y bloqueos laborales. <span class="font-bold">Activa tu ARL a tiempo.</span>
+        Evita gastos médicos, incapacidades no pagadas y bloqueos laborales. <span
+          class="font-bold">Activa tu ARL a tiempo.</span
+        >
       </p>
     </div>
-
   </div>
 </section>
