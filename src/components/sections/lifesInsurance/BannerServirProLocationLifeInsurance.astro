@@ -1,0 +1,147 @@
+
+---
+import { Image } from "astro:assets";
+
+import icon1 from "../../../assets/iconos/aditionalServices/servicies1.svg";
+import icon2 from "../../../assets/iconos/aditionalServices/servicies2.svg";
+import icon3 from "../../../assets/iconos/aditionalServices/servicies3.svg";
+import check from "../../../assets/iconos/lifeInsurance/Check-green.svg";
+import { whatsappLinks } from "../../../utils/whatsapp";
+
+---
+<section class="bg-gray-200 py-16 px-4 relative">
+  <div class="max-w-7xl mx-auto">
+
+    <h2 class="text-2xl md:text-4xl text-center font-bold text-servir-gray-dark title">
+      Por qué puedes confiar <br />
+      <span class="text-[#4A88B7]">la proteccion de tu familia a </span>
+      ServirPRO
+    </h2>
+
+    <!-- Grid de estadísticas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center md:gap-8">
+      <!-- Stat 1 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-6 h-25 md:h-40 flex flex-col justify-end">
+          <Image
+            src={icon1}
+            alt="Icono de servicios"
+            class="w-20 h-20 md:w-30 md:h-30 text-servir-blue"
+          />
+        </div>
+        <p class="text-black text-xl md:text-2xl font-medium subtitle">
+         <span class="text-[#22638A]">Más de 10 años afiliando</span><br> cuidando el bienestar <br> de miles de familias.
+        </p>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-6 h-20 md:h-40 flex items-end">
+          <Image
+            src={icon2}
+            alt="Icono de servicios"
+            class="w-20 h-20 md:w-30 md:h-30 text-servir-blue"
+          />
+        </div>
+
+        <h3
+          class="text-black text-xl md:text-2xl font-medium mb-2 subtitle"
+        >
+          <span class="text-[#22638A]">Atención cercana </span><br>con oficinas físicas en <br> Medellín, Bogotá y <br>Pereira.
+        </h3>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-6 h-20 md:h-40 flex items-end">
+          <Image
+            src={icon3}
+            alt="Icono de servicios"
+            class="w-20 h-20 md:w-30 md:h-30 text-servir-blue"
+          />
+        </div>
+
+        <p
+          class="text-black text-xl md:text-2xl font-medium leading-tight subtitle"
+        >
+          <span class="text-[#22638A]">Trabajamos con <br>aseguradoras líderes</span><br> para darte respaldo real
+        </p>
+      </div>
+    </div>
+    <div class="w-full flex flex-col items-center justify-center">
+  <a 
+    href={whatsappLinks.cotizarSeguroVida} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="button-text button-container bg-servir-green cursor-pointer w-full md:w-[500px] text-[#000] font-bold px-8 py-3 rounded-2xl hover:bg-servir-green transition text-center mb-4" style="margin-top: 25px;"
+  >
+    Cotizar mi seguro de vida ahora
+  </a>
+
+  <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+    <div class="flex items-center gap-2">
+      <Image 
+        src={check} 
+        alt="Check" 
+        class="w-5 h-5 sm:w-6 sm:h-6"
+      />
+      <span class="text-base sm:text-lg font-normal text-black leading-snug whitespace-nowrap">
+        Acompañamiento humano
+      </span>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <Image 
+        src={check} 
+        alt="Check" 
+        class="w-5 h-5 sm:w-6 sm:h-6"
+      />
+      <span class="text-base sm:text-lg font-normal text-black leading-snug whitespace-nowrap">
+        Trámite claro
+      </span>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <Image 
+        src={check} 
+        alt="Check" 
+        class="w-5 h-5 sm:w-6 sm:h-6"
+      />
+      <span class="text-base sm:text-lg font-normal text-black leading-snug whitespace-nowrap">
+        Sin letra pequeña
+      </span>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<style>
+  /* Animación opcional para los números */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section > div > div > div {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  section > div > div > div:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  section > div > div > div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  section > div > div > div:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+</style>
