@@ -10,8 +10,9 @@ import icon1 from "../../../assets/iconos/lifeInsurance/proteccion-economica.svg
 import icon2 from "../../../assets/iconos/lifeInsurance/respaldo-invalidez.svg";
 import icon3 from "../../../assets/iconos/lifeInsurance/cobertura-deudas.svg";
 import icon4 from "../../../assets/iconos/lifeInsurance/futuro-seguro.svg";
+import check from "../../../assets/iconos/lifeInsurance/Check-green.svg";
+import family from "../../../assets/images/lifeInsurance/Family.webp";
 import { whatsappLinks } from "../../../utils/whatsapp";
-
 ---
 
 <section
@@ -22,75 +23,148 @@ import { whatsappLinks } from "../../../utils/whatsapp";
     <Image
       src={tituloImg}
       alt="Una póliza de salud te brinda"
-      class="mx-auto w-[400px] md:w-[520px]"
+      class="mx-auto w-[400px] md:w-[680px]"
     />
   </div>
 
   <!-- Beneficios -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-6 max-w-5xl mb-10">
     <BenefitItem
       icon={icon1}
       alt="protección económica"
-      text={`Protección ecónomica para tu
-      familia en caso de fallecimiento.`}
+      title={`Protección económica para 
+      tu familia.`}
+      text={`Tus seres queridos estarán 
+      respaldados si llegas a faltar.`}
       showBorder={true}
     />
 
     <BenefitItem
       icon={icon3}
-      alt="cobertura deudas"
-      text={`Cobertura de deudas
-      o créditos.`}
+      alt="pago de deudas"
+      title={`Pago de deudas y créditos 
+      pendientes`}
+      text={`Tus créditos, hipotecas o 
+      préstamos no serán una carga 
+      para tu familia.`}
       showBorder={true}
     />
 
     <BenefitItem
       icon={icon2}
-      alt="respaldo invalidez"
-      text={`Respaldo en caso de invalidez o
-      enfermedades graves.`}
+      alt="cobertura invalidez"
+      title={`Cobertura en caso de 
+      invalidez o enfermedades graves.`}
+      text={`Respaldo económico si una 
+      enfermedad o accidente te impide 
+      trabajar.`}
       showBorderMobileOnly={true}
     />
 
     <BenefitItem
       icon={icon4}
       alt="futuro seguro"
-      text={`Futuro seguro para tus hijos 
-      o dependientes.`}
-    
+      title={`Futuro seguro para tus 
+      hijos`}
+      text={`Una base económica para su 
+      educación y proyectos.`}
     />
   </div>
 
   <!-- Botón Cotizar -->
-  <a href={whatsappLinks.cotizarSeguroVida} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green transition mb-12">
-    Cotizar seguro
+  <a
+    href={whatsappLinks.cotizarSeguroVida}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="button-text button-container bg-servir-green cursor-pointer md:w-[400px] text-[#000] font-bold px-8 py-3 rounded-2xl hover:bg-servir-green transition mb-12"
+  >
+    Cotizar mi seguro de vida
   </a>
+</section>
 
-
+<section
+  class="w-full flex flex-col items-center justify-center text-center px-6 py-10 md:py-16 bg-[#e6e6e6]"
+  style="padding-bottom: 100px;"
+>
+  <div class="ditext-center md:mb-16v">
+    <h2
+      class="font-bold text-[#4A88B7] text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-weight:normal mt-2 title"
+    >
+      Asegura tu tranquilidad
+    </h2>
+  </div>
   <!-- Pasos -->
-  <div class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative">
+  <div
+    class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative"
+  >
     <!-- Paso 1 -->
-    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
-      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
-      <p class="font-medium text-servir-dark-text step-text description" >Cotiza tu seguro en minutos.</p>
+    <div
+      class="relative bg-white rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
+    >
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#4A88B7]">1.</h3>
+      <p class="font-medium text-black step-text description">
+        Cotiza tu seguro en minutos.
+      </p>
     </div>
 
     <!-- Paso 2 -->
-    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
-      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
-      <p class="font-medium text-servir-dark-text step-text description" >Elige el plan ideal para ti y tu familia.</p>
+    <div
+      class="relative bg-white rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
+    >
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#4A88B7]">2.</h3>
+      <p class="font-medium text-black step-text description">
+        Elige el plan ideal para ti y tu familia.
+      </p>
     </div>
 
     <!-- Paso 3 -->
-    <div class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6">
-      <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
-      <p class="font-medium text-servir-dark-text step-text description" >Vive con tranquilidad.</p>
+    <div
+      class="relative bg-white rounded-2xl p-6 pt-10 pb-20 text-center shadow-sm flex flex-col items-center mb-6"
+      style="padding-bottom: 40px;"
+    >
+      <h3 class="absolute -top-6 text-5xl font-bold text-[#4A88B7]">3.</h3>
+      <p class="font-medium text-black step-text description mb-4">
+        Vive con total<br />tranquilidad.
+      </p>
+      <!-- Imagen -->
+      <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
+        <Image
+          src={family}
+          alt="Familia protegida"
+          class="w-50 h-auto md:w-58"
+        />
+      </div>
     </div>
   </div>
 
-
   <!-- Segundo botón -->
-  <a href={whatsappLinks.cotizarSeguroVida} target="_blank" rel="noopener noreferrer" class="button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green">
-    Cotizar seguro
+  <a
+    href={whatsappLinks.cotizarSeguroVida}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="button-text button-container bg-servir-green cursor-pointer md:w-[500px] text-[#000] font-bold px-8 py-3 rounded-2xl hover:bg-servir-green"
+  >
+    Cotizar mi seguro de vida ahora
   </a>
+
+  <div class="flex items-center gap-3 mt-4">
+    <Image src={check} alt="Check" class="w-5 h-5 sm:w-6 sm:h-6" />
+    <span
+      class="text-base sm:text-lg md:text-xl lg:text-lg font-normal text-black leading-snug"
+    >
+      Rápido y sencillo
+    </span>
+    <Image src={check} alt="Check" class="w-5 h-5 sm:w-6 sm:h-6" />
+    <span
+      class="text-base sm:text-lg md:text-xl lg:text-lg font-normal text-black leading-snug"
+    >
+      Planes a tu medida
+    </span>
+    <Image src={check} alt="Check" class="w-5 h-5 sm:w-6 sm:h-6" />
+    <span
+      class="text-base sm:text-lg md:text-xl lg:text-lg font-normal text-black leading-snug"
+    >
+      Asesoría sin costo
+    </span>
+  </div>
 </section>

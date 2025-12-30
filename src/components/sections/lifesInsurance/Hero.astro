@@ -1,85 +1,160 @@
 ---
-import { Image } from 'astro:assets';
-import heroBg from '../../../assets/images/lifeInsurance/Hero.webp';
-import heroBgMobile from '../../../assets/images/lifeInsurance/Hero-mobile.webp';
+import { Image } from "astro:assets";
+import heroBg from "../../../assets/images/lifeInsurance/Hero.webp";
+import heroBgMobile from "../../../assets/images/lifeInsurance/Hero-mobile.webp";
+import check from "../../../assets/iconos/lifeInsurance/Check-green.svg";
 
-const policyTitle = "Seguros de vida";
-const subtitle = "Tranquilidad y respaldo económico";
-const description = "para quienes dependen de ti.";
-const buttonText = "Cotizar seguro";
+const policyTitle = "Proteje el futuro";
+const policyTitle2 = "de tu familia,";
+const policyTitle3 = "Pase lo que pase.";
+const description = "Un seguro de vida que garantiza";
+const description2 = "y tranquilidad";
+const description3 = "para quienes más amas, incluso si tú no estás.";
+const subtitle = "Planes accesibles y coberturas flexibles";
+const subtitle2 = "según tu necesidad y presupuesto.";
+const buttonText = "Cotizar mi seguro de vida";
+const subtitle3 = "Cotización gratuita sin compromiso";
 
 import { whatsappLinks } from "../../../utils/whatsapp";
 ---
 
 <section class="h-[70vh] max-h-[70vh] sm:h-auto sm:max-h-none">
   <div class="w-full h-full">
-    <div 
-      class="relative overflow-hidden  h-full sm:min-h-[500px] md:min-h-[580px] lg:min-h-[650px]"
+    <div
+      class="relative overflow-hidden h-full sm:min-h-[500px] md:min-h-[580px] lg:min-h-[650px]"
     >
       <!-- Imagen de fondo usando el componente Image -->
       <!-- Desktop y Tablet -->
-      <Image src={heroBg} alt="Pólizas de salud" class="absolute inset-0 w-full h-full object-cover hidden sm:block" />
+      <Image
+        src={heroBg}
+        alt="Pólizas de salud"
+        class="absolute inset-0 w-full h-full object-cover hidden sm:block"
+      />
       <!-- Mobile -->
-      <Image src={heroBgMobile} alt="Pólizas de salud mobile" class="absolute inset-0 w-full h-[80vh] border-none object-cover sm:hidden" />
-      
-      <!-- Banda de título en tablet y desktop: fija a la derecha -->
-      <div id="title-band" class="hidden sm:block absolute top-36 md:top-36 lg:top-36 right-0 w-[45%] md:w-[40%] bg-servir-blue-dark rounded-l-full rounded-r-none shadow-md z-10 py-3 md:py-4 px-4 md:px-6">
-        <h2 class="font-extrabold text-white leading-tight text-center text-3xl md:text-4xl lg:text-5xl title">{policyTitle}</h2>
-      </div>
-      
-      <div class="absolute inset-0 bg-opacity-20 sm:hidden"></div>
-      
-      <!-- Contenedor para móvil -->
-      <div class="sm:hidden absolute inset-0 flex items-center justify-center p-5">
-        <div class="w-full max-w-lg p-6 bg-transparent mt-[60%] z-10">
-          <div class="text-center w-full">
-            <!-- Título en móvil: caja azul pequeña centrada -->
-            <div class="inline-block p-2 mb-5 rounded-lg bg-servir-blue-dark shadow-md">
-              <h2 class="text-3xl font-extrabold text-white leading-tight">
-                {policyTitle}
-              </h2>
-            </div>
+      <Image
+        src={heroBgMobile}
+        alt="Pólizas de salud mobile"
+        class="absolute inset-0 w-full h-[80vh] border-none object-cover sm:hidden"
+      />
 
-            <p  class="mb-5">
-              <span class="text-lg font-bold text-[#5793ce] leading-snug " style="font-weight:800">{subtitle}</span>
-              <span class="text-base text-servir-blue-dark text-gray-700 " style="font-weight:600">
-              {description}
-            </span>
-            </p>
-            
-    
-
-            <a href={whatsappLinks.cotizarSeguroVida} target="_blank" rel="noopener noreferrer" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
-              {buttonText}
-            </a>
-          </div>
+      <!-- Contenedor para tablet y desktop -->
+      <div
+        class="hidden sm:block absolute top-8 sm:top-10 md:top-12 lg:top-16 right-0 w-[50%] lg:w-[45%]"
+      >
+        <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <h2
+            class="font-extrabold text-[#21608D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl leading-tight"
+          >
+            {policyTitle}<br />
+            {policyTitle2}<br />{policyTitle3}
+          </h2>
         </div>
       </div>
 
-      <!-- Contenedor para tablet y desktop -->
+      <div class="absolute inset-0 bg-opacity-20 sm:hidden"></div>
+
       <div class="hidden sm:block">
         <!-- Contenido posicionado debajo de la banda, centrado respecto a ella -->
-        <div class="absolute right-0 w-[45%] md:w-[40%] z-10 sm:top-[200px] md:top-[220px] lg:top-[230px]">
-          <div class=" md:p-6 lg:p-8">
-            <div class="text-center w-full">
-              <p class="mb-6 md:mb-8">
-                <span class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#5793ce] leading-snug font-extrabold subtitle">
-                  {subtitle}
-                </span>
-                
-                <span class="text-base sm:text-lg md:text-2xl lg:text-3xl text-servir-blue-dark font-semibold subtitle">
-                  {description}
+        <div
+          class="relative sm:absolute sm:right-0 sm:top-0 sm:bottom-0 sm:w-[50%] lg:w-[45%] flex items-center sm:items-start md:items-center pt-12"
+        >
+          <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+            <div class="text-left w-full">
+              <p class="mb-2 md:mb-4" style="margin-top: 95px;">
+                <span
+                  class="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-black leading-snug"
+                >
+                  {description}<br /><span class="font-bold"
+                    >respaldo económico
+                  </span>{description2}<br />{description3}
                 </span>
               </p>
 
-              <a href={whatsappLinks.cotizarSeguroVida} target="_blank" rel="noopener noreferrer" class="inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl btn-text">
+              <p>
+                <span
+                  class="text-base sm:text-lg md:text-xl lg:text-xl font-normal text-black leading-snug"
+                >
+                  {subtitle}<br />{subtitle2}
+                </span>
+              </p>
+
+              <a
+                href={whatsappLinks.cotizarSeguroVida}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block w-100 mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm text-center sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-2xl shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl btn-text"
+                style="margin-top: 12px;"
+              >
                 {buttonText}
               </a>
+
+              <div class="flex items-center gap-2 mt-4">
+                <Image src={check} alt="Check" class="w-5 h-5 sm:w-6 sm:h-6" />
+                <span
+                  class="text-base sm:text-lg md:text-xl lg:text-lg font-normal text-black leading-snug"
+                >
+                  {subtitle3}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
+
+      <!-- Contenedor para móvil -->
+      <div class="sm:hidden absolute inset-0 flex items-start justify-start">
+        <div
+          class="w-full p-2 bg-transparent mt-[45%] z-10 pb-8"
+          style="
+    padding-left: 30px;
+    padding-right: 40px;"
+        >
+          <div class="text-left w-full">
+            <!-- Título -->
+            <h2 class="text-2xl font-extrabold text-[#21608D] leading-tight">
+              {policyTitle}<br />
+              {policyTitle2}<br />
+              {policyTitle3}
+            </h2>
+
+            <!-- Descripción -->
+            <p class="leading-tight mb-1">
+              <span class="text-sm font-medium text-black leading-tight">
+                {description}<br />
+                <span class="font-bold">respaldo económico</span>
+                {description2}<br />
+                {description3}
+              </span>
+            </p>
+
+            <!-- Subtítulo -->
+            <p class="leading-none mb-2">
+              <span class="text-xs font-normal text-black leading-none">
+                {subtitle}
+                {subtitle2}
+              </span>
+            </p>
+
+            <!-- Botón -->
+            <a
+              href={whatsappLinks.cotizarSeguroVida}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block px-4 py-3 text-sm font-bold text-black bg-servir-green w-full rounded-2xl shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl mb-2 text-center"
+            >
+              {buttonText}
+            </a>
+
+            <!-- Check con texto -->
+            <div class="flex items-center gap-2">
+              <Image src={check} alt="Check" class="w-4 h-4 flex-shrink-0" />
+              <span class="text-xs font-normal text-black leading-tight">
+                {subtitle3}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
