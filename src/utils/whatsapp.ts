@@ -5,8 +5,26 @@ export const whatsappLinks = {
     cotizarSeguro: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro"
     )}`,
+    cotizarSeguroVehiculo: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar un seguro para mi vehículo"
+    )}`,
+    cotizarSeguroVida: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar un seguro de vida"
+    )}`,
+    cotizarSeguroHogar: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar un seguro para mi hogar"
+    )}`,
+    cotizarSegurosGeneral: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y me interesa cotizar sus seguros (Vida, Salud, Vehículo)"
+    )}`,
     cotizarPoliza: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar una póliza"
+    )}`,
+    cotizarPolizaSalud: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar una póliza de salud"
+    )}`,
+    cotizarPlanPolizaColectiva: `https://wa.me/${phone}?text=${encodeURIComponent(
+        "Hola, vi el sitio web y quiero cotizar una póliza colectiva"
     )}`,
     cotizarPolizaColectiva: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero ver los planes colectivos"
@@ -21,13 +39,13 @@ export const whatsappLinks = {
         "Hola, vi el sitio web y quiero afiliarme a solo ARL"
     )}`,
     cotizarEpsArl: `https://wa.me/${phone}?text=${encodeURIComponent(
-        "Hola, vi el sitio web y quiero afiliarme a la seguridad social EPS+ARL"
+        "Hola, vi el sitio web y quiero afiliarme a EPS+ARL"
     )}`,
     cotizarEpsArlPension: `https://wa.me/${phone}?text=${encodeURIComponent(
-        "Hola, vi el sitio web y quiero afiliarme a la seguridad social EPS+ARL+Pensión"
+        "Hola, vi el sitio web y quiero afiliarme a EPS+ARL+Pensión"
     )}`,
     cotizarEpsArlPensionCaja: `https://wa.me/${phone}?text=${encodeURIComponent(
-        "Hola, vi el sitio web y quiero afiliarme a la seguridad social EPS+ARL+Pensión+Caja"
+        "Hola, vi el sitio web y quiero afiliarme a EPS+ARL+Pensión+Caja"
     )}`,
     cotizarArlEmpresas: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero una asesoría gratuita para mi empresa"

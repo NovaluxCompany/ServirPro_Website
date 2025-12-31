@@ -1,51 +1,124 @@
 ---
 import { Image } from "astro:assets";
-import detailBg from "../../../assets/images/lifeInsurance/Health-detail.webp";
-import detailBgMobile from "../../../assets/images/lifeInsurance/Health-detail-mobile.webp";
+import detailBg from "../../../assets/images/healthEnrollment/detailArl.webp";
+import detailBgMobile from "../../../assets/images/healthEnrollment/detail-mobile.webp";
+import checkIcon from "../../../assets/iconos/healthEnrollment/check.svg";
+
+const features = [
+  "Construcción",
+  "Aseo",
+  "Mensajería",
+  "Mantenimiento",
+  "Enfermería",
+  "Servicios eléctricos",
+  "Oficios varios",
+];
 ---
 
 <section
-  class="relative bg-cover bg-center bg-no-repeat text-white  overflow-hidden flex flex-col items-center justify-center text-center h-[670px] md:h-[650px] m-0 p-0 md:h-auto  md:px-6 md:py-36"
+  class="relative overflow-hidden flex items-center justify-center py-10 md:py-20 min-h-[800px] md:min-h-[900px]"
 >
-  <!-- Imagen de fondo: Desktop y Mobile -->
-  <!-- Desktop -->
-  <Image
-    src={detailBg}
-    alt="Fondo salud detalle"
-    class="absolute inset-0 w-full h-full object-cover hidden md:block md:max-w[95vw]"
-    style="object-fit:contain"
-  />
-  <!-- Mobile -->
-  <Image
-    src={detailBgMobile}
-    alt="Fondo salud detalle móvil"
-    class="absolute inset-0 w-full h-[670px] object-cover md:hidden md:h-full"
-  />
+  <!-- Fondo Desktop -->
+  <div class="absolute inset-0 flex items-center justify-center hidden md:flex">
+    <Image
+      src={detailBg}
+      alt="Fondo"
+      class="w-full max-w-3xl lg:max-w-4xl xl:max-w-5xl h-auto object-contain"
+    />
+  </div>
 
-  <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-    <!-- Título -->
-    <div
-      class="bg-servir-blue-banner px-6 py-3 w-[90%] rounded-[20px] inline-block mb-3 md:w-auto md:rounded-lg"
+  <!-- Fondo Mobile -->
+  <div
+    class="md:hidden absolute inset-0 p-4"
+    style="
+    padding-top: 40px;
+    padding-bottom: 40px;"
+  >
+    <Image
+      src={detailBgMobile}
+      alt="Fondo móvil"
+      class="w-full h-full object-cover rounded-[40px]"
+    />
+  </div>
+
+  <!-- Contenido -->
+  <div class="absolute z-10 max-w-5xl w-full px-8 py-6 md:px-12 md:py-0">
+    <!-- TITULAR PRINCIPAL -->
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-center leading-snug mb-4 md:mb-8"
     >
-      <h2 class="text-2xl md:text-3xl font-semibold subtitle">
-        <span class="block md:inline subtitle">Si trabajas en construcción, aseo, mantenimiento, mensajería, enfermería, servicios eléctricos, etc...</span>
-        <br >
-        <span class="block md:inline font-extrabold italic subtitle">Necesitas estar afiliado a una ARL.</span>
-      </h2>
-    </div>
+      Si prestas servicios como independiente, <br class="hidden md:block" />
+      necesitas una ARL para trabajar legalmente
+    </h2>
 
-    <!-- Texto principal del cuerpo -->
+    <!-- MOBILE: Lista primero -->
+    <ul class="md:hidden space-y-1.5 mb-6">
+      {
+        features.map((feature) => (
+          <li class="flex items-center gap-2.5">
+            <img
+              src={checkIcon.src}
+              alt="Check"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="text-white text-sm font-medium leading-snug">
+              {feature}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- MOBILE: Texto después de la lista -->
     <p
-      class="md:text-3xl text-lg leading-relaxed mb-6 text-white max-w-[85%] md:max-w-[100%] md:text-3xl text-lg md:whitespace-pre-line subtitle"
-    >Sin esta afiliación, no puedes prestar servicios a empresas ni estar cubierto en caso de accidente laboral.
+      class="md:hidden text-base text-[#0B2E4A] justify-center font-semibold leading-relaxed mb-6"
+    >
+      Sin una ARL activa, no puedes trabajar con empresas ni estás cubierto en
+      caso de accidente laboral.
     </p>
 
-    <!-- Texto final -->
+    <!-- DESKTOP: Flex con texto izquierda y lista derecha -->
+    <div class="hidden md:flex flex-row justify-center gap-8">
+      <!-- TEXTO IZQUIERDA -->
+      <p
+        class="text-xl lg:text-2xl text-[#0B2E4A] font-semibold leading-relaxed max-w-[45%]"
+        style="padding-top: 79px"
+      >
+        Sin una ARL activa, no puedes trabajar con empresas ni estás cubierto en
+        caso de accidente laboral.
+      </p>
+
+      <!-- LISTA DERECHA -->
+      <ul class="space-y-2.5">
+        {
+          features.map((feature) => (
+            <li class="flex items-center gap-3">
+              <img
+                src={checkIcon.src}
+                alt="Check"
+                class="w-5 h-5 flex-shrink-0"
+              />
+              <span class="text-white text-lg font-medium leading-snug">
+                {feature}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- CAJA BLANCA FINAL -->
     <div
-      class="bg-white text-[#3b5881] font-extrabold italic rounded-2xl px-8 py-5 inline-block shadow-md md:text-3xl text-lg leading-snug mx-[23px] md:mx-0 subtitle"
+      class="bg-white text-[#1e3a5f] rounded-2xl shadow-md py-5 px-5 md:py-6 md:px-10 mt-6 md:mt-10 text-left md:text-center mx-auto md:max-w-2xl"
     >
-      <p class="md:whitespace-pre-line p-0 m-0 subtitle">Un accidente puede pasar en segundos y dejarte
-        sin ingresos, con gastos médicos o incapacidades que podrías evitar fácilmente si te afilias.
+      <p class="text-base md:text-xl font-bold leading-snug mb-2">
+        Un accidente laboral puede ocurrir en segundos y dejarte sin ingresos ni
+        protección.
+      </p>
+      <p class="text-sm md:text-lg font-normal leading-snug">
+        Evita gastos médicos, incapacidades no pagadas y bloqueos laborales. <span
+          class="font-bold">Activa tu ARL a tiempo.</span
+        >
       </p>
     </div>
   </div>

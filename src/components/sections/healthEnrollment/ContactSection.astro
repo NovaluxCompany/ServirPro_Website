@@ -29,88 +29,44 @@ import { whatsappLinks } from "../../../utils/whatsapp";
     />
 
     <!-- Contenido -->
-    <div
-        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[620px] md:min-h-[100vh] sm:min-h-0 flex flex-col justify-between sm:justify-center py-8 sm:py-0"
-    >
-        <div
-            class="max-w-2xl mx-auto text-center sm:text-left sm:mx-0 sm:max-w-none flex-grow flex flex-col justify-end sm:justify-start"
-        >
-            <!-- Título principal -->
-            <h2
-                class="text-2xl md:text-3xl lg:text-5xl text-center sm:text-left font-bold text-[#3b5881] mb-4 sm:mb-6 mt-8 italic leading-tight subtitle"
-                style="font-weight:900"
-            >
-                <span class="sm:hidden subtitle"
-                    >Un accidente laboral puede cambiar tu vida en segundos</span
-                >
-                <span class="hidden sm:inline subtitle"
-                    >Un accidente laboral puede <br class="hidden sm:block" /> cambiar
-                    tu vida en segundos.</span
-                >
+<!-- Contenido -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[620px] sm:min-h-full md:min-h-full flex flex-col justify-end py-8 sm:py-0">
+        <div class="sm:mx-0 sm:max-w-xl lg:max-w-2xl text-left"style="margin-bottom: 50px;">
+            <!-- Título -->
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0B2D49] font-bold mb-4 sm:mb-6 leading-tight">
+                Tu tranquilidad <br />no tiene precio.
             </h2>
             <!-- Subtítulo -->
-            <p
-                class="text-lg sm:text-xl lg:text-3xl text-servir-dark-text mb-6 lg:mb-16 leading-relaxed font-medium text-center sm:text-left subtitle"
-                style="font-weight:700;"
-            >
-                <span class="sm:hidden subtitle"
-                    >Afíliate con <strong>ServirPRO Seguros</strong> y recibe acompañamiento,
-                    respaldo y trámite rápido para trabajar con total tranquilidad.</span
-                >
-                <span class="hidden sm:inline subtitle"
-                    >Afíliate con <strong>ServirPRO Seguros</strong> y <br
-                        class="hidden sm:block"
-                    /> recibe acompañamiento, respaldo y <br
-                        class="hidden sm:block"
-                    /> trámite rápido para trabajar con <br
-                        class="hidden sm:block"
-                    /> total tranquilidad.</span
-                >
+            <p class="text-xl md:text-2xl text-black font-medium mb-6">
+                <span>Un accidente de trabajo puede <br />
+                cambiarlo todo en un instante.</span>
             </p>
+        <!-- Descripción -->
+            <p class="text-lg sm:text-xl lg:text-2xl text-black mb-8 lg:mb-10 leading-relaxed font-medium text-left">
+                <span class="font-bold">Afíliate con ServirPRO Seguros </span> y <br class="hidden sm:block" />recibe respaldo inmediato para
+                <br class="hidden sm:block" />trabajar con seguridad.
+            </p> 
         </div>
 
         <!-- Botones (mobile: flujo normal; desktop: overlay inferior con espaciado) -->
         <!-- Mobile -->
-        <div
-            class="flex flex-col gap-1 pb-8 justify-center items-center w-full sm:hidden"
-        >
-            <a
-                href={whatsappLinks.hablarConAsesor}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button-text button-container inline-block text-center w-full px-8 py-4 bg-gray-200 text-black text-lg font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 max-w-[320px] cursor-pointer"
-            >
+        <div class="flex flex-col gap-3 pt-6 pb-8 justify-center items-center w-full sm:hidden">
+            <a href={whatsappLinks.cotizarArl} target="_blank" rel="noopener noreferrer" class="bg-servir-green text-black min-w-64 sm:w-min md:w-72 font-bold py-3 px-8 rounded-2xl hover:opacity-90 transition-opacity text-center shadow-md">
+                Activar mi ARL ahora 
+            </a>
+            <a href={whatsappLinks.hablarConAsesor} target="_blank" rel="noopener noreferrer" class="bg-gray-200 text-black min-w-64 sm:w-min md:w-72 font-bold py-3 px-8 rounded-2xl hover:bg-gray-300 transition-colors text-center shadow-md">
                 Hablar con un asesor
             </a>
-            <a
-                href={whatsappLinks.cotizarArl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button-text button-container bg-servir-green inline-block text-center w-full px-8 py-4 text-black text-lg font-bold rounded-full hover:opacity-90 transition-colors duration-300 max-w-[320px] cursor-pointer"
-            >
-                Afiliarme a la ARL
-            </a>
         </div>
+
     </div>
     <!-- Desktop overlay (posicionado hacia la parte inferior de la imagen) -->
-    <div
-        class="hidden sm:flex gap-4 justify-center items-center w-full sm:absolute sm:inset-x-0 sm:bottom-10"
-    >
-        <a
-            href={whatsappLinks.hablarConAsesor}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button-text button-container inline-block text-center px-8 py-4 bg-gray-200 text-black font-bold rounded-full hover:bg-gray-300 transition-colors duration-300 cursor-pointer"
-        >
+    <div class="hidden sm:flex gap-4 justify-start items-center w-full sm:absolute sm:inset-x-0 sm:bottom-30 z-20 max-w-7xl mx-auto px-4 sm:px-12 lg:px-8">
+        <a href={whatsappLinks.cotizarArl} target="_blank" rel="noopener noreferrer" class="bg-servir-green text-black min-w-64 sm:w-min md:w-72 font-bold py-3 px-8 text-xl rounded-2xl hover:opacity-90 transition-opacity text-center shadow-md">
+            Activar mi ARL ahora
+        </a> 
+        <a href={whatsappLinks.hablarConAsesor} target="_blank" rel="noopener noreferrer" class="bg-gray-200 text-black min-w-64 sm:w-min md:w-72 font-bold py-3 px-8 text-xl rounded-2xl hover:bg-gray-300 transition-colors text-center shadow-md">
             Hablar con un asesor
-        </a>
-        <a
-            href={whatsappLinks.cotizarArl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button-text button-container bg-servir-green inline-block text-center px-16 py-4 text-black font-bold rounded-full hover:opacity-90 transition-colors duration-300 cursor-pointer"
-        >
-            Afiliarme a la ARL
         </a>
     </div>
 </section>
