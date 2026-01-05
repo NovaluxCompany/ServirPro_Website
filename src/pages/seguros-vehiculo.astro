@@ -10,9 +10,14 @@ import BannerServirProLocation from "../components/sections/common/BannerServirP
 import ContactSectionBanner from "../components/sections/vehicleInsurance/ContactSectionBanner.astro";
 import InsuranceHero from "../components/sections/vehicleInsurance/InsuranceHero.astro";
 import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
+
+import { whatsappLinks } from "../utils/whatsapp";
 ---
 
-<Layout title="Servicios | ServirPRO">
+<Layout
+  title="Servicios | ServirPRO"
+  whatsapp={whatsappLinks.cotizarSeguroVehiculo}
+>
   <Header />
   <main class="bg-white">
     <InsuranceHero />

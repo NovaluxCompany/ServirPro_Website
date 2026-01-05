@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/sections/common/Header.astro";
-import Footer from "../components/sections/common/Footer.astro"; 
+import Footer from "../components/sections/common/Footer.astro";
 import Testimonials from "../components/sections/common/Testimonials.astro";
 import HeroHealthServices from "../components/sections/healthCareServices/HeroHealthServices.astro";
 import HealthDescription from "../components/sections/healthCareServices/HealthDescription.astro";
@@ -10,16 +10,21 @@ import HealthDetail from "../components/sections/healthCareServices/HealthDetail
 import BannerServirProLocation from "../components/sections/common/BannerServirProLocation.astro";
 import ContactSectionBanner from "../components/sections/healthCareServices/ContactSectionBanner.astro";
 import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
+
+import { whatsappLinks } from "../utils/whatsapp";
 ---
 
-<Layout title="Servicios | ServirPRO">
+<Layout
+  title="Servicios | ServirPRO"
+  whatsapp={whatsappLinks.cotizarPolizaSalud}
+>
   <Header />
   <main class="bg-white">
     <HeroHealthServices />
     <HealthDescription />
     <HealthDetail />
     <OfficesCarousel />
-    <BannerServirProLocation/>
+    <BannerServirProLocation />
     <Testimonials />
     <ContactSectionBanner />
   </main>

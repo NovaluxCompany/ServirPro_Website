@@ -10,9 +10,11 @@ import Description from "../components/sections/healthEnrollment/Description.ast
 import Detail from "../components/sections/healthEnrollment/Detail.astro";
 import BannerServirProLocation from "../components/sections/common/BannerServirProLocation.astro";
 import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
+
+import { whatsappLinks } from "../utils/whatsapp";
 ---
 
-<Layout title="Servicios | ServirPRO">
+<Layout title="Servicios | ServirPRO" whatsapp={whatsappLinks.cotizarArl}>
   <Header />
   <main class="bg-white">
     <Hero />
