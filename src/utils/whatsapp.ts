@@ -1,5 +1,6 @@
 const phone = "573011090186";
 const ARLphone = "573015618278";
+const creditsPhone = "573203995052";
 
 export const whatsappLinks = {
     cotizarSeguro: `https://wa.me/${phone}?text=${encodeURIComponent(
@@ -8,7 +9,7 @@ export const whatsappLinks = {
     cotizarSeguroVehiculo: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro para mi vehículo"
     )}`,
-    cotizarSeguroVida: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarSeguroVida: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro de vida"
     )}`,
     cotizarSeguroHogar: `https://wa.me/${phone}?text=${encodeURIComponent(
@@ -25,9 +26,6 @@ export const whatsappLinks = {
     )}`,
     cotizarPlanPolizaColectiva: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar una póliza colectiva"
-    )}`,
-    cotizarPolizaColectiva: `https://wa.me/${phone}?text=${encodeURIComponent(
-        "Hola, vi el sitio web y quiero ver los planes colectivos"
     )}`,
     cotizarPlanSeguridadSocial: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a la seguridad social"
@@ -62,7 +60,7 @@ export const whatsappLinks = {
     genericMessage: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi su página web y quiero más información sobre un servicio"
     )}`,
-    bajarCuotaVehiculo: `https://wa.me/${phone}?text=${encodeURIComponent(
+    bajarCuotaVehiculo: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero bajar la cuota de mi crédito"
     )}`,
 };
