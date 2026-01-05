@@ -3,6 +3,12 @@
 import { Image } from "astro:assets";
 import logo from "../../../assets/logos/Logo.png";
 import { whatsappLinks } from "../../../utils/whatsapp";
+
+export interface Props {
+    whatsapp?: string;
+}
+
+const { whatsapp = whatsappLinks.genericMessage } = Astro.props;
 ---
 
 <!-- Footer -->
@@ -39,7 +45,7 @@ import { whatsappLinks } from "../../../utils/whatsapp";
                         ¿Aún tienes dudas? Habla con un asesor ahora mismo.
                     </p>
                     <a
-                        href={whatsappLinks.cotizarSeguro}
+                        href={whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
                         class="inline-block px-8 py-3 bg-servir-green text-black font-bold rounded-full shadow-lg transition-all duration-300 hover:bg-opacity-90 hover:shadow-xl whitespace-nowrap button-text"
