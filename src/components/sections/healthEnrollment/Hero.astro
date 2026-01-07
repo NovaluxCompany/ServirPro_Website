@@ -4,13 +4,13 @@ import heroBg from "../../../assets/images/healthEnrollment/Hero.webp";
 import heroBgMobile from "../../../assets/images/healthEnrollment/Hero-mobile.webp";
 import { whatsappLinks } from "../../../utils/whatsapp";
 
-const policyTitle = "Activa tu ARL";
-const policyTitle2 = "en 24/48 horas"
+const policyTitle = "Te afiliamos a la";
+const policyTitle2 = "ARL en 24/48 horas";
 const description1 = "Evita rechazos, errores y demoras. ";
-const description2 ="Afiliamos independientes y ";
+const description2 = "Afiliamos independientes y ";
 const description3 = "empresas en todo Colombia.";
 const subtitle = "Atención inmediata por WhatsApp";
-const buttonText = "Activar mi ARL ahora";
+const buttonText = "Afiliarme a la ARL ahora";
 ---
 
 <section class="h-[70vh] max-h-[70vh] sm:h-auto sm:max-h-none">
@@ -32,107 +32,116 @@ const buttonText = "Activar mi ARL ahora";
         class="absolute inset-0 w-full h-[80vh] border-none object-cover sm:hidden"
       />
 
-     <!-- Contenedor para móvil -->
-<div class="sm:hidden absolute inset-0 flex flex-col justify-end px-8">
-  <div class="w-full max-w-lg mx-auto">
-    <div class="text-left w-full">
-      <!-- Título en móvil -->
-      <h1 class="text-3xl font-extrabold text-[#21608D] leading-tight mb-4">
-        {policyTitle}<br />{policyTitle2}
-      </h1>
-
-      <!-- Descripción en móvil -->
-      <p class="text-base font-medium text-black mb-0 leading-relaxed">
-        {description1}
-      </p>
-      <p class="text-base font-medium text-black mb-0 leading-relaxed">
-        {description2}
-      </p>
-      <p class="text-base font-medium text-black mb-5 leading-relaxed">
-        {description3}
-      </p>
-
-      <!-- Botón en móvil -->
-      <a
-        href={whatsappLinks.cotizarArl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block w-auto px-8 py-2.5 text-base font-bold text-black bg-servir-green rounded-xl shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl mb-4"
-      >
-        {buttonText}
-      </a>
-
-      <!-- Subtítulo en móvil -->
-      <p class="text-base font-medium text-black leading-relaxed">
-        {subtitle}
-      </p>
-    </div>
-  </div>
-</div>
-
-
-<!-- Banda de título en tablet y desktop: fija a la derecha -->
-<div
-  class="hidden sm:block absolute top-8 sm:top-10 md:top-12 lg:top-16 right-0 w-[50%] lg:w-[45%]"
->
-  <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-    <h1
-      class="font-extrabold text-[#21608D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl leading-tight"
-    >
-      {policyTitle}<br /> {policyTitle2}
-    </h1>
-  </div>
-</div>
-
-<!-- Contenedor para tablet y desktop -->
-<div class="hidden sm:block">
-  <div
-    class="relative sm:absolute sm:right-0 sm:top-0 sm:bottom-0 sm:w-[50%] lg:w-[45%] flex items-center sm:items-start md:items-center" style="padding-bottom: 0px"; 
-  >
-    <!-- <div class="w-full pt-36 sm:pt-40 md:pt-48 lg:pt-56 pb-8"> -->
-      <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div class="text-left w-full">
-          <!-- Descripción -->
-          <p class="mb-0">
-            <span
-              class="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium leading-snug"
+      <!-- Contenedor para móvil -->
+      <div class="sm:hidden absolute inset-0 flex flex-col justify-end px-8">
+        <div class="w-full max-w-lg mx-auto">
+          <div class="text-left w-full">
+            <!-- Título en móvil -->
+            <h1
+              class="text-3xl font-extrabold text-[#21608D] leading-tight mb-4 min-w-max"
             >
+              {policyTitle}<br />{policyTitle2}
+            </h1>
+
+            <!-- Descripción en móvil -->
+            <p class="text-base font-medium text-black mb-0 leading-relaxed">
               {description1}
-            </span>
-          </p>
-
-          <p class="mb-5 sm:mb-6 md:mb-0">
-            <span
-              class="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium leading-snug"
-            >
+            </p>
+            <p class="text-base font-medium text-black mb-0 leading-relaxed">
               {description2}
-            </span>
-          </p>
-
-          <p class="mb-5 sm:mb-6 md:mb-7">
-            <span
-              class="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium leading-snug"
-            >
+            </p>
+            <p class="text-base font-medium text-black mb-5 leading-relaxed">
               {description3}
-            </span>
-          </p>
+            </p>
 
-          <!-- Botón -->
-          <a
-            href={whatsappLinks.cotizarArl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block w-full sm:w-auto mb-5 sm:mb-6 md:mb-7 px-6 sm:px-7 md:px-8 lg:px-10 py-3 sm:py-3.5 md:py-4 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-black bg-servir-green rounded-xl shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
-          >
-            {buttonText}
-          </a>
+            <!-- Botón en móvil -->
+            <a
+              href={whatsappLinks.cotizarArl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block w-auto px-8 py-2.5 text-base font-bold text-black bg-servir-green rounded-xl shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl mb-4"
+            >
+              {buttonText}
+            </a>
 
-          <!-- Texto de WhatsApp -->
-          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-black leading-snug">
-            {subtitle}
-          </p>
+            <!-- Subtítulo en móvil -->
+            <p class="text-base font-medium text-black leading-relaxed">
+              {subtitle}
+            </p>
+          </div>
         </div>
       </div>
-    <!-- </div> -->
+
+      <!-- Banda de título en tablet y desktop: fija a la derecha -->
+      <div
+        class="hidden sm:block absolute top-8 sm:top-10 md:top-12 lg:top-16 right-0 w-[50%] lg:w-[45%]"
+      >
+        <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xl:pr-0">
+          <h1
+            class="font-extrabold text-[#21608D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl leading-tight"
+          >
+            {policyTitle}<br />
+            {policyTitle2}
+          </h1>
+        </div>
+      </div>
+
+      <!-- Contenedor para tablet y desktop -->
+      <div class="hidden sm:block">
+        <div
+          class="relative sm:absolute sm:right-0 sm:top-0 sm:bottom-0 sm:w-[50%] lg:w-[45%] flex items-center sm:items-start md:items-center"
+          style="padding-bottom: 0px"
+          ;
+        >
+          <!-- <div class="w-full pt-36 sm:pt-40 md:pt-48 lg:pt-56 pb-8"> -->
+          <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+            <div class="text-left w-full">
+              <!-- Descripción -->
+              <p class="mb-0">
+                <span
+                  class="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium leading-snug"
+                >
+                  {description1}
+                </span>
+              </p>
+
+              <p class="mb-5 sm:mb-6 md:mb-0">
+                <span
+                  class="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium leading-snug"
+                >
+                  {description2}
+                </span>
+              </p>
+
+              <p class="mb-5 sm:mb-6 md:mb-7">
+                <span
+                  class="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium leading-snug"
+                >
+                  {description3}
+                </span>
+              </p>
+
+              <!-- Botón -->
+              <a
+                href={whatsappLinks.cotizarArl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block w-full sm:w-auto mb-5 sm:mb-6 md:mb-7 px-6 sm:px-7 md:px-8 lg:px-10 py-3 sm:py-3.5 md:py-4 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-black bg-servir-green rounded-xl shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
+              >
+                {buttonText}
+              </a>
+
+              <!-- Texto de WhatsApp -->
+              <p
+                class="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-black leading-snug"
+              >
+                {subtitle}
+              </p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
   </div>
 </section>
