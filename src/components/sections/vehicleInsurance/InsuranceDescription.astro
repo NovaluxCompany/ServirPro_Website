@@ -1,22 +1,21 @@
 ---
 import { Image } from 'astro:assets';
-import detailAccident from '../../../assets/images/vehicleInsurance/Detail-accident.webp';
 import detailMoney from '../../../assets/images/vehicleInsurance/Detail-money.webp';
-import detailAccidentMobil from '../../../assets/images/vehicleInsurance/Detail-accident-mobile.webp';
 import detailsHero from '../../../assets/images/vehicleInsurance/Details-hero.webp';
+import detailsHeroMobile from '../../../assets/images/vehicleInsurance/Details-hero-mobile.webp';
 ---
 
 <section
   class="relative rounded-4xl w-4/5 md:w-3/5 min-h-screen md:min-h-fit text-white overflow-hidden flex flex-col items-center text-center mx-auto py-8 pb-12 md:pb-20 mt-32 md:-mt-200 md:-px-10 md:py-30 lg:py-38"
 >
-  <!-- Imagen de accidente Mobile -->
+  <!-- Imagen de fondo Mobile -->
   <Image 
-    src={detailAccidentMobil}
-    alt="Accidente vehicular móvil"
-    class="md:hidden absolute top-2 -right-0 w-3/5 h-auto rounded-bl-3xl object-cover z-20 -mt-5"  
+    src={detailsHeroMobile}
+    alt="Hero detalle móvil"
+    class="md:hidden absolute top-2 -right-0 w-5/5 h-auto rounded-bl-3xl object-cover z-20 -mt-5"  
   />
   
-  <!-- Imagen de accidente Desktop -->
+  <!-- Imagen Desktop -->
   <Image 
     src={detailsHero}
     alt="Hero detalle"
@@ -24,64 +23,65 @@ import detailsHero from '../../../assets/images/vehicleInsurance/Details-hero.we
   />
   <div class="relative z-30 max-w-3xl mx-auto flex flex-col items-center w-full px-4 md:px-0">
     <!-- MOBILE LAYOUT -->
-    <div class="md:hidden w-full flex flex-col items-center justify-center mt-20">
+    <div class="md:hidden w-full flex flex-col items-center justify-center mt-10">
       <!-- Título Mobile -->
-      <div class="bg-servir-blue-banner p-3 rounded-2xl mb-4 flex flex-row items-start gap-3 w-fit self-start ml-4">
-        <span class="text-sm font-semibold subtitle text-left">Los imprevistos <br /> pueden salir <br /> muy caros</span>
+      <div class="bg-servir-blue-banner p-3 rounded-2xl mb-4 flex flex-row items-start gap-3 w-fit self-start ml-4  ">
+        <span class="text-sm font-bold subtitle">Los imprevistos <br /> pueden salir <br /> muy caros</span>
         <span class="text-2xl shrink-0 mt-3">⚠️</span>
       </div>
 
       <!-- Lista de riesgos Mobile -->
-      <div class="w-4/5 mb-6 space-y-2 text-center">
+      <div class="w-4/5 mb-6 space-y-2 text-center -ml-10">
         <div class="flex items-center gap-2">
-          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 24px;"></iconify-icon>
+          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 18px;"></iconify-icon>
           <span class="text-sm text-white">Accidente grave</span>
         </div>
         <div class="flex items-center gap-2">
-          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 24px;"></iconify-icon>
+          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 18px;"></iconify-icon>
           <span class="text-sm text-white">Robo de tu carro o moto</span>
         </div>
         <div class="flex items-center gap-2">
-          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 24px;"></iconify-icon>
+          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 18px;"></iconify-icon>
           <span class="text-sm text-white">Daños a terceros</span>
         </div>
       </div>
 
       <!-- Segundo título Mobile -->
-      <div class="bg-servir-blue-banner p-0.5 rounded-2xl inline-block mb-4 flex flex-col items-center gap-2 w-4/5 justify-center">
-        <span class="text-sm font-bold subtitle">Sin un seguro podrías enfrentar:</span> <br>
-         <span class="text-1xl shrink-0">⚠️</span>
+      <div class="bg-servir-blue-banner p-3 rounded-2xl mb-4 flex flex-row items-center gap-3 w-fit self-start ml-4">
+        <span class="text-2xl shrink-0">⚠️</span>
+        <span class="text-sm font-bold subtitle">Sin un seguro <br> podrías enfrentar:</span>
+       
       </div>
 
       <!-- Lista de consecuencias Mobile -->
-      <div class="w-4/5 mb-6 space-y-2">
+      <div class="w-4/5 mb-6 space-y-2 -ml-10">
         <div class="flex items-start gap-2">
-          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 24px;"></iconify-icon>
-          <span class="text-sm text-white"><span class="font-bold text-[#1e3a5f]">Costos de reparación</span> demasiado altos</span>
+          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 18px;"></iconify-icon>
+          <span class="text-sm text-white text-left"><span class="font-bold text-[#1e3a5f]">Costos de reparación</span> demasiado altos</span>
         </div>
         <div class="flex items-start gap-2">
-          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 24px;"></iconify-icon>
-          <span class="text-sm text-white"><span class="font-bold text-[#1e3a5f]">Pérdida total del vehículo</span> en un robo</span>
+          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 18px;"></iconify-icon>
+          <span class="text-sm text-white text-left"><span class="font-bold text-[#1e3a5f]">Pérdida total del vehículo</span> en un robo</span>
         </div>
         <div class="flex items-start gap-2">
-          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 24px;"></iconify-icon>
+          <iconify-icon icon="mdi:information-variant-circle" class="text-white shrink-0" style="font-size: 18px;"></iconify-icon>
           <span class="text-sm text-white text-left"><span class="font-bold text-[#1e3a5f]">Responsabilidad civil</span> por daños a terceros</span>
         </div>
       </div>
 
       <!-- Texto final Mobile -->
-      <div class="w-4/5 mt-4 relative">
+      <div class="w-4/5 mt-4 relative -ml-8">
         <div class="bg-white text-[#3b5881] text-sm font-semibold rounded-2xl p-4 shadow-md leading-tight subtitle -mt-5" >
           <p>
               <span class="font-bold text-[#1e3a5f]">Un accidente, robo o daño inesperado</span> puede dejarte con <span class="font-bold text-[#1e3a5f]">altas deudas</span> y sin transporte en cuestión de segundos...
           </p>
         </div>
-        
-        <!-- Imagen de dinero Mobile -->
-        <Image 
+
+        <!-- Imagen dinero Mobile -->
+        <Image
           src={detailMoney}
           alt="Dinero"
-          class="absolute w-1/4 h-auto rounded-tl-3xl object-cover z-20 -bottom-6 -right-8"
+          class="absolute w-2/5 h-auto rounded-tl-3xl object-cover z-20 -bottom-6 -right-15"
         />
       </div>
     </div>
@@ -89,7 +89,7 @@ import detailsHero from '../../../assets/images/vehicleInsurance/Details-hero.we
     <!-- DESKTOP LAYOUT -->
     <div class="hidden md:flex md:flex-col md:w-full md:items-center md:pt-26">
       <!-- Título Desktop -->
-      <div class="bg-servir-blue-banner p-0.5 md:pl-3 md:pr-10 md:py-0 rounded-[15px] mb-6 md:mb-5 -mt-58 md:rounded-2xl flex items-center gap-1.5 md:gap-5 md:w-auto  md:-ml-30">
+      <div class="bg-servir-blue-banner p-0.5 md:pl-3 md:pr-10 md:py-0 rounded-[15px] mb-6 md:mb-5 -mt-58 md:rounded-2xl flex items-center gap-1.5 md:gap-5 md:w-auto  md:-ml-38">
         <div class="shrink-0 flex items-center">
           <span class="text-3xl">⚠️</span>
         </div>
@@ -115,7 +115,7 @@ import detailsHero from '../../../assets/images/vehicleInsurance/Details-hero.we
       </div>
 
       <!-- Segundo título Desktop -->
-      <div class="bg-servir-blue-banner p-0.5 md:pl-3 md:pr-10 md:py-0 rounded-[15px] mb-6 md:mb-5 -mt-0 md:rounded-2xl flex items-center gap-1.5 md:gap-5 md:w-auto  md:-ml-50">
+      <div class="bg-servir-blue-banner p-0.5 md:pl-3 md:pr-10 md:py-0 rounded-[15px] mb-6 md:mb-5 -mt-0 md:rounded-2xl flex items-center gap-1.5 md:gap-5 md:w-auto md:-ml-55">
         <div class="shrink-0 flex items-center">
           <span class="text-3xl">⚠️</span>
         </div>
