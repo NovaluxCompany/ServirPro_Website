@@ -6,7 +6,7 @@ import detailsHeroMobile from "../../../assets/images/vehicleInsurance/Details-h
 ---
 
 <section
-  class="relative rounded-4xl w-4/5 md:w-3/5 min-h-screen md:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] text-white overflow-hidden flex flex-col items-center text-center mx-auto py-8 pb-12 md:pb-20 mt-32 md:mt-16 lg:mt-20 md:px-0 md:py-30 lg:py-38"
+  class="relative rounded-4xl w-4/5 md:w-3/5 min-h-screen md:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] text-white overflow-hidden flex flex-col items-center text-center mx-auto py-8 pb-12 md:pb-20 mt-32 md:mt-16 lg:mt-5 md:px-0 md:py-30 lg:py-38"
 >
   <!-- Imagen de fondo Mobile -->
   <Image
@@ -67,8 +67,8 @@ import detailsHeroMobile from "../../../assets/images/vehicleInsurance/Details-h
       </div>
 
       <!-- Lista de consecuencias Mobile -->
-      <div class="w-full space-y-2 pl-4">
-        <div class="flex items-start gap-2">
+      <div class="w-full space-y-1 pl-4">
+        <div class="flex items-start gap-1">
           <iconify-icon
             icon="mdi:information-variant-circle"
             class="text-white shrink-0 mt-0.5"
@@ -99,23 +99,23 @@ import detailsHeroMobile from "../../../assets/images/vehicleInsurance/Details-h
 
       <!-- Texto final Mobile con Grid -->
       <div class="w-full grid grid-cols-12 gap-2 items-end">
-        <div class="col-span-9 bg-white text-[#3b5881] text-sm font-semibold rounded-2xl p-4 shadow-md leading-tight">
+        <div class=" w-70 bg-white text-[#3b5881] text-sm font-semibold rounded-2xl p-4 shadow-md leading-tight">
           <p>
             <span class="font-bold text-[#1e3a5f]">Un accidente, robo o daño inesperado</span> 
             puede dejarte con <span class="font-bold text-[#1e3a5f]">altas deudas</span> 
             y sin transporte en cuestión de segundos...
           </p>
         </div>
-        <div class="col-span-3 flex justify-end items-end pb-2">
-          <Image src={detailMoney} alt="Dinero" class="w-20 h-auto" />
-        </div>
       </div>
+       <div class="absolute right-5 -bottom-2">
+          <Image src={detailMoney} alt="Dinero" class="w-28 h-14" />
+        </div>
     </div>
 
     <!-- DESKTOP LAYOUT -->
-    <div class="hidden md:flex md:flex-col w-full md:w-4/5 lg:w-3/4 xl:w-2/3 md:items-start pl-4 md:pl-12 lg:pl-16 xl:pl-20 pt-8 md:pt-8 lg:pt-10 xl:pt-6 gap-2 md:gap-2.5 lg:mt-10 lg:gap-3 xl:gap-4">
+    <div class="hidden md:flex md:flex-col w-full md:w-4/5 lg:w-3/4 xl:w-2/3 md:items-start pl-4 md:pl-12 lg:pl-8 xl:pl-10 pt-8 md:pt-8 lg:pt-10 gap-2 md:gap-2.5 lg:mt-10 lg:gap-3 xl:gap-4">
       <!-- Título Desktop -->
-      <div class="bg-[#1e3a5f] px-1 md:px-6 lg:px-4 xl:px-12 py-1.5 md:py-0.5 rounded-xl md:rounded-1xl flex items-first gap-2 w-auto shadow-lg">
+      <div class="bg-[#1e3a5f] px-1 md:px-6 lg:px-4 xl:px-10 py-1.5 md:py-0.5 rounded-xl md:rounded-1xl flex gap-2 w-auto shadow-lg">
         <span class="text-lg md:text-xl lg:text-2xl shrink-0">⚠️</span>
         <span class="text-xs md:text-sm lg:text-base xl:text-lg font-semibold text-white whitespace-nowrap">
           Los imprevistos pueden salir muy caros
@@ -187,8 +187,8 @@ import detailsHeroMobile from "../../../assets/images/vehicleInsurance/Details-h
       </div>
 
       <!-- Texto final Desktop  -->
-      <div class="w-full md:max-w-[350px] lg:max-w-[900px] xl:max-w-[800px] relative mt-10">
-        <div class="w-full bg-white text-[#3b5881] text-xs md:text-sm lg:text-base xl:text-lg font-semibold rounded-xl md:rounded-2xl px-3 md:px-4 lg:px-5 py-2 md:py-3 shadow-md leading-tight text-left lg:text-center xl:text-left">
+      <div class="w-full md:max-w-[350px] lg:max-w-[1000px] xl:max-w-[1000px] relative mt-5">
+        <div class="w-full bg-white text-[#3b5881] text-xs md:text-sm lg:text-base xl:text-lg font-semibold rounded-xl md:rounded-2xl px-3 md:px-4 lg:px-5 py-2 md:py-2 shadow-md leading-tight text-left lg:text-left xl:text-left">
           <p>
             <span class="font-bold text-[#1e3a5f]">Un accidente, robo o daño inesperado</span>
             <br />puede dejarte con <span class="font-bold text-[#1e3a5f]">altas deudas</span> 
@@ -197,8 +197,8 @@ import detailsHeroMobile from "../../../assets/images/vehicleInsurance/Details-h
         </div>
         
         <!-- Imagen de dinero  -->
-        <div class="relative -right-20 md:-right-70 lg:-right-24 xl:-right-95 bottom-0 md:bottom-8 lg:bottom-10">
-          <Image src={detailMoney} alt="Dinero" class="w-[100px] md:w-[100px] lg:w-[400px] xl:w-[100px] h-auto" />
+        <div class="relative -right-20 md:-right-75 lg:-right-50 xl:-right-95 bottom-0 md:bottom-10   lg:bottom-20">
+          <Image src={detailMoney} alt="Dinero" class="w-[200px] md:w-[100px] lg:w-[300px] xl:w-[200px] h-auto" />
         </div>
       </div>
     </div>
