@@ -1,43 +1,206 @@
 ---
-import { Image } from 'astro:assets';
-import detailBg from '../../../assets/images/vehicleInsurance/Detail-Banner.webp';
-import detailBgMobile from '../../../assets/images/vehicleInsurance/Detail-Banner-mobile.webp';
+import { Image } from "astro:assets";
+import detailMoney from "../../../assets/images/vehicleInsurance/Cash.webp";
+import detailsHero from "../../../assets/images/vehicleInsurance/Details-hero.webp";
+import detailsHeroMobile from "../../../assets/images/vehicleInsurance/Details-hero-mobile.webp";
 ---
 
 <section
-  class="relative bg-cover bg-center bg-no-repeat text-white overflow-hidden flex flex-col items-center justify-center text-center h-[450px] md:h-[600px] m-0 p-0 md:h-auto md:mt-10 md:px-2 md:py-30 lg:py-38 md:bg-transparent bg-servir-blue"
+  class="relative rounded-4xl w-4/5 md:w-3/5 min-h-screen md:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] text-white overflow-hidden flex flex-col items-center text-center mx-auto py-8 pb-12 md:pb-20 mt-32 md:mt-16 lg:mt-5 md:px-0 md:py-30 lg:py-38"
 >
-  <!-- Imagen de fondo: Desktop y Mobile -->
-  <!-- Desktop -->
-  <Image 
-    src={detailBg} 
-    alt="Fondo salud detalle" 
-    class="absolute inset-0 w-full   h-[720px] lg:object-contain md:object-cover hidden md:block"
-  />
-  <!-- Mobile -->
-  <Image 
-    src={detailBgMobile} 
-    alt="Fondo salud detalle móvil" 
-    class="absolute inset-0 w-full h-[450px] object-contain md:hidden md:h-full"
+  <!-- Imagen de fondo Mobile -->
+  <Image
+    src={detailsHeroMobile}
+    alt="Hero detalle móvil"
+    class="md:hidden absolute top-0 right-0 w-full h-auto rounded-bl-3xl object-cover z-0"
   />
 
-  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-    <!-- Título -->
-    <div class="bg-servir-blue-banner  p-[20px] md:px-10 md:py-3 w-[89%] md:w-[100%] md:w-100 rounded-[20px] inline-block mb-8 md:rounded-2xl ">
-         <h2 class="text-2xl md:text-3xl font-semibold sm:text-lg">
-        <span class="block md:inline md:whitespace-pre-line md:text-3xl text-lg subtitle">Un accidente, robo o daño
-           inesperado puede dejarte con
-           altos gastos y sin transporte
-           en cuestión de segundos.</span>
-      </h2>
+  <!-- Imagen Desktop -->
+  <Image
+    src={detailsHero}
+    alt="Hero detalle"
+    class="hidden md:block absolute top-0 left-0 w-full h-full rounded-bl-3xl object-contain z-0"
+  />
+  
+  <div class="relative z-10 w-full max-w-3xl mx-auto px-4 md:px-0">
+    <!-- MOBILE LAYOUT -->
+    <div class="md:hidden w-full flex flex-col items-start mt-10 space-y-6 pl-8">
+      <!-- Título Mobile -->
+      <div class="bg-[#1e3a5f] px-4 py-3 rounded-2xl flex flex-row items-end gap-2 w-auto max-w-[280px]">
+        <span class="text-sm font-bold text-white leading-tight">
+          Los imprevistos <br /> pueden salir <br /> muy caros
+        </span>
+        <span class="text-2xl shrink-0 leading-none pb-0.5">⚠️</span>
+      </div>
+
+      <!-- Lista de riesgos Mobile -->
+      <div class="w-full space-y-2 pl-4">
+        <div class="flex items-center gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0"
+            style="font-size: 14px;"></iconify-icon>
+          <span class="text-sm text-white">Accidente grave</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0"
+            style="font-size: 14px;"></iconify-icon>
+          <span class="text-sm text-white">Robo de tu carro o moto</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0"
+            style="font-size: 14px;"></iconify-icon>
+          <span class="text-sm text-white">Daños a terceros</span>
+        </div>
+      </div>
+
+      <!-- Segundo título Mobile -->
+      <div class="bg-[#1e3a5f] px-4 py-3 rounded-2xl flex flex-row items-center gap-3 w-auto max-w-[300px]">
+        <span class="text-2xl shrink-0">⚠️</span>
+        <span class="text-sm font-bold text-white leading-tight">
+          Sin un seguro <br /> podrías enfrentar:
+        </span>
+      </div>
+
+      <!-- Lista de consecuencias Mobile -->
+      <div class="w-full space-y-1 pl-4">
+        <div class="flex items-start gap-1">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0 mt-0.5"
+            style="font-size: 14px;"></iconify-icon>
+          <span class="text-sm text-white text-left">
+            <span class="font-bold text-[#1e3a5f]">Costos de reparación</span> demasiado altos
+          </span>
+        </div>
+        <div class="flex items-start gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0 mt-0.5"
+            style="font-size: 14px;"></iconify-icon>
+          <span class="text-sm text-white text-left">
+            <span class="font-bold text-[#1e3a5f]">Pérdida total del vehículo</span> en un robo
+          </span>
+        </div>
+        <div class="flex items-start gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0 mt-0.5"
+            style="font-size: 14px;"></iconify-icon>
+          <span class="text-sm text-white text-left">
+            <span class="font-bold text-[#1e3a5f]">Responsabilidad civil</span> por daños a terceros
+          </span>
+        </div>
+      </div>
+
+      <!-- Texto final Mobile con Grid -->
+      <div class="w-full grid grid-cols-12 gap-2 items-end">
+        <div class=" w-70 bg-white text-[#3b5881] text-sm font-semibold rounded-2xl p-4 shadow-md leading-tight">
+          <p>
+            <span class="font-bold text-[#1e3a5f]">Un accidente, robo o daño inesperado</span> 
+            puede dejarte con <span class="font-bold text-[#1e3a5f]">altas deudas</span> 
+            y sin transporte en cuestión de segundos...
+          </p>
+        </div>
+      </div>
+       <div class="absolute right-5 -bottom-2">
+          <Image src={detailMoney} alt="Dinero" class="w-28 h-14" />
+        </div>
     </div>
 
+    <!-- DESKTOP LAYOUT -->
+    <div class="hidden md:flex md:flex-col w-full md:w-4/5 lg:w-3/4 xl:w-2/3 md:items-start pl-4 md:pl-12 lg:pl-8 xl:pl-10 pt-8 md:pt-8 lg:pt-10 gap-2 md:gap-2.5 lg:mt-10 lg:gap-3 xl:gap-4">
+      <!-- Título Desktop -->
+      <div class="bg-[#1e3a5f] px-1 md:px-6 lg:px-4 xl:px-10 py-1.5 md:py-0.5 rounded-xl md:rounded-1xl flex gap-2 w-auto shadow-lg">
+        <span class="text-lg md:text-xl lg:text-2xl shrink-0">⚠️</span>
+        <span class="text-xs md:text-sm lg:text-base xl:text-lg font-semibold text-white whitespace-nowrap">
+          Los imprevistos pueden salir muy caros
+        </span>
+      </div>
 
-    <!-- Texto final -->
-    <div class="bg-white text-[#3b5881]  text-lg font-extrabold italic rounded-2xl  p-[23px]  md:px-8 md:py-5 inline-block shadow-md text-lg md:text-3xl leading-snug mx-[23px] md:mx-0 subtitle">
-      <p>
-          Sin un seguro, podrías asumir costos elevados de reparación, pérdidas totales o incluso responsabilidad por daños a terceros.
-      </p>
+      <!-- Lista de riesgos Desktop -->
+      <div class="w-full space-y-1 md:space-y-1 lg:space-y-0.5 pl-2 md:pl-3 lg:pl-4">
+        <div class="flex items-center gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0"
+            style="font-size: 16px;"></iconify-icon>
+          <span class="text-xs md:text-xs lg:text-lg text-white">Accidente grave</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0"
+            style="font-size: 16px;"></iconify-icon>
+          <span class="text-xs md:text-xs lg:text-lg text-white">Robo de tu carro o moto</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0"
+            style="font-size: 16px;"></iconify-icon>
+          <span class="text-xs md:text-xs lg:text-lg text-white">Daños a terceros</span>
+        </div>
+      </div>
+
+      <!-- Segundo título Desktop -->
+      <div class="bg-[#1e3a5f] px-2 md:px-10 lg:px-4 xl:px-5 py-1.5 md:py-0.5 rounded-xl md:rounded-1xl flex items-center gap-2 w-auto shadow-lg">
+        <span class="text-lg md:text-xl lg:text-2xl shrink-0">⚠️</span>
+        <span class="text-xs md:text-sm lg:text-base xl:text-lg font-semibold text-white whitespace-nowrap">
+          Sin un seguro podrías enfrentar:
+        </span>
+      </div>
+
+      <!-- Lista de consecuencias Desktop -->
+      <div class="w-full space-y-1 md:space-y-1 lg:space-y-1.5 pl-2 md:pl-3 lg:pl-4">
+        <div class="flex items-start gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0 mt-0.5"
+            style="font-size: 16px;"></iconify-icon>
+          <span class="text-xs md:text-xs lg:text-lg text-white text-left md:whitespace-nowrap">
+            <span class="font-bold text-[#1e3a5f]">Costos de reparación</span> demasiado altos
+          </span>
+        </div>
+        <div class="flex items-start gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0 mt-0.5"
+            style="font-size: 16px;"></iconify-icon>
+          <span class="text-xs md:text-xs lg:text-lg text-white text-left md:whitespace-nowrap">
+            <span class="font-bold text-[#1e3a5f]">Pérdida total del vehículo</span> en un robo
+          </span>
+        </div>
+        <div class="flex items-start gap-2">
+          <iconify-icon
+            icon="mdi:information-variant-circle"
+            class="text-white shrink-0 mt-0.5"
+            style="font-size: 16px;"></iconify-icon>
+          <span class="text-xs md:text-xs lg:text-lg text-white text-left md:whitespace-nowrap">
+            <span class="font-bold text-[#1e3a5f]">Responsabilidad civil</span> por daños a terceros
+          </span>
+        </div>
+      </div>
+
+      <!-- Texto final Desktop  -->
+      <div class="w-full md:max-w-[350px] lg:max-w-[1000px] xl:max-w-[1000px] relative mt-5">
+        <div class="w-full bg-white text-[#3b5881] text-xs md:text-sm lg:text-base xl:text-lg font-semibold rounded-xl md:rounded-2xl px-3 md:px-4 lg:px-5 py-2 md:py-2 shadow-md leading-tight text-left lg:text-left xl:text-left">
+          <p>
+            <span class="font-bold text-[#1e3a5f]">Un accidente, robo o daño inesperado</span>
+            <br />puede dejarte con <span class="font-bold text-[#1e3a5f]">altas deudas</span> 
+            y sin <br />transporte en cuestión de segundos...
+          </p>
+        </div>
+        
+        <!-- Imagen de dinero  -->
+        <div class="relative -right-20 md:-right-75 lg:-right-50 xl:-right-95 bottom-0 md:bottom-10   lg:bottom-20">
+          <Image src={detailMoney} alt="Dinero" class="w-[200px] md:w-[100px] lg:w-[300px] xl:w-[200px] h-auto" />
+        </div>
+      </div>
     </div>
   </div>
 </section>

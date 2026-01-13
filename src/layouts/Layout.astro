@@ -1,44 +1,76 @@
 ---
-import FloatingWppButton from '../components/sections/common/FloatingWppButton.astro';
-import '../styles/global.css';
+import FloatingWppButton from "../components/sections/common/FloatingWppButton.astro";
+import "../styles/global.css";
 
 export interface Props {
   title: string;
   description?: string;
+  whatsapp?: string;
 }
 
-const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.props;
+const {
+  title,
+  description = "ServirPRO: Tu tranquilidad asegurada",
+  whatsapp,
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-THFWQTTS');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-THFWQTTS");
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '309011398388234');
-      fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "309011398388234");
+      fbq("track", "PageView");
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=309011398388234&ev=PageView&noscript=1"
-    /></noscript>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=309011398388234&ev=PageView&noscript=1"
+      /></noscript
+    >
     <!-- End Meta Pixel Code -->
- 
+
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,17 +78,20 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
     <link rel="alternate icon" type="image/svg+xml" href="/ServirPro.svg" />
     <link rel="apple-touch-icon" href="/ServirPro.svg" />
     <title>{title}</title>
-    
+
     <!-- Google Fonts - Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Iconify Script -->
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script
+      src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+    ></script>
 
-
-    
     <style is:global>
       .icon {
         display: inline-block;
@@ -73,13 +108,12 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
       /* Estilos para simular la imagen de fondo */
       .hero-background {
         /* Usamos una imagen de placeholder que simula un encuentro de negocios */
-        background-image: url('https://placehold.co/1920x800/224050/ffffff?text=Reunión+de+negocios+ServirPRO');
+        background-image: url("https://placehold.co/1920x800/224050/ffffff?text=Reunión+de+negocios+ServirPRO");
         background-size: cover;
         background-position: center;
       }
 
       /* Estilos para el difuminado azul */
-  
 
       /* Estilos mejorados para los menús desplegables */
       .dropdown-group {
@@ -88,7 +122,7 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
 
       /* Área extendida de hover para mejor UX */
       .dropdown-group::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -10px;
@@ -104,7 +138,9 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
         margin-top: 0.25rem;
         width: 22rem;
         border-radius: 0.375rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
         background-color: white;
         border: 1px solid rgba(0, 0, 0, 0.05);
         opacity: 0;
@@ -148,9 +184,8 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
     </style>
   </head>
   <body class="font-sans antialiased bg-gray-50">
-
     <slot />
-    <FloatingWppButton />
+    <FloatingWppButton whatsapp={whatsapp} />
     <!-- Script para la interactividad del menú responsive -->
     <script>
       // Variables globales
@@ -163,21 +198,21 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
 
       // Función para mostrar slide específico
       function showSlide(slideIndex) {
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.carousel-indicator');
-        
+        const slides = document.querySelectorAll(".carousel-slide");
+        const indicators = document.querySelectorAll(".carousel-indicator");
+
         // Ocultar todos los slides
-        slides.forEach(slide => slide.classList.add('hidden'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        
+        slides.forEach((slide) => slide.classList.add("hidden"));
+        indicators.forEach((indicator) => indicator.classList.remove("active"));
+
         // Mostrar slide actual
         if (slides[slideIndex]) {
-          slides[slideIndex].classList.remove('hidden');
+          slides[slideIndex].classList.remove("hidden");
         }
         if (indicators[slideIndex]) {
-          indicators[slideIndex].classList.add('active');
+          indicators[slideIndex].classList.add("active");
         }
-        
+
         currentSlide = slideIndex;
       }
 
@@ -195,16 +230,16 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
 
       // Función para mostrar slide de oficina específico
       function showOfficeSlide(slideIndex) {
-        const slides = document.querySelectorAll('.office-slide');
-        
+        const slides = document.querySelectorAll(".office-slide");
+
         // Ocultar todos los slides
-        slides.forEach(slide => slide.classList.add('hidden'));
-        
+        slides.forEach((slide) => slide.classList.add("hidden"));
+
         // Mostrar slide actual
         if (slides[slideIndex]) {
-          slides[slideIndex].classList.remove('hidden');
+          slides[slideIndex].classList.remove("hidden");
         }
-        
+
         currentOfficeSlide = slideIndex;
       }
 
@@ -216,22 +251,23 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
 
       // Función para ir al slide anterior de oficina
       function prevOfficeSlide() {
-        currentOfficeSlide = (currentOfficeSlide - 1 + totalOfficeSlides) % totalOfficeSlides;
+        currentOfficeSlide =
+          (currentOfficeSlide - 1 + totalOfficeSlides) % totalOfficeSlides;
         showOfficeSlide(currentOfficeSlide);
       }
 
       // Función para mostrar slide de reseña específico
       function showReviewSlide(slideIndex) {
-        const slides = document.querySelectorAll('.review-slide');
-        
+        const slides = document.querySelectorAll(".review-slide");
+
         // Ocultar todos los slides
-        slides.forEach(slide => slide.classList.add('hidden'));
-        
+        slides.forEach((slide) => slide.classList.add("hidden"));
+
         // Mostrar slide actual
         if (slides[slideIndex]) {
-          slides[slideIndex].classList.remove('hidden');
+          slides[slideIndex].classList.remove("hidden");
         }
-        
+
         currentReviewSlide = slideIndex;
       }
 
@@ -243,47 +279,48 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
 
       // Función para ir al slide anterior de reseña
       function prevReviewSlide() {
-        currentReviewSlide = (currentReviewSlide - 1 + totalReviewSlides) % totalReviewSlides;
+        currentReviewSlide =
+          (currentReviewSlide - 1 + totalReviewSlides) % totalReviewSlides;
         showReviewSlide(currentReviewSlide);
       }
 
       // Control del Sidemenu móvil con overlay
       function openMobileMenu() {
-        const overlay = document.getElementById('mobile-overlay');
-        const panel = document.getElementById('mobile-menu-panel');
+        const overlay = document.getElementById("mobile-overlay");
+        const panel = document.getElementById("mobile-menu-panel");
         if (!overlay || !panel) return;
-        overlay.classList.remove('hidden');
+        overlay.classList.remove("hidden");
         // Iniciar fade-in del overlay
         requestAnimationFrame(() => {
-          overlay.classList.remove('opacity-0');
-          overlay.classList.add('opacity-100');
+          overlay.classList.remove("opacity-0");
+          overlay.classList.add("opacity-100");
         });
         // Expandir panel desde la izquierda
-        panel.classList.remove('scale-x-0');
-        panel.classList.add('scale-x-100');
-        document.body.style.overflow = 'hidden';
+        panel.classList.remove("scale-x-0");
+        panel.classList.add("scale-x-100");
+        document.body.style.overflow = "hidden";
       }
 
       function closeMobileMenu() {
-        const overlay = document.getElementById('mobile-overlay');
-        const panel = document.getElementById('mobile-menu-panel');
+        const overlay = document.getElementById("mobile-overlay");
+        const panel = document.getElementById("mobile-menu-panel");
         if (!overlay || !panel) return;
         // Contraer panel hacia la izquierda
-        panel.classList.remove('scale-x-100');
-        panel.classList.add('scale-x-0');
+        panel.classList.remove("scale-x-100");
+        panel.classList.add("scale-x-0");
         // Iniciar fade-out del overlay y esperar la transición antes de ocultarlo
-        overlay.classList.remove('opacity-100');
-        overlay.classList.add('opacity-0');
+        overlay.classList.remove("opacity-100");
+        overlay.classList.add("opacity-0");
         setTimeout(() => {
-          overlay.classList.add('hidden');
-          document.body.style.overflow = '';
+          overlay.classList.add("hidden");
+          document.body.style.overflow = "";
         }, 300);
       }
 
       function toggleMobileMenu() {
-        const overlay = document.getElementById('mobile-overlay');
+        const overlay = document.getElementById("mobile-overlay");
         if (!overlay) return;
-        if (overlay.classList.contains('hidden')) {
+        if (overlay.classList.contains("hidden")) {
           openMobileMenu();
         } else {
           closeMobileMenu();
@@ -292,32 +329,36 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
 
       // Funciones para dropdowns del header
       function toggleDropdown(dropdownName) {
-        const dropdown = document.querySelector(`[data-dropdown="${dropdownName}"] .dropdown-menu`);
-        const arrow = document.querySelector(`[data-dropdown="${dropdownName}"] .dropdown-arrow`);
-        
+        const dropdown = document.querySelector(
+          `[data-dropdown="${dropdownName}"] .dropdown-menu`,
+        );
+        const arrow = document.querySelector(
+          `[data-dropdown="${dropdownName}"] .dropdown-arrow`,
+        );
+
         // Cerrar todos los otros dropdowns
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
           if (menu !== dropdown) {
-            menu.classList.add('opacity-0', 'invisible');
-            menu.classList.remove('opacity-100', 'visible');
+            menu.classList.add("opacity-0", "invisible");
+            menu.classList.remove("opacity-100", "visible");
           }
         });
-        
-        document.querySelectorAll('.dropdown-arrow').forEach(arr => {
+
+        document.querySelectorAll(".dropdown-arrow").forEach((arr) => {
           if (arr !== arrow) {
-            arr.style.transform = 'rotate(0deg)';
+            arr.style.transform = "rotate(0deg)";
           }
         });
-        
+
         // Toggle del dropdown actual
-        if (dropdown.classList.contains('opacity-0')) {
-          dropdown.classList.remove('opacity-0', 'invisible');
-          dropdown.classList.add('opacity-100', 'visible');
-          arrow.style.transform = 'rotate(180deg)';
+        if (dropdown.classList.contains("opacity-0")) {
+          dropdown.classList.remove("opacity-0", "invisible");
+          dropdown.classList.add("opacity-100", "visible");
+          arrow.style.transform = "rotate(180deg)";
         } else {
-          dropdown.classList.add('opacity-0', 'invisible');
-          dropdown.classList.remove('opacity-100', 'visible');
-          arrow.style.transform = 'rotate(0deg)';
+          dropdown.classList.add("opacity-0", "invisible");
+          dropdown.classList.remove("opacity-100", "visible");
+          arrow.style.transform = "rotate(0deg)";
         }
       }
 
@@ -325,149 +366,170 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
       function toggleMobileAccordion(section) {
         const content = document.getElementById(`mobile-${section}-content`);
         const icon = document.getElementById(`mobile-${section}-icon`);
-        
-        if (content.classList.contains('hidden')) {
-          content.classList.remove('hidden');
-          icon.style.transform = 'rotate(180deg)';
+
+        if (content.classList.contains("hidden")) {
+          content.classList.remove("hidden");
+          icon.style.transform = "rotate(180deg)";
         } else {
-          content.classList.add('hidden');
-          icon.style.transform = 'rotate(0deg)';
+          content.classList.add("hidden");
+          icon.style.transform = "rotate(0deg)";
         }
       }
 
       // Toggle de acordeones móviles
       function toggleAccordion(accordionId) {
         const accordion = document.getElementById(accordionId);
-        const arrow = accordion.previousElementSibling.querySelector('.accordion-arrow');
-        
-        if (accordion.classList.contains('hidden')) {
-          accordion.classList.remove('hidden');
-          arrow.style.transform = 'rotate(180deg)';
+        const arrow =
+          accordion.previousElementSibling.querySelector(".accordion-arrow");
+
+        if (accordion.classList.contains("hidden")) {
+          accordion.classList.remove("hidden");
+          arrow.style.transform = "rotate(180deg)";
         } else {
-          accordion.classList.add('hidden');
-          arrow.style.transform = 'rotate(0deg)';
+          accordion.classList.add("hidden");
+          arrow.style.transform = "rotate(0deg)";
         }
       }
 
       // Toggle del campo de búsqueda móvil
       function toggleSearch() {
-        const searchField = document.getElementById('mobile-search-field');
-        const searchIcon = document.getElementById('search-icon');
-        const closeSearchIcon = document.getElementById('close-search-icon');
-        
-        if (searchField.classList.contains('hidden')) {
-          searchField.classList.remove('hidden');
-          searchIcon.classList.add('hidden');
-          closeSearchIcon.classList.remove('hidden');
-          searchField.querySelector('input').focus();
+        const searchField = document.getElementById("mobile-search-field");
+        const searchIcon = document.getElementById("search-icon");
+        const closeSearchIcon = document.getElementById("close-search-icon");
+
+        if (searchField.classList.contains("hidden")) {
+          searchField.classList.remove("hidden");
+          searchIcon.classList.add("hidden");
+          closeSearchIcon.classList.remove("hidden");
+          searchField.querySelector("input").focus();
         } else {
-          searchField.classList.add('hidden');
-          searchIcon.classList.remove('hidden');
-          closeSearchIcon.classList.add('hidden');
+          searchField.classList.add("hidden");
+          searchIcon.classList.remove("hidden");
+          closeSearchIcon.classList.add("hidden");
         }
       }
 
       // Función para cambiar imagen del carrusel de oficina
       function changeOfficeImage(officeId, imageIndex) {
         const images = document.querySelectorAll(`#${officeId} .office-image`);
-        const indicators = document.querySelectorAll(`#${officeId} .image-indicator`);
-        
-        images.forEach(img => img.classList.add('hidden'));
-        indicators.forEach(ind => ind.classList.remove('bg-white', 'bg-opacity-100'));
-        indicators.forEach(ind => ind.classList.add('bg-white', 'bg-opacity-50'));
-        
+        const indicators = document.querySelectorAll(
+          `#${officeId} .image-indicator`,
+        );
+
+        images.forEach((img) => img.classList.add("hidden"));
+        indicators.forEach((ind) =>
+          ind.classList.remove("bg-white", "bg-opacity-100"),
+        );
+        indicators.forEach((ind) =>
+          ind.classList.add("bg-white", "bg-opacity-50"),
+        );
+
         if (images[imageIndex]) {
-          images[imageIndex].classList.remove('hidden');
+          images[imageIndex].classList.remove("hidden");
         }
         if (indicators[imageIndex]) {
-          indicators[imageIndex].classList.remove('bg-opacity-50');
-          indicators[imageIndex].classList.add('bg-opacity-100');
+          indicators[imageIndex].classList.remove("bg-opacity-50");
+          indicators[imageIndex].classList.add("bg-opacity-100");
         }
       }
 
       // Inicialización cuando el DOM esté listo
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Mostrar el primer slide
         showSlide(0);
         showOfficeSlide(0);
         showReviewSlide(0);
-        
+
         // Auto-play del carrusel principal cada 5 segundos
         setInterval(nextSlide, 5000);
-        
+
         // Event listeners para el menú móvil (sidemenu)
-        const menuButton = document.getElementById('menu-button');
+        const menuButton = document.getElementById("menu-button");
         if (menuButton) {
-          menuButton.addEventListener('click', toggleMobileMenu);
+          menuButton.addEventListener("click", toggleMobileMenu);
         }
-        const menuButtonInside = document.getElementById('menu-button-inside');
+        const menuButtonInside = document.getElementById("menu-button-inside");
         if (menuButtonInside) {
-          menuButtonInside.addEventListener('click', toggleMobileMenu);
+          menuButtonInside.addEventListener("click", toggleMobileMenu);
         }
-        const backdrop = document.getElementById('mobile-backdrop');
+        const backdrop = document.getElementById("mobile-backdrop");
         if (backdrop) {
-          backdrop.addEventListener('click', closeMobileMenu);
+          backdrop.addEventListener("click", closeMobileMenu);
         }
         // Cerrar con tecla ESC
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') closeMobileMenu();
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMobileMenu();
         });
 
         // Event listeners para búsqueda móvil
-        const searchButton = document.getElementById('search-button');
+        const searchButton = document.getElementById("search-button");
         if (searchButton) {
-          searchButton.addEventListener('click', function() {
-            const searchBar = document.getElementById('search-bar');
+          searchButton.addEventListener("click", function () {
+            const searchBar = document.getElementById("search-bar");
             if (searchBar) {
-              searchBar.classList.toggle('hidden');
+              searchBar.classList.toggle("hidden");
             }
           });
         }
 
         // Event listeners para dropdowns del header
-        document.querySelectorAll('.dropdown-group button').forEach(button => {
-          button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const dropdownGroup = this.closest('.dropdown-group');
-            const dropdownName = dropdownGroup.getAttribute('data-dropdown');
-            toggleDropdown(dropdownName);
+        document
+          .querySelectorAll(".dropdown-group button")
+          .forEach((button) => {
+            button.addEventListener("click", function (e) {
+              e.preventDefault();
+              const dropdownGroup = this.closest(".dropdown-group");
+              const dropdownName = dropdownGroup.getAttribute("data-dropdown");
+              toggleDropdown(dropdownName);
+            });
           });
-        });
 
         // Event listeners para acordeones móviles
-        const mobileSeguroBtn = document.getElementById('mobile-seguros-btn');
+        const mobileSeguroBtn = document.getElementById("mobile-seguros-btn");
         if (mobileSeguroBtn) {
-          mobileSeguroBtn.addEventListener('click', () => toggleMobileAccordion('seguros'));
+          mobileSeguroBtn.addEventListener("click", () =>
+            toggleMobileAccordion("seguros"),
+          );
         }
 
-        const mobileSeguridadBtn = document.getElementById('mobile-seguridad-btn');
+        const mobileSeguridadBtn = document.getElementById(
+          "mobile-seguridad-btn",
+        );
         if (mobileSeguridadBtn) {
-          mobileSeguridadBtn.addEventListener('click', () => toggleMobileAccordion('seguridad'));
+          mobileSeguridadBtn.addEventListener("click", () =>
+            toggleMobileAccordion("seguridad"),
+          );
         }
 
-        const mobileEmpresasBtn = document.getElementById('mobile-empresas-btn');
+        const mobileEmpresasBtn = document.getElementById(
+          "mobile-empresas-btn",
+        );
         if (mobileEmpresasBtn) {
-          mobileEmpresasBtn.addEventListener('click', () => toggleMobileAccordion('empresas'));
+          mobileEmpresasBtn.addEventListener("click", () =>
+            toggleMobileAccordion("empresas"),
+          );
         }
-        
+
         // Cerrar dropdowns al hacer clic fuera
-        document.addEventListener('click', function(event) {
-          const isDropdownClick = event.target.closest('.dropdown-group');
-          const isMobileMenuClick = event.target.closest('#mobile-menu-panel') || event.target.closest('#menu-button');
-          
+        document.addEventListener("click", function (event) {
+          const isDropdownClick = event.target.closest(".dropdown-group");
+          const isMobileMenuClick =
+            event.target.closest("#mobile-menu-panel") ||
+            event.target.closest("#menu-button");
+
           if (!isDropdownClick) {
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-              menu.classList.add('opacity-0', 'invisible');
-              menu.classList.remove('opacity-100', 'visible');
+            document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+              menu.classList.add("opacity-0", "invisible");
+              menu.classList.remove("opacity-100", "visible");
             });
-            document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
-              arrow.style.transform = 'rotate(0deg)';
+            document.querySelectorAll(".dropdown-arrow").forEach((arrow) => {
+              arrow.style.transform = "rotate(0deg)";
             });
           }
 
           if (!isMobileMenuClick) {
-            const overlay = document.getElementById('mobile-overlay');
-            if (overlay && !overlay.classList.contains('hidden')) {
+            const overlay = document.getElementById("mobile-overlay");
+            if (overlay && !overlay.classList.contains("hidden")) {
               closeMobileMenu();
             }
           }
@@ -494,8 +556,13 @@ const { title, description = "ServirPRO: Tu tranquilidad asegurada" } = Astro.pr
       window.changeOfficeImage = changeOfficeImage;
     </script>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THFWQTTS"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-THFWQTTS"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
     <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>

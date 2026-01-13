@@ -9,11 +9,15 @@ import Detail from "../components/sections/vehiclePurchase/Detail.astro";
 import PaternsSection from "../components/sections/vehiclePurchase/PaternsSection.astro";
 import ContactSectionBanner from "../components/sections/vehiclePurchase/ContactSectionBanner.astro";
 import Hero from "../components/sections/vehiclePurchase/Hero.astro";
-import OfficesCarousel from '../components/sections/OfficesCarousel.astro';
+import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
 
+import { whatsappLinks } from "../utils/whatsapp";
 ---
 
-<Layout title="Servicios | ServirPRO">
+<Layout
+  title="Servicios | ServirPRO"
+  whatsapp={whatsappLinks.bajarCuotaVehiculo}
+>
   <Header />
   <main class="bg-white">
     <Hero />
@@ -24,5 +28,5 @@ import OfficesCarousel from '../components/sections/OfficesCarousel.astro';
     <Testimonials />
     <ContactSectionBanner />
   </main>
-  <Footer />
+  <Footer whatsapp={whatsappLinks.bajarCuotaVehiculo} />
 </Layout>
