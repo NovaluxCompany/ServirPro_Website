@@ -6,7 +6,7 @@ export const whatsappLinks = {
     cotizarSeguro: `https://wa.me/${phone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro"
     )}`,
-    cotizarSeguroVehiculo: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarSeguroVehiculo: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro para mi vehículo"
     )}`,
     cotizarSeguroVida: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
