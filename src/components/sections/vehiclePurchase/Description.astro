@@ -21,42 +21,48 @@ import detailBgMobile from '../../../assets/images/vehicleInsurance/Detail-Banne
     class="absolute inset-0 w-full h-[450px] object-contain md:hidden md:h-full"
   />
 
-  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center w-full py-2 md:py-16  md:pb-20">
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center w-full py-2 md:py-13  md:pb-20">
     <!-- Título -->
-    <div class="bg-servir-blue-banner p-6 md:px-10 md:py-6 w-[89%] md:w-full rounded-[20px] mb-8 md:rounded-2xl mt-5 md:-mt-16">
+    <div class="bg-servir-blue-banner p-6 md:px-10 md:py-3 w-[89%] md:w-full rounded-[20px] mb-8 md:rounded-2xl mt-5 md:-mt-12">
       <h2 class="subtitle font-bold text-center mb-4 md:mb-6 text-xl md:text-3xl">
-        Si hoy sientes que tu crédito no avanza, no estás solo
+        Si actualmente sientes que:
       </h2>
-      <ul class="space-y-3 md:space-y-4 text-left max-w-2xl mx-auto">
-        <li class="flex items-start gap-3 description">
-          <iconify-icon icon="mdi:check-circle" class="text-servir-green mt-1 shrink-0" style="font-size: 24px;"></iconify-icon>
+      <ul class="space-y-3 md:space-y-4 text-left max-w-2xl mx-auto ">
+        <li class="flex items-start gap-3 md:text-[18px]">
+          <span class="text-base md:text-2xl mt-0 shrink-0">⚠️</span>
           <span>Aunque pagas puntualmente, el <span class="font-bold">saldo casi no baja</span></span>
         </li>
-        <li class="flex items-start gap-3 description">
-          <iconify-icon icon="mdi:check-circle" class="text-servir-green mt-1 shrink-0" style="font-size: 24px;"></iconify-icon>
+        <li class="flex items-start gap-3 md:text-[18px]">
+          <span class="text-base md:text-2xl mt-0 shrink-0">⚠️</span>
           <span>Tu tasa de interés es <span class="font-bold">más alta de lo que debería</span></span>
         </li>
-        <li class="flex items-start gap-3 description">
-          <iconify-icon icon="mdi:check-circle" class="text-servir-green mt-1 shrink-0" style="font-size: 24px;"></iconify-icon>
+        <li class="flex items-start gap-3 md:text-[18px]">
+          <span class="text-base md:text-2xl mt-0 shrink-0">⚠️</span>
           <span>El banco no te ofrece <span class="font-bold">alternativas reales para reducir la cuota</span></span>
         </li>
-        <li class="flex items-start gap-3 description">
-          <iconify-icon icon="mdi:check-circle" class="text-servir-green mt-1 shrink-0" style="font-size: 24px;"></iconify-icon>
+        <li class="flex items-start gap-3 md:text-[18px]">
+          <span class="text-base md:text-2xl mt-0 shrink-0">⚠️</span>
           <span>Te están cobrando <span class="font-bold">un seguro de vida costoso</span> sin opciones</span>
         </li>
       </ul>
+
+      <!-- Texto blanco dentro del div azul -->
+      <div class="bg-white text-[#3b5881] rounded-2xl p-4 md:px-8 md:py-3 shadow-md md:text-ml leading-snug font-bold mt-6">
+        <p>
+          Es momento de solicitar una compra de cartera con nosotros
+        </p>
+      </div>
     </div>
 
-
-    <!-- Texto final -->
-    <div class="bg-white text-[#3b5881] rounded-2xl p-4 md:px-8 md:py-5 inline-block shadow-md text-base md:text-xl leading-snug mx-4 md:mx-0 subtitle font-bold italic -mt-4">
+    <!-- Texto verde -->
+    <div class="bg-servir-green text-black rounded-2xl p-4 md:px-8 md:py-3 inline-block shadow-md text-ml md:text-xl leading-snug mx-4 md:mx-0 font-bold italic -mt-8 md:-mt-5">
       <p>
         Quiero revisar mi crédito con un asesor
       </p>
     </div>
 
     <!-- Características adicionales -->
-    <div class="flex flex-wrap justify-center gap-6 md:gap-8 mt-6 md:mt-8 text-sm md:text-base pb-8 md:pb-0">
+    <div class="flex flex-wrap justify-center gap-6 md:gap-8 mt-6 md:mt-4 text-sm md:text-base pb-8 md:pb-0">
       <div class="flex items-center gap-2">
         <iconify-icon icon="mdi:clock-fast" class="text-white" style="font-size: 20px;"></iconify-icon>
         <span>Respuesta rápida</span>
