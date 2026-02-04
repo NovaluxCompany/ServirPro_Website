@@ -27,14 +27,24 @@ import calendarIcon from "../../../assets/iconos/socialPension/CalendarioCheck.w
       class="col-start-1 row-start-1 z-10 flex flex-col items-start w-full px-6 py-12 md:px-24 md:py-20"
     >
       <!-- Texto principal -->
+      <!-- Mobile version -->
       <h2
-        class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight text-left w-[90%] md:w-full mx-auto pl-6 md:pl-0 mt-10"
+        class="block md:hidden text-3xl font-bold text-white mb-4 leading-tight text-left w-[90%] mx-auto pl-6 mt-10"
       >
-        <span class="block md:inline">Durante años,</span>
-        <span class="block md:inline">muchas personas</span>
-        <span class="block md:inline">quisieron pagar</span>
-        <span class="block md:inline">solo pensión...</span>
-        <span class="block md:inline">y no podían</span>
+        <span class="block">Durante años,</span>
+        <span class="block">muchas personas</span>
+        <span class="block">quisieron pagar</span>
+        <span class="block">solo pensión...</span>
+        <span class="block">y no podían</span>
+      </h2>
+
+      <!-- Desktop version -->
+      <h2
+        class="hidden md:block text-5xl font-bold text-white mb-4 leading-tight text-left w-full mt-10"
+      >
+        <span class="block">Durante años, muchas</span>
+        <span class="block">personas quisieron pagar</span>
+        <span class="block">solo pensión... y no podían</span>
       </h2>
 
       <p
@@ -67,12 +77,21 @@ import calendarIcon from "../../../assets/iconos/socialPension/CalendarioCheck.w
         </h3>
 
         <!-- Texto Parrafo -->
+        <!-- Mobile version -->
         <p
-          class="col-start-1 col-span-2 row-start-2 md:col-start-2 md:col-span-1 md:row-start-2 text-black md:text-servir-blue-dark text-sm md:text-xl font-medium leading-normal text-left"
+          class="block md:hidden col-start-1 col-span-2 row-start-2 text-black text-sm font-medium leading-normal text-left"
         >
-          <span class="block md:inline">Si eres beneficiario de EPS</span>
-          <span class="block md:inline">o del régimen subsidiado, con</span>
-          <span class="block md:inline">el acompañamiento correcto.</span>
+          <span class="block">Si eres beneficiario de EPS</span>
+          <span class="block">o del régimen subsidiado, con</span>
+          <span class="block">el acompañamiento correcto.</span>
+        </p>
+
+        <!-- Desktop version -->
+        <p
+          class="hidden md:block col-start-2 col-span-1 row-start-2 text-servir-blue-dark text-xl font-medium leading-normal text-left"
+        >
+          <span class="block">Si eres beneficiario de EPS o del régimen</span>
+          <span class="block">subsidiado, con el acompañamiento correcto.</span>
         </p>
       </div>
     </div>
