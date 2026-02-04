@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import descriptionBg from "../../../assets/images/socialPension/FondoBlue-desk.webp";
+import descriptionBgMobile from "../../../assets/images/socialPension/FondoBlue-mobile.webp";
+import calendarIcon from "../../../assets/iconos/socialPension/CalendarioCheck.webp";
+---
+
+<section class="py-12 px-4 md:py-20 md:px-8 bg-white flex justify-center">
+  <div
+    class="grid grid-cols-1 grid-rows-1 max-w-5xl mx-auto w-full place-items-center"
+  >
+    <!-- Imagen de fondo: Desktop y Mobile -->
+    <!-- Usamos grid-area 1/1 para superponer -->
+    <Image
+      src={descriptionBg}
+      alt="Fondo azul pension"
+      class="col-start-1 row-start-1 w-full h-auto object-contain hidden md:block"
+    />
+    <Image
+      src={descriptionBgMobile}
+      alt="Fondo azul pension móvil"
+      class="col-start-1 row-start-1 w-full h-auto object-contain md:hidden"
+    />
+
+    <!-- Contenido encima de la imagen -->
+    <div
+      class="col-start-1 row-start-1 z-10 flex flex-col items-start w-full px-12 py-12 md:px-24 md:py-20"
+    >
+      <!-- Texto principal -->
+      <h2
+        class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight text-left w-full"
+      >
+        Durante años, muchas <br class="hidden md:block" />
+        personas quisieron pagar <br class="hidden md:block" />
+        solo pensión... y no podían
+      </h2>
+
+      <p
+        class="text-[#344869] font-extrabold text-xl md:text-2xl mb-10 text-left w-full"
+      >
+        Hoy eso cambió.
+      </p>
+
+      <!-- Tarjeta Blanca -->
+      <div
+        class="bg-white rounded-[30px] p-4 md:p-5 flex flex-col md:flex-row items-center gap-6 shadow-lg w-full max-w-[54rem] border-4 border-white"
+      >
+        <!-- Icono -->
+        <div class="flex-shrink-0">
+          <Image
+            src={calendarIcon}
+            alt="Icono calendario check"
+            class="w-24 h-24 md:w-32 md:h-32 object-contain"
+          />
+        </div>
+
+        <!-- Texto Tarjeta -->
+        <div class="text-left">
+          <h3
+            class="text-servir-blue-dark text-xl md:text-2xl font-extrabold mb-2"
+          >
+            Ahora puedes cotizar a solo pensión
+          </h3>
+          <p
+            class="text-servir-blue-dark text-lg md:text-xl font-medium leading-snug"
+          >
+            Si eres beneficiario de EPS o del régimen <br /> subsidiado, con el acompañamiento
+            correcto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

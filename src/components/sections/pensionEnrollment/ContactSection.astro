@@ -1,0 +1,122 @@
+---
+// FamilySection.astro - Sección de tranquilidad con imagen de familia
+import { Image } from "astro:assets";
+import contactWebImage from "../../../assets/images/socialPension/CTA-desk.webp";
+import contactMobileImage from "../../../assets/images/socialSecurityEnrollment/ContactBanner-mobile.webp";
+import { whatsappLinks } from "../../../utils/whatsapp";
+---
+
+<!-- Sección de Tranquilidad con Imagen de Familia -->
+<section
+  class="relative py-0 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[600px] flex items-center"
+>
+  <!-- Imagen de fondo para desktop -->
+  <Image
+    src={contactWebImage}
+    alt="Contacto ServirPRO"
+    class="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block"
+    loading="lazy"
+    quality={90}
+  />
+
+  <!-- Imagen de fondo para mobile (usando la misma por ahora o una versión mobile si existe) -->
+  <Image
+    src={contactMobileImage}
+    alt="Contacto ServirPRO mobile"
+    class="absolute inset-0 w-full h-full object-cover object-top z-0 sm:hidden"
+    loading="lazy"
+    quality={90}
+  />
+
+  <!-- Contenido -->
+  <div
+    class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full"
+  >
+    <div class="max-w-2xl text-left flex flex-col justify-center h-full">
+      <!-- Título principal -->
+      <h2
+        class="text-3xl lg:text-5xl font-extrabold text-[#0F3057] mb-6 leading-tight"
+      >
+        Empieza hoy a cotizar <br />
+        SOLO PENSIÓN <span class="text-[#3b5881]"
+          >con ayuda <br />
+          de ServirPRO Seguros</span
+        >
+      </h2>
+
+      <!-- Subtítulo -->
+      <p class="text-xl lg:text-2xl text-[#3b5881] font-semibold mb-8">
+        Estamos para apoyarte en cada paso.
+      </p>
+
+      <!-- Lista de beneficios -->
+      <ul class="space-y-4 mb-10">
+        <li class="flex items-center gap-3">
+          <svg
+            class="w-6 h-6 text-[#0F3057] flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-lg lg:text-xl font-medium text-black"
+            >Administramos tus pagos</span
+          >
+        </li>
+        <li class="flex items-center gap-3">
+          <svg
+            class="w-6 h-6 text-[#0F3057] flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-lg lg:text-xl font-medium text-black"
+            >Respondemos todas tus dudas</span
+          >
+        </li>
+        <li class="flex items-center gap-3">
+          <svg
+            class="w-6 h-6 text-[#0F3057] flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-lg lg:text-xl font-medium text-black"
+            >Aseguramos que cotices sin errores</span
+          >
+        </li>
+      </ul>
+
+      <!-- Botones -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href={whatsappLinks.cotizarPension}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex justify-center items-center px-8 py-4 bg-servir-green hover:bg-[#8CD556] text-black text-lg font-bold rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-1"
+        >
+          Afiliarme a Solo Pensión
+        </a>
+        <a
+          href={whatsappLinks.hablarConAsesor}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex justify-center items-center px-8 py-4 bg-gray-300 hover:bg-gray-400 text-black text-lg font-bold rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-1"
+        >
+          Hablar con un asesor
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
