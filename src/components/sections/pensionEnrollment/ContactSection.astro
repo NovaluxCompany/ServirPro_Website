@@ -8,13 +8,13 @@ import { whatsappLinks } from "../../../utils/whatsapp";
 
 <!-- Sección de Tranquilidad con Imagen de Familia -->
 <section
-  class="relative py-0 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[600px] flex items-center"
+  class="relative py-0 sm:py-20 lg:py-24 px-4 sm:px-0 overflow-hidden min-h-[600px] flex items-center"
 >
   <!-- Imagen de fondo para desktop -->
   <Image
     src={contactWebImage}
     alt="Contacto ServirPRO"
-    class="absolute inset-0 w-full h-full object-contain z-0 hidden sm:block"
+    class="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block"
     loading="lazy"
     quality={90}
   />
@@ -30,7 +30,7 @@ import { whatsappLinks } from "../../../utils/whatsapp";
 
   <!-- Contenido -->
   <div
-    class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full"
+    class="relative z-10 max-w-7xl mx-auto px-4 sm:px-12 lg:px-16 w-full h-full"
   >
     <!-- Estructura para Desktop: Todo en un solo contenedor -->
     <div
