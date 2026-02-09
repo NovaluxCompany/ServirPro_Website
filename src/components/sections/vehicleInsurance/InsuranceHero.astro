@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import heroBg from '../../../assets/images/vehicleInsurance/Hero.webp';
-import heroBgMobile from '../../../assets/images/vehicleInsurance/Hero-mobile.webp';
+import { Image } from "astro:assets";
+import heroBg from "../../../assets/images/vehicleInsurance/Hero.webp";
+import heroBgMobile from "../../../assets/images/vehicleInsurance/Hero-mobile.webp";
 import { whatsappLinks } from "../../../utils/whatsapp";
 
 const policyTitle = `Asegura tu carro o moto
@@ -9,146 +9,306 @@ y maneja con tranquilidad`;
 const subtitle = "Obtén el mejor seguro y protége ";
 const description = "vehículo ante cualquier imprevisto en la vía.";
 const buttonText = "Cotizar seguro vehicular";
-
-
+const policyTitle = `Asegura tu carro o moto
+y maneja con tranquilidad`;
+const subtitle = "Obtén el mejor seguro y protége ";
+const description = "vehículo ante cualquier imprevisto en la vía.";
+const buttonText = "Cotizar seguro vehicular";
 ---
 
-<section class=" max-h-[70vh] sm:h-auto sm:min-h-[70vh] sm:max-h-none relative z-10 ">
-  <div class="w-full h-full">
-    <div 
-      class="relative overflow-hidden min-h-[600px] sm:min-h-[600px] md:min-h-[580px] lg:min-h-[700px]"
-    >
-      <!-- Imagen de fondo usando el componente Image -->
-      <!-- Desktop y Tablet -->
-      <Image src={heroBg} alt="Seguro vehicular" class="absolute inset-0 w-full h-full object-cover hidden sm:block" />
-      <!-- Mobile -->
-      <Image src={heroBgMobile} alt="Seguro vehicular mobile" class="absolute inset-0 w-full h-full border-none object-cover sm:hidden" />
-      
-      <!-- Banda de título en tablet y desktop -->
-      
-      <div class="absolute inset-0 bg-opacity-20 sm:hidden"></div>
-      
-      <!-- Contenedor para móvil -->
-      <div class="sm:hidden absolute inset-0 flex flex-col justify-between pt-8 px-6 pb-6">
-        <div class="w-full">
-          <div class="w-full space-y-4">
-            <!-- Título en móvil -->
-            <div class="w-full text-left">
-              <h2 class="subtitle text-3xl font-extrabold text-servir-blue-dark leading-tight">
-                Asegura tu carro o<br />moto y maneja con tranquilidad
-              </h2>
-            </div>
+<section
+  class="max-h-[70vh] sm:h-auto sm:min-h-[70vh] sm:max-h-none relative z-10"
+>
+  <section
+    class="max-h-[70vh] sm:h-auto sm:min-h-[70vh] sm:max-h-none relative z-10"
+  >
+    <div class="w-full h-full">
+      <div
+        class="relative overflow-hidden min-h-[600px] sm:min-h-[600px] md:min-h-[580px] lg:min-h-[700px]"
+        class="relative overflow-hidden min-h-[600px] sm:min-h-[600px] md:min-h-[580px] lg:min-h-[700px]"
+      >
+        <!-- Imagen de fondo usando el componente Image -->
+        <!-- Desktop y Tablet -->
+        <Image
+          src={heroBg}
+          alt="Seguro vehicular"
+          class="absolute inset-0 w-full h-full object-cover hidden sm:block"
+        />
+        <!-- Mobile -->
+        <Image
+          src={heroBgMobile}
+          alt="Seguro vehicular mobile"
+          class="absolute inset-0 w-full h-full border-none object-cover sm:hidden"
+        />
 
-            <!-- Subtítulo y descripción -->
-            <div class="space-y-1 mb-2 text-left">
-              <p class="subtitle text-xl text-black leading-tight"><span class="font-bold">Obtén el mejor seguro</span> y protege</p>
-              <p class="subtitle text-xl text-black leading-tight">tu vehículo ante cualquier</p>
-              <p class="subtitle text-xl text-black leading-tight">imprevisto en la vía.</p>
-            </div>
-            
-            <!-- Botón -->
-            <div class="pt-1 pb-2">   
-              <a href={whatsappLinks.cotizarSeguroVehiculo} target="_blank" rel="noopener noreferrer" class="button-container button-text block px-8 py-3 text-base font-bold text-black bg-servir-green w-full rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
-                {buttonText}
-              </a>
-            </div>
+        <!-- Banda de título en tablet y desktop -->
+        <!-- Banda de título en tablet y desktop -->
 
-            <!-- Beneficios -->
-            <div class="space-y-2 text-left">
-              <div class="flex items-center gap-3">
-                <iconify-icon icon="mdi:check-circle" class="text-servir-green shrink-0" style="font-size: 20px;"></iconify-icon>
-                <span class="text-sm text-black">Mejores coberturas</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <iconify-icon icon="mdi:check-circle" class="text-servir-green shrink-0" style="font-size: 20px;"></iconify-icon>
-                <span class="text-sm text-black">Precio competitivo</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <iconify-icon icon="mdi:check-circle" class="text-servir-green shrink-0" style="font-size: 20px;"></iconify-icon>
-                <span class="text-sm text-black">Atención inmediata <span class="font-bold">24/7</span></span>
+        <div class="absolute inset-0 bg-opacity-20 sm:hidden"></div>
+
+        <!-- Contenedor para móvil -->
+        <div
+          class="sm:hidden absolute inset-0 flex flex-col justify-between pt-8 px-6 pb-6"
+        >
+          <div
+            class="sm:hidden absolute inset-0 flex flex-col justify-between pt-8 px-6 pb-6"
+          >
+            <div class="w-full">
+              <div class="w-full space-y-4">
+                <!-- Título en móvil -->
+                <div class="w-full text-left">
+                  <h2
+                    class="subtitle text-3xl font-extrabold text-servir-blue-dark leading-tight"
+                  >
+                    Asegura tu carro o<br />moto y maneja con tranquilidad
+                    <div class="w-full space-y-4">
+                      <!-- Título en móvil -->
+                      <div class="w-full text-left">
+                        <h2
+                          class="subtitle text-3xl font-extrabold text-servir-blue-dark leading-tight"
+                        >
+                          Asegura tu carro o<br />moto y maneja con tranquilidad
+                        </h2>
+                      </div>
+
+                      <!-- Subtítulo y descripción -->
+                      <div class="space-y-1 mb-2 text-left">
+                        <p class="subtitle text-xl text-black leading-tight">
+                          <span class="font-bold">Obtén el mejor seguro</span> y protege
+                        </p>
+                        <p class="subtitle text-xl text-black leading-tight">
+                          tu vehículo ante cualquier
+                        </p>
+                        <p class="subtitle text-xl text-black leading-tight">
+                          imprevisto en la vía.
+                        </p>
+                        <div class="space-y-1 mb-2 text-left">
+                          <p class="subtitle text-xl text-black leading-tight">
+                            <span class="font-bold">Obtén el mejor seguro</span> y
+                            protege
+                          </p>
+                          <p class="subtitle text-xl text-black leading-tight">
+                            tu vehículo ante cualquier
+                          </p>
+                          <p class="subtitle text-xl text-black leading-tight">
+                            imprevisto en la vía.
+                          </p>
+                        </div>
+
+                        <!-- Botón -->
+                        <div class="pt-1 pb-2">
+                          <a
+                            href={whatsappLinks.cotizarSeguroVehiculo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button-container button-text block px-8 py-3 text-base font-bold text-black bg-servir-green w-full rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
+                          >
+                            <div class="pt-1 pb-2">
+                              <a
+                                href={whatsappLinks.cotizarSeguroVehiculo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="button-container button-text block px-8 py-3 text-base font-bold text-black bg-servir-green w-full rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl"
+                              >
+                                {buttonText}
+                              </a>
+                            </div>
+
+                            <!-- Beneficios -->
+                            <div class="space-y-2 text-left">
+                              <div class="flex items-center gap-3">
+                                <iconify-icon
+                                  icon="mdi:check-circle"
+                                  class="text-servir-green shrink-0"
+                                  style="font-size: 20px;"></iconify-icon>
+                                <span class="text-sm text-black"
+                                  >Mejores coberturas</span
+                                >
+                              </div>
+                              <div class="flex items-center gap-3">
+                                <iconify-icon
+                                  icon="mdi:check-circle"
+                                  class="text-servir-green shrink-0"
+                                  style="font-size: 20px;"></iconify-icon>
+                                <span class="text-sm text-black"
+                                  >Precio competitivo</span
+                                >
+                              </div>
+                              <div class="flex items-center gap-3">
+                                <iconify-icon
+                                  icon="mdi:check-circle"
+                                  class="text-servir-green shrink-0"
+                                  style="font-size: 20px;"></iconify-icon>
+                                <span class="text-sm text-black"
+                                  >Atención inmediata <span class="font-bold"
+                                    >24/7</span
+                                  ></span
+                                >
+                              </div>
+                            </div>
+
+                            <!-- Beneficios -->
+                            <div class="space-y-2 text-left">
+                              <div class="flex items-center gap-3">
+                                <iconify-icon
+                                  icon="mdi:check-circle"
+                                  class="text-servir-green shrink-0"
+                                  style="font-size: 20px;"></iconify-icon>
+                                <span class="text-sm text-black"
+                                  >Mejores coberturas</span
+                                >
+                              </div>
+                              <div class="flex items-center gap-3">
+                                <iconify-icon
+                                  icon="mdi:check-circle"
+                                  class="text-servir-green shrink-0"
+                                  style="font-size: 20px;"></iconify-icon>
+                                <span class="text-sm text-black"
+                                  >Precio competitivo</span
+                                >
+                              </div>
+                              <div class="flex items-center gap-3">
+                                <iconify-icon
+                                  icon="mdi:check-circle"
+                                  class="text-servir-green shrink-0"
+                                  style="font-size: 20px;"></iconify-icon>
+                                <span class="text-sm text-black"
+                                  >Atención inmediata <span class="font-bold"
+                                    >24/7</span
+                                  ></span
+                                >
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+
+                        <!-- Texto final en esquina inferior izquierda -->
+                        <div class="w-full">
+                          <p class="text-sm text-white text-left">
+                            Rápido • Fácil • 100% online
+                          </p>
+                        </div>
+
+                        <!-- Texto final en esquina inferior izquierda -->
+                        <div class="w-full">
+                          <p class="text-sm text-white text-left">
+                            Rápido • Fácil • 100% online
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- Contenedor para tablet y desktop -->
+                      <div class="hidden sm:block">
+                        <!-- Título centrado en toda la pantalla -->
+                        <div
+                          class="absolute top-16 md:top-20 lg:top-24 left-0 right-0 z-10"
+                        >
+                          <div class="text-center px-6">
+                            <h2
+                              class="title text-3xl md:text-4xl lg:text-5xl font-extrabold text-servir-blue-dark leading-tight whitespace-pre-line"
+                            >
+                              {policyTitle}
+                            </h2>
+                          </div>
+                        </div>
+
+                        <!-- Contenido: Subtítulo, descripción, beneficios y botón -->
+                        <div
+                          class="absolute left-0 right-0 z-10 sm:top-[120px] md:top-[180px] lg:top-50"
+                        >
+                          <div class="px-6 md:px-0">
+                            <!-- Subtítulo y descripción centrados -->
+                            <p
+                              class="text-base sm:text-lg md:text-xl lg:text-2xl text-center leading-snug mb-0 md:mb-0 text-black font-medium"
+                            >
+                              <span class="font-bold"
+                                >Obtén el mejor seguro</span
+                              ><span> y protége tu</span>
+                            </p>
+
+                            <p
+                              class="text-base sm:text-lg md:text-xl lg:text-2xl text-center mt-1 md:mt-1 mb-10 md:mb-16 text-black font-medium"
+                            >
+                              {description}
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Contenedor independiente para beneficios, botón y texto final -->
+                        <div
+                          class="absolute left-0 right-0 z-10 sm:top-[380px] md:top-[300px] lg:top-[400px]"
+                        >
+                          <div class="px-6 md:px-0">
+                            <!-- Contenedor para beneficios  -->
+                            <div class="flex max-w-6xl mx-auto mb-6 md:-mt-18">
+                              <!-- Beneficios a la derecha -->
+                              <div
+                                class="ml-auto space-y-3 md:space-y-4 text-left pr-24 md:pr-40 lg:pr-40"
+                              >
+                                <div class="flex items-center gap-3">
+                                  <iconify-icon
+                                    icon="mdi:check-circle"
+                                    class="text-servir-green shrink-0"
+                                    style="font-size: 24px;"></iconify-icon>
+                                  <span class="text-sm md:text-lg text-black"
+                                    >Mejores coberturas</span
+                                  >
+                                </div>
+                                <div class="flex items-center gap-3">
+                                  <iconify-icon
+                                    icon="mdi:check-circle"
+                                    class="text-servir-green shrink-0"
+                                    style="font-size: 24px;"></iconify-icon>
+                                  <span class="text-sm md:text-lg text-black"
+                                    >Precio competitivo</span
+                                  >
+                                </div>
+                                <div class="flex items-center gap-3">
+                                  <iconify-icon
+                                    icon="mdi:check-circle"
+                                    class="text-servir-green shrink-0"
+                                    style="font-size: 24px;"></iconify-icon>
+                                  <span class="text-sm md:text-lg text-black"
+                                    >Atención inmediata <span class="font-bold"
+                                      >24/7</span
+                                    ></span
+                                  >
+                                </div>
+
+                                <!-- Botón debajo de los beneficios -->
+                                <div class="mt-6 md:mt-8">
+                                  <a
+                                    href={whatsappLinks.cotizarSeguroVehiculo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="button-container block px-8 py-3 text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl btn-text text-center"
+                                  >
+                                    {buttonText}
+                                  </a>
+                                </div>
+
+                                <!-- Texto final debajo del botón -->
+                                <p
+                                  class="text-sm md:text-lg text-black text-left"
+                                >
+                                  Rápido • Fácil • 100% online
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Vacío para mantener espacio -->
+                        <div class="hidden"></div>
+                      </div>
+                    </div>
+                  </h2>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Texto final en esquina inferior izquierda -->
-        <div class="w-full">
-          <p class="text-sm text-white text-left">
-            Rápido • Fácil • 100% online
-          </p>
         </div>
       </div>
-
-      <!-- Contenedor para tablet y desktop -->
-      <div class="hidden sm:block">
-        <!-- Título centrado en toda la pantalla -->
-        <div class="absolute top-16 md:top-20 lg:top-24 left-0 right-0 z-10">
-          <div class="text-center px-6">
-            <h2 class="title text-3xl md:text-4xl lg:text-5xl font-extrabold text-servir-blue-dark leading-tight whitespace-pre-line">
-              {policyTitle}
-            </h2>
-          </div>
-        </div>
-
-        <!-- Contenido: Subtítulo, descripción, beneficios y botón -->
-        <div class="absolute left-0 right-0 z-10 sm:top-[120px] md:top-[180px] lg:top-50">
-          <div class="px-6 md:px-0">
-            <!-- Subtítulo y descripción centrados -->
-            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-center leading-snug mb-0 md:mb-0 text-black font-medium">
-              <span class="font-bold">Obtén el mejor seguro</span><span> y protége tu</span>
-            </p>
-            
-            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-center mt-1 md:mt-1 mb-10 md:mb-16 text-black font-medium">
-              {description}
-            </p>
-          </div>
-        </div>
-
-        <!-- Contenedor independiente para beneficios, botón y texto final -->
-        <div class="absolute left-0 right-0 z-10 sm:top-[380px] md:top-[300px] lg:top-[400px]">
-          <div class="px-6 md:px-0">
-            <!-- Contenedor para beneficios  -->
-            <div class="flex max-w-6xl mx-auto mb-6  md:-mt-18">
-              <!-- Beneficios a la derecha -->
-              <div class="ml-auto space-y-3 md:space-y-4 text-left pr-24 md:pr-40 lg:pr-40">
-                <div class="flex items-center gap-3">
-                  <iconify-icon icon="mdi:check-circle" class="text-servir-green shrink-0" style="font-size: 24px;"></iconify-icon>
-                  <span class="text-sm md:text-lg text-black">Mejores coberturas</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <iconify-icon icon="mdi:check-circle" class="text-servir-green shrink-0" style="font-size: 24px;"></iconify-icon>
-                  <span class="text-sm md:text-lg text-black ">Precio competitivo</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <iconify-icon icon="mdi:check-circle" class="text-servir-green shrink-0" style="font-size: 24px;"></iconify-icon>
-                  <span class="text-sm md:text-lg text-black ">Atención inmediata <span class="font-bold">24/7</span></span>
-                </div>
-
-                <!-- Botón debajo de los beneficios -->
-                <div class="mt-6 md:mt-8">
-                  <a href={whatsappLinks.cotizarSeguroVehiculo} target="_blank" rel="noopener noreferrer" class="button-container block px-8 py-3 text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl btn-text text-center">
-                    {buttonText}
-                  </a>
-                </div>
-
-                <!-- Texto final debajo del botón -->
-                <p class="text-sm md:text-lg text-black text-left">
-                  Rápido • Fácil • 100% online
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-            <!-- Vacío para mantener espacio -->
-            <div class="hidden"></div>
-          </div>
-        </div>
-      </div>
-          </div>
-        </div>
-      </div>
-      
     </div>
-  </div>
+  </section>
 </section>
