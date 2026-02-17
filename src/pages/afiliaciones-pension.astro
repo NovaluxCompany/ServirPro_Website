@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/sections/common/Header.astro";
+import Footer from "../components/sections/common/Footer.astro";
+import Testimonials from "../components/sections/common/Testimonials.astro";
+import ContactSection from "../components/sections/pensionEnrollment/ContactSection.astro";
+import Hero from "../components/sections/pensionEnrollment/Hero.astro";
+import Description from "../components/sections/pensionEnrollment/Description.astro";
+import Detail from "../components/sections/pensionEnrollment/Detail.astro";
+import StepsSection from "../components/sections/pensionEnrollment/StepsSection.astro";
+import BannerServirProLocation from "../components/sections/common/BannerServirProLocation.astro";
+import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
+
+// Icons for BannerServirProLocation
+import icon1 from "../assets/iconos/aditionalServices/servicies1.svg";
+import icon2 from "../assets/iconos/aditionalServices/servicies2.svg";
+import iconAtencion from "../assets/iconos/socialPension/Atencion.webp";
+---
+
+<Layout title="Servicios | ServirPRO">
+  <Header />
+  <main class="bg-white">
+    <Hero />
+    <Description />
+    <Detail />
+    <StepsSection />
+    <OfficesCarousel />
+    <BannerServirProLocation
+      title="¿Por qué gestionar tu pensión con <br> ServirPRO Seguros?"
+      titleClass="text-[#0F3057]"
+      items={[
+        {
+          icon: icon1,
+          text: "Más de 10 años afiliando<br> trabajadores y empresas<br> en todo el país.",
+          alt: "Experiencia",
+        },
+        {
+          icon: icon2,
+          text: "Oficinas físicas en <br> Medellín, Bogotá, <br> Pereira y Envigado.",
+          alt: "Oficinas",
+        },
+        {
+          icon: iconAtencion,
+          text: "Acompañamiento real <br> y personalizado en <br> todo el proceso.",
+          alt: "Acompañamiento",
+        },
+      ]}
+      buttonText="Cotizar mi pensión"
+      buttonLink="#planes-afiliaciones"
+      footerText="Nosotros administramos tu pago y te enviamos la planilla cada mes."
+    />
+    <Testimonials />
+    <ContactSection />
+  </main>
+  <Footer
+    bgClass="bg-[#E6E6E6]"
+    buttonClass="px-8 py-4 md:px-12 md:py-4 text-lg md:text-xl rounded-full"
+  />
+</Layout>
