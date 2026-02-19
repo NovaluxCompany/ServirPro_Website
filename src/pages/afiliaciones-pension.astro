@@ -16,9 +16,10 @@ import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
 import icon1 from "../assets/iconos/aditionalServices/servicies1.svg";
 import icon2 from "../assets/iconos/aditionalServices/servicies2.svg";
 import iconAtencion from "../assets/iconos/socialPension/Atencion.webp";
+import { whatsappLinks } from "../utils/whatsapp";
 ---
 
-<Layout title="Servicios | ServirPRO">
+<Layout title="Servicios | ServirPRO" whatsapp={whatsappLinks.cotizarPension}>
   <Header />
   <main class="bg-white">
     <Hero />
@@ -47,13 +48,14 @@ import iconAtencion from "../assets/iconos/socialPension/Atencion.webp";
         },
       ]}
       buttonText="Cotizar mi pensión"
-      buttonLink="#planes-afiliaciones"
+      buttonLink={whatsappLinks.cotizarPension}
       footerText="Nosotros administramos tu pago y te enviamos la planilla cada mes."
     />
     <Testimonials />
     <ContactSection />
   </main>
   <Footer
+    whatsapp={whatsappLinks.cotizarPension}
     bgClass="bg-[#E6E6E6]"
     buttonClass="px-8 py-4 md:px-12 md:py-4 text-lg md:text-xl rounded-full"
   />
