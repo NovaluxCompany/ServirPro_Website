@@ -11,9 +11,14 @@ import Detail from "../components/sections/socialSecurityEnrollment/Detail.astro
 import BannerServirProLocation from "../components/sections/common/BannerServirProLocation.astro";
 import DescriptionService from "../components/sections/socialSecurityEnrollment/DescriptionService.astro";
 import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
+
+import { whatsappLinks } from "../utils/whatsapp";
 ---
 
-<Layout title="Servicios | ServirPRO">
+<Layout
+  title="Servicios | ServirPRO"
+  whatsapp={whatsappLinks.cotizarPlanSeguridadSocial}
+>
   <Header />
   <main class="bg-white">
     <Hero />
@@ -25,5 +30,5 @@ import OfficesCarousel from "../components/sections/OfficesCarousel.astro";
     <Testimonials />
     <ContactSection />
   </main>
-  <Footer />
+  <Footer whatsapp={whatsappLinks.cotizarPlanSeguridadSocial} />
 </Layout>
