@@ -1,5 +1,5 @@
 const phone = "573011090186";
-const ARLphone = "573015618278";
+const ARLphone = "573042416853";
 const creditsPhone = "573203995052";
 const pensionPhone = "573146349341";
 const seguridadSocialPhone = "573001573319";
