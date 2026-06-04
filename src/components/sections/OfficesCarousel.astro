@@ -2,8 +2,6 @@
 // OfficesCarousel.astro - Carrusel de oficinas
 
 // Importar imágenes de oficinas
-import oficinaEnvigado01 from "../../assets/images/offices/Oficinaenvigado-01.webp";
-import oficinaEnvigado02 from "../../assets/images/offices/Oficinaenvigado-02.webp";
 import oficinaMedellin01 from "../../assets/images/offices/Oficinamedellin-01.webp";
 import oficinaMedellin02 from "../../assets/images/offices/Oficinamedellin-02.webp";
 import oficinaBogota01 from "../../assets/images/offices/Oficinabogota-01.webp";
@@ -64,22 +62,6 @@ import OfficeCard from "../ui/OfficeCard.astro";
                     class="flex transition-transform duration-300 ease-in-out"
                 >
                     <OfficeCard
-                        officeKey="envigado"
-                        title="Oficina Envigado"
-                        images={{
-                            src1: oficinaEnvigado01,
-                            src2: oficinaEnvigado02,
-                            alt1: "CC. Viva Envigado 1",
-                            alt2: "CC. Viva Envigado 2",
-                        }}
-                        mapUrl="https://maps.app.goo.gl/oRQPp4ebTXAm61iF9?g_st=ipc"
-                        ,
-                        details={[
-                            "Carrera 48 #32b sur - 139",
-                            "CC. Viva Envigado Piso 2 - Zona Financiera (al frente del Banco DaviBank)",
-                        ]}
-                    />
-                    <OfficeCard
                         officeKey="medellin"
                         title="Oficina en Medellín"
                         images={{
@@ -93,21 +75,6 @@ import OfficeCard from "../ui/OfficeCard.astro";
                             "Carrera 51 #45-75",
                             "CC. Pioneros - Local 213",
                             "Centro de Medellín, La Candelaria",
-                        ]}
-                    />
-                    <OfficeCard
-                        officeKey="envigado"
-                        title="Oficina Envigado"
-                        images={{
-                            src1: oficinaEnvigado01,
-                            src2: oficinaEnvigado02,
-                            alt1: "CC. Viva Envigado 1",
-                            alt2: "CC. Viva Envigado 2",
-                        }}
-                        mapUrl="https://maps.app.goo.gl/oRQPp4ebTXAm61iF9?g_st=ipc"
-                        details={[
-                            "Carrera 48 #32b sur - 139",
-                            "CC. Viva Envigado Piso 2 - Zona Financiera (al frente del Banco DaviBank)",
                         ]}
                     />
                     <OfficeCard
