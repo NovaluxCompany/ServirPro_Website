@@ -32,10 +32,10 @@ export const whatsappLinks = {
     cotizarPlanSeguridadSocial: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a la seguridad social"
     )}`,
-    cotizarEps: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarEps: `https://wa.me/${pensionPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a solo EPS"
     )}`,
-    cotizarArl: `https://wa.me/${ARLphone}?text=${encodeURIComponent(
+    cotizarArl: `https://wa.me/${pensionPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a solo ARL"
     )}`,
     cotizarEpsArl: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
