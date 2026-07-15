@@ -10,6 +10,8 @@ import oficinaBogota01 from "../../assets/images/offices/Oficinabogota-01.webp";
 import oficinaBogota02 from "../../assets/images/offices/Oficinabogota-02.webp";
 import oficinaPereira01 from "../../assets/images/offices/Oficinapereira-01.webp";
 import oficinaPereira02 from "../../assets/images/offices/Oficinapereira-02.webp";
+import oficinaCali01 from "../../assets/images/offices/Oficinacali-01.jpg";
+import oficinaCali02 from "../../assets/images/offices/Oficinacali-02.jpg";
 import OfficeCard from "../ui/OfficeCard.astro";
 ---
 
@@ -142,6 +144,22 @@ import OfficeCard from "../ui/OfficeCard.astro";
                             "Plaza Bolívar, Pereira",
                         ]}
                     />
+                    <OfficeCard
+                        officeKey="cali"
+                        title="Oficina en Cali"
+                        images={{
+                            src1: oficinaCali01,
+                            src2: oficinaCali02,
+                            alt1: "Oficina Cali 1",
+                            alt2: "Oficina Cali 2",
+                        }}
+                        mapUrl="https://maps.app.goo.gl/kbg45hZYSBnYSkHG8"
+                        details={[
+                            "Calle 70 #1‑00",
+                            "Oficina EP02",
+                            "Centro Comercial Calima",
+                        ]}
+                    />
                 </div>
             </div>
         </div>
@@ -177,6 +195,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
         medellin: 0,
         bogota: 0,
         pereira: 0,
+        cali: 0,
     };
 
     // Función para iniciar la auto-rotación (simplificada)
