@@ -8,12 +8,14 @@ export interface Props {
   whatsapp?: string;
   bgClass?: string;
   buttonClass?: string;
+  showComplianceNote?: boolean;
 }
 
 const {
   whatsapp = whatsappLinks.genericMessage,
   bgClass = "bg-gray-100",
   buttonClass = "px-8 py-3 rounded-full",
+  showComplianceNote = false,
 } = Astro.props;
 ---
 
@@ -42,6 +44,15 @@ const {
       <div
         class="bg-white rounded-3xl shadow-lg p-6 md:p-8 mb-8 max-w-4xl mx-auto"
       >
+        {
+          showComplianceNote && (
+            <p class="text-xs text-gray-500 text-center mb-3">
+              ServirPRO Seguros presta servicios privados de asesoría,
+              gestión e intermediación para afiliaciones al Sistema de
+              Seguridad Social.
+            </p>
+          )
+        }
         <div
           class="flex flex-col md:flex-row items-center justify-between gap-4"
         >
@@ -223,6 +234,9 @@ const {
       <!-- Copyright centrado -->
       <div class="text-center text-gray-600 text-sm">
         © 2025 ServirPRO Seguros - Empresa registrada en Colombia
+      </div>
+      <div class="text-center text-gray-500 text-xs mt-1">
+        ServirPRO Seguros es una empresa privada especializada en afiliaciones al Sistema de Seguridad Social y seguros.
       </div>
     </div>
   </div>
