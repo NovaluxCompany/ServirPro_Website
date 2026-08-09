@@ -20,5 +20,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# local scratch/audit scripts
+.scratch/
+
 # jetbrains setting folder
 .idea/
+
+.vercel/
