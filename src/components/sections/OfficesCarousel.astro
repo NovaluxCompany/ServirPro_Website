@@ -40,12 +40,12 @@ import OfficeCard from "../ui/OfficeCard.astro";
             class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
             <div
-                class="bg-[#e6e6e6] rounded-full px-6 py-4 md:px-12 md:py-6 shadow-lg"
+                class="bg-[#e6e6e6] rounded-3xl sm:rounded-full px-6 py-4 md:px-12 md:py-6 shadow-lg w-[220px] sm:w-auto"
             >
                 <h2
-                    class="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap text-[#0B2D49]"
+                    class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:whitespace-nowrap text-[#0B2D49]"
                 >
-                    Contamos con oficinas en:
+                    Contamos con<br class="sm:hidden" /> oficinas en:
                 </h2>
             </div>
         </div>
@@ -149,7 +149,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
 <script>
     // Variables globales para el carrusel principal
     let currentOfficeIndex = 0;
-    const totalOffices = 4;
+    let totalOffices = 4;
 
     // Auto-rotación del carrusel principal
     let autoTimer = null;
@@ -321,6 +321,12 @@ import OfficeCard from "../ui/OfficeCard.astro";
 
     // Inicializar el carrusel cuando se carga la página
     document.addEventListener("DOMContentLoaded", function () {
+        // Calcular el número real de oficinas a partir de las tarjetas renderizadas
+        const officesCarousel = document.getElementById("offices-carousel");
+        if (officesCarousel) {
+            totalOffices = officesCarousel.children.length;
+        }
+
         // Configurar los botones indicadores del carrusel principal (solo Offices)
         const carouselButtons = document.querySelectorAll(
             "#offices-indicators .office-indicator",

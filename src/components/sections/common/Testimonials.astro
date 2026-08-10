@@ -956,6 +956,9 @@ const reviews = [
     if (window.innerWidth < 768) {
       // md breakpoint
       reviewsPerView = 1; // 1 card en móviles
+    } else if (window.innerWidth < 1024) {
+      // lg breakpoint
+      reviewsPerView = 2; // 2 cards en tablet
     } else {
       reviewsPerView = 3; // 3 cards en desktop
     }

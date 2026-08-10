@@ -19,5 +19,8 @@
     "resend": "^6.5.2",
     "sharp": "^0.34.4",
     "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
   }
 }
