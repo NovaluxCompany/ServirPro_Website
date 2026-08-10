@@ -98,21 +98,6 @@ import OfficeCard from "../ui/OfficeCard.astro";
                         ]}
                     />
                     <OfficeCard
-                        officeKey="envigado"
-                        title="Oficina Envigado"
-                        images={{
-                            src1: oficinaEnvigado01,
-                            src2: oficinaEnvigado02,
-                            alt1: "CC. Viva Envigado 1",
-                            alt2: "CC. Viva Envigado 2",
-                        }}
-                        mapUrl="https://maps.app.goo.gl/oRQPp4ebTXAm61iF9?g_st=ipc"
-                        details={[
-                            "Carrera 48 #32b sur - 139",
-                            "CC. Viva Envigado Piso 2 - Zona Financiera (al frente del Banco DaviBank)",
-                        ]}
-                    />
-                    <OfficeCard
                         officeKey="bogota"
                         title="Oficina en Bogotá"
                         images={{
@@ -182,7 +167,7 @@ import OfficeCard from "../ui/OfficeCard.astro";
 <script>
     // Variables globales para el carrusel principal
     let currentOfficeIndex = 0;
-    const totalOffices = 4;
+    let totalOffices = 4;
 
     // Auto-rotación del carrusel principal
     let autoTimer = null;
@@ -354,6 +339,12 @@ import OfficeCard from "../ui/OfficeCard.astro";
 
     // Inicializar el carrusel cuando se carga la página
     document.addEventListener("DOMContentLoaded", function () {
+        // Calcular el número real de oficinas a partir de las tarjetas renderizadas
+        const officesCarousel = document.getElementById("offices-carousel");
+        if (officesCarousel) {
+            totalOffices = officesCarousel.children.length;
+        }
+
         // Configurar los botones indicadores del carrusel principal (solo Offices)
         const carouselButtons = document.querySelectorAll(
             "#offices-indicators .office-indicator",
