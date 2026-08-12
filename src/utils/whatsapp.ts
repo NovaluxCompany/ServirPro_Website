@@ -1,8 +1,9 @@
 const phone = "573011090186";
-const ARLphone = "573042416853";
+const ARLphone = "573004269504";
 const creditsPhone = "573203995052";
 const pensionPhone = "573146349341";
 const seguridadSocialPhone = "573001573319";
+const EPSphone = "573004269504";
 
 export const whatsappLinks = {
     cotizarSeguro: `https://wa.me/${phone}?text=${encodeURIComponent(
@@ -32,10 +33,10 @@ export const whatsappLinks = {
     cotizarPlanSeguridadSocial: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a la seguridad social"
     )}`,
-    cotizarEps: `https://wa.me/${pensionPhone}?text=${encodeURIComponent(
+    cotizarEps: `https://wa.me/${EPSphone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a solo EPS"
     )}`,
-    cotizarArl: `https://wa.me/${pensionPhone}?text=${encodeURIComponent(
+    cotizarArl: `https://wa.me/${ARLphone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a solo ARL"
     )}`,
     cotizarEpsArl: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
