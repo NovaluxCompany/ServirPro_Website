@@ -1,14 +1,8 @@
-const phone = "573011090186";
-const ARLphone = "573004269504";
 const creditsPhone = "573203995052";
-const pensionPhone = "573146349341";
-const seguridadSocialPhone = "573146349341";
-const EPSphone = "573004269504";
-const companyPhone = "573004538558";
-const portfolioPurchase = "573117127652";
+const BotPhone = "573004269504";
 
 export const whatsappLinks = {
-    cotizarSeguro: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarSeguro: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro"
     )}`,
     cotizarSeguroVehiculo: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
@@ -17,58 +11,58 @@ export const whatsappLinks = {
     cotizarSeguroVida: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro de vida"
     )}`,
-    cotizarSeguroHogar: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarSeguroHogar: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar un seguro para mi hogar"
     )}`,
-    cotizarSegurosGeneral: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarSegurosGeneral: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y me interesa cotizar sus seguros (Vida, Salud, Vehículo)"
     )}`,
-    cotizarPoliza: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarPoliza: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar una póliza"
     )}`,
-    cotizarPolizaSalud: `https://wa.me/${phone}?text=${encodeURIComponent(
+    cotizarPolizaSalud: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar una póliza de salud"
     )}`,
-    cotizarPlanPolizaColectiva: `https://wa.me/${companyPhone}?text=${encodeURIComponent(
+    cotizarPlanPolizaColectiva: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero cotizar una póliza colectiva"
     )}`,
-    cotizarPlanSeguridadSocial: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
+    cotizarPlanSeguridadSocial: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a la seguridad social"
     )}`,
-    cotizarEps: `https://wa.me/${EPSphone}?text=${encodeURIComponent(
+    cotizarEps: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a solo EPS"
     )}`,
-    cotizarArl: `https://wa.me/${ARLphone}?text=${encodeURIComponent(
+    cotizarArl: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a solo ARL"
     )}`,
-    cotizarEpsArl: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
+    cotizarEpsArl: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a EPS+ARL"
     )}`,
-    cotizarPension: `https://wa.me/${pensionPhone}?text=${encodeURIComponent(
+    cotizarPension: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a solo Pensión"
     )}`,
-    cotizarEpsArlPension: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
+    cotizarEpsArlPension: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a EPS+ARL+Pensión"
     )}`,
-    cotizarEpsArlPensionCaja: `https://wa.me/${seguridadSocialPhone}?text=${encodeURIComponent(
+    cotizarEpsArlPensionCaja: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero afiliarme a EPS+ARL+Pensión+Caja"
     )}`,
-    cotizarArlEmpresas: `https://wa.me/${companyPhone}?text=${encodeURIComponent(
+    cotizarArlEmpresas: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero una asesoría gratuita para mi empresa"
     )}`,
-    hablarConAsesor: `https://wa.me/${phone}?text=${encodeURIComponent(
+    hablarConAsesor: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero hablar con un asesor"
     )}`,
-    asesoriaCreditoVehicular: `https://wa.me/${phone}?text=${encodeURIComponent(
+    asesoriaCreditoVehicular: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero una asesoría gratuita para mi crédito vehicular"
     )}`,
-    comprarSoat: `https://wa.me/${phone}?text=${encodeURIComponent(
+    comprarSoat: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero comprar un SOAT"
     )}`,
-    genericMessage: `https://wa.me/${phone}?text=${encodeURIComponent(
+    genericMessage: `https://wa.me/${BotPhone}?text=${encodeURIComponent(
         "Hola, vi su página web y quiero más información sobre un servicio"
     )}`,
-    bajarCuotaVehiculo: `https://wa.me/${portfolioPurchase}?text=${encodeURIComponent(
+    bajarCuotaVehiculo: `https://wa.me/${creditsPhone}?text=${encodeURIComponent(
         "Hola, vi el sitio web y quiero bajar la cuota de mi crédito"
     )}`,
 };
