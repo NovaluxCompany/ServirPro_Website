@@ -9,6 +9,7 @@ export interface Props {
   bgClass?: string;
   buttonClass?: string;
   showComplianceNote?: boolean;
+  complianceNoteText?: string;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   bgClass = "bg-gray-100",
   buttonClass = "px-8 py-3 rounded-full",
   showComplianceNote = false,
+  complianceNoteText = "ServirPRO Seguros presta servicios privados de asesoría, gestión e intermediación para afiliaciones al Sistema de Seguridad Social.",
 } = Astro.props;
 ---
 
@@ -47,9 +49,7 @@ const {
         {
           showComplianceNote && (
             <p class="text-xs text-gray-500 text-center mb-3">
-              ServirPRO Seguros presta servicios privados de asesoría,
-              gestión e intermediación para afiliaciones al Sistema de
-              Seguridad Social.
+              {complianceNoteText}
             </p>
           )
         }

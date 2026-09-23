@@ -4,14 +4,13 @@ import heroBg from "../../../assets/images/arlEnrollment/Hero.webp";
 import heroBgMobile from "../../../assets/images/arlEnrollment/Hero-mobile.webp";
 import { whatsappLinks } from "../../../utils/whatsapp";
 
-const title = "Gestionamos tu afiliación a EPS en 24/48 horas";
-const description1 = "Afiliación a solo EPS";
-const description2 = "desde $152.000 mensuales";
-const buttonText = "Cotizar mi afiliación a EPS";
+const title = "¿Necesitas orientación sobre EPS?";
+const description = "Recibe asesoría personalizada para resolver tus dudas sobre EPS y conocer los pasos según tu situación.";
+const buttonText = "Recibir asesoría por WhatsApp";
 
 const benefits = [
-  "Oficinas físicas en Medellín, Bogotá y Pereira",
-  "Proceso guiado",
+  "Oficinas físicas en Medellín, Bogotá, Pereira y Cali",
+  "Orientación personalizada",
   "Más de 10 años de experiencia",
   "Acompañamiento por WhatsApp",
 ];
@@ -22,12 +21,12 @@ const benefits = [
   <div class="absolute inset-0">
     <Image
       src={heroBg}
-      alt="Afiliación EPS"
+      alt="Orientación sobre EPS"
       class="hidden md:block w-full h-full object-cover object-left"
     />
     <Image
       src={heroBgMobile}
-      alt="Afiliación EPS mobile"
+      alt="Orientación sobre EPS mobile"
       class="md:hidden w-full h-full object-cover"
       style="height: calc(100vh - 80px);"
     />
@@ -56,15 +55,9 @@ const benefits = [
           <div class="space-y-1 mb-4 mt-4 md:mt-8 md:mb-8">
             <p
               class="subtitle font-semibold text-gray-800"
-              style="font-size: 16px; line-height: 0.5"
-            >
-              {description1}
-            </p>
-            <p
-              class="subtitle font-semibold text-gray-800"
               style="font-size: 16px"
             >
-              {description2}
+              {description}
             </p>
           </div>
 

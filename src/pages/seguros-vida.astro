@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/sections/common/Header.astro";
 import Footer from "../components/sections/common/Footer.astro";
+import ComplianceNotice from "../components/sections/common/ComplianceNotice.astro";
 import Testimonials from "../components/sections/common/Testimonials.astro";
 import FamilySection from "../components/sections/lifesInsurance/FamilySection.astro";
 import Hero from "../components/sections/lifesInsurance/Hero.astro";
@@ -28,5 +29,6 @@ import { whatsappLinks } from "../utils/whatsapp";
     <Testimonials />
     <FamilySection />
   </main>
+  <ComplianceNotice />
   <Footer whatsapp={whatsappLinks.cotizarSeguroVida} />
 </Layout>
