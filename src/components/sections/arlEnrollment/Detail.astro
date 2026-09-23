@@ -1,83 +1,55 @@
 ---
-import { Image } from "astro:assets";
 import BenefitItem from "../../ui/BenefitItem.astro";
 import { whatsappLinks } from "../../../utils/whatsapp";
-
-// Imagen del título
-import tituloImg from "../../../assets/images/arlEnrollment/afiliacion-titulo.webp";
 
 // Iconos
 import icon1 from "../../../assets/iconos/arlEnrollment/icon1.svg";
 import icon2 from "../../../assets/iconos/arlEnrollment/icon2.svg";
-import icon3 from "../../../assets/iconos/arlEnrollment/icon3.svg";
 import icon4 from "../../../assets/iconos/arlEnrollment/icon4.svg";
 import icon5 from "../../../assets/iconos/arlEnrollment/icon5.svg";
-import icon6 from "../../../assets/iconos/arlEnrollment/icon6.svg";
 ---
 
 <section
   class="w-full flex flex-col items-center justify-center text-center px-6 py-10 md:py-16 bg-white"
 >
-  <!-- Imagen del título -->
-  <div class="mb-4">
-    <Image
-      src={tituloImg}
-      alt="Una póliza de salud te brinda"
-      class="mx-auto w-[400px] md:w-[680px]"
-    />
-  </div>
+  <h2 class="title text-3xl md:text-5xl font-extrabold text-servir-blue-dark mb-4 max-w-3xl">
+    ¿Eres independiente y tienes dudas sobre tu EPS?
+  </h2>
 
-  <p class="text-center subtitle mb-12 text-servir-blue">
-    Afíliate a tu EPS de forma correcta, rápida y sin contratiempos
+  <p class="text-center subtitle mb-12 text-servir-blue max-w-2xl">
+    Nuestro equipo te brinda orientación clara y personalizada para que
+    conozcas los requisitos y pasos relacionados con tu EPS.
   </p>
 
   <!-- Beneficios -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mb-10">
-    <BenefitItem
-      icon={icon1}
-      alt="icon1"
-      text={`Evita rechazos
-       y bloqueos en la afiliación.`}
-      showBorder={false}
-    />
+    <BenefitItem icon={icon1} alt="icon1" text="Orientación personalizada" showBorder={false} />
 
-    <BenefitItem
-      icon={icon2}
-      alt="icon2"
-      text={`Acompañamiento real por WhatsApp durante todo el proceso`}
-      showBorder={false}
-    />
-
-    <BenefitItem
-      icon={icon3}
-      alt="icon3"
-      text={`Activación rápida sin 
-      filas ni complicaciones.`}
-      showBorder={false}
-    />
+    <BenefitItem icon={icon2} alt="icon2" text="Atención por WhatsApp" showBorder={false} />
 
     <BenefitItem
       icon={icon4}
       alt="icon4"
-      text={`Orientación para elegir la EPS
-       adecuada según tu caso`}
+      text="Información clara sobre requisitos"
       showBorderMobileOnly={false}
     />
     <BenefitItem
       icon={icon5}
       alt="icon5"
-      text={`Corrección de datos y
-       verificación antes del envío`}
-      showBorder={false}
-    />
-    <BenefitItem
-      icon={icon6}
-      alt="icon6"
-      text={`+10 años afiliando trabajadores
-      y empresas en todo el país`}
+      text="Acompañamiento durante tus consultas"
       showBorder={false}
     />
   </div>
+
+  <!-- Botón CTA -->
+  <a
+    href={whatsappLinks.cotizarEps}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="button-text button-container bg-servir-green cursor-pointer md:w-[350px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green"
+  >
+    Hablar con un asesor
+  </a>
 </section>
 <section
   class="w-full flex flex-col items-center justify-center text-center px-6 py-16 md:py-16 bg-[#f3f3f3]"
