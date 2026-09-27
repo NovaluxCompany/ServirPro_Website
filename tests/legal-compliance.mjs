@@ -21,7 +21,7 @@ const LANDING_PAGES = [
 ];
 
 const COMPLIANCE_TEXT = "Servicio sujeto a condiciones y tarifas";
-const NEW_ARL_PHRASE = "Te asesoramos y gestionamos";
+const NEW_ARL_PHRASE = "Te asesoramos paso a paso";
 const OLD_ARL_PHRASE = "Afiliamos independientes";
 const LEGAL_CLAUSE =
   "ServirPRO no es una entidad gubernamental, EPS ni ARL. Es una empresa privada e independiente que presta servicios de asesoría y gestión administrativa.";
