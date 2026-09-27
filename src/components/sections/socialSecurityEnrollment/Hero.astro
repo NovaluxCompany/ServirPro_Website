@@ -2,11 +2,12 @@
 import { Image } from 'astro:assets';
 import heroBg from '../../../assets/images/socialSecurityEnrollment/Hero.webp';
 import heroBgMobile from '../../../assets/images/socialSecurityEnrollment/Hero-mobile.webp';
- 
-const policyTitle = "Gestión de afiliaciones a seguridad social";
-const subtitle = "Tu afiliación a salud, pensión y ARL sin preocupaciones. ";
-const description = "En ServirPRO Seguros hacemos tu trámite rápido y transparente, con oficinas en las principales ciudades.";
-const buttonText = "Conocer planes";
+import { whatsappLinks } from '../../../utils/whatsapp';
+
+const policyTitle = "¿Necesitas afiliarte a Seguridad Social?";
+const description = "Te asesoramos paso a paso para que conozcas los requisitos y sepas cómo realizar correctamente tu proceso.";
+const buttonText = "Recibir asesoría por WhatsApp";
+const belowButton = "Atención personalizada • Más de 10 años de experiencia • Oficinas físicas";
 ---
 
 <section class=" h-[90vh] max-h-[90vh]  sm:h-auto sm:max-h-none">
@@ -38,18 +39,19 @@ const buttonText = "Conocer planes";
               </h2>
             </div>
 
-            <p  class="mb-8">
-              <span class="text-lg  text-[#5793ce] leading-snug " style="font-weight:800">{subtitle}</span>
-              <span class="text-lg  font-bold text-servir-blue-dark  " style="font-weight:600">
+            <p class="mb-8">
+              <span class="text-lg font-bold text-servir-blue-dark" style="font-weight:600">
               {description}
             </span>
             </p>
-            
-    
 
-            <a href="#planes-afiliaciones" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
+            <a href={whatsappLinks.cotizarPlanSeguridadSocial} target="_blank" rel="noopener noreferrer" class="button-text button-container inline-block px-6 py-3 text-sm font-bold text-black bg-servir-green w-100 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl" style="width:100%">
               {buttonText}
             </a>
+
+            <p class="mt-4 text-sm font-medium text-servir-blue-dark">
+              {belowButton}
+            </p>
           </div>
         </div>
       </div>
@@ -61,18 +63,18 @@ const buttonText = "Conocer planes";
           <div class=" md:p-6 lg:p-8">
             <div class="text-center w-full">
               <p class="mb-6 md:mb-8">
-                <span class="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-snug text-[#5793ce] font-extrabold subtitle">
-                  {subtitle}
-                </span>
-                
                 <span class="text-base sm:text-lg md:text-2xl lg:text-3xl text-servir-blue-dark font-semibold subtitle">
                   {description}
                 </span>
               </p>
 
-              <a href="#planes-afiliaciones" class="button-text inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
+              <a href={whatsappLinks.cotizarPlanSeguridadSocial} target="_blank" rel="noopener noreferrer" class="button-text inline-block w-100  mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-black bg-servir-green rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-servir-green hover:shadow-xl">
                 {buttonText}
               </a>
+
+              <p class="mt-4 text-sm md:text-base font-medium text-servir-blue-dark">
+                {belowButton}
+              </p>
             </div>
           </div>
         </div>
