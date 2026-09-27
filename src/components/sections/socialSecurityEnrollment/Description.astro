@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import detailBg from "../../../assets/images/lifeInsurance/Health-detail.webp";
 import detailBgMobile from "../../../assets/images/lifeInsurance/Health-detail-mobile.webp";
+import { whatsappLinks } from "../../../utils/whatsapp";
 ---
 
 <section
@@ -29,7 +30,7 @@ import detailBgMobile from "../../../assets/images/lifeInsurance/Health-detail-m
     >
       <h2 class="text-2xl md:text-3xl subtitle">
         <span class="block md:inline subtile"
-          >Con ServirPRO Seguros tienes la tranquilidad de un proceso guiado y supervisado por profesionales.</span
+          >Evita errores y resuelve tus dudas antes de iniciar tu proceso</span
         >
       </h2>
     </div>
@@ -37,17 +38,17 @@ import detailBgMobile from "../../../assets/images/lifeInsurance/Health-detail-m
     <!-- Texto principal del cuerpo -->
     <p
       class="md:text-3xl text-lg leading-relaxed mb-6 text-white max-w-[85%] md:max-w-[100%] md:whitespace-pre-line subtitle"
-    >Nos aseguramos de que tu afiliación quede correctamente registrada en salud, pensión y ARL.
+    >Recibe atención personalizada según tu situación y conoce los requisitos y pasos que debes tener en cuenta.
     </p>
 
-    <!-- Texto final -->
-    <div
-      class="bg-white text-[#3b5881] font-extrabold italic rounded-2xl px-8 py-5 inline-block shadow-md text-lg md:text-xl leading-snug mx-[23px] md:mx-0 subtitle"
+    <!-- Botón -->
+    <a
+      href={whatsappLinks.cotizarPlanSeguridadSocial}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button-text button-container inline-block bg-servir-green text-black font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-servir-green transition"
     >
-      <p class="md:whitespace-pre-line p-0 m-0 md:text-3xl text-lg subtitle"> 
-        Más de 10 años de experiencia y miles de clientes satisfechos nos respaldan.
-        En ServirPRO Seguros validamos cada trámite para garantizar que tu afiliación quede correctamente registrada y activa en el menor tiempo posible.
-      </p>
-    </div>
+      Quiero recibir asesoría
+    </a>
   </div>
 </section>
