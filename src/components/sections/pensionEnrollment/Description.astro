@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import descriptionBg from "../../../assets/images/socialPension/FondoBlue-desk.webp";
 import descriptionBgMobile from "../../../assets/images/socialPension/FondoBlue-mobile.webp";
 import calendarIcon from "../../../assets/iconos/socialPension/CalendarioCheck.webp";
+import { whatsappLinks } from "../../../utils/whatsapp";
 ---
 
 <section class="py-12 px-4 md:py-3 md:px-8 bg-white flex justify-center">
@@ -29,70 +30,53 @@ import calendarIcon from "../../../assets/iconos/socialPension/CalendarioCheck.w
       <!-- Texto principal -->
       <!-- Mobile version -->
       <h2
-        class="block md:hidden text-3xl font-bold text-white mb-4 leading-tight text-left w-[90%] mx-auto pl-6 mt-10"
+        class="block md:hidden text-2xl font-bold text-white mb-4 leading-tight text-left w-[90%] mx-auto pl-6 mt-10"
       >
-        <span class="block">Durante años,</span>
-        <span class="block">muchas personas</span>
-        <span class="block">quisieron pagar</span>
-        <span class="block">solo pensión...</span>
-        <span class="block">y no podían</span>
+        <span class="block">Ahora puedes cotizar a</span>
+        <span class="block">SOLO PENSIÓN, si cumples</span>
+        <span class="block">los requisitos</span>
       </h2>
 
       <!-- Desktop version -->
       <h2
-        class="hidden md:block text-5xl font-bold text-white mb-4 leading-tight text-left w-full mt-10"
+        class="hidden md:block text-4xl font-bold text-white mb-4 leading-tight text-left w-full mt-10"
       >
-        <span class="block">Durante años, muchas</span>
-        <span class="block">personas quisieron pagar</span>
-        <span class="block">solo pensión... y no podían</span>
+        <span class="block">Ahora puedes cotizar a SOLO PENSIÓN,</span>
+        <span class="block">si cumples los requisitos</span>
       </h2>
-
-      <p
-        class="text-[#344869] font-extrabold text-xl md:text-2xl mb-10 text-left w-[90%] md:w-full mx-auto pl-6 md:pl-0"
-      >
-        Hoy eso cambió.
-      </p>
 
       <!-- Tarjeta Blanca -->
       <div
-        class="bg-white rounded-[30px] px-4 py-4 md:p-5 grid grid-cols-[auto_1fr] items-center gap-x-4 gap-y-2 md:gap-x-6 shadow-lg w-[90%] md:w-full mx-auto max-w-[54rem] border-4 border-white mb-10 md:mb-4"
+        class="bg-white rounded-[30px] px-6 py-6 md:p-8 flex flex-col items-start gap-4 shadow-lg w-[90%] md:w-full mx-auto max-w-[54rem] border-4 border-white mb-10 md:mb-4 text-left"
       >
-        <!-- Icono -->
-        <div
-          class="flex-shrink-0 col-start-1 row-start-1 md:row-span-2 self-center"
-        >
+        <div class="flex items-start gap-4">
           <Image
             src={calendarIcon}
             alt="Icono calendario check"
-            class="w-16 h-16 md:w-32 md:h-32 object-contain"
+            class="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
           />
+          <p class="text-servir-blue-dark text-base md:text-xl font-medium leading-normal">
+            La normatividad vigente contempla casos en los que es posible
+            realizar aportes a pensión sin cotizar simultáneamente a EPS.
+          </p>
         </div>
 
-        <!-- Texto Titulo -->
-        <h3
-          class="col-start-2 row-start-1 text-servir-blue-dark text-base md:text-2xl font-extrabold text-left mb-0 leading-tight"
-        >
-          <span class="block md:inline">Ahora puedes cotizar</span>
-          <span class="block md:inline">a solo pensión</span>
-        </h3>
-
-        <!-- Texto Parrafo -->
-        <!-- Mobile version -->
-        <p
-          class="block md:hidden col-start-1 col-span-2 row-start-2 text-black text-sm font-medium leading-normal text-left"
-        >
-          <span class="block">Si eres beneficiario de EPS</span>
-          <span class="block">o del régimen subsidiado, con</span>
-          <span class="block">el acompañamiento correcto.</span>
+        <p class="text-servir-blue-dark text-lg md:text-xl font-extrabold">
+          ¿Quieres saber si puedes hacerlo?
         </p>
 
-        <!-- Desktop version -->
-        <p
-          class="hidden md:block col-start-2 col-span-1 row-start-2 text-servir-blue-dark text-xl font-medium leading-normal text-left"
-        >
-          <span class="block">Si eres beneficiario de EPS o del régimen</span>
-          <span class="block">subsidiado, con el acompañamiento correcto.</span>
+        <p class="text-black text-base md:text-xl font-medium leading-normal">
+          Cuéntanos tu situación y recibe orientación personalizada sobre los
+          requisitos que debes cumplir.
         </p>
+
+        <a
+          target="_blank"
+          href={whatsappLinks.cotizarPension}
+          class="inline-block px-8 py-3 text-base md:text-lg font-bold text-black bg-servir-green rounded-xl shadow-lg transition duration-300 ease-in-out hover:bg-[#8CD556] hover:shadow-xl transform hover:-translate-y-1"
+        >
+          Consultar mi caso
+        </a>
       </div>
     </div>
   </div>
