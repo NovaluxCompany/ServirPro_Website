@@ -1,10 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import BenefitItem from "../../ui/BenefitItem.astro";
 import { whatsappLinks } from "../../../utils/whatsapp";
-
-// Imagen del título
-import tituloImg from "../../../assets/images/healthEnrollment/afiliacion-titulo.webp";
 
 // Iconos
 import icon1 from "../../../assets/iconos/healthEnrollment/icon1.webp";
@@ -16,59 +12,59 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
 <section
   class="w-full flex flex-col items-center justify-center text-center text-black px-6 py-10 md:py-16 bg-white"
 >
-  <!-- Imagen del título -->
-  <div class="mb-8">
-    <Image
-      src={tituloImg}
-      alt="Una póliza de salud te brinda"
-      class="mx-auto w-[400px] md:w-[680px]"
-    />
-  </div>
+  <h2 class="title text-2xl md:text-4xl font-extrabold text-servir-blue-dark mb-4 max-w-2xl">
+    ¿Por qué es importante contar con ARL?
+  </h2>
+
+  <p class="subtitle mb-8 text-servir-blue max-w-2xl">
+    La ARL brinda protección frente a accidentes y riesgos laborales de
+    acuerdo con las condiciones y coberturas aplicables.
+  </p>
 
   <!-- Beneficios -->
   <div class="space-y-1 sm:space-y-2.5 md:space-y-1 mb-10">
     <BenefitItem
       icon={icon1}
-      alt="Atención médica ante accidentes"
-      text={`Atención médica urgente por accidentes laborales.`}
+      alt="Atención ante accidentes laborales"
+      text={`Atención ante accidentes laborales según la cobertura aplicable.`}
       showBorder={false}
     />
 
     <BenefitItem
       icon={icon2}
-      alt="Pago de incapacidades"
-      text={`Pago de incapacidades durante tu recuperación.`}
+      alt="Prestaciones económicas"
+      text={`Prestaciones económicas cuando correspondan según la normatividad.`}
       showBorder={false}
     />
 
     <BenefitItem
       icon={icon3}
-      alt="Rehabilitación y tratamientos sin costo adicional"
-      text={`Terapias y rehabilitación sin costo adicional.`}
+      alt="Rehabilitación y atención"
+      text={`Rehabilitación y atención derivadas de accidentes o enfermedades laborales, cuando aplique.`}
       showBorderMobileOnly={false}
     />
 
     <BenefitItem
       icon={icon4}
-      alt="Cumplimiento legal para prestar tus servicios"
-      text={`Cumplimiento legal para prestar servicios a empresas.`}
+      alt="Cumplimiento de requisitos de Seguridad Social"
+      text={`Cumplimiento de requisitos de Seguridad Social cuando sean exigibles para tu actividad.`}
     />
   </div>
 
-  <!-- Botón Cotizar -->
+  <p class="text-base md:text-lg font-medium text-black leading-snug mb-5 max-w-2xl">
+    Si tienes dudas sobre la ARL que necesitas para tu actividad, recibe
+    orientación personalizada.
+  </p>
+
+  <!-- Botón -->
   <a
     href={whatsappLinks.cotizarArl}
     target="_blank"
     rel="noopener noreferrer"
-    class="button-text button-container bg-servir-green cursor-pointer md:w-[400px] text-[#000] font-bold px-8 py-3 rounded-xl hover:bg-servir-green transition mb-5"
+    class="button-text button-container bg-servir-green cursor-pointer md:w-[400px] text-[#000] font-bold px-8 py-3 rounded-xl hover:bg-servir-green transition"
   >
-    Afiliarme a la ARL ahora
+    Hablar con un asesor
   </a>
-  <p
-    class="text-base sm:text-lg md:text-xl lg:text-xl font-medium text-black leading-snug"
-  >
-    Atención inmediata por WhatsApp
-  </p>
 </section>
 
 <section
@@ -79,8 +75,11 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
     <h2
       class="font-extrabold text-[#2b89c6] text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-weight:normal mt-2 title"
     >
-      Afiliarte a una ARL <br />es muy fácil
+      ¿Necesitas afiliarte a una ARL <br />y no sabes cómo empezar?
     </h2>
+    <p class="subtitle text-servir-blue mt-4 max-w-2xl mx-auto">
+      Te orientamos paso a paso para que conozcas qué debes tener en cuenta.
+    </p>
   </div>
   <!-- Pasos -->
   <div
@@ -91,8 +90,12 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
       class="relative bg-white rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
     >
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
+      <p class="font-bold text-black step-text description">
+        Cuéntanos tu caso
+      </p>
       <p class="font-medium text-black step-text description">
-        Envía tus datos personales y cargo a realizar.
+        Indícanos la actividad o trabajo que vas a realizar y las dudas que
+        tienes.
       </p>
     </div>
 
@@ -101,8 +104,12 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
       class="relative bg-white rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
     >
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
+      <p class="font-bold text-black step-text description">
+        Recibe asesoría personalizada
+      </p>
       <p class="font-medium text-black step-text description">
-        Nosotros gestionamos todo el proceso ante la ARL.
+        Uno de nuestros asesores revisa tu consulta y te orienta sobre los
+        requisitos y aspectos que debes conocer.
       </p>
     </div>
 
@@ -111,9 +118,12 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
       class="relative bg-white rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
     >
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
+      <p class="font-bold text-black step-text description">
+        Conoce cómo continuar
+      </p>
       <p class="font-medium text-black step-text description">
-        En menos de 24 horas recibes tu certificado y puedes comenzar a
-        trabajar.
+        Recibe orientación clara sobre los siguientes pasos de acuerdo con tu
+        situación.
       </p>
     </div>
   </div>
@@ -125,6 +135,6 @@ import icon4 from "../../../assets/iconos/healthEnrollment/icon4.webp";
     rel="noopener noreferrer"
     class="button-text button-container bg-servir-green cursor-pointer md:w-[400px] text-[#000] font-bold px-8 py-3 rounded-xl hover:bg-servir-green"
   >
-    Afiliarme a la ARL ahora
+    Recibir asesoría por WhatsApp
   </a>
 </section>
