@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BenefitItem from "../../ui/BenefitItem.astro";
+import { whatsappLinks } from "../../../utils/whatsapp";
 
 // Imagen del título
 import tituloImg from "../../../assets/images/socialSecurityEnrollment/afiliacion-titulo.webp";
@@ -81,6 +82,11 @@ import icon6 from "../../../assets/iconos/socialSecurityEnrollment/icon6.png";
     Conocer planes
   </a>
 
+  <!-- Título del proceso -->
+  <h2 class="title text-2xl md:text-4xl font-extrabold text-servir-blue-dark mb-10 max-w-2xl">
+    ¿No sabes cómo empezar? Te orientamos
+  </h2>
+
   <!-- Pasos -->
   <div
     class="mt-17 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-17 relative"
@@ -90,8 +96,12 @@ import icon6 from "../../../assets/iconos/socialSecurityEnrollment/icon6.png";
       class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
     >
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">1.</h3>
+      <p class="font-bold text-servir-dark-text step-text subtitle">
+        Cuéntanos tu situación
+      </p>
       <p class="font-medium text-servir-dark-text step-text subtitle">
-        Envía tus datos personales y actividad laboral.
+        Indícanos qué necesitas y cuáles son tus dudas sobre Seguridad
+        Social.
       </p>
     </div>
 
@@ -100,8 +110,12 @@ import icon6 from "../../../assets/iconos/socialSecurityEnrollment/icon6.png";
       class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
     >
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">2.</h3>
+      <p class="font-bold text-servir-dark-text step-text subtitle">
+        Recibe asesoría personalizada
+      </p>
       <p class="font-medium text-servir-dark-text step-text subtitle">
-        Nosotros realizamos las afiliaciones según tu plan.
+        Uno de nuestros asesores revisa tu consulta y te orienta sobre los
+        requisitos y aspectos que debes conocer.
       </p>
     </div>
 
@@ -110,18 +124,24 @@ import icon6 from "../../../assets/iconos/socialSecurityEnrollment/icon6.png";
       class="relative bg-[#e6e6e6] rounded-2xl p-6 pt-10 text-center shadow-sm flex flex-col items-center mb-6"
     >
       <h3 class="absolute -top-6 text-5xl font-bold text-[#2b89c6]">3.</h3>
+      <p class="font-bold text-servir-dark-text step-text subtitle">
+        Conoce cómo continuar
+      </p>
       <p class="font-medium text-servir-dark-text step-text subtitle">
-        En menos de 24 horas recibes tus certificados y puedes comenzar a trabajar.
+        Recibe orientación clara sobre los siguientes pasos de acuerdo con
+        tu situación.
       </p>
     </div>
   </div>
 
-  <!-- Segundo botón Conocer planes (scroll a planes) -->
+  <!-- Segundo botón -->
   <a
-    href="#planes-afiliaciones"
+    href={whatsappLinks.cotizarPlanSeguridadSocial}
+    target="_blank"
+    rel="noopener noreferrer"
     class="inline-block button-text button-container bg-servir-green cursor-pointer md:w-[300px] text-[#000] font-bold px-8 py-3 rounded-full hover:bg-servir-green text-center"
   >
-    Conocer planes
+    Recibir asesoría por WhatsApp
   </a>
 
 </section>
